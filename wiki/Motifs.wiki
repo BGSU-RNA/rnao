@@ -24,6 +24,8 @@ also in FR3D: cWW-tSH-tSH-tHS-cWW_kink-turn
 == sarcin like RNA motif (SO:0000024) ==
 SO def: "A loop in ribosomal RNA containing the sites of attack for ricin and sarcin." [http:////proton.chem.yale.edu/pdf/7897662.pdf]
 
+also in FR3D: cWW-tSH-tHW-tHH-cWW_sarcin-like
+
 == symmetric RNA internal loop (SO:0000025) ==
 SO def: "An internal RNA loop where the extent of the loop on both stands is the same size." [SO:ke]
 
@@ -33,10 +35,20 @@ no SO def.
 == RNA hook turn (SO:0000027) ==
 no SO def.
 
-== cWW-tHW-cSW-cWW_C-loop ==
-== cWW-tSH-tHW-cSH-tHH-tHS-cWW sarcin/ricin ==
+== C-loop ==
+
+cWW-tHW-cSW-cWW
+
+== sarcin/ricin motif ==
+(contrast sarcin like RNA motif above (SO:0000024))
+
+cWW-tSH-tHW-cSH-tHH-tHS-cWW 
+
 == cWW-tWH-insertion-tHS-cWW ==
-== cWW-tWH-cWW_GAAA-receptor ==
+== GAAA-receptor ==
+
+cWW-tWH-cWW
+
 == cWW-(cWW-cSW)-(tWH-cWW)-cWW-cWW ==
 == cWW-tSH-tWH-tHS-cWW ==
 == cWW-tHS-cWW ==
@@ -49,10 +61,9 @@ no SO def.
 == cWW-tWH-tSH-tHS-cWW ==
 == cWW-cWS-cWW ==
 == cWW-(cWH-cWW)-(tHW-cWW)-cWW ==
-== cWW-tSH-tHW-tHH-cWW_sarcin-like ==
-=  cWW-cSH-cWW-tHS-cWW ==
-== cWW-tSH-tHH-cSH-tWH-tHS-insertion-c ==
-
+==  cWW-cSH-cWW-tHS-cWW ==
+== insertion-c ==
+cWW-tSH-tHH-cSH-tWH-tHS
 == GNRA tetraloop ==
 == UNCG tetraloop ==
 == T-loop ==
