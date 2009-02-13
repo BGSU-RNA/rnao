@@ -2,6 +2,8 @@
 % uncomment the following to use with XSB
 %:- import reverse/2, append/3, ith/3 from basics.
 
+% TODO:
+% use full-length predicate names
 
 :- table motif/1.
 motif(X):- stemloop(X).
@@ -40,7 +42,7 @@ tetraloop(X):-
         X=[A,B,C,D],
         five_prime_to(S1,A),
         five_prime_to(D,S2),
-        paired_with_cww(S1,S2).
+        pairs_with_CWW(S1,S2).
 
 :- table gnra_tetraloop/1.
 gnra_tetraloop(X):-
@@ -52,12 +54,19 @@ gnra_tetraloop(X):-
         purine(B3),
         a(B4).
 
-:- table gnra_tetraloop_with_ths/1.
-gnra_tetraloop_with_ths(X):-
+:- table gnra_tetraloop_with_TSH/1.
+gnra_tetraloop_with_TSH(X):-
         gnra_tetraloop(X),
         has_base_at(X,B1,1),
         has_base_at(X,B4,4),
-        paired_with_ths(B1,B4).
+        pairs_with_TSH(B1,B4).
+
+:- table gnra_hairpin_loop/1.
+gnra_hairpin_loop(X):-
+        loop(X),
+        has_base_at(X,B1,1),
+        has_base_at(X,B4,4),
+        pairs_with_TSH(B1,B4).
 
 :- table bulge/1.
 bulge(L):-
@@ -71,14 +80,14 @@ bulge(L):-
 :- table bulge2/1.
 bulge2(L12-L34):-
         base(B1),
-        paired_with(B1,B4),
+        pairs_with(B1,B4),
         base(B4),
         five_prime_to(B1,B1x),
         loop(L12),
         has_start_base(L12,B1x),
         has_end_base(L12,B2x),
         five_prime_to(B2x,B2),
-        paired_with(B2,B3),
+        pairs_with(B2,B3),
         five_prime_to(B3,B3x),
         has_start_base(L34,B3x),
         loop(L34),
@@ -136,10 +145,10 @@ nt_sequence([X,Y|T]):-
 
 :- table ss_sequence/1.
 ss_sequence([S]):-
-        unpaired_cww_base(S).
+        unpaired_CWW_base(S).
 ss_sequence([X,Y|T]):-
         five_prime_to(X,Y),
-        unpaired_cww_base(X),
+        unpaired_CWW_base(X),
         ss_sequence([Y|T]).
 
 :- table loop/1.
@@ -150,16 +159,16 @@ loop(S):-
 base_pair(BP):-
         base(X),
         base(Y),
-        paired_with(X,Y),
+        pairs_with(X,Y),
         mereological_union(X,Y,BP).
 
 %% stem(X)
 % stored as two seqs, the second is 3 to 5
 :- table stem/1.
 stem([X-Y]):-
-        paired_with(X,Y).
+        pairs_with(X,Y).
 stem([X-Y,X2-Y2|L]):-
-        paired_with(X,Y),
+        pairs_with(X,Y),
         five_prime_to(X,X2),
         five_prime_to(Y2,Y),
         stem([X2-Y2|L]).
@@ -184,7 +193,7 @@ purine(X):- u(X).
 pyrimidine(X):- g(X).
 pyrimidine(X):- c(X).
 
-unpaired_cww_base(X):- base(X),\+ paired_with_cww(X,_).
+unpaired_CWW_base(X):- base(X),\+ pairs_with_CWW(X,_).
 
 % ========================================
 % nucleic acid connection relations
@@ -280,18 +289,18 @@ start_of_strand2(SS,X):-
 end_of_strand2([_-X|_],X).
 
 % sub-relations
-:- table paired_with/2.
-paired_with(X,Y):- paired_with_cww(X,Y).
+:- table pairs_with/2.
+pairs_with(X,Y):- pairs_with_CWW(X,Y).
 
-:- table paired_with_cww/2.
-paired_with_cww(X,Y):- paired_with_cww(Y,X).
+:- table pairs_with_CWW/2.
+pairs_with_CWW(X,Y):- pairs_with_CWW(Y,X).
 
-paired_with(X,Y):- paired_with_ths(X,Y).
+pairs_with(X,Y):- pairs_with_THS(X,Y).
 
-:- table paired_with_tsh/2.
-paired_with_tsh(X,Y):- paired_with_ths(Y,X).
+:- table pairs_with_TSH/2.
+pairs_with_TSH(X,Y):- pairs_with_THS(Y,X).
 
-%%TODO paired_with(X,Y):- paired_with(Y,X).
+%%TODO pairs_with(X,Y):- pairs_with(Y,X).
 
 mereological_union(X,Y,Z):-
         is_list(X),
