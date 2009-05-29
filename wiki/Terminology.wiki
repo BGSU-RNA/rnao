@@ -1,6 +1,6 @@
 #summary Essential RNAO terminology
 
-= Introduction =
+- terms & definitions.
 
 
 * Quality
