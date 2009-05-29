@@ -2,27 +2,82 @@
 
 = Introduction =
 
-Add your content here.
-
-
-= Details =
 
 * Quality
  * Conformation
-  * syn/anti
-* Composition
- * bases (AUCG) 
+  * Base conformation
+    * syn conformation
+    * anti conformation
+  * furanose conformation
+    * envelope conformation
+    * twist conformation
+ * nucleotide edge
+  * hoogsteen edge
+  * sugar edge
+  * watson edge
+ * nucleotide face
+  * bifurcated face
+    * bifurcated hoogteen face
+    * bifurcated sugar face
+  * hoogsteen-hoogsteen face
+  * hoogsteen-watson face
+  * sugar-sugar face
+  * sugar-watson face
+  * watson-hoogsteen face
+  * watson-sugar face
+  * watson-watson face
+  * c8 face
+  * o2' face
+* Role
+ * atom orientation in plane role
+  * endo role
+  * exo role
+ * nucleotide stacking role
+  * facing towards role
+  * facing away role
+* Object
+ * nitrogenous base
+   * purine
+     * adenine
+     * guanine
+     * inosine
+   * pyrimidine
+     * cytosine
+     * thymine
+     * uracil
+     * pseudouridine
  * ribose
  * phosphate
+ * ribonucleoside
+   * purine nucleoside
+     * adenosine
+     * guanosine
+   * pyrimidine nucleoside
+     * cytidine
+     
  * ribonucleotide
- * ribonucleic acid
-* Base Pairing
-   * Canonical / Non-canonical  - (defined)
-   * Parallel / Antiparallel
-   * cis / trans
-* Base Stacking
- * Major Nomenclature
-  * upward
-  * downward
-  * inward
-  * outward
+   * C*P
+   * G*P
+   * A*P
+   * U*P
+   * T*P
+ * nucleic acid
+   * ribonucleic acid
+* Interaction
+ * Base Pairing
+   * canonical base pair ({GC},{AU},{AT})
+   * non-canonical base pair (base pair and not canonical base pair)
+   * base normal oriented base pair
+     * parallel base pair
+     * antiparallel base pair
+   * glycosyl-bond oriented base pair
+     * cis base pair
+     * trans base pair
+ * Base Stacking
+  * adjacent stacking
+  * non-adjacent stacking
+  * base-normal oriented stacking
+   * upward stacking
+   * downward stacking
+   * inward stacking 
+   * outward stacking
