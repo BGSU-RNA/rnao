@@ -2,6 +2,7 @@
 
 - terms & definitions.
 
+Hierarchically Organized
 
 * Quality
  * Conformation
@@ -80,3 +81,10 @@
    * downward stacking
    * inward stacking 
    * outward stacking
+
+
+Not yet placed: 
+
+
+
+
