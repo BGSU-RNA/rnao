@@ -54,13 +54,12 @@
      * guanosine
    * pyrimidine nucleoside
      * cytidine
-     
+     * uridine
  * ribonucleotide
    * C*P
    * G*P
    * A*P
    * U*P
-   * T*P
  * nucleic acid
    * ribonucleic acid
 * Interaction
