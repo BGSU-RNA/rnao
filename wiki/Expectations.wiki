@@ -6,6 +6,8 @@ Ontology evokes a myriad of responses - from eye-rolling to fanatic enthusiasm. 
 
 = Details =
 
+Vocabulary for:
+
  * Structure: from nucleic acid to atoms - their mereological and positional descriptions
 
  * Sequence: a simplification for string-based bioinformatic analyses
@@ -13,3 +15,8 @@ Ontology evokes a myriad of responses - from eye-rolling to fanatic enthusiasm. 
  * Interactions: base pairing, base stacking
 
  * ...
+
+Rich descriptions about:
+ * The bases in a trans Hoogsteen-Hoogteen base pair will be in parallel strands if they base orientations are anti.
+
+ * ..
