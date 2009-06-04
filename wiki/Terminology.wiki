@@ -12,7 +12,8 @@ Hierarchically Organized
   * furanose conformation
     * envelope conformation
     * twist conformation
-(these could be fiat object parts / spatial regions?)
+
+* fiat object parts (spatial regions?)
  * nucleotide edge
   * hoogsteen edge
   * sugar edge
@@ -85,5 +86,3 @@ Hierarchically Organized
 
 
 Not yet placed: 
-
-
