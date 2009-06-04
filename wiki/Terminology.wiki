@@ -49,6 +49,9 @@ Hierarchically Organized
      * thymine
      * uracil
      * pseudouridine
+ * nucleobase
+   * purine nucleobase
+   * pyrimidine nucleobase
  * ribose
  * phosphate
  * ribonucleoside
