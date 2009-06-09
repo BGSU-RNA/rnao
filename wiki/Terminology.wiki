@@ -5,15 +5,19 @@
 Hierarchically Organized
 
 * Quality
- * Conformation
-  * nucleobase conformation
-    * syn conformation
-    * anti conformation
-  * furanose conformation
-    * envelope conformation
-    * twist conformation
+ * Conformation: The quality of shape based on geometry.
+  * nucleotide conformation: A conformation of the nucleotide based on the rotation of the base across the glycosidic torsion angle χ.
+    * syn conformation: The syn conformation characterizes a nucleobase oriented towards the ribose. From χ = 0°, where the plane of the base is aligned with the O4’-C1’ bond in a direction towards the O4’ atom, the syn conformation covers the remaining rotations of ±90°: χ = [-90°, 90°]
+    * anti conformation: The anti conformation characterizes a base oriented away from the ribose. From χ = 180°, where the plane of the base is aligned with the O4’-C1’ bond in a direction away from O4’, the anti conformation covers a rotation of ±90°: χ = [-180°, -90°] and χ = [90°, 180°]
+  * furanose conformation: 
+    * envelope conformation: A furanose conformation in which only one of the five furanose atoms  (C1’, C2’, C3’, C4’ or O4’) is out of the plane formed by the four others.
+    * twist conformation: A furanose conformation in which two atoms are out of the plane formed by the remaining three.
+    * pucker conformation: A furanose conformation characterized by the set of their torsion angles: θ0-4.
+       * 3T2 conformation C2'-exo-C3'-endo: At ρ = 0°, the ribose is in the twist shape with the C3’ atom above (endo) and the C2’atom below (exo) the plane
+       * C3’-endo conformation
+       * C2’-endo conformation
 
-* fiat object parts (spatial regions?)
+* fiat object part
  * nucleotide edge
   * hoogsteen edge
   * sugar edge
@@ -31,6 +35,7 @@ Hierarchically Organized
   * watson-watson face
   * c8 face
   * o2' face
+
 * Role
  * atom orientation in plane role
   * endo role
@@ -38,8 +43,9 @@ Hierarchically Organized
  * nucleotide stacking role
   * facing towards role
   * facing away role
+
 * Object
- * nitrogenous base
+ * nitrogenous base {aka nucleobase or simply base}
    * purine
      * adenine
      * guanine
@@ -49,19 +55,16 @@ Hierarchically Organized
      * thymine
      * uracil
      * pseudouridine
- * nucleobase
-   * purine nucleobase
-   * pyrimidine nucleobase
  * ribose
  * phosphate
- * ribonucleoside
-   * purine nucleoside
+ * ribonucleoside: Composed of a ribose covalently linked to a base through a glycosidic bond. 
+   * purine nucleoside : Composed of a ribose covalently linked to a base through a C1’-N9 glycosidic bond.
      * adenosine
      * guanosine
-   * pyrimidine nucleoside
+   * pyrimidine nucleoside: Composed of a ribose covalently linked to a base through a C1’-N1 glycosidic bond.
      * cytidine
      * uridine
- * ribonucleotide
+ * ribonucleotide: Composed of a ribonucleoside covalently linked to a phosphate through through diester bonds: C5’-O5’ and C3’-O3’.
    * C*P
    * G*P
    * A*P
