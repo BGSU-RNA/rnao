@@ -1,9 +1,9 @@
 #summary Essential RNAO terminology
 
-Auxiliary terms and definitions:
+==Auxiliary terms and definitions==
 
 
-Hierarchically Organized
+==Taxonomy of Terms==
 
 * Quality
  * Conformation: *The quality of shape based on geometry*.
