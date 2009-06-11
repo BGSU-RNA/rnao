@@ -5,15 +5,15 @@
 Hierarchically Organized
 
 * Quality
- * Conformation: The quality of shape based on geometry.
-  * nucleotide conformation: A conformation of the nucleotide based on the rotation of the base across the glycosidic torsion angle χ.
-    * syn conformation: The syn conformation characterizes a nucleobase oriented towards the ribose. From χ = 0°, where the plane of the base is aligned with the O4’-C1’ bond in a direction towards the O4’ atom, the syn conformation covers the remaining rotations of ±90°: χ = [-90°, 90°]
-    * anti conformation: The anti conformation characterizes a base oriented away from the ribose. From χ = 180°, where the plane of the base is aligned with the O4’-C1’ bond in a direction away from O4’, the anti conformation covers a rotation of ±90°: χ = [-180°, -90°] and χ = [90°, 180°]
-  * furanose conformation: 
-    * envelope conformation: A furanose conformation in which only one of the five furanose atoms  (C1’, C2’, C3’, C4’ or O4’) is out of the plane formed by the four others.
-    * twist conformation: A furanose conformation in which two atoms are out of the plane formed by the remaining three.
-    * pucker conformation: A furanose conformation characterized by the set of their torsion angles: θ0-4.
-       * 3T2 conformation C2'-exo-C3'-endo: At ρ = 0°, the ribose is in the twist shape with the C3’ atom above (endo) and the C2’atom below (exo) the plane
+ * Conformation: *The quality of shape based on geometry*.
+  * Nucleotide Conformation: *A conformation of the nucleotide based on the rotation of the base across the glycosidic torsion angle χ.*
+    * Syn Conformation: *The syn conformation characterizes a nucleobase oriented towards the ribose. From χ = 0°, where the plane of the base is aligned with the O4’-C1’ bond in a direction towards the O4’ atom, the syn conformation covers the remaining rotations of ±90°: χ = [-90°, 90°]*
+    * *Anti Conformation*: The anti conformation characterizes a base oriented away from the ribose. From χ = 180°, where the plane of the base is aligned with the O4’-C1’ bond in a direction away from O4’, the anti conformation covers a rotation of ±90°: χ = [-180°, -90°] and χ = [90°, 180°]
+  * Furanose Conformation: 
+    * Envelope Conformation: *A furanose conformation in which only one of the five furanose atoms  (C1’, C2’, C3’, C4’ or O4’) is out of the plane formed by the four others.*
+    * Twist Conformation: *A furanose conformation in which two atoms are out of the plane formed by the remaining three.*
+    * Pucker Conformation: *A furanose conformation characterized by the set of their torsion angles: θ0-4.*
+       * 3T2 conformation C2'-exo-C3'-endo: *At ρ = 0°, the ribose is in the twist shape with the C3’ atom above (endo) and the C2’atom below (exo) the plane*
        * C3’-endo conformation
        * C2’-endo conformation
 
