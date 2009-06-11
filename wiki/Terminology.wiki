@@ -1,6 +1,7 @@
 #summary Essential RNAO terminology
 
-- terms & definitions.
+Auxiliary terms and definitions:
+
 
 Hierarchically Organized
 
