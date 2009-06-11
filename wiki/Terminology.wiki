@@ -7,6 +7,20 @@ http://rnao.googlecode.com/svn/wiki/images/backboneangles.png
 
 *Figure 1* : RNA backbone with six torsion angles, the glycosidic torsion angle χ and the five torsion angles of the furanose (θ,,0,, through θ,,4,,). 
 
+Figure 1 depicts the δ and θ,,1,, torsions on the same covalent bond C3'-C4', but from different endpoints, respectively C2' and O4' for θ,,1,,, and C5' and O3' in the phosphodiester chain for δ. The glycosidic torsion, χ, is measured respectively in purines and pyrimidines from atoms 04'-C1'-N9-C4 and O4'-C1'-N1-C2.
+
+The furanose ring stereochemistry imposes interdependent relations on θ,,0-4,,, which is expressed by the cosine function:
+
+            θ,,j,, = θ,,max,,cos(ρ + jφ)            *(1)*
+where j=0...4 and φ = 144°(720°/5).
+
+
+When  j=0, we have:
+            θ,,0,, = θ,,max,,cos(ρ)                 *(2)*
+
+In equations 1 and 2, ρ is the pseudorotation of the ribose ring. Note that when ρ is varied from 0 to 360° by steps of 90°, θ,,0,, goes from θ,,max,, to 0, to -θ,,max,, to 0, and finally back to θ,,max,,. The θ,,max,, value is reached twice, at the initial conformation (ρ = 0, as cos(0) = 1) and at ρ = 360°. at each step of ρ + 180°, the sign of all torsions is inversed, corresponding to the mirror image of the conformation at ρ. Equation 1 can also be expressed in terms of ρ:
+
+
 ==Taxonomy of Terms==
 
 * Quality
