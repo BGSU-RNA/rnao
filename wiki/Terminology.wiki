@@ -3,6 +3,7 @@
 ==Auxiliary terms and definitions==
 The structural conformation of a nucleotide can be in part described by its torsion angles. The phosphodiester linkage (backbone) has six characteristic angles: α, β, γ, δ, ε, and ζ, the ribose has five torsions: θ0 through θ4, and the glycosidic bond χ describes the remaining torsion angle.
 
+http://rnao.googlecode.com/svn/wiki/images/backboneangles.png
 
 ==Taxonomy of Terms==
 
