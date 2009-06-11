@@ -12,11 +12,12 @@ Hierarchically Organized
   * **Furanose Conformation:** 
     * **Pucker Conformation**:* A furanose conformation characterized by the set of their torsion angles: θ0-4.*
       * **Envelope Conformation**: *A furanose conformation in which only one of the five furanose atoms  (C1’, C2’, C3’, C4’ or O4’) is out of the plane formed by the four others.
-        * *^3^E conformation (C3’-endo)* : For ρ [18°,36°[, the ribose forms an envelope with the C3’ atom above the plane.
-        * *^2^E conformation (C2’-endo)*
-      * *Twist Conformation*: A furanose conformation in which two atoms are out of the plane formed by the remaining three.*
-        * ^3^T,,2,, conformation (C3'-endo - C2'-exo): *At ρ = 0°, the ribose is in the twist shape with the C3’ atom above (endo) and the C2’atom below (exo) the plane*
-        * **^3^T,,4,, conformation (C3'-endo - C4' -exo)**: *For ρ [36°,54°[, the ribose is in the twist conformation with C3' atom above (endo) and the C4' atom (exo), below the plane*.  
+        * *^3^E conformation (C3’-endo)* : For ρ [18°,36°[, the furanose forms an envelope with the C3’ atom above the plane.
+        * *^2^E conformation (C2’-endo)* : The furanose forms an envelope with the C2' atom above the plane.
+        * *,,4,,E conformation (C4' -exo)*: For ρ [54°,72°[, the furanose forms an envelope with the C4' atom below the plane. 
+      * *Twist Conformation*: A furanose conformation in which two atoms are in opposite sides of the plane formed by the remaining three.*
+        * ^3^T,,2,, conformation (C3'-endo - C2'-exo): *At ρ = 0°, the furanose is in the twist shape with the C3’ atom above (endo) and the C2’atom below (exo) the plane*
+        * **^3^T,,4,, conformation (C3'-endo - C4' -exo)**: *For ρ [36°,54°[, the furanose is in the twist conformation with C3' atom above (endo) and the C4' atom (exo), below the plane*.  
        
        
 
