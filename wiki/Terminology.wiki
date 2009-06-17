@@ -1,6 +1,7 @@
 #summary Essential RNAO terminology
 
 ==Auxiliary terms and definitions==
+===Nucleic Acid Structure===
 The structural conformation of a nucleotide can be in part described by its torsion angles. The phosphodiester linkage (backbone) has six characteristic angles: α, β, γ, δ, ε, and ζ, the furanose has five torsions: θ,,0,, through θ,,4,,, and the glycosidic bond χ describes the remaining torsion angle (Figure 1).
 
 http://rnao.googlecode.com/svn/wiki/images/backboneangles.png
@@ -22,10 +23,20 @@ In equations 1 and 2, ρ is the pseudorotation of the ribose ring. Note that whe
 
 http://rnao.googlecode.com/svn/wiki/images/equation3.png
 
+===Ontology terms===
+*Continuant*: An entity that exists in full at any time in which it exists at all, it persists through time while maintaining its identity and has no temporal parts. 
+
+*Independent Continuant*: A continuant that is the bearer of qualities and realizable entities. For example: 
+
+*Dependent Continuant*: A continuant that is an attribute of the independent continuant that bears it. For example: 
+
+*Quality*: An intrinsic dependent continuant whose observed/measured value may change with time. For example: The mass of a molecule, the number of atoms in a protein.
+
+*Fiat Object Part*: An independent continuant that is part of an object but is not demarcated by any physical discontinuities. For example: The part of the cell that is involved in cell adhesion.
 
 ==Taxonomy of Terms==
 
-* Quality
+* Quality: 
  * Conformation: *The quality of shape based on geometry*.
   * Nucleotide Conformation: *A conformation of the nucleotide based on the rotation of the base across the glycosidic torsion angle χ.*
     * Syn Conformation: *The syn conformation characterizes a nucleobase oriented towards the ribose. From χ = 0°, where the plane of the base is aligned with the O4’-C1’ bond in a direction towards the O4’ atom, the syn conformation covers the remaining rotations of ±90°: χ = [-90°, 90°]*
@@ -42,7 +53,7 @@ http://rnao.googlecode.com/svn/wiki/images/equation3.png
        
        
 
-* fiat object part
+* Fiat Object Part: *An independent continuant that is part of an object but is not demarcated by any physical discontinuities*
  * nucleotide edge
   * hoogsteen edge
   * sugar edge
