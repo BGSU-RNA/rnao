@@ -54,7 +54,7 @@ http://rnao.googlecode.com/svn/wiki/images/equation3.png
 -----
 
 * Fiat Object Part: 
- * Nucleotide Edge: A mereological part of a nucleobase that is involved in edge-to-edge interactions such as base stacking and base pairing.
+ * Nucleotide Edge: A [http://en.wikipedia.org/wiki/Mereology mereological] part of a nucleobase that is involved in edge-to-edge interactions such as base stacking and base pairing.
   * hoogsteen edge
   * sugar edge
   * watson edge
