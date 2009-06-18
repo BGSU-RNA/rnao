@@ -25,11 +25,13 @@ In equations 1 and 2, ρ is the pseudorotation of the ribose ring. Note that whe
 http://rnao.googlecode.com/svn/wiki/images/equation3.png
 
 ====Base Normal Vectors====
-In pyrimidines the normal vector is the rotational vector η obtained by a right-handed rotation from N,,1,, to N,,6,, around the pyrimidine ring. The pyrimidine ring in purines is reversed with respect to that of pyrimidines (Figure 2). The normal vector for any base can be defined by σ. Note that σ = η for cytosine and uracil, whereas σ = -η in adenine and guanine. 
+In pyrimidines the normal vector is the rotational vector η obtained by a right-handed rotation from atoms 1 to 6 around the pyrimidine ring. The pyrimidine ring in purines is reversed with respect to that of pyrimidines (Figure 2). The normal vector for any base can be defined by σ. Note that σ = η for cytosine and uracil, whereas σ = -η in adenine and guanine. 
 
 
 
 http://rnao.googlecode.com/svn/wiki/images/normalVectors2.png
+
+*Figure 2* : The normal vector η obtained from a right-handed rotation around the pyrimidine ring from atoms 1 to 6. In purines σ is defined as -η while in pyrimidines σ = η 
 -----
 ===Ontological terms===
 ====Upper Level Classes====
@@ -120,12 +122,12 @@ http://rnao.googlecode.com/svn/wiki/images/normalVectors2.png
 
 
 * Role
- * **Atom Orientation in a Furanose Plane Role :** *When considering a horizontal plane on the furanose composed by at least three ring atoms (C1’, C2’, C3’, C4’ or O4’), and the C5' is on the left side, the relative position of the ring atoms that exist outside of this plane determines their Furanose Plane Role*
+ * **Atom Orientation in a Furanose Plane Role :** *When considering a horizontal plane on the furanose composed of at least three of the ring atoms (C1’, C2’, C3’, C4’ or O4’), and the C5' is on the left side, the relative position of the ring atoms that exist outside of this plane determines their Furanose Plane Role*
   * **Endo Role :** *The atoms located over the plane are said to be endo to the C5'*
   * **Exo Role :**  *The atoms located under the plane are said to be exo to the C5'*
- * **Nucleotide Stacking Role :** *Base stacking involves London dispersion inter-molecular interactions between two bases that induce a 3D arrangement where one base is staked on top of the other. The normal vector to the plane each of the nitrogenous bases involved defines their Stacking Role * 
-  * **Facing Towards Role :**
-  * **Facing Away Role :**
+ * **Nucleotide Stacking Role :** *Base stacking involves London dispersion inter-molecular interactions between two bases that induce a 3D arrangement where one base is stacked on top of the other. The normal vector σ to the plane each of the nitrogenous bases involved defines their Stacking Role. The following roles may be borne by stacked nitrogenous bases A and B:* 
+  * **Facing Towards Role :** *σ,,A,, has the same direction as σ,,B,,*
+  * **Facing Away Role :** *σ,,A,, has an opposite direction to σ,,B,,*
 
 * Object
  * nitrogenous base {aka nucleobase or simply base}
