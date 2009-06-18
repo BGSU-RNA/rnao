@@ -51,7 +51,6 @@ http://rnao.googlecode.com/svn/wiki/images/equation3.png
         * ^3^T,,2,, conformation (C3'-endo - C2'-exo): *At ρ = 0°, the furanose is in the twist shape with the C3’ atom above (endo) and the C2’atom below (exo) the plane*
         * **^3^T,,4,, conformation (C3'-endo - C4' -exo)**: *For ρ = [36°,54°[, the furanose is in the twist conformation with C3' atom above (endo) and the C4' atom (exo), below the plane*.  
        
------
 
 * Fiat Object Part: 
  * Nucleotide Edge: *A [http://en.wikipedia.org/wiki/Mereology part] of a nucleobase that is involved in edge-to-edge interactions such as base stacking and base pairing.*
@@ -86,7 +85,7 @@ http://rnao.googlecode.com/svn/wiki/images/equation3.png
   * Watson-Watson Face
   * C8 Face
   * O2' Face
------
+
 * Role
  * atom orientation in plane role
   * endo role
