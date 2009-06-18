@@ -112,12 +112,12 @@ http://rnao.googlecode.com/svn/wiki/images/equation3.png
 
 
 * Role
- * atom orientation in plane role
-  * endo role
-  * exo role
- * nucleotide stacking role
-  * facing towards role
-  * facing away role
+ * Atom Orientation in Plane Role
+  * **Endo Role :** *When considering a horizontal plane on the furanose, and the C5' atom is on the left side, the atoms located over the plane are said to be endo to the C5'*
+  * **Exo Role :** *When considering a horizontal plane on the furanose, and the C5' atom is on the left side, the atoms located under the plane are said to be exo to the C5'*
+ * **Nucleotide Stacking Role**
+  * **Facing Towards Role :**
+  * **Facing Away Role :**
 
 * Object
  * nitrogenous base {aka nucleobase or simply base}
