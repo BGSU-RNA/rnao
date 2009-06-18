@@ -26,6 +26,8 @@ http://rnao.googlecode.com/svn/wiki/images/equation3.png
 
 ====Base Normal Vectors====
 In pyrimidines the normal vector is the rotational vector η obtained by a right-handed rotation from N,,1,, to N,,6,, around the pyrimidine ring. 
+
+http://rnao.googlecode.com/svn/wiki/images/normalVectors2.png
 -----
 ===Ontological terms===
 ====Upper Level Classes====
