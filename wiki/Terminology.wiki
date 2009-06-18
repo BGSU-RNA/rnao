@@ -99,10 +99,17 @@ http://rnao.googlecode.com/svn/wiki/images/equation3.png
   * **Watson-Hoogsteen Face :** *Face that is composed of the follwing atoms:*
     # *Adenine (Nitrogen 6) or Guanine (Oxygen 6)*
     # *Uracil (Oxygen 4) or Cytosine (Nitrogen 4)*
-  * **Watson-Sugar Face :** *Face that is composed of the follwing atoms:*
+  * **Watson-Sugar Face :** *Face that is composed of the follwing atoms:* 
+    # *Guanine (Nitrogen 2)*
+    # *Y (Oxygen 2)*
   * **Watson-Watson Face :** *Face that is composed of the follwing atoms:*
-  * **C8 Face :** *Face that is composed of the follwing atoms:*
-  * **O2' Face :** *Face that is composed of the follwing atoms:*
+    # *R (Nitrogen 1)*
+    # *Y (Nitrogen 3) *
+  * **C8 Face :** *Face that is composed of the follwing atom:*
+    # *R (Carbon 8)*
+  * **O2' Face :** *Face that is composed of the follwing atom:*
+    # *Furanose O2'*
+
 
 * Role
  * atom orientation in plane role
