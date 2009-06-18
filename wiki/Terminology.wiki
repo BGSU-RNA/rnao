@@ -22,7 +22,7 @@ When  j=0, we have:
 In equations 1 and 2, ρ is the pseudorotation of the ribose ring. Note that when ρ is varied from 0 to 360° by steps of 90°, θ,,0,, goes from θ,,max,, to 0, to -θ,,max,, to 0, and finally back to θ,,max,,. The θ,,max,, value is reached twice, at the initial conformation (ρ = 0, as cos(0) = 1) and at ρ = 360°. at each step of ρ + 180°, the sign of all torsions is inversed, corresponding to the mirror image of the conformation at ρ. Equation 1 can also be expressed in terms of ρ:
 
 http://rnao.googlecode.com/svn/wiki/images/equation3.png
-
+-----
 ===Ontological terms===
 ====Upper Level Classes====
 *Continuant*: An entity that exists in full at any time in which it exists at all, it persists through time while maintaining its identity and has no temporal parts. 
@@ -38,7 +38,7 @@ http://rnao.googlecode.com/svn/wiki/images/equation3.png
 *hasPart* : A transitive relation such that one has as a part itself or another, with disconnected, overlapping or non-overlapping spatial regions. For example: Person has part arm, Workshop has part coffee break
 
 *hasProperPart* : A mereological relation such that when x has proper part y, then x and y are distinct, and the spatial region occupied by y is wholly contained by with that of x. For example : car hasProperPart engine.
-
+-----
 ==Taxonomy of Terms==
 
 * Quality: 
