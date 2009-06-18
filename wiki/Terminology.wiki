@@ -25,7 +25,9 @@ In equations 1 and 2, ρ is the pseudorotation of the ribose ring. Note that whe
 http://rnao.googlecode.com/svn/wiki/images/equation3.png
 
 ====Base Normal Vectors====
-In pyrimidines the normal vector is the rotational vector η obtained by a right-handed rotation from N,,1,, to N,,6,, around the pyrimidine ring. 
+In pyrimidines the normal vector is the rotational vector η obtained by a right-handed rotation from N,,1,, to N,,6,, around the pyrimidine ring. The pyrimidine ring in purines is reversed with respect to that of pyrimidines (Figure 2). The normal vector for any base can be defined by σ. Note that σ = η for cytosine and uracil, whereas σ = -η in adenine and guanine. 
+
+
 
 http://rnao.googlecode.com/svn/wiki/images/normalVectors2.png
 -----
