@@ -54,24 +54,24 @@ http://rnao.googlecode.com/svn/wiki/images/equation3.png
 -----
 
 * Fiat Object Part: 
- * Nucleotide Edge: A [http://en.wikipedia.org/wiki/Mereology mereological] part of a nucleobase that is involved in edge-to-edge interactions such as base stacking and base pairing.
-  * hoogsteen edge
-  * sugar edge
-  * watson edge
- * nucleotide face
-  * bifurcated face
-    * bifurcated hoogteen face
-    * bifurcated sugar face
-  * hoogsteen-hoogsteen face
-  * hoogsteen-watson face
-  * sugar-sugar face
-  * sugar-watson face
-  * watson-hoogsteen face
-  * watson-sugar face
-  * watson-watson face
-  * c8 face
-  * o2' face
-
+ * Nucleotide Edge: A [http://en.wikipedia.org/wiki/Mereology part] of a nucleobase that is involved in edge-to-edge interactions such as base stacking and base pairing.
+  * Hoogsteen Edge
+  * Sugar Edge
+  * Watson Edge
+ * Nucleotide Face
+  * Bifurcated Face
+    * Bifurcated Hoogsteen Face
+    * Bifurcated Sugar Face
+  * Hoogsteen-Hoogsteen face
+  * Hoogsteen-watson face
+  * Sugar-Sugar Face
+  * Sugar-Watson Face
+  * Watson-Hoogsteen Face
+  * Watson-Sugar Face
+  * Watson-Watson Face
+  * C8 Face
+  * O2' Face
+-----
 * Role
  * atom orientation in plane role
   * endo role
