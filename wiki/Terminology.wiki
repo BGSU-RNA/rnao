@@ -55,7 +55,7 @@ http://rnao.googlecode.com/svn/wiki/images/equation3.png
 
 * Fiat Object Part: 
  * Nucleotide Edge: *A [http://en.wikipedia.org/wiki/Mereology part] of a nucleobase that is involved in edge-to-edge interactions such as base stacking and base pairing.*
-  * Hoogsteen Edge (or C-H Edge) : *Edge composed by the following atoms: (R = Purines and Y = Pyrimidines)*
+  * Hoogsteen Edge / C-H Edge : *Edge composed by the following atoms: (R = Purines and Y = Pyrimidines)*
     # *Adenine (Nitrogen 6) or Guanine (Oxygen 6)*
     # *R (Nitrogen 7)*
     # *Uracil (Oxygen 4) or Cytosine (Nitrogen 4)* 
@@ -73,7 +73,7 @@ http://rnao.googlecode.com/svn/wiki/images/equation3.png
     # *(Nitrogen 4)*
     # *Y (Nitrogen 3)*
     # *Y (Oxygen 2)*
- * Nucleotide Face
+ * **Nucleotide Face :** *A proper part of a nucleotide edge that is capable of forming hydrogen bonds*
   * Bifurcated Face
     * Bifurcated Hoogsteen Face
     * Bifurcated Sugar Face
