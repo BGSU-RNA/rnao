@@ -65,7 +65,14 @@ http://rnao.googlecode.com/svn/wiki/images/equation3.png
     # *R (Nitrogen 3)*
     # *Y (Oxygen 2)*
     # *Furanose (Oxygen 2)*
-  * Watson Edge
+  * **Watson Edge :** *Edge composed by the following atoms: (R = Purines and Y = Pyrimidines)*
+    # *Adenine (Nitrogen 6) or Guanine (Oxygen 6)*
+    # *R (Nitrogen 1)*
+    # *Adenine (Carbon 2) or Guanine (Nitrogen 2)*
+    # *Uracil (Oxygen 4) or Cytosine* 
+    # *(Nitrogen 4)*
+    # *Y (Nitrogen 3)*
+    # *Y (Oxygen 2)*
  * Nucleotide Face
   * Bifurcated Face
     * Bifurcated Hoogsteen Face
