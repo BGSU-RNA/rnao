@@ -58,18 +58,18 @@ http://rnao.googlecode.com/svn/wiki/images/equation3.png
        
 
 * Fiat Object Part: 
- * Nucleotide Edge: *A [http://en.wikipedia.org/wiki/Mereology part] of a nucleobase that is involved in edge-to-edge interactions such as base stacking and base pairing.*
-  * Hoogsteen Edge / C-H Edge : *Edge composed by the following atoms: (R = Purines and Y = Pyrimidines)*
+ * Nucleotide Edge: *A [http://en.wikipedia.org/wiki/Mereology part] of a nucleobase that is involved in edge-to-edge interactions such as base stacking and base pairing. (R = Purines and Y = Pyrimidines)*
+  * Hoogsteen Edge / C-H Edge : *Edge composed by the following atoms:*
     # *Adenine (Nitrogen 6) or Guanine (Oxygen 6)*
     # *R (Nitrogen 7)*
     # *Uracil (Oxygen 4) or Cytosine (Nitrogen 4)* 
     # *Y (Carbon 5), R (Carbon 8)*
-  * **Sugar Edge :** *Edge composed by the following atoms: (R = Purines and Y = Pyrimidines)*
+  * **Sugar Edge :** *Edge composed by the following atoms:*
     # *Adenine (Carbon 2) or Guanine (Nitrogen 2)*
     # *R (Nitrogen 3)*
     # *Y (Oxygen 2)*
     # *Furanose (Oxygen 2)*
-  * **Watson Edge :** *Edge composed by the following atoms: (R = Purines and Y = Pyrimidines)*
+  * **Watson Edge :** *Edge composed by the following atoms:*
     # *Adenine (Nitrogen 6) or Guanine (Oxygen 6)*
     # *R (Nitrogen 1)*
     # *Adenine (Carbon 2) or Guanine (Nitrogen 2)*
@@ -77,23 +77,25 @@ http://rnao.googlecode.com/svn/wiki/images/equation3.png
     # *(Nitrogen 4)*
     # *Y (Nitrogen 3)*
     # *Y (Oxygen 2)*
- * **Nucleotide Face :** *A proper part of a nucleotide edge that is capable of forming hydrogen bonds*
+ * **Nucleotide Face :** *A proper part of a nucleotide edge that is capable of forming hydrogen bonds (R = Purines and Y = Pyrimidines)*
   * **Bifurcated Face :** *Face that represents the formation of a hydrogen bond that oscillates between two edges.*
     * **Bifurcated Hoogsteen Face :** *Face that is composed of the following atoms:*
       # *Adenine (Nitrogen 6) or Guanine (Oxygen 6)*  
       # *Uracil (Oxygen 4) or Cytosine (Nitrogen 4)*
-    * **Bifurcated Sugar Face :** *Face that is composed of the following atoms: (Y = Pyrimidines)*
+    * **Bifurcated Sugar Face :** *Face that is composed of the following atoms:*
       # *Adenine (Carbon 2) or Guanine (Nitrogen 2)*
       # *Y (Oxygen 2) *
-  * Hoogsteen-Hoogsteen face
-  * Hoogsteen-watson face
-  * Sugar-Sugar Face
-  * Sugar-Watson Face
-  * Watson-Hoogsteen Face
-  * Watson-Sugar Face
-  * Watson-Watson Face
-  * C8 Face
-  * O2' Face
+  * **Hoogsteen-Hoogsteen Face :** *Face that is composed of the following atoms:*
+    # *R(Nitrogen 7)*
+    # *Y (Carbon 5)*
+  * **Hoogsteen-Watson Face :** *Face that is composed of the follwing atoms:*
+  * **Sugar-Sugar Face :** *Face that is composed of the follwing atoms:*
+  * **Sugar-Watson Face :** *Face that is composed of the follwing atoms:*
+  * **Watson-Hoogsteen Face :** *Face that is composed of the follwing atoms:*
+  * **Watson-Sugar Face :** *Face that is composed of the follwing atoms:*
+  * **Watson-Watson Face :** *Face that is composed of the follwing atoms:*
+  * **C8 Face :** *Face that is composed of the follwing atoms:*
+  * **O2' Face :** *Face that is composed of the follwing atoms:*
 
 * Role
  * atom orientation in plane role
