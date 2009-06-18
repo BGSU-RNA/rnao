@@ -60,8 +60,11 @@ http://rnao.googlecode.com/svn/wiki/images/equation3.png
     # *R (Nitrogen 7)*
     # *Uracil (Oxygen 4) or Cytosine (Nitrogen 4)* 
     # *Y (Carbon 5), R (Carbon 8)*
-
-  * Sugar Edge
+  * Sugar Edge : *Edge composed by the following atoms: (R = Purines and Y = Pyrimidines)*
+    # Adenine (Carbon 2) or Guanine (Nitrogen 2)
+    # R (Nitrogen 3)
+    # Y (Oxygen 2)
+    # Furanose (Oxygen 2)
   * Watson Edge
  * Nucleotide Face
   * Bifurcated Face
