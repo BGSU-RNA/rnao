@@ -78,7 +78,7 @@ http://rnao.googlecode.com/svn/wiki/images/equation3.png
     # *Y (Nitrogen 3)*
     # *Y (Oxygen 2)*
  * **Nucleotide Face :** *A proper part of a nucleotide edge that is capable of forming hydrogen bonds*
-  * Bifurcated Face
+  * **Bifurcated Face :** *Face that represents the formation of a hydrogen bond that oscillates between two edges.*
     * Bifurcated Hoogsteen Face
     * Bifurcated Sugar Face
   * Hoogsteen-Hoogsteen face
