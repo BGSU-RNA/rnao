@@ -29,8 +29,7 @@ In pyrimidines the normal vector is the rotational vector η obtained by a right
 
 
 
-http://rnao.googlecode.com/svn/wiki/images/normalVectors2.png
-
+http://rnao.googlecode.com/svn/wiki/images/normalVectors.png
 *Figure 2* : The normal vector η obtained from a right-handed rotation around the pyrimidine ring from atoms 1 to 6. In purines σ is defined as -η while in pyrimidines σ = η 
 -----
 ===Ontological terms===
