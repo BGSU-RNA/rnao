@@ -27,9 +27,8 @@ http://rnao.googlecode.com/svn/wiki/images/equation3.png
 ====Base Normal Vectors====
 In pyrimidines the normal vector is the rotational vector η obtained by a right-handed rotation from atoms 1 to 6 around the pyrimidine ring. The pyrimidine ring in purines is reversed with respect to that of pyrimidines (Figure 2). The normal vector for any base can be defined by σ. Note that σ = η for cytosine and uracil, whereas σ = -η in adenine and guanine. 
 
-
-
 http://rnao.googlecode.com/svn/wiki/images/normalVectors.png
+
 *Figure 2* : The normal vector η obtained from a right-handed rotation around the pyrimidine ring from atoms 1 to 6. In purines σ is defined as -η while in pyrimidines σ = η 
 -----
 ===Ontological terms===
