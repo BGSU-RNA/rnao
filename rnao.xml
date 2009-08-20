@@ -2925,7 +2925,7 @@ degrees do not get separate entries in the ontology.</IAO_0000115>
         <IAO_0000115
             >A conformation that inheres in an nucleoside based on the rotation of the base about the glycosidic torsion angle &#967;.</IAO_0000115>
         <purl:IAO_0000117
-            >PERSON: Michel Dumontier, based on </purl:IAO_0000117>
+            >PERSON: Michel Dumontier</purl:IAO_0000117>
         <IAO_0000111
             >nucleoside conformation</IAO_0000111>
     </owl:Class>
@@ -2938,10 +2938,10 @@ degrees do not get separate entries in the ontology.</IAO_0000115>
         <rdfs:subClassOf rdf:resource="_0000121"/>
         <IAO_0000115
             >A syn nucleoside conformation is a nucleoside conformation characterized by the nucleobase being oriented towards the ribose due to rotation about the glycosidic torsion angle &#967;. From &#967; = 0&#176;, where the plane of the base is aligned with the O4&#8217;-C1&#8217; bond in a direction towards the O4&#8217; atom, the syn conformation covers the remaining rotations of &#177;90&#176;: &#967; = [-90&#176;, 90&#176;].</IAO_0000115>
-        <purl:IAO_0000117
-            >PERSON: Michel Dumontier, based on </purl:IAO_0000117>
         <IAO_0000111
             >syn nucleoside conformation</IAO_0000111>
+        <purl:IAO_0000117
+            >PERSON: Michel Dumontier</purl:IAO_0000117>
     </owl:Class>
     
 
@@ -2950,12 +2950,68 @@ degrees do not get separate entries in the ontology.</IAO_0000115>
 
     <owl:Class rdf:about="_0000123">
         <rdfs:subClassOf rdf:resource="_0000121"/>
+        <purl:IAO_0000117
+            >PERSON: Michel Dumontier</purl:IAO_0000117>
         <IAO_0000115
             >A anti nucleoside conformation is a nucleoside conformation characterized by the nucleobase being oriented away from the ribose due to rotation about the glycosidic torsion angle &#967;. From &#967; = 180&#176;, where the plane of the base is aligned with the O4&#8217;-C1&#8217; bond in a direction away from the O4&#8217; atom, the anti conformation covers a rotations of &#177;90&#176;: &#967; = [-180&#176;, 90&#176;].</IAO_0000115>
         <IAO_0000111
             >anti nucleoside conformation</IAO_0000111>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obofoundry.org/RNAO_0000124 -->
+
+    <owl:Class rdf:about="_0000124">
+        <rdfs:subClassOf rdf:resource="_0000126"/>
+        <IAO_0000111
+            >furanose envelope conformation</IAO_0000111>
         <purl:IAO_0000117
-            >PERSON: Michel Dumontier, based on </purl:IAO_0000117>
+            >PERSON: Michel Dumontier</purl:IAO_0000117>
+        <IAO_0000115
+            >A furanose envelope conformation is a furanose conformation in which only one of the five furanose atoms (C1&#8217;, C2&#8217;, C3&#8217;, C4&#8217; or O4&#8217;) is out of the plane formed by the four others.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obofoundry.org/RNAO_0000125 -->
+
+    <owl:Class rdf:about="_0000125">
+        <rdfs:subClassOf rdf:resource="_0000126"/>
+        <IAO_0000115
+            >A furanose envelope conformation is a furanose conformation in which two atoms are in opposite sides of the plane formed by the remaining three.</IAO_0000115>
+        <purl:IAO_0000117
+            >PERSON: Michel Dumontier</purl:IAO_0000117>
+        <IAO_0000111
+            >furanose twist conformation</IAO_0000111>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obofoundry.org/RNAO_0000126 -->
+
+    <owl:Class rdf:about="_0000126">
+        <rdfs:subClassOf rdf:resource="_0000112"/>
+        <IAO_0000111
+            >furanose conformation</IAO_0000111>
+        <purl:IAO_0000117
+            >PERSON: Michel Dumontier</purl:IAO_0000117>
+        <IAO_0000115
+            >A furanose conformation is a conformation characterized by the set of torsion angles: &#952;0-4 in a furanose.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obofoundry.org/RNAO_0000127 -->
+
+    <owl:Class rdf:about="_0000127">
+        <rdfs:subClassOf rdf:resource="_0000124"/>
+        <IAO_0000111
+            >E2 conformation (C2&#8217;-endo pucker)</IAO_0000111>
+        <IAO_0000115
+            >An E2 conformation (C2&#39;-endo pucker) is a furanose envelope conformation in which the C2&#39; atom is above the plane formed by the other 4 atoms.</IAO_0000115>
+        <purl:IAO_0000117
+            >PERSON: Michel Dumontier</purl:IAO_0000117>
     </owl:Class>
     
 
