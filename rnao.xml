@@ -2992,12 +2992,12 @@ degrees do not get separate entries in the ontology.</IAO_0000115>
 
     <owl:Class rdf:about="_0000126">
         <rdfs:subClassOf rdf:resource="_0000112"/>
+        <IAO_0000115
+            >A furanose conformation is a conformation that inheres in a furanose and is characterized by the values of torsion angles: &#952;0-4.</IAO_0000115>
         <IAO_0000111
             >furanose conformation</IAO_0000111>
         <purl:IAO_0000117
             >PERSON: Michel Dumontier</purl:IAO_0000117>
-        <IAO_0000115
-            >A furanose conformation is a conformation characterized by the set of torsion angles: &#952;0-4 in a furanose.</IAO_0000115>
     </owl:Class>
     
 
@@ -3006,12 +3006,65 @@ degrees do not get separate entries in the ontology.</IAO_0000115>
 
     <owl:Class rdf:about="_0000127">
         <rdfs:subClassOf rdf:resource="_0000124"/>
-        <IAO_0000111
-            >E2 conformation (C2&#8217;-endo pucker)</IAO_0000111>
         <IAO_0000115
-            >An E2 conformation (C2&#39;-endo pucker) is a furanose envelope conformation in which the C2&#39; atom is above the plane formed by the other 4 atoms.</IAO_0000115>
+            >C2&#39;-endo pucker (&lt;sup&gt;2&lt;/sup&gt;E conformation) is a furanose envelope conformation in which the C2&#39; atom is above the plane formed by the other 4 atoms.</IAO_0000115>
+        <IAO_0000111>C2&#8217;-endo pucker</IAO_0000111>
         <purl:IAO_0000117
             >PERSON: Michel Dumontier</purl:IAO_0000117>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obofoundry.org/RNAO_0000128 -->
+
+    <owl:Class rdf:about="_0000128">
+        <rdfs:subClassOf rdf:resource="_0000124"/>
+        <purl:IAO_0000117
+            >PERSON: Michel Dumontier</purl:IAO_0000117>
+        <IAO_0000111>C3&#8217;-endo pucker</IAO_0000111>
+        <IAO_0000115
+            >C3&#39;-endo pucker (An &lt;sup&gt;3&lt;/sup&gt;E conformation) is a furanose envelope conformation in which the C3&#39; atom is above the plane formed by the other 4 atoms.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obofoundry.org/RNAO_0000129 -->
+
+    <owl:Class rdf:about="_0000129">
+        <rdfs:subClassOf rdf:resource="_0000124"/>
+        <purl:IAO_0000117
+            >PERSON: Michel Dumontier</purl:IAO_0000117>
+        <IAO_0000111>C4&#8217;-exo pucker</IAO_0000111>
+        <IAO_0000115
+            >C4&#39;-exo pucker (E&lt;sub&gt;4&lt;/sub&gt; conformation) is a furanose envelope conformation in which the C4&#39; atom is below the plane formed by the other 4 atoms.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obofoundry.org/RNAO_0000130 -->
+
+    <owl:Class rdf:about="_0000130">
+        <rdfs:subClassOf rdf:resource="_0000125"/>
+        <IAO_0000111
+            >C3&#39;-endo - C4&#39; -exo pucker</IAO_0000111>
+        <purl:IAO_0000117
+            >PERSON: Michel Dumontier</purl:IAO_0000117>
+        <IAO_0000115
+            >C3&#39;-endo - C4&#39; exo pucker (&lt;sup&gt;3&lt;/sup&gt;E&lt;sub&gt;4&lt;/sub&gt; conformation) is a furanose envelope conformation in which the C3&#39; atom is above the plane and the C4&#39; atom is below the plane.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obofoundry.org/RNAO_0000131 -->
+
+    <owl:Class rdf:about="_0000131">
+        <rdfs:subClassOf rdf:resource="_0000125"/>
+        <IAO_0000111
+            >C3&#39;-endo - C2&#39; -exo pucker</IAO_0000111>
+        <purl:IAO_0000117
+            >PERSON: Michel Dumontier</purl:IAO_0000117>
+        <IAO_0000115
+            >C3&#39;-endo - C2&#39; exo pucker (&lt;sup&gt;3&lt;/sup&gt;E&lt;sub&gt;2&lt;/sub&gt; conformation) is a furanose envelope conformation in which the C3&#39; atom is above the plane and the C2&#39; atom is below the plane.</IAO_0000115>
     </owl:Class>
     
 
