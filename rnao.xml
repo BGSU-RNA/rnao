@@ -3,11 +3,12 @@
 
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY obo "http://purl.obolibrary.org/obo/" >
     <!ENTITY owl2 "http://www.w3.org/2006/12/owl2#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY iao "http://purl.obofoundry.org/obo/iao/" >
     <!ENTITY snap "http://www.ifomis.org/bfo/1.1/snap#" >
     <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
-    <!ENTITY iao "http://purl.obofoundry.org/obo/iao/" >
     <!ENTITY rnao "http://purl.obofoundry.org/obo/rnao/" >
     <!ENTITY ro "http://purl.obofoundry.org/ro/ro.owl#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
@@ -16,18 +17,20 @@
 
 
 <rdf:RDF xmlns="http://purl.obofoundry.org/obo/rnao.owl"
-     xml:base="&rnao;rnao.owl"
-     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
-     xmlns:snap="http://www.ifomis.org/bfo/1.1/snap#"
-     xmlns:ro="http://purl.obofoundry.org/ro/ro.owl#"
-     xmlns:rnao="http://purl.obofoundry.org/obo/rnao/"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:iao="http://purl.obofoundry.org/obo/iao/"
-     xmlns:owl2="http://www.w3.org/2006/12/owl2#"
+     xml:base="http://purl.obofoundry.org/obo/rnao.owl"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ro="http://purl.obofoundry.org/ro/ro.owl#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:iao="http://purl.obofoundry.org/obo/iao/"
+     xmlns:snap="http://www.ifomis.org/bfo/1.1/snap#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#">
+     xmlns:owl2="http://www.w3.org/2006/12/owl2#"
+     xmlns:rnao="http://purl.obofoundry.org/obo/rnao/">
     <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="&obo;iao/dev/ontology-metadata.owl"/>
         <owl:imports rdf:resource="http://www.ifomis.org/bfo/1.1"/>
     </owl:Ontology>
     
@@ -41,10 +44,10 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <owl:AnnotationProperty rdf:about="&iao;IAO_0000117"/>
-    <owl:AnnotationProperty rdf:about="&iao;IAO_0000115"/>
-    <owl:AnnotationProperty rdf:about="&iao;IAO_0000112"/>
-    <owl:AnnotationProperty rdf:about="&iao;IAO_0000111"/>
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000115"/>
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000111"/>
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000117"/>
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000112"/>
     
 
 
@@ -62,8 +65,8 @@
     <!-- http://purl.obofoundry.org/obo/rnao/ObjectProperty1243973897611439000 -->
 
     <owl:ObjectProperty rdf:about="&rnao;ObjectProperty1243973897611439000">
-        <iao:IAO_0000111
-            >obsolete_relation</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >obsolete_relation</obo:IAO_0000111>
     </owl:ObjectProperty>
     
 
@@ -91,8 +94,8 @@
 
     <owl:ObjectProperty rdf:about="&rnao;disconnected_from">
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
-        <iao:IAO_0000111
-            >disconnected_from</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >disconnected_from</obo:IAO_0000111>
     </owl:ObjectProperty>
     
 
@@ -101,8 +104,8 @@
 
     <owl:ObjectProperty rdf:about="&rnao;externally_connected_to">
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
-        <iao:IAO_0000111
-            >externally_connected_to</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >externally_connected_to</obo:IAO_0000111>
     </owl:ObjectProperty>
     
 
@@ -148,7 +151,7 @@
     <!-- http://purl.obofoundry.org/obo/rnao/has_boundary -->
 
     <owl:ObjectProperty rdf:about="&rnao;has_boundary">
-        <iao:IAO_0000111>has_boundary</iao:IAO_0000111>
+        <obo:IAO_0000111>has_boundary</obo:IAO_0000111>
     </owl:ObjectProperty>
     
 
@@ -156,8 +159,8 @@
     <!-- http://purl.obofoundry.org/obo/rnao/has_non_tangential_proper_part -->
 
     <owl:ObjectProperty rdf:about="&rnao;has_non_tangential_proper_part">
-        <iao:IAO_0000111
-            >has_non_tangential_proper_part</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >has_non_tangential_proper_part</obo:IAO_0000111>
         <rdfs:subPropertyOf rdf:resource="&ro;has_part"/>
     </owl:ObjectProperty>
     
@@ -166,8 +169,8 @@
     <!-- http://purl.obofoundry.org/obo/rnao/has_tangential_proper_part -->
 
     <owl:ObjectProperty rdf:about="&rnao;has_tangential_proper_part">
-        <iao:IAO_0000111
-            >has_tangential_proper_part</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >has_tangential_proper_part</obo:IAO_0000111>
         <owl:inverseOf rdf:resource="&rnao;tangential_proper_part_of"/>
         <rdfs:subPropertyOf rdf:resource="&ro;has_part"/>
     </owl:ObjectProperty>
@@ -186,8 +189,8 @@
     <!-- http://purl.obofoundry.org/obo/rnao/interacts_with_1BPh -->
 
     <owl:ObjectProperty rdf:about="&rnao;interacts_with_1BPh">
-        <iao:IAO_0000115
-            >Pairwise interaction of the sugar edge with a phosphate unit. Only occurs with G.</iao:IAO_0000115>
+        <obo:IAO_0000115
+            >Pairwise interaction of the sugar edge with a phosphate unit. Only occurs with G.</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="&rnao;ObjectProperty1243973897611439000"/>
         <rdfs:range rdf:resource="&rnao;RNAO_0000018"/>
         <rdfs:domain rdf:resource="&rnao;RNAO_0000105"/>
@@ -348,8 +351,8 @@
     <!-- http://purl.obofoundry.org/obo/rnao/non_tangential_proper_part-of -->
 
     <owl:ObjectProperty rdf:about="&rnao;non_tangential_proper_part-of">
-        <iao:IAO_0000111
-            >non_tangential_proper_part_of</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >non_tangential_proper_part_of</obo:IAO_0000111>
         <owl:inverseOf rdf:resource="&rnao;has_non_tangential_proper_part"/>
         <rdfs:subPropertyOf rdf:resource="&rnao;part_of"/>
     </owl:ObjectProperty>
@@ -638,7 +641,7 @@
     <!-- http://purl.obofoundry.org/obo/rnao/part_of -->
 
     <owl:ObjectProperty rdf:about="&rnao;part_of">
-        <iao:IAO_0000111>part_of</iao:IAO_0000111>
+        <obo:IAO_0000111>part_of</obo:IAO_0000111>
         <owl:inverseOf rdf:resource="&ro;has_part"/>
     </owl:ObjectProperty>
     
@@ -689,8 +692,8 @@
     <!-- http://purl.obofoundry.org/obo/rnao/tangential_proper_part_of -->
 
     <owl:ObjectProperty rdf:about="&rnao;tangential_proper_part_of">
-        <iao:IAO_0000111
-            >tangential_proper_part_of</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >tangential_proper_part_of</obo:IAO_0000111>
         <rdfs:subPropertyOf rdf:resource="&rnao;part_of"/>
     </owl:ObjectProperty>
     
@@ -766,7 +769,7 @@
     <!-- http://purl.obofoundry.org/ro/ro.owl#has_quality -->
 
     <owl:ObjectProperty rdf:about="&ro;has_quality">
-        <iao:IAO_0000111>has_quality</iao:IAO_0000111>
+        <obo:IAO_0000111>has_quality</obo:IAO_0000111>
     </owl:ObjectProperty>
     
 
@@ -807,9 +810,9 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&snap;MaterialEntity"/>
-        <iao:IAO_0000115
-            >An RNA base pair consists of a pair of RNA nucleotides that interact by edge-to-edge hydrogen bonding with two of their nucleoside edges.</iao:IAO_0000115>
-        <iao:IAO_0000111>RNA base pair</iao:IAO_0000111>
+        <obo:IAO_0000115
+            >An RNA base pair consists of a pair of RNA nucleotides that interact by edge-to-edge hydrogen bonding with two of their nucleoside edges.</obo:IAO_0000115>
+        <obo:IAO_0000111>RNA base pair</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -818,10 +821,10 @@
 
     <owl:Class rdf:about="&rnao;RNAO_0000002">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000147"/>
-        <iao:IAO_0000115
-            >A ribose ring that does not have a hydroxy group at the 2&#39; position.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >deoxyribose ring</iao:IAO_0000111>
+        <obo:IAO_0000115
+            >A ribose ring that does not have a hydroxy group at the 2&#39; position.</obo:IAO_0000115>
+        <obo:IAO_0000111
+            >deoxyribose ring</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -884,10 +887,10 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000116"/>
-        <iao:IAO_0000115
-            >A family_1_base_pair is an RNAO_base_pair in which the two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edges of each base and in which the glycosidic bonds of the two nucleotides are oriented &quot;cis&quot; relative to each other.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >family_1_base_pair</iao:IAO_0000111>
+        <obo:IAO_0000115
+            >A family_1_base_pair is an RNAO_base_pair in which the two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edges of each base and in which the glycosidic bonds of the two nucleotides are oriented &quot;cis&quot; relative to each other.</obo:IAO_0000115>
+        <obo:IAO_0000111
+            >family_1_base_pair</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -957,10 +960,10 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000117"/>
-        <iao:IAO_0000115
-            >A family_2_base_pair is an RNAO_base_pair in which the two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edges of each base and in which the glycosidic bonds of the two nucleotides are oriented &quot;trans&quot; relative to each other.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >family_2_base_pair</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >family_2_base_pair</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >A family_2_base_pair is an RNAO_base_pair in which the two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edges of each base and in which the glycosidic bonds of the two nucleotides are oriented &quot;trans&quot; relative to each other.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -1014,12 +1017,12 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000116"/>
-        <iao:IAO_0000115
-            >A family_3_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Hoogsteen edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented &quot;cis&quot; relative to each other.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >family_3_base_pair</iao:IAO_0000111>
-        <iao:IAO_0000112
-            >Forbidden pairings (Watson-Crick edge first); CA, UC, AC, AA, GC, GU.</iao:IAO_0000112>
+        <obo:IAO_0000111
+            >family_3_base_pair</obo:IAO_0000111>
+        <obo:IAO_0000112
+            >Forbidden pairings (Watson-Crick edge first); CA, UC, AC, AA, GC, GU.</obo:IAO_0000112>
+        <obo:IAO_0000115
+            >A family_3_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Hoogsteen edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented &quot;cis&quot; relative to each other.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -1073,12 +1076,12 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000117"/>
-        <iao:IAO_0000112
-            >Forbidden are the following pairings (Watson-Crick edge first); CU, UC, AC, AU, GC, GA.</iao:IAO_0000112>
-        <iao:IAO_0000111
-            >family_4_base_pair</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >A family_4_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Hoogsteen edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented &quot;trans&quot; relative to each other.</iao:IAO_0000115>
+        <obo:IAO_0000112
+            >Forbidden are the following pairings (Watson-Crick edge first); CU, UC, AC, AU, GC, GA.</obo:IAO_0000112>
+        <obo:IAO_0000111
+            >family_4_base_pair</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >A family_4_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Hoogsteen edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented &quot;trans&quot; relative to each other.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -1132,10 +1135,10 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000116"/>
-        <iao:IAO_0000111
-            >family_5_base_pair</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >A family_5_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented &quot;cis&quot; relative to each other.</iao:IAO_0000115>
+        <obo:IAO_0000115
+            >A family_5_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented &quot;cis&quot; relative to each other.</obo:IAO_0000115>
+        <obo:IAO_0000111
+            >family_5_base_pair</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1189,12 +1192,12 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000117"/>
-        <iao:IAO_0000111
-            >family_6_base_pair</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >A family_6_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented &quot;trans&quot; relative to each other.</iao:IAO_0000115>
-        <iao:IAO_0000112
-            >Forbidden is the pairing where G presents the Watson-Crick edge and A presents the sugar edge.</iao:IAO_0000112>
+        <obo:IAO_0000115
+            >A family_6_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented &quot;trans&quot; relative to each other.</obo:IAO_0000115>
+        <obo:IAO_0000112
+            >Forbidden is the pairing where G presents the Watson-Crick edge and A presents the sugar edge.</obo:IAO_0000112>
+        <obo:IAO_0000111
+            >family_6_base_pair</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1248,12 +1251,12 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000116"/>
-        <iao:IAO_0000112
-            >Forbidden pairings are: CC, CU, CA, UA, UC, UG, UU, AC, AU, AA and GU.</iao:IAO_0000112>
-        <iao:IAO_0000115
-            >A family_7_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edges of each base and in which the glycosidic bonds of the two nucleotides are oriented &quot;cis&quot; relative to each other.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >family_7_base_pair</iao:IAO_0000111>
+        <obo:IAO_0000112
+            >Forbidden pairings are: CC, CU, CA, UA, UC, UG, UU, AC, AU, AA and GU.</obo:IAO_0000112>
+        <obo:IAO_0000111
+            >family_7_base_pair</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >A family_7_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edges of each base and in which the glycosidic bonds of the two nucleotides are oriented &quot;cis&quot; relative to each other.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -1307,10 +1310,10 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000117"/>
-        <iao:IAO_0000115
-            >A family_8_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edges of each base and in which the glycosidic bonds of the two nucleotides are oriented &quot;trans&quot; relative to each other.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >family_8_base_pair</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >family_8_base_pair</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >A family_8_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edges of each base and in which the glycosidic bonds of the two nucleotides are oriented &quot;trans&quot; relative to each other.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -1364,10 +1367,10 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000116"/>
-        <iao:IAO_0000115
-            >A family_9_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented &quot;cis&quot; relative to each other.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >family_9_base_pair</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >family_9_base_pair</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >A family_9_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented &quot;cis&quot; relative to each other.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -1421,10 +1424,10 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000117"/>
-        <iao:IAO_0000115
-            >A family_10_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented &quot;trans&quot; relative to each other.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >family_10_base_pair</iao:IAO_0000111>
+        <obo:IAO_0000115
+            >A family_10_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented &quot;trans&quot; relative to each other.</obo:IAO_0000115>
+        <obo:IAO_0000111
+            >family_10_base_pair</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1478,10 +1481,10 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000116"/>
-        <iao:IAO_0000111
-            >family_11_base_pair</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >A family_11_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Sugar edges of each base and in which the glycosidic bonds of the two nucleotides are oriented &quot;cis&quot; relative to each other.</iao:IAO_0000115>
+        <obo:IAO_0000115
+            >A family_11_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Sugar edges of each base and in which the glycosidic bonds of the two nucleotides are oriented &quot;cis&quot; relative to each other.</obo:IAO_0000115>
+        <obo:IAO_0000111
+            >family_11_base_pair</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1535,12 +1538,12 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000117"/>
-        <iao:IAO_0000111
-            >family_12_base_pair</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >A family_12_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Sugar edges of each base and in which the glycosidic bonds of the two nucleotides are oriented &quot;trans&quot; relative to each other.</iao:IAO_0000115>
-        <iao:IAO_0000112
-            >Excluded are CA, CC, CU, CG, and UA, UC, UU, UG.</iao:IAO_0000112>
+        <obo:IAO_0000111
+            >family_12_base_pair</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >A family_12_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Sugar edges of each base and in which the glycosidic bonds of the two nucleotides are oriented &quot;trans&quot; relative to each other.</obo:IAO_0000115>
+        <obo:IAO_0000112
+            >Excluded are CA, CC, CU, CG, and UA, UC, UU, UG.</obo:IAO_0000112>
     </owl:Class>
     
 
@@ -1549,8 +1552,8 @@
 
     <owl:Class rdf:about="&rnao;RNAO_0000015">
         <rdfs:subClassOf rdf:resource="&snap;MaterialEntity"/>
-        <iao:IAO_0000111
-            >nucleotide_suite</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >nucleotide_suite</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1642,10 +1645,10 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000116"/>
-        <iao:IAO_0000111
-            >canonical RNA base pair</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >An RNAO_base_pair which has cis-Watson--Crick pairing and where the participating bases are AU, CG, GC or UA.</iao:IAO_0000115>
+        <obo:IAO_0000111
+            >canonical RNA base pair</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >An RNAO_base_pair which has cis-Watson--Crick pairing and where the participating bases are AU, CG, GC or UA.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -1654,9 +1657,9 @@
 
     <owl:Class rdf:about="&rnao;RNAO_0000017">
         <rdfs:subClassOf rdf:resource="&snap;FiatObjectPart"/>
-        <iao:IAO_0000111>nucleobase</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >A nucleobase is an N-heterocyclic group that forms part of a nucleotide.</iao:IAO_0000115>
+        <obo:IAO_0000115
+            >A nucleobase is an N-heterocyclic group that forms part of a nucleotide.</obo:IAO_0000115>
+        <obo:IAO_0000111>nucleobase</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1665,9 +1668,9 @@
 
     <owl:Class rdf:about="&rnao;RNAO_0000018">
         <rdfs:subClassOf rdf:resource="&snap;FiatObjectPart"/>
-        <iao:IAO_0000115
-            >A phosphate group consists of a phosphorus atom doubly-bonded to two oxygen atoms and singly-bonded to two oxygen atoms, both of which have a free valence. Unlike the phosphate group in ChEBI (CHEBI:32958), the RNAO phosphate group has two free valences.</iao:IAO_0000115>
-        <iao:IAO_0000111>phosphate unit</iao:IAO_0000111>
+        <obo:IAO_0000115
+            >A phosphate group consists of a phosphorus atom doubly-bonded to two oxygen atoms and singly-bonded to two oxygen atoms, both of which have a free valence. Unlike the phosphate group in ChEBI (CHEBI:32958), the RNAO phosphate group has two free valences.</obo:IAO_0000115>
+        <obo:IAO_0000111>phosphate unit</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1705,9 +1708,9 @@
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <iao:IAO_0000111>ribonucleoside</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >A ribonucleoside consists of a nitrogen heterocycle (a nucleobase) covalently bonded to a ribose ring, with free valences at the 3&#39; and 5&#39; positions on the ring.</iao:IAO_0000115>
+        <obo:IAO_0000115
+            >A ribonucleoside consists of a nitrogen heterocycle (a nucleobase) covalently bonded to a ribose ring, with free valences at the 3&#39; and 5&#39; positions on the ring.</obo:IAO_0000115>
+        <obo:IAO_0000111>ribonucleoside</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1744,9 +1747,9 @@
                 </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <iao:IAO_0000111>ribonucleotide</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >A ribonucleotide consists of a nitrogen heterocyclic group covalently bonded to the 4&#39; position of a ribose ring and a phosphate group covalently bonded the 3&#39; position of the ribose ring. There is a free valence on one of the oxygens of the phosphate group and on the 5&#39; position of the ribose ring.</iao:IAO_0000115>
+        <obo:IAO_0000115
+            >A ribonucleotide consists of a nitrogen heterocyclic group covalently bonded to the 4&#39; position of a ribose ring and a phosphate group covalently bonded the 3&#39; position of the ribose ring. There is a free valence on one of the oxygens of the phosphate group and on the 5&#39; position of the ribose ring.</obo:IAO_0000115>
+        <obo:IAO_0000111>ribonucleotide</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1755,9 +1758,9 @@
 
     <owl:Class rdf:about="&rnao;RNAO_0000021">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000147"/>
-        <iao:IAO_0000111>ribose ring</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >A ribose ring is a furanose ring with free valences at the 4&#39; position (to bond to the nucleobase), and the 3&#39; and 5&#39; positions.</iao:IAO_0000115>
+        <obo:IAO_0000115
+            >A ribose ring is a furanose ring with free valences at the 4&#39; position (to bond to the nucleobase), and the 3&#39; and 5&#39; positions.</obo:IAO_0000115>
+        <obo:IAO_0000111>ribose ring</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1772,8 +1775,8 @@
                 <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000021"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <iao:IAO_0000111
-            >two_prime_hydroxy_group</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >two_prime_hydroxy_group</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1782,10 +1785,10 @@
 
     <owl:Class rdf:about="&rnao;RNAO_0000023">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000017"/>
-        <iao:IAO_0000115
-            >A purine nucleobase is a heterocyclic group consisting of a five-membered aromatic ring ortho,para-fused to a six-membered aromatic ring and where the atoms at the 1-, 3-, 7- and 9- positions are nitrogen atoms.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >purine nucleobase</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >purine nucleobase</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >A purine nucleobase is a heterocyclic group consisting of a five-membered aromatic ring ortho,para-fused to a six-membered aromatic ring and where the atoms at the 1-, 3-, 7- and 9- positions are nitrogen atoms.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -1794,10 +1797,10 @@
 
     <owl:Class rdf:about="&rnao;RNAO_0000024">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000017"/>
-        <iao:IAO_0000115
-            >A pyrimidine nucleobase is a heterocyclic group consisting of a six-membered ring where the atoms at the 1- and 3-positions are nitrogen atoms.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >pyrimidine nucleobase</iao:IAO_0000111>
+        <obo:IAO_0000115
+            >A pyrimidine nucleobase is a heterocyclic group consisting of a six-membered ring where the atoms at the 1- and 3-positions are nitrogen atoms.</obo:IAO_0000115>
+        <obo:IAO_0000111
+            >pyrimidine nucleobase</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1806,10 +1809,10 @@
 
     <owl:Class rdf:about="&rnao;RNAO_0000025">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000024"/>
-        <iao:IAO_0000115
-            >A cytosine nucleobase is a pyrimidine that contains a 4-amino group and a 2-oxo group and has a free valence at the 1-position.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >cytosine nucleobase</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >cytosine nucleobase</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >A cytosine nucleobase is a pyrimidine that contains a 4-amino group and a 2-oxo group and has a free valence at the 1-position.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -1818,10 +1821,10 @@
 
     <owl:Class rdf:about="&rnao;RNAO_0000026">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000024"/>
-        <iao:IAO_0000115
-            >A uracil nucleobase is a pyrimidine nucleobase that contains a 2-oxo group and a 4-oxo group and has a free valence at the 1-position.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >uracil nucleobase</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >uracil nucleobase</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >A uracil nucleobase is a pyrimidine nucleobase that contains a 2-oxo group and a 4-oxo group and has a free valence at the 1-position.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -1830,10 +1833,10 @@
 
     <owl:Class rdf:about="&rnao;RNAO_0000027">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000023"/>
-        <iao:IAO_0000115
-            >An adenine nucleobase is a purine nucleobase that contains a 6-amino group and a free valence at the 9-position.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >adenine nucleobase</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >adenine nucleobase</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >An adenine nucleobase is a purine nucleobase that contains a 6-amino group and a free valence at the 9-position.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -1842,10 +1845,10 @@
 
     <owl:Class rdf:about="&rnao;RNAO_0000028">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000023"/>
-        <iao:IAO_0000115
-            >A guanine nucleobase is a purine nucleobase that contains a 2-amino group, a 6-oxo group and a free valence at the 9-position.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >guanine nucleobase</iao:IAO_0000111>
+        <obo:IAO_0000115
+            >A guanine nucleobase is a purine nucleobase that contains a 2-amino group, a 6-oxo group and a free valence at the 9-position.</obo:IAO_0000115>
+        <obo:IAO_0000111
+            >guanine nucleobase</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1856,8 +1859,8 @@
         <rdfs:label
             >suite in 22 conformation</rdfs:label>
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000015"/>
-        <iao:IAO_0000111
-            >suite in 22 conformation</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >suite in 22 conformation</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1868,8 +1871,8 @@
         <rdfs:label
             >suite in 23 conformation</rdfs:label>
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000015"/>
-        <iao:IAO_0000111
-            >suite in 23 conformation</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >suite in 23 conformation</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1880,8 +1883,8 @@
         <rdfs:label
             >suite in 32 conformation</rdfs:label>
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000015"/>
-        <iao:IAO_0000111
-            >suite in 32 conformation</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >suite in 32 conformation</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1890,8 +1893,8 @@
 
     <owl:Class rdf:about="&rnao;RNAO_0000032">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000019"/>
-        <iao:IAO_0000111
-            >purine ribonucleoside</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >purine ribonucleoside</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1902,8 +1905,8 @@
         <rdfs:label
             >suite in 33 conformation</rdfs:label>
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000015"/>
-        <iao:IAO_0000111
-            >suite in 33 conformation</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >suite in 33 conformation</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1912,8 +1915,8 @@
 
     <owl:Class rdf:about="&rnao;RNAO_0000034">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000019"/>
-        <iao:IAO_0000111
-            >pyrimidine ribonucleoside</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >pyrimidine ribonucleoside</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1922,8 +1925,8 @@
 
     <owl:Class rdf:about="&rnao;RNAO_0000035">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000034"/>
-        <iao:IAO_0000111
-            >cytidine residue</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >cytidine residue</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1932,7 +1935,7 @@
 
     <owl:Class rdf:about="&rnao;RNAO_0000036">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000034"/>
-        <iao:IAO_0000111>uridine residue</iao:IAO_0000111>
+        <obo:IAO_0000111>uridine residue</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1941,8 +1944,8 @@
 
     <owl:Class rdf:about="&rnao;RNAO_0000037">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000032"/>
-        <iao:IAO_0000111
-            >adenosine residue</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >adenosine residue</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -1951,8 +1954,8 @@
 
     <owl:Class rdf:about="&rnao;RNAO_0000038">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000032"/>
-        <iao:IAO_0000111
-            >guanosine residue</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >guanosine residue</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2483,10 +2486,10 @@
 
     <owl:Class rdf:about="&rnao;RNAO_0000091">
         <rdfs:subClassOf rdf:resource="&snap;FiatObjectPart"/>
-        <iao:IAO_0000111
-            >tangential proper part of RNA molecule</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >A tangential proper part of an RNA molecule is a proper part that shares a boundary with the RNA molecule.</iao:IAO_0000115>
+        <obo:IAO_0000115
+            >A tangential proper part of an RNA molecule is a proper part that shares a boundary with the RNA molecule.</obo:IAO_0000115>
+        <obo:IAO_0000111
+            >tangential proper part of RNA molecule</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2501,10 +2504,10 @@
                 <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <iao:IAO_0000111
-            >Watson-Crick edge</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >The Watson-Crick edge of a nucleobase is the preferred edge along which it undergoes hydrogen bonding with other nucleobases.</iao:IAO_0000115>
+        <obo:IAO_0000115
+            >The Watson-Crick edge of a nucleobase is the preferred edge along which it undergoes hydrogen bonding with other nucleobases.</obo:IAO_0000115>
+        <obo:IAO_0000111
+            >Watson-Crick edge</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2519,9 +2522,9 @@
                 <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <iao:IAO_0000111>Hoogsteen edge</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >The Hoogsteen edge of a nucleobase is the edge of the nucleobase which is not adjacent to the 2&#39;-hydroxyl group on the ribose ring.</iao:IAO_0000115>
+        <obo:IAO_0000111>Hoogsteen edge</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >The Hoogsteen edge of a nucleobase is the edge of the nucleobase which is not adjacent to the 2&#39;-hydroxyl group on the ribose ring.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -2536,9 +2539,9 @@
                 <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000019"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <iao:IAO_0000111>sugar edge</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >The sugar edge of a nucleoside consists of the edge of the nucleobase adjacent ot the 2&#39;-hydroxyl group on the ribose ring and the 2&#39;-hydroxyl group on the ribose ring.</iao:IAO_0000115>
+        <obo:IAO_0000111>sugar edge</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >The sugar edge of a nucleoside consists of the edge of the nucleobase adjacent ot the 2&#39;-hydroxyl group on the ribose ring and the 2&#39;-hydroxyl group on the ribose ring.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -2555,10 +2558,10 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="&rnao;RNAO_0000096"/>
-        <iao:IAO_0000115
+        <obo:IAO_0000111>paired_region</obo:IAO_0000111>
+        <obo:IAO_0000115
             >A collection of one or more sequence regions that
-contains at least 1 base pair.</iao:IAO_0000115>
-        <iao:IAO_0000111>paired_region</iao:IAO_0000111>
+contains at least 1 base pair.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -2577,9 +2580,9 @@ contains at least 1 base pair.</iao:IAO_0000115>
                 </owl:complementOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <iao:IAO_0000115
-            >A collection of one or more sequence regions that contains no base pairs.</iao:IAO_0000115>
-        <iao:IAO_0000111>unpaired_region</iao:IAO_0000111>
+        <obo:IAO_0000115
+            >A collection of one or more sequence regions that contains no base pairs.</obo:IAO_0000115>
+        <obo:IAO_0000111>unpaired_region</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2588,13 +2591,13 @@ contains at least 1 base pair.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000097">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000095"/>
-        <iao:IAO_0000115
+        <obo:IAO_0000111>unbroken_stem</obo:IAO_0000111>
+        <obo:IAO_0000115
             >A paired_region made up of two regions of sequence,
 each of which is contiguous, that completely pair with each other (no
 bulges/mismatches/etc).  This form is sometimes colloquially referred
 to as a &quot;helix&quot;, but we have not adopted that term since it implies a
-level of explicit structural knowledge that is frequently lacking.</iao:IAO_0000115>
-        <iao:IAO_0000111>unbroken_stem</iao:IAO_0000111>
+level of explicit structural knowledge that is frequently lacking.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -2603,14 +2606,14 @@ level of explicit structural knowledge that is frequently lacking.</iao:IAO_0000
 
     <owl:Class rdf:about="&rnao;RNAO_0000098">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000110"/>
-        <iao:IAO_0000115
+        <obo:IAO_0000115
             >A contiguous sequence region that directly links the
 two halves of an unbroken_stem (but does not participate in the stem);
 this structure is also known as a &quot;hairpin loop&quot;.  Because a terminal
 loop may also participate in other inter-base interactions, (a) it is
 defined relative to a particular unbroken_stem, and (b) it is not
-implicitly defined as unpaired (or paired).</iao:IAO_0000115>
-        <iao:IAO_0000111>terminal_loop</iao:IAO_0000111>
+implicitly defined as unpaired (or paired).</obo:IAO_0000115>
+        <obo:IAO_0000111>terminal_loop</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2619,13 +2622,13 @@ implicitly defined as unpaired (or paired).</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000099">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000108"/>
-        <iao:IAO_0000115
+        <obo:IAO_0000115
             >A set consisting of all and only the sequence regions
 that link two given unbroken_stems; this term encompasses the concepts of
 &quot;bulge&quot; and &quot;mismatch&quot; as well. Again, this term is defined relative
 to two particular unbroken_stems and does not imply unpairedness (or
-pairedness).</iao:IAO_0000115>
-        <iao:IAO_0000111>internal_loop</iao:IAO_0000111>
+pairedness).</obo:IAO_0000115>
+        <obo:IAO_0000111>internal_loop</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2634,8 +2637,8 @@ pairedness).</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000100">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000020"/>
-        <iao:IAO_0000111
-            >purine ribonucleotide</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >purine ribonucleotide</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2644,8 +2647,8 @@ pairedness).</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000101">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000020"/>
-        <iao:IAO_0000111
-            >pyrimidine ribonucleotide</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >pyrimidine ribonucleotide</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2654,8 +2657,8 @@ pairedness).</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000102">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000101"/>
-        <iao:IAO_0000111
-            >cytidylate residue</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >cytidylate residue</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2664,8 +2667,8 @@ pairedness).</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000103">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000101"/>
-        <iao:IAO_0000111
-            >uridylate residue</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >uridylate residue</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2674,8 +2677,8 @@ pairedness).</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000104">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000100"/>
-        <iao:IAO_0000111
-            >adenylate residue</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >adenylate residue</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2684,8 +2687,8 @@ pairedness).</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000105">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000100"/>
-        <iao:IAO_0000111
-            >guanylate residue</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >guanylate residue</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2694,15 +2697,15 @@ pairedness).</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000106">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000108"/>
-        <iao:IAO_0000115
+        <obo:IAO_0000115
             >The set consisting of all and only the sequence regions that
 link more than two given unbroken_stems such that each region links exactly
 two unbroken_stems.  This term is defined relative to the particular
 unbroken_stems involved and, again, does not imply anything about the
 pairedness/unpairedness of the bases in this region. The degree of a
 junction is a property (e.g. 3-junction, 4-junction), so the different
-degrees do not get separate entries in the ontology.</iao:IAO_0000115>
-        <iao:IAO_0000111>stem_junction</iao:IAO_0000111>
+degrees do not get separate entries in the ontology.</obo:IAO_0000115>
+        <obo:IAO_0000111>stem_junction</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2733,9 +2736,9 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <iao:IAO_0000111>strand_end</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >A sequence_region bounded at one end by the 5&#39; or 3&#39; end of the molecule, and at the other by an unbroken_stem.</iao:IAO_0000115>
+        <obo:IAO_0000111>strand_end</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >A sequence_region bounded at one end by the 5&#39; or 3&#39; end of the molecule, and at the other by an unbroken_stem.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -2744,10 +2747,10 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000108">
         <rdfs:subClassOf rdf:resource="&snap;MaterialEntity"/>
-        <iao:IAO_0000111
-            >collection_of_sequence_regions</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >Part of an RNA or DNA molecule consisting of one or more sequence_regions.</iao:IAO_0000115>
+        <obo:IAO_0000115
+            >Part of an RNA or DNA molecule consisting of one or more sequence_regions.</obo:IAO_0000115>
+        <obo:IAO_0000111
+            >collection_of_sequence_regions</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2756,7 +2759,7 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000109">
         <rdfs:subClassOf rdf:resource="&snap;ObjectBoundary"/>
-        <iao:IAO_0000111>three_prime_end</iao:IAO_0000111>
+        <obo:IAO_0000111>three_prime_end</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2772,10 +2775,10 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
                 <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <iao:IAO_0000111
-            >nucleic acid part</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >Part of an RNA or DNA molecule containing only nucleotide residues.</iao:IAO_0000115>
+        <obo:IAO_0000111
+            >nucleic acid fiat part</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >Fiat part of an RNA or DNA molecule containing only nucleotide residues.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -2784,7 +2787,7 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000111">
         <rdfs:subClassOf rdf:resource="&snap;ObjectBoundary"/>
-        <iao:IAO_0000111>five_prime_end</iao:IAO_0000111>
+        <obo:IAO_0000111>five_prime_end</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2793,11 +2796,11 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000112">
         <rdfs:subClassOf rdf:resource="&snap;Quality"/>
-        <iao:IAO_0000115
-            >The spatial arrangement of the atoms in a molecule or molecular part affording distinction between stereoisomers which can be interconverted by rotations about formally single bonds.</iao:IAO_0000115>
-        <iao:IAO_0000117
-            >http://goldbook.iupac.org/C01258.html</iao:IAO_0000117>
-        <iao:IAO_0000111>conformation</iao:IAO_0000111>
+        <obo:IAO_0000117
+            >http://goldbook.iupac.org/C01258.html</obo:IAO_0000117>
+        <obo:IAO_0000111>conformation</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >The spatial arrangement of the atoms in a molecule or molecular part affording distinction between stereoisomers which can be interconverted by rotations about formally single bonds.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -2806,12 +2809,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000113">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000112"/>
-        <iao:IAO_0000117
-            >PERSON: Colin Batchelor, based on the Leontis-Westhof classification.</iao:IAO_0000117>
-        <iao:IAO_0000115
-            >A conformation that inheres in an RNA base pair. It may be cis- or trans- depending on the orientations of the ribose rings relative to the edge-edge interaction of the nucleobases.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >base pair orientation</iao:IAO_0000111>
+        <obo:IAO_0000115
+            >A conformation that inheres in an RNA base pair. It may be cis- or trans- depending on the orientations of the ribose rings relative to the edge-edge interaction of the nucleobases.</obo:IAO_0000115>
+        <obo:IAO_0000111
+            >base pair orientation</obo:IAO_0000111>
+        <obo:IAO_0000117
+            >PERSON: Colin Batchelor, based on the Leontis-Westhof classification.</obo:IAO_0000117>
     </owl:Class>
     
 
@@ -2821,12 +2824,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
     <owl:Class rdf:about="&rnao;RNAO_0000114">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000113"/>
         <owl:disjointWith rdf:resource="&rnao;RNAO_0000115"/>
-        <iao:IAO_0000115
-            >A base pair conformation where the ribose rings are on the same side of a plane drawn through the middle of the edge-edge hydrogen bonds.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >base pair cis-orientation</iao:IAO_0000111>
-        <iao:IAO_0000117
-            >PERSON: Colin Batchelor, based on the Leontis-Westhof classification.</iao:IAO_0000117>
+        <obo:IAO_0000111
+            >base pair cis-orientation</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >A base pair conformation where the ribose rings are on the same side of a plane drawn through the middle of the edge-edge hydrogen bonds.</obo:IAO_0000115>
+        <obo:IAO_0000117
+            >PERSON: Colin Batchelor, based on the Leontis-Westhof classification.</obo:IAO_0000117>
     </owl:Class>
     
 
@@ -2835,12 +2838,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000115">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000113"/>
-        <iao:IAO_0000115
-            >A base pair conformation where the ribose rings are on opposite sides of a plane drawn through the middle of the edge-edge hydrogen bonds.</iao:IAO_0000115>
-        <iao:IAO_0000117
-            >PERSON: Colin Batchelor, based on the Leontis-Westhof classification.</iao:IAO_0000117>
-        <iao:IAO_0000111
-            >base pair trans-orientation</iao:IAO_0000111>
+        <obo:IAO_0000115
+            >A base pair conformation where the ribose rings are on opposite sides of a plane drawn through the middle of the edge-edge hydrogen bonds.</obo:IAO_0000115>
+        <obo:IAO_0000117
+            >PERSON: Colin Batchelor, based on the Leontis-Westhof classification.</obo:IAO_0000117>
+        <obo:IAO_0000111
+            >base pair trans-orientation</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2860,8 +2863,8 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000001"/>
-        <iao:IAO_0000111
-            >cis-oriented RNA base pair</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >cis-oriented RNA base pair</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2881,8 +2884,8 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000001"/>
-        <iao:IAO_0000111
-            >trans-oriented RNA base pair</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >trans-oriented RNA base pair</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2891,12 +2894,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000121">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000112"/>
-        <iao:IAO_0000111
-            >nucleoside conformation</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >A conformation that inheres in an nucleoside based on the rotation of the nucleobase about the glycosidic torsion angle &#967; with the furanose.</iao:IAO_0000115>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
+        <obo:IAO_0000111
+            >nucleoside conformation</obo:IAO_0000111>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
+        <obo:IAO_0000115
+            >A conformation that inheres in an nucleoside based on the rotation of the nucleobase about the glycosidic torsion angle &#967; with the furanose.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -2906,12 +2909,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
     <owl:Class rdf:about="&rnao;RNAO_0000122">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000121"/>
         <owl:disjointWith rdf:resource="&rnao;RNAO_0000123"/>
-        <iao:IAO_0000111
-            >syn nucleoside conformation</iao:IAO_0000111>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000115
-            >A syn nucleoside conformation is a nucleoside conformation characterized by the nucleobase being oriented towards the ribose due to rotation about the glycosidic torsion angle &#967;. From &#967; = 0&#176;, where the plane of the base is aligned with the O4&#8217;-C1&#8217; bond in a direction towards the O4&#8217; atom, the syn conformation covers the remaining rotations of &#177;90&#176;: &#967; = [-90&#176;, 90&#176;].</iao:IAO_0000115>
+        <obo:IAO_0000115
+            >A syn nucleoside conformation is a nucleoside conformation characterized by the nucleobase being oriented towards the ribose due to rotation about the glycosidic torsion angle &#967;. From &#967; = 0&#176;, where the plane of the base is aligned with the O4&#8217;-C1&#8217; bond in a direction towards the O4&#8217; atom, the syn conformation covers the remaining rotations of &#177;90&#176;: &#967; = [-90&#176;, 90&#176;].</obo:IAO_0000115>
+        <obo:IAO_0000111
+            >syn nucleoside conformation</obo:IAO_0000111>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
     </owl:Class>
     
 
@@ -2920,12 +2923,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000123">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000121"/>
-        <iao:IAO_0000115
-            >A anti nucleoside conformation is a nucleoside conformation characterized by the nucleobase being oriented away from the ribose due to rotation about the glycosidic torsion angle &#967;. From &#967; = 180&#176;, where the plane of the base is aligned with the O4&#8217;-C1&#8217; bond in a direction away from the O4&#8217; atom, the anti conformation covers a rotations of &#177;90&#176;: &#967; = [-180&#176;, 90&#176;].</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >anti nucleoside conformation</iao:IAO_0000111>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
+        <obo:IAO_0000111
+            >anti nucleoside conformation</obo:IAO_0000111>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
+        <obo:IAO_0000115
+            >A anti nucleoside conformation is a nucleoside conformation characterized by the nucleobase being oriented away from the ribose due to rotation about the glycosidic torsion angle &#967;. From &#967; = 180&#176;, where the plane of the base is aligned with the O4&#8217;-C1&#8217; bond in a direction away from the O4&#8217; atom, the anti conformation covers a rotations of &#177;90&#176;: &#967; = [-180&#176;, 90&#176;].</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -2935,12 +2938,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
     <owl:Class rdf:about="&rnao;RNAO_0000124">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000126"/>
         <owl:disjointWith rdf:resource="&rnao;RNAO_0000125"/>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000111
-            >envelope conformation</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >An envelope conformation is a furanose ring conformation in which only one of the five furanose atoms (C1&#8217;, C2&#8217;, C3&#8217;, C4&#8217; or O4&#8217;) is out of the plane formed by the four others.</iao:IAO_0000115>
+        <obo:IAO_0000115
+            >An envelope conformation is a furan ring conformation in which only one of the five fruan atoms (C1&#8217;, C2&#8217;, C3&#8217;, C4&#8217; or O4&#8217;) is out of the plane formed by the four others.</obo:IAO_0000115>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
+        <obo:IAO_0000111
+            >envelope conformation</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2949,12 +2952,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000125">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000126"/>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000111
-            >twist conformation</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >An envelope conformation is a furanose ring conformation in which two atoms are in opposite sides of the plane formed by the remaining three.</iao:IAO_0000115>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
+        <obo:IAO_0000115
+            >An envelope conformation is a furan ring conformation in which two atoms are in opposite sides of the plane formed by the remaining three.</obo:IAO_0000115>
+        <obo:IAO_0000111
+            >twist conformation</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -2963,12 +2966,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000126">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000112"/>
-        <iao:IAO_0000115
-            >A furanose ring conformation is a conformation that inheres in a furanose ring and is characterized by the values of torsion angles: &#952;0-4.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >furanose ring conformation</iao:IAO_0000111>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
+        <obo:IAO_0000115
+            >A furan ring conformation is a conformation that inheres in a furan ring and is characterized by the values of torsion angles: &#952;0-4.</obo:IAO_0000115>
+        <obo:IAO_0000111
+            >furan ring conformation</obo:IAO_0000111>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
     </owl:Class>
     
 
@@ -2977,11 +2980,11 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000127">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000124"/>
-        <iao:IAO_0000115
-            >C2&#39;-endo pucker (&lt;sup&gt;2&lt;/sup&gt;E conformation) is a furanose envelope conformation in which the C2&#39; atom is above the plane formed by the other 4 atoms.</iao:IAO_0000115>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000111>C2&#8217;-endo pucker</iao:IAO_0000111>
+        <obo:IAO_0000111>C2&#8217;-endo pucker</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >C2&#39;-endo pucker (&lt;sup&gt;2&lt;/sup&gt;E conformation) is an envelope conformation in which the C2&#39; atom is above the plane formed by the other 4 atoms.</obo:IAO_0000115>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
     </owl:Class>
     
 
@@ -2990,11 +2993,11 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000128">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000124"/>
-        <iao:IAO_0000115
-            >C3&#39;-endo pucker (An &lt;sup&gt;3&lt;/sup&gt;E conformation) is a furanose envelope conformation in which the C3&#39; atom is above the plane formed by the other 4 atoms.</iao:IAO_0000115>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000111>C3&#8217;-endo pucker</iao:IAO_0000111>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
+        <obo:IAO_0000111>C3&#8217;-endo pucker</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >C3&#39;-endo pucker (An &lt;sup&gt;3&lt;/sup&gt;E conformation) is an envelope conformation in which the C3&#39; atom is above the plane formed by the other 4 atoms.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -3003,11 +3006,11 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000129">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000124"/>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000115
-            >C4&#39;-exo pucker (E&lt;sub&gt;4&lt;/sub&gt; conformation) is a furanose envelope conformation in which the C4&#39; atom is below the plane formed by the other 4 atoms.</iao:IAO_0000115>
-        <iao:IAO_0000111>C4&#8217;-exo pucker</iao:IAO_0000111>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
+        <obo:IAO_0000115
+            >C4&#39;-exo pucker (E&lt;sub&gt;4&lt;/sub&gt; conformation) is an envelope conformation in which the C4&#39; atom is below the plane formed by the other 4 atoms.</obo:IAO_0000115>
+        <obo:IAO_0000111>C4&#8217;-exo pucker</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -3017,12 +3020,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
     <owl:Class rdf:about="&rnao;RNAO_0000130">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000125"/>
         <owl:disjointWith rdf:resource="&rnao;RNAO_0000131"/>
-        <iao:IAO_0000111
-            >C3&#39;-endo - C4&#39; -exo pucker</iao:IAO_0000111>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000115
-            >C3&#39;-endo - C4&#39; exo pucker (&lt;sup&gt;3&lt;/sup&gt;E&lt;sub&gt;4&lt;/sub&gt; conformation) is a furanose envelope conformation in which the C3&#39; atom is above the plane and the C4&#39; atom is below the plane.</iao:IAO_0000115>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
+        <obo:IAO_0000111
+            >C3&#39;-endo - C4&#39; -exo pucker</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >C3&#39;-endo - C4&#39; exo pucker (&lt;sup&gt;3&lt;/sup&gt;E&lt;sub&gt;4&lt;/sub&gt; conformation) is a twist conformation in which the C3&#39; atom is above the plane and the C4&#39; atom is below the plane.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -3031,12 +3034,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000131">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000125"/>
-        <iao:IAO_0000115
-            >C3&#39;-endo - C2&#39; exo pucker (&lt;sup&gt;3&lt;/sup&gt;E&lt;sub&gt;2&lt;/sub&gt; conformation) is a furanose envelope conformation in which the C3&#39; atom is above the plane and the C2&#39; atom is below the plane.</iao:IAO_0000115>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000111
-            >C3&#39;-endo - C2&#39; -exo pucker</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >C3&#39;-endo - C2&#39; -exo pucker</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >C3&#39;-endo - C2&#39; exo pucker (&lt;sup&gt;3&lt;/sup&gt;E&lt;sub&gt;2&lt;/sub&gt; conformation) is a twist conformation in which the C3&#39; atom is above the plane and the C2&#39; atom is below the plane.</obo:IAO_0000115>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
     </owl:Class>
     
 
@@ -3045,6 +3048,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000132">
         <rdfs:subClassOf rdf:resource="&snap;MaterialEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
+                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000135"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;has_part"/>
@@ -3061,17 +3070,11 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ro;has_quality"/>
-                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000135"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <iao:IAO_0000115
-            >A base stack consists of a pair of nucleotides that interact by London dispersion inter-molecular interactions between their nucleobases such that one base is stacked on top of the other.</iao:IAO_0000115>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000111>base stack</iao:IAO_0000111>
+        <obo:IAO_0000115
+            >A base stack consists of a pair of nucleotides that interact by London dispersion inter-molecular interactions between their nucleobases such that one base is stacked on top of the other.</obo:IAO_0000115>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
+        <obo:IAO_0000111>base stack</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -3086,12 +3089,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
                 <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000145"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <iao:IAO_0000111
-            >adjacent base stack</iao:IAO_0000111>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000115
-            >An adjacent base stack is a base stack between a pair of sequence-adjacent nucleotides.</iao:IAO_0000115>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
+        <obo:IAO_0000115
+            >An adjacent base stack is a base stack between a pair of sequence-adjacent nucleotides.</obo:IAO_0000115>
+        <obo:IAO_0000111
+            >adjacent base stack</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -3106,12 +3109,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
                 <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000146"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000115
-            >A non-adjacent base stack is a base stack between a pair of non sequence-adjacent nucleotides.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >non-adjacent base stack</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >non-adjacent base stack</obo:IAO_0000111>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
+        <obo:IAO_0000115
+            >A non-adjacent base stack is a base stack between a pair of non sequence-adjacent nucleotides.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -3120,12 +3123,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000135">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000112"/>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000115
-            >A base stack orientation is a conformation that inheres in a base stack by virtue of the orientation of the nucleobases relative to i) the alignment of base normals and ii) their sequence adjacency.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >base stack orientation</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >base stack orientation</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >A base stack orientation is a conformation that inheres in a base stack by virtue of the orientation of the nucleobases relative to i) the alignment of base normals and ii) their sequence adjacency.</obo:IAO_0000115>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
     </owl:Class>
     
 
@@ -3134,12 +3137,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000138">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000140"/>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000115
-            >An base stack straight orientation is a base stack orientation in which the normals of both bases are aligned in the same direction.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >base stack straight orientation</iao:IAO_0000111>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
+        <obo:IAO_0000111
+            >base stack straight orientation</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >An base stack straight orientation is a base stack orientation in which the normals of both bases are aligned in the same direction.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -3148,12 +3151,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000139">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000140"/>
-        <iao:IAO_0000115
-            >A base stack reverse orientation is a base stack orientation in which the normals of both bases are aligned in the opposite directions.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >base stack reverse orientation</iao:IAO_0000111>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
+        <obo:IAO_0000111
+            >base stack reverse orientation</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >A base stack reverse orientation is a base stack orientation in which the normals of both bases are aligned in the opposite directions.</obo:IAO_0000115>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
     </owl:Class>
     
 
@@ -3163,10 +3166,10 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
     <owl:Class rdf:about="&rnao;RNAO_0000140">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000135"/>
         <owl:disjointWith rdf:resource="&rnao;RNAO_0000144"/>
-        <iao:IAO_0000111
-            >base stack base-normal orientation</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >A base stack base-normal orientation is a base stack orientation that depends on the relative orientation of the base normals.</iao:IAO_0000115>
+        <obo:IAO_0000111
+            >base stack base-normal orientation</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >A base stack base-normal orientation is a base stack orientation that depends on the relative orientation of the base normals.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -3175,12 +3178,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000142">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000140"/>
-        <iao:IAO_0000111
-            >base stack above orientation</iao:IAO_0000111>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000115
-            >A base stack above orientation is a base stack orientation in which the second base (B) is in the same direction as the normal to the first base (A).</iao:IAO_0000115>
+        <obo:IAO_0000111
+            >base stack above orientation</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >A base stack above orientation is a base stack orientation in which the second base (B) is in the same direction as the normal to the first base (A).</obo:IAO_0000115>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
     </owl:Class>
     
 
@@ -3189,12 +3192,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000143">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000140"/>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000111
-            >base stack below orientation</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >A base stack below orientation is a base stack orientation in which the normal of the second base (B) is directed towards the first base (A).</iao:IAO_0000115>
+        <obo:IAO_0000111
+            >base stack below orientation</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >A base stack below orientation is a base stack orientation in which the normal of the second base (B) is directed towards the first base (A).</obo:IAO_0000115>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
     </owl:Class>
     
 
@@ -3203,12 +3206,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000144">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000135"/>
-        <iao:IAO_0000111
-            >base stack sequence adjacency</iao:IAO_0000111>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000115
-            >A base stack sequence adjacency is a base stack orientation that depends on whether the stacked nucleobases are part of nucleotides that are sequence adjacent or not.</iao:IAO_0000115>
+        <obo:IAO_0000111
+            >base stack sequence adjacency</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >A base stack sequence adjacency is a base stack orientation that depends on whether the stacked nucleobases are part of nucleotides that are sequence adjacent or not.</obo:IAO_0000115>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
     </owl:Class>
     
 
@@ -3218,12 +3221,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
     <owl:Class rdf:about="&rnao;RNAO_0000145">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000144"/>
         <owl:disjointWith rdf:resource="&rnao;RNAO_0000146"/>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000111
-            >base stack adjacent base orientation</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >A base stack adjacent orientation is a base stack orientation in which the stacked nucleobases are part of nucleotides that are sequence adjacent.</iao:IAO_0000115>
+        <obo:IAO_0000115
+            >A base stack adjacent orientation is a base stack orientation in which the stacked nucleobases are part of nucleotides that are sequence adjacent.</obo:IAO_0000115>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
+        <obo:IAO_0000111
+            >base stack adjacent base orientation</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -3232,12 +3235,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000146">
         <rdfs:subClassOf rdf:resource="&rnao;RNAO_0000144"/>
-        <iao:IAO_0000115
-            >A base stack non-adjacent orientation is a base stack orientation in which the stacked nucleobases are part of nucleotides that are not sequence adjacent.</iao:IAO_0000115>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000111
-            >base stack non-adjacent base orientation</iao:IAO_0000111>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
+        <obo:IAO_0000111
+            >base stack non-adjacent base orientation</obo:IAO_0000111>
+        <obo:IAO_0000115
+            >A base stack non-adjacent orientation is a base stack orientation in which the stacked nucleobases are part of nucleotides that are not sequence adjacent.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -3246,11 +3249,11 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
     <owl:Class rdf:about="&rnao;RNAO_0000147">
         <rdfs:subClassOf rdf:resource="&snap;FiatObjectPart"/>
-        <iao:IAO_0000115
-            >A furanose ring is a molecular ring that consists of four carbon and one oxygen atom with the anomeric carbon to the right of the oxygen and has free valences at the 2&#39;, 3&#39;,4&#39;,5&#39; positions.</iao:IAO_0000115>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000111>furanose ring</iao:IAO_0000111>
+        <obo:IAO_0000115
+            >A furanose ring is a ring that consists of four carbon and one oxygen atom and has free valences at each carbon position.</obo:IAO_0000115>
+        <obo:IAO_0000111>furanose ring</obo:IAO_0000111>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
     </owl:Class>
     
 
@@ -3271,12 +3274,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
                 <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000138"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000115
-            >An upward base stack is a base stack that exhibits both an straight orientation and an above orientation.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >upward base stack</iao:IAO_0000111>
+        <obo:IAO_0000115
+            >An upward base stack is a base stack that exhibits both an straight orientation and an above orientation.</obo:IAO_0000115>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
+        <obo:IAO_0000111
+            >upward base stack</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -3288,21 +3291,21 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;has_quality"/>
-                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000138"/>
+                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;has_quality"/>
-                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000143"/>
+                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000138"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <iao:IAO_0000111
-            >downward base stack</iao:IAO_0000111>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000115
-            >A downward base stack is a base stack that exhibits both an straight orientation and a below orientation.</iao:IAO_0000115>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
+        <obo:IAO_0000115
+            >A downward base stack is a base stack that exhibits both an straight orientation and a below orientation.</obo:IAO_0000115>
+        <obo:IAO_0000111
+            >downward base stack</obo:IAO_0000111>
     </owl:Class>
     
 
@@ -3314,21 +3317,21 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;has_quality"/>
-                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000142"/>
+                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000138"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;has_quality"/>
-                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000138"/>
+                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000142"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000111
-            >inward base stack</iao:IAO_0000111>
-        <iao:IAO_0000115
-            >An inward base stack is a base stack that exhibits both a reverse orientation and an above orientation.</iao:IAO_0000115>
+        <obo:IAO_0000115
+            >An inward base stack is a base stack that exhibits both a reverse orientation and an above orientation.</obo:IAO_0000115>
+        <obo:IAO_0000111
+            >inward base stack</obo:IAO_0000111>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
     </owl:Class>
     
 
@@ -3349,12 +3352,12 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
                 <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000138"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <iao:IAO_0000117
-            >PERSON: Michel Dumontier</iao:IAO_0000117>
-        <iao:IAO_0000115
-            >An outward base stack is a base stack that exhibits both a reverse orientation and a below orientation.</iao:IAO_0000115>
-        <iao:IAO_0000111
-            >outward base stack</iao:IAO_0000111>
+        <obo:IAO_0000111
+            >outward base stack</obo:IAO_0000111>
+        <obo:IAO_0000117
+            >PERSON: Michel Dumontier</obo:IAO_0000117>
+        <obo:IAO_0000115
+            >An outward base stack is a base stack that exhibits both a reverse orientation and a below orientation.</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -3394,18 +3397,18 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&rnao;RNAO_0000127"/>
-            <rdf:Description rdf:about="&rnao;RNAO_0000128"/>
-            <rdf:Description rdf:about="&rnao;RNAO_0000129"/>
+            <rdf:Description rdf:about="&rnao;RNAO_0000113"/>
+            <rdf:Description rdf:about="&rnao;RNAO_0000121"/>
+            <rdf:Description rdf:about="&rnao;RNAO_0000126"/>
+            <rdf:Description rdf:about="&rnao;RNAO_0000135"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&rnao;RNAO_0000113"/>
-            <rdf:Description rdf:about="&rnao;RNAO_0000121"/>
-            <rdf:Description rdf:about="&rnao;RNAO_0000126"/>
-            <rdf:Description rdf:about="&rnao;RNAO_0000135"/>
+            <rdf:Description rdf:about="&rnao;RNAO_0000127"/>
+            <rdf:Description rdf:about="&rnao;RNAO_0000128"/>
+            <rdf:Description rdf:about="&rnao;RNAO_0000129"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -3421,5 +3424,5 @@ degrees do not get separate entries in the ontology.</iao:IAO_0000115>
 
 
 
-<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 2.2.1.1101) http://owlapi.sourceforge.net -->
 
