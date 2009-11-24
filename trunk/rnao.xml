@@ -835,54 +835,59 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&rnao;RNAO_0000116"/>
                     <owl:Class>
-                        <owl:complementOf>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Class>
+                                <owl:complementOf>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&ro;has_part"/>
+                                        <owl:onClass rdf:resource="&rnao;RNAO_0000028"/>
+                                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                                    </owl:Restriction>
+                                </owl:complementOf>
+                            </owl:Class>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="&ro;has_part"/>
-                                <owl:onClass rdf:resource="&rnao;RNAO_0000028"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="&rnao;RNAO_0000092"/>
+                                                            <owl:Restriction>
+                                                                <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
+                                                                <owl:someValuesFrom>
+                                                                    <owl:Class>
+                                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                                            <rdf:Description rdf:about="&rnao;RNAO_0000092"/>
+                                                                            <owl:Restriction>
+                                                                                <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
+                                                                                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
+                                                                            </owl:Restriction>
+                                                                        </owl:intersectionOf>
+                                                                    </owl:Class>
+                                                                </owl:someValuesFrom>
+                                                            </owl:Restriction>
+                                                        </owl:intersectionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
                                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
                             </owl:Restriction>
-                        </owl:complementOf>
+                        </owl:intersectionOf>
                     </owl:Class>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
-                                        <owl:someValuesFrom>
-                                            <owl:Class>
-                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                    <rdf:Description rdf:about="&rnao;RNAO_0000092"/>
-                                                    <owl:Restriction>
-                                                        <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
-                                                        <owl:someValuesFrom>
-                                                            <owl:Class>
-                                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                                    <rdf:Description rdf:about="&rnao;RNAO_0000092"/>
-                                                                    <owl:Restriction>
-                                                                        <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
-                                                                        <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
-                                                                    </owl:Restriction>
-                                                                </owl:intersectionOf>
-                                                            </owl:Class>
-                                                        </owl:someValuesFrom>
-                                                    </owl:Restriction>
-                                                </owl:intersectionOf>
-                                            </owl:Class>
-                                        </owl:someValuesFrom>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
-                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
-                    </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -901,61 +906,66 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&rnao;RNAO_0000117"/>
                     <owl:Class>
-                        <owl:complementOf>
+                        <owl:intersectionOf rdf:parseType="Collection">
                             <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                                        <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000027"/>
-                                    </owl:Restriction>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                                        <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000028"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
+                                <owl:complementOf>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000027"/>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000028"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:complementOf>
                             </owl:Class>
-                        </owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="&rnao;RNAO_0000092"/>
+                                                            <owl:Restriction>
+                                                                <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
+                                                                <owl:someValuesFrom>
+                                                                    <owl:Class>
+                                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                                            <rdf:Description rdf:about="&rnao;RNAO_0000092"/>
+                                                                            <owl:Restriction>
+                                                                                <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
+                                                                                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
+                                                                            </owl:Restriction>
+                                                                        </owl:intersectionOf>
+                                                                    </owl:Class>
+                                                                </owl:someValuesFrom>
+                                                            </owl:Restriction>
+                                                        </owl:intersectionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
+                                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
                     </owl:Class>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
-                                        <owl:someValuesFrom>
-                                            <owl:Class>
-                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                    <rdf:Description rdf:about="&rnao;RNAO_0000092"/>
-                                                    <owl:Restriction>
-                                                        <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
-                                                        <owl:someValuesFrom>
-                                                            <owl:Class>
-                                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                                    <rdf:Description rdf:about="&rnao;RNAO_0000092"/>
-                                                                    <owl:Restriction>
-                                                                        <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
-                                                                        <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
-                                                                    </owl:Restriction>
-                                                                </owl:intersectionOf>
-                                                            </owl:Class>
-                                                        </owl:someValuesFrom>
-                                                    </owl:Restriction>
-                                                </owl:intersectionOf>
-                                            </owl:Class>
-                                        </owl:someValuesFrom>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
-                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
-                    </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -974,45 +984,50 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
-                                        <owl:someValuesFrom>
-                                            <owl:Class>
-                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                    <rdf:Description rdf:about="&rnao;RNAO_0000092"/>
-                                                    <owl:Restriction>
-                                                        <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
-                                                        <owl:someValuesFrom>
-                                                            <owl:Class>
-                                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                                    <rdf:Description rdf:about="&rnao;RNAO_0000093"/>
-                                                                    <owl:Restriction>
-                                                                        <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
-                                                                        <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
-                                                                    </owl:Restriction>
-                                                                </owl:intersectionOf>
-                                                            </owl:Class>
-                                                        </owl:someValuesFrom>
-                                                    </owl:Restriction>
-                                                </owl:intersectionOf>
-                                            </owl:Class>
-                                        </owl:someValuesFrom>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
-                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
-                    </owl:Restriction>
+                    <rdf:Description rdf:about="&rnao;RNAO_0000116"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="&rnao;RNAO_0000092"/>
+                                                            <owl:Restriction>
+                                                                <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
+                                                                <owl:someValuesFrom>
+                                                                    <owl:Class>
+                                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                                            <rdf:Description rdf:about="&rnao;RNAO_0000093"/>
+                                                                            <owl:Restriction>
+                                                                                <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
+                                                                                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
+                                                                            </owl:Restriction>
+                                                                        </owl:intersectionOf>
+                                                                    </owl:Class>
+                                                                </owl:someValuesFrom>
+                                                            </owl:Restriction>
+                                                        </owl:intersectionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
+                                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -1033,45 +1048,50 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
-                                        <owl:someValuesFrom>
-                                            <owl:Class>
-                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                    <rdf:Description rdf:about="&rnao;RNAO_0000092"/>
-                                                    <owl:Restriction>
-                                                        <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
-                                                        <owl:someValuesFrom>
-                                                            <owl:Class>
-                                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                                    <rdf:Description rdf:about="&rnao;RNAO_0000093"/>
-                                                                    <owl:Restriction>
-                                                                        <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
-                                                                        <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
-                                                                    </owl:Restriction>
-                                                                </owl:intersectionOf>
-                                                            </owl:Class>
-                                                        </owl:someValuesFrom>
-                                                    </owl:Restriction>
-                                                </owl:intersectionOf>
-                                            </owl:Class>
-                                        </owl:someValuesFrom>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
-                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
-                    </owl:Restriction>
+                    <rdf:Description rdf:about="&rnao;RNAO_0000117"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="&rnao;RNAO_0000092"/>
+                                                            <owl:Restriction>
+                                                                <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
+                                                                <owl:someValuesFrom>
+                                                                    <owl:Class>
+                                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                                            <rdf:Description rdf:about="&rnao;RNAO_0000093"/>
+                                                                            <owl:Restriction>
+                                                                                <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
+                                                                                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
+                                                                            </owl:Restriction>
+                                                                        </owl:intersectionOf>
+                                                                    </owl:Class>
+                                                                </owl:someValuesFrom>
+                                                            </owl:Restriction>
+                                                        </owl:intersectionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
+                                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -1092,45 +1112,50 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
-                                        <owl:someValuesFrom>
-                                            <owl:Class>
-                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                    <rdf:Description rdf:about="&rnao;RNAO_0000092"/>
-                                                    <owl:Restriction>
-                                                        <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
-                                                        <owl:someValuesFrom>
-                                                            <owl:Class>
-                                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                                    <rdf:Description rdf:about="&rnao;RNAO_0000094"/>
-                                                                    <owl:Restriction>
-                                                                        <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
-                                                                        <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
-                                                                    </owl:Restriction>
-                                                                </owl:intersectionOf>
-                                                            </owl:Class>
-                                                        </owl:someValuesFrom>
-                                                    </owl:Restriction>
-                                                </owl:intersectionOf>
-                                            </owl:Class>
-                                        </owl:someValuesFrom>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
-                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
-                    </owl:Restriction>
+                    <rdf:Description rdf:about="&rnao;RNAO_0000116"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="&rnao;RNAO_0000092"/>
+                                                            <owl:Restriction>
+                                                                <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
+                                                                <owl:someValuesFrom>
+                                                                    <owl:Class>
+                                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                                            <rdf:Description rdf:about="&rnao;RNAO_0000094"/>
+                                                                            <owl:Restriction>
+                                                                                <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
+                                                                                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
+                                                                            </owl:Restriction>
+                                                                        </owl:intersectionOf>
+                                                                    </owl:Class>
+                                                                </owl:someValuesFrom>
+                                                            </owl:Restriction>
+                                                        </owl:intersectionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
+                                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -1149,45 +1174,50 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
-                                        <owl:someValuesFrom>
-                                            <owl:Class>
-                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                    <rdf:Description rdf:about="&rnao;RNAO_0000092"/>
-                                                    <owl:Restriction>
-                                                        <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
-                                                        <owl:someValuesFrom>
-                                                            <owl:Class>
-                                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                                    <rdf:Description rdf:about="&rnao;RNAO_0000094"/>
-                                                                    <owl:Restriction>
-                                                                        <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
-                                                                        <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
-                                                                    </owl:Restriction>
-                                                                </owl:intersectionOf>
-                                                            </owl:Class>
-                                                        </owl:someValuesFrom>
-                                                    </owl:Restriction>
-                                                </owl:intersectionOf>
-                                            </owl:Class>
-                                        </owl:someValuesFrom>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
-                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
-                    </owl:Restriction>
+                    <rdf:Description rdf:about="&rnao;RNAO_0000117"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="&rnao;RNAO_0000092"/>
+                                                            <owl:Restriction>
+                                                                <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
+                                                                <owl:someValuesFrom>
+                                                                    <owl:Class>
+                                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                                            <rdf:Description rdf:about="&rnao;RNAO_0000094"/>
+                                                                            <owl:Restriction>
+                                                                                <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
+                                                                                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
+                                                                            </owl:Restriction>
+                                                                        </owl:intersectionOf>
+                                                                    </owl:Class>
+                                                                </owl:someValuesFrom>
+                                                            </owl:Restriction>
+                                                        </owl:intersectionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
+                                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -1208,45 +1238,50 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
-                                        <owl:someValuesFrom>
-                                            <owl:Class>
-                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                    <rdf:Description rdf:about="&rnao;RNAO_0000093"/>
-                                                    <owl:Restriction>
-                                                        <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
-                                                        <owl:someValuesFrom>
-                                                            <owl:Class>
-                                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                                    <rdf:Description rdf:about="&rnao;RNAO_0000093"/>
-                                                                    <owl:Restriction>
-                                                                        <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
-                                                                        <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
-                                                                    </owl:Restriction>
-                                                                </owl:intersectionOf>
-                                                            </owl:Class>
-                                                        </owl:someValuesFrom>
-                                                    </owl:Restriction>
-                                                </owl:intersectionOf>
-                                            </owl:Class>
-                                        </owl:someValuesFrom>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
-                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
-                    </owl:Restriction>
+                    <rdf:Description rdf:about="&rnao;RNAO_0000116"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="&rnao;RNAO_0000093"/>
+                                                            <owl:Restriction>
+                                                                <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
+                                                                <owl:someValuesFrom>
+                                                                    <owl:Class>
+                                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                                            <rdf:Description rdf:about="&rnao;RNAO_0000093"/>
+                                                                            <owl:Restriction>
+                                                                                <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
+                                                                                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
+                                                                            </owl:Restriction>
+                                                                        </owl:intersectionOf>
+                                                                    </owl:Class>
+                                                                </owl:someValuesFrom>
+                                                            </owl:Restriction>
+                                                        </owl:intersectionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
+                                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -1267,45 +1302,50 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
-                                        <owl:someValuesFrom>
-                                            <owl:Class>
-                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                    <rdf:Description rdf:about="&rnao;RNAO_0000093"/>
-                                                    <owl:Restriction>
-                                                        <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
-                                                        <owl:someValuesFrom>
-                                                            <owl:Class>
-                                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                                    <rdf:Description rdf:about="&rnao;RNAO_0000093"/>
-                                                                    <owl:Restriction>
-                                                                        <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
-                                                                        <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
-                                                                    </owl:Restriction>
-                                                                </owl:intersectionOf>
-                                                            </owl:Class>
-                                                        </owl:someValuesFrom>
-                                                    </owl:Restriction>
-                                                </owl:intersectionOf>
-                                            </owl:Class>
-                                        </owl:someValuesFrom>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
-                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
-                    </owl:Restriction>
+                    <rdf:Description rdf:about="&rnao;RNAO_0000117"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="&rnao;RNAO_0000093"/>
+                                                            <owl:Restriction>
+                                                                <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
+                                                                <owl:someValuesFrom>
+                                                                    <owl:Class>
+                                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                                            <rdf:Description rdf:about="&rnao;RNAO_0000093"/>
+                                                                            <owl:Restriction>
+                                                                                <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
+                                                                                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
+                                                                            </owl:Restriction>
+                                                                        </owl:intersectionOf>
+                                                                    </owl:Class>
+                                                                </owl:someValuesFrom>
+                                                            </owl:Restriction>
+                                                        </owl:intersectionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
+                                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -1324,45 +1364,50 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
-                                        <owl:someValuesFrom>
-                                            <owl:Class>
-                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                    <rdf:Description rdf:about="&rnao;RNAO_0000093"/>
-                                                    <owl:Restriction>
-                                                        <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
-                                                        <owl:someValuesFrom>
-                                                            <owl:Class>
-                                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                                    <rdf:Description rdf:about="&rnao;RNAO_0000094"/>
-                                                                    <owl:Restriction>
-                                                                        <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
-                                                                        <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
-                                                                    </owl:Restriction>
-                                                                </owl:intersectionOf>
-                                                            </owl:Class>
-                                                        </owl:someValuesFrom>
-                                                    </owl:Restriction>
-                                                </owl:intersectionOf>
-                                            </owl:Class>
-                                        </owl:someValuesFrom>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
-                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
-                    </owl:Restriction>
+                    <rdf:Description rdf:about="&rnao;RNAO_0000116"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="&rnao;RNAO_0000093"/>
+                                                            <owl:Restriction>
+                                                                <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
+                                                                <owl:someValuesFrom>
+                                                                    <owl:Class>
+                                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                                            <rdf:Description rdf:about="&rnao;RNAO_0000094"/>
+                                                                            <owl:Restriction>
+                                                                                <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
+                                                                                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
+                                                                            </owl:Restriction>
+                                                                        </owl:intersectionOf>
+                                                                    </owl:Class>
+                                                                </owl:someValuesFrom>
+                                                            </owl:Restriction>
+                                                        </owl:intersectionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
+                                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -1381,45 +1426,50 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
-                                        <owl:someValuesFrom>
-                                            <owl:Class>
-                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                    <rdf:Description rdf:about="&rnao;RNAO_0000093"/>
-                                                    <owl:Restriction>
-                                                        <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
-                                                        <owl:someValuesFrom>
-                                                            <owl:Class>
-                                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                                    <rdf:Description rdf:about="&rnao;RNAO_0000094"/>
-                                                                    <owl:Restriction>
-                                                                        <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
-                                                                        <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
-                                                                    </owl:Restriction>
-                                                                </owl:intersectionOf>
-                                                            </owl:Class>
-                                                        </owl:someValuesFrom>
-                                                    </owl:Restriction>
-                                                </owl:intersectionOf>
-                                            </owl:Class>
-                                        </owl:someValuesFrom>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
-                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
-                    </owl:Restriction>
+                    <rdf:Description rdf:about="&rnao;RNAO_0000117"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="&rnao;RNAO_0000093"/>
+                                                            <owl:Restriction>
+                                                                <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
+                                                                <owl:someValuesFrom>
+                                                                    <owl:Class>
+                                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                                            <rdf:Description rdf:about="&rnao;RNAO_0000094"/>
+                                                                            <owl:Restriction>
+                                                                                <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
+                                                                                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
+                                                                            </owl:Restriction>
+                                                                        </owl:intersectionOf>
+                                                                    </owl:Class>
+                                                                </owl:someValuesFrom>
+                                                            </owl:Restriction>
+                                                        </owl:intersectionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
+                                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -1438,45 +1488,50 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
-                                        <owl:someValuesFrom>
-                                            <owl:Class>
-                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                    <rdf:Description rdf:about="&rnao;RNAO_0000094"/>
-                                                    <owl:Restriction>
-                                                        <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
-                                                        <owl:someValuesFrom>
-                                                            <owl:Class>
-                                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                                    <rdf:Description rdf:about="&rnao;RNAO_0000094"/>
-                                                                    <owl:Restriction>
-                                                                        <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
-                                                                        <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
-                                                                    </owl:Restriction>
-                                                                </owl:intersectionOf>
-                                                            </owl:Class>
-                                                        </owl:someValuesFrom>
-                                                    </owl:Restriction>
-                                                </owl:intersectionOf>
-                                            </owl:Class>
-                                        </owl:someValuesFrom>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
-                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
-                    </owl:Restriction>
+                    <rdf:Description rdf:about="&rnao;RNAO_0000116"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="&rnao;RNAO_0000094"/>
+                                                            <owl:Restriction>
+                                                                <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
+                                                                <owl:someValuesFrom>
+                                                                    <owl:Class>
+                                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                                            <rdf:Description rdf:about="&rnao;RNAO_0000094"/>
+                                                                            <owl:Restriction>
+                                                                                <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
+                                                                                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
+                                                                            </owl:Restriction>
+                                                                        </owl:intersectionOf>
+                                                                    </owl:Class>
+                                                                </owl:someValuesFrom>
+                                                            </owl:Restriction>
+                                                        </owl:intersectionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
+                                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -1495,45 +1550,50 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
-                                        <owl:someValuesFrom>
-                                            <owl:Class>
-                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                    <rdf:Description rdf:about="&rnao;RNAO_0000094"/>
-                                                    <owl:Restriction>
-                                                        <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
-                                                        <owl:someValuesFrom>
-                                                            <owl:Class>
-                                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                                    <rdf:Description rdf:about="&rnao;RNAO_0000094"/>
-                                                                    <owl:Restriction>
-                                                                        <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
-                                                                        <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
-                                                                    </owl:Restriction>
-                                                                </owl:intersectionOf>
-                                                            </owl:Class>
-                                                        </owl:someValuesFrom>
-                                                    </owl:Restriction>
-                                                </owl:intersectionOf>
-                                            </owl:Class>
-                                        </owl:someValuesFrom>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ro;has_part"/>
-                        <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
-                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
-                    </owl:Restriction>
+                    <rdf:Description rdf:about="&rnao;RNAO_0000117"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&rnao;RNAO_0000017"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&rnao;has_tangential_proper_part"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="&rnao;RNAO_0000094"/>
+                                                            <owl:Restriction>
+                                                                <owl:onProperty rdf:resource="&rnao;externally_connected_to"/>
+                                                                <owl:someValuesFrom>
+                                                                    <owl:Class>
+                                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                                            <rdf:Description rdf:about="&rnao;RNAO_0000094"/>
+                                                                            <owl:Restriction>
+                                                                                <owl:onProperty rdf:resource="&rnao;tangential_proper_part_of"/>
+                                                                                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000017"/>
+                                                                            </owl:Restriction>
+                                                                        </owl:intersectionOf>
+                                                                    </owl:Class>
+                                                                </owl:someValuesFrom>
+                                                            </owl:Restriction>
+                                                        </owl:intersectionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:onClass rdf:resource="&rnao;RNAO_0000019"/>
+                                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -3050,12 +3110,6 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&snap;MaterialEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ro;has_quality"/>
-                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000135"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;has_part"/>
                 <owl:someValuesFrom>
                     <owl:Class>
@@ -3068,6 +3122,12 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
                         </owl:intersectionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
+                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000135"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115
@@ -3317,13 +3377,13 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;has_quality"/>
-                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000138"/>
+                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000142"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;has_quality"/>
-                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000142"/>
+                <owl:someValuesFrom rdf:resource="&rnao;RNAO_0000138"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115
@@ -3424,5 +3484,5 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
 
 
 
-<!-- Generated by the OWL API (version 2.2.1.1101) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
 
