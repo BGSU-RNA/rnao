@@ -1,4 +1,4 @@
-:- use_module(library(lists)). % Yap
+:- use_module(library(lists)). 
 % uncomment the following to use with XSB
 %:- import reverse/2, append/3, ith/3 from basics.
 
@@ -27,6 +27,10 @@ stemloop(X):-
         top_connects(S,L),
         connects_bottom_of(L,S),
         mereological_union(S,L,X).
+
+hairpin_loop(X) :-
+        loop(X).
+
 
 :- table fullstemloop/1.
 fullstemloop(X):-
