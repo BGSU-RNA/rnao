@@ -53,7 +53,7 @@
            // pmolecule: x is a pmolecule iff x is a q1_connected_sum_of p and x is mereologically_maximal
            (forall (x)
                    (iff (pmolecule p x)
-                        (and (q_connected_sum_of x p)
+                        (and (q1_connected_sum_of x p)
                              (mereologically_maximal x))))
 
            // molecule: x is a molecule iff there is a collection p of atoms such that x is a pmolecule

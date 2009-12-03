@@ -78,14 +78,14 @@ sum_of_collection(X, P) :- q1_connected_sum_of(X, P).
 
 q1_connected_sum_of(X, P) :- atom_collection(P), sum_of_collection(X, P), \+(member_of(Y, P), member_of(Z, P), \+(q1_reachable(Y, Z))).
 
-% forall([x], iff(pmolecule(p, x), and(q_connected_sum_of(x, p), mereologically_maximal(x))))
-% and(forall([x], if(pmolecule(p, x), and(q_connected_sum_of(x, p), mereologically_maximal(x)))), forall([x], if(and(q_connected_sum_of(x, p), mereologically_maximal(x)), pmolecule(p, x))))
-% and(forall([x], if(pmolecule(p, x), q_connected_sum_of(x, p))), forall([x], if(pmolecule(p, x), mereologically_maximal(x))))
-q_connected_sum_of(X, p) :- pmolecule(p, X).
+% forall([x], iff(pmolecule(p, x), and(q1_connected_sum_of(x, p), mereologically_maximal(x))))
+% and(forall([x], if(pmolecule(p, x), and(q1_connected_sum_of(x, p), mereologically_maximal(x)))), forall([x], if(and(q1_connected_sum_of(x, p), mereologically_maximal(x)), pmolecule(p, x))))
+% and(forall([x], if(pmolecule(p, x), q1_connected_sum_of(x, p))), forall([x], if(pmolecule(p, x), mereologically_maximal(x))))
+q1_connected_sum_of(X, p) :- pmolecule(p, X).
 
 mereologically_maximal(X) :- pmolecule(p, X).
 
-pmolecule(p, X) :- q_connected_sum_of(X, p), mereologically_maximal(X).
+pmolecule(p, X) :- q1_connected_sum_of(X, p), mereologically_maximal(X).
 
 % forall([x], iff(instance_of(x, molecule), exists([p], pmolecule(p, x))))
 % and(forall([x], if(instance_of(x, molecule), exists([p], pmolecule(p, x)))), forall([x], if(exists([p], pmolecule(p, x)), instance_of(x, molecule))))

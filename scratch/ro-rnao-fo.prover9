@@ -19,7 +19,7 @@ formulas(sos).
  all x all y all z ((q1_reachable2(x, y) & q1_reachable2(y, z) -> q1_reachable2(x, z))).
  all x all y all z all t ((q1_reachable3(x, y, t) & q1_reachable3(y, z, t) -> q1_reachable3(x, z, t))).
  all x all p ((q1_connected_sum_of(x, p) <-> atom_collection(p) & sum_of_collection(x, p) &  all y all z ((member_of(y, p) & member_of(z, p) -> q1_reachable2(y, z))))).
- all x ((pmolecule("p", x) <-> q_connected_sum_of(x, "p") & mereologically_maximal(x))).
+ all x ((pmolecule("p", x) <-> q1_connected_sum_of(x, "p") & mereologically_maximal(x))).
  all x ((instance_of(x, "molecule") <->  exists p (pmolecule(p, x)))).
  all x all y ((sub_molecule_of(y, x) <->  exists p exists r (collection(p) & collection(r) & q1_connected_sum_of(y, r) & q1_connected_sum_of(x, p) & sub_collection_of(r, p)))).
  all a all b ((sub_collection_of(a, b) <->  all x ((member_of(x, a) -> member_of(x, b))))).
