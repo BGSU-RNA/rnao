@@ -2,41 +2,27 @@
 
 
 <!DOCTYPE rdf:RDF [
-    <!ENTITY snap2 "http://www.ifomis.org/snap#" >
-    <!ENTITY purl "http://purl.obofoundry.org/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY obo "http://purl.obolibrary.org/obo/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
     <!ENTITY snap "http://www.ifomis.org/bfo/1.1/snap#" >
-    <!ENTITY RNAO "http://purl.obolibrary.org/obo/RNAO#" >
-    <!ENTITY rnao "http://purl.obofoundry.org/obo/rnao/" >
     <!ENTITY ro "http://purl.obofoundry.org/ro/ro.owl#" >
-    <!ENTITY ro2 "http://purl.obolibrary.org/ro/ro.owl#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rnao2 "http://purl.obofoundry.org/obo/rnao.owl#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY obo2 "http://semanticscience.org/ontology/sulo.owl#http://purl.obolibrary.org/obo/" >
 ]>
 
 
-<rdf:RDF xmlns="&purl;obo/rnao.owl#"
-     xml:base="&obo;rnao.owl"
-     xmlns:ro="&purl;ro/ro.owl#"
-     xmlns:rnao2="&purl;obo/rnao.owl#"
-     xmlns:ro2="http://purl.obolibrary.org/ro/ro.owl#"
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/rnao.owl#"
+     xml:base="http://purl.obolibrary.org/obo/rnao.owl"
+     xmlns:ro="http://purl.obofoundry.org/ro/ro.owl#"
      xmlns:snap="http://www.ifomis.org/bfo/1.1/snap#"
-     xmlns:rnao="&purl;obo/rnao/"
-     xmlns:obo2="http://semanticscience.org/ontology/sulo.owl#&obo;"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
-     xmlns:purl="http://purl.obofoundry.org/"
-     xmlns:snap2="http://www.ifomis.org/snap#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:RNAO="&obo;RNAO#">
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <owl:Ontology rdf:about="">
         <owl:imports rdf:resource="http://www.ifomis.org/bfo/1.1"/>
     </owl:Ontology>
@@ -54,7 +40,7 @@
     <owl:AnnotationProperty rdf:about="&obo;IAO_0000115"/>
     <owl:AnnotationProperty rdf:about="&obo;IAO_0000111"/>
     <owl:AnnotationProperty rdf:about="&obo;IAO_0000117"/>
-    <owl:AnnotationProperty rdf:about="&purl;IAO_0000111"/>
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000111"/>
     <owl:AnnotationProperty rdf:about="&obo;IAO_0000112"/>
     
 
@@ -72,22 +58,22 @@
 
     <!-- http://purl.obofoundry.org/ro/ro.owl#has_part -->
 
-    <owl:ObjectProperty rdf:about="&purl;ro/ro.owl#has_part"/>
+    <owl:ObjectProperty rdf:about="&ro;has_part"/>
     
 
 
     <!-- http://purl.obofoundry.org/ro/ro.owl#has_proper_part -->
 
-    <owl:ObjectProperty rdf:about="&purl;ro/ro.owl#has_proper_part">
+    <owl:ObjectProperty rdf:about="&ro;has_proper_part">
         <rdfs:label>has_proper_part</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="&purl;ro/ro.owl#has_part"/>
+        <rdfs:subPropertyOf rdf:resource="&ro;has_part"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obofoundry.org/ro/ro.owl#has_quality -->
 
-    <owl:ObjectProperty rdf:about="&purl;ro/ro.owl#has_quality">
+    <owl:ObjectProperty rdf:about="&ro;has_quality">
         <rdfs:label>has_quality</rdfs:label>
     </owl:ObjectProperty>
     
@@ -95,18 +81,18 @@
 
     <!-- http://purl.obofoundry.org/ro/ro.owl#part_of -->
 
-    <owl:ObjectProperty rdf:about="&purl;ro/ro.owl#part_of">
+    <owl:ObjectProperty rdf:about="&ro;part_of">
         <rdfs:label>part_of</rdfs:label>
-        <owl:inverseOf rdf:resource="&purl;ro/ro.owl#has_part"/>
+        <owl:inverseOf rdf:resource="&ro;has_part"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obofoundry.org/ro/ro.owl#proper_part_of -->
 
-    <owl:ObjectProperty rdf:about="&purl;ro/ro.owl#proper_part_of">
+    <owl:ObjectProperty rdf:about="&ro;proper_part_of">
         <rdfs:label>proper_part_of</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="&purl;ro/ro.owl#part_of"/>
+        <rdfs:subPropertyOf rdf:resource="&ro;part_of"/>
     </owl:ObjectProperty>
     
 
@@ -122,17 +108,17 @@
 
     <!-- http://purl.obolibrary.org/obo/RNAO#backbone_connected_to -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#backbone_connected_to">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_backbone_connected_to">
         <rdfs:label
             >backbone_connected_to</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#covalently_bonded_to"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_covalently_bonded_to"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#connected_to -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#connected_to">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_connected_to">
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
         <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <rdfs:label>connected_to</rdfs:label>
@@ -142,7 +128,7 @@
 
     <!-- http://purl.obolibrary.org/obo/RNAO#covalently_bonded_to -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#covalently_bonded_to">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_covalently_bonded_to">
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
         <rdfs:label
             >covalently_bonded_to</rdfs:label>
@@ -150,28 +136,28 @@
             >y is covalently_bonded_to z iff [(y and z are atoms) and (there exists a covalent bond between y and z)]</obo:IAO_0000115>
         <rdfs:range rdf:resource="&obo;CHEBI_33250"/>
         <rdfs:domain rdf:resource="&obo;CHEBI_33250"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#covalently_connected_to"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_covalently_connected_to"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#covalently_connected_to -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#covalently_connected_to">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_covalently_connected_to">
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
         <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <rdfs:label
             >covalently_connected_to</rdfs:label>
         <obo:IAO_0000115
             >m Covalently_connected_to n iff (m and n are part of molecules) and there exist x and y such that (x and y are atoms) and x part_of m and y part_of n and x covalently_bonded_to y.</obo:IAO_0000115>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#connected_to"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_connected_to"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#disconnected_from -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#disconnected_from">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_disconnected_from">
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
         <rdfs:label
             >disconnected_from</rdfs:label>
@@ -181,56 +167,56 @@
 
     <!-- http://purl.obolibrary.org/obo/RNAO#externally_connected_to -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#externally_connected_to">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_externally_connected_to">
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
         <rdfs:label
             >externally_connected_to</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#connected_to"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_connected_to"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#five_prime_to_five_prime_to -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#five_prime_to_five_prime_to">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_five_prime_to_five_prime_to">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
         <rdfs:label
             >five_prime_to_five_prime_to</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#backbone_connected_to"/>
-        <owl:propertyDisjointWith rdf:resource="&obo;RNAO#five_prime_to_three_prime_to"/>
-        <owl:propertyDisjointWith rdf:resource="&obo;RNAO#five_prime_to_two_prime_to"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_backbone_connected_to"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_five_prime_to_three_prime_to"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_five_prime_to_two_prime_to"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#five_prime_to_three_prime_to -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#five_prime_to_three_prime_to">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_five_prime_to_three_prime_to">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label
             >five_prime_to_three_prime_to</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#backbone_connected_to"/>
-        <owl:propertyDisjointWith rdf:resource="&obo;RNAO#five_prime_to_two_prime_to"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_backbone_connected_to"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_five_prime_to_two_prime_to"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#five_prime_to_two_prime_to -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#five_prime_to_two_prime_to">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_five_prime_to_two_prime_to">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label
             >five_prime_to_two_prime_to</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#backbone_connected_to"/>
-        <owl:inverseOf rdf:resource="&obo;RNAO#two_prime_to_five_prime_to"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_backbone_connected_to"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_two_prime_to_five_prime_to"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#has_boundary -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#has_boundary">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_has_boundary">
         <rdfs:label>has_boundary</rdfs:label>
     </owl:ObjectProperty>
     
@@ -238,38 +224,38 @@
 
     <!-- http://purl.obolibrary.org/obo/RNAO#has_non_tangential_proper_part -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#has_non_tangential_proper_part">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_has_non_tangential_proper_part">
         <rdfs:label
             >has_non_tangential_proper_part</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="&purl;ro/ro.owl#has_proper_part"/>
+        <rdfs:subPropertyOf rdf:resource="&ro;has_proper_part"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#has_tangential_proper_part -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#has_tangential_proper_part">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_has_tangential_proper_part">
         <rdfs:label
             >has_tangential_proper_part</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="&purl;ro/ro.owl#has_proper_part"/>
-        <owl:inverseOf rdf:resource="&obo;RNAO#tangential_proper_part_of"/>
+        <rdfs:subPropertyOf rdf:resource="&ro;has_proper_part"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_tangential_proper_part_of"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#isosteric_with -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#isosteric_with">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_isosteric_with">
         <rdf:type rdf:resource="&owl;ReflexiveProperty"/>
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
-        <owl:propertyDisjointWith rdf:resource="&obo;RNAO#near_isosteric_with"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_near_isosteric_with"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#near_isosteric_with -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#near_isosteric_with">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_near_isosteric_with">
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
     </owl:ObjectProperty>
     
@@ -277,19 +263,19 @@
 
     <!-- http://purl.obolibrary.org/obo/RNAO#non_tangential_proper_part-of -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#non_tangential_proper_part-of">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_non_tangential_proper_part-of">
         <rdfs:label
             >non_tangential_proper_part_of</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="&purl;ro/ro.owl#proper_part_of"/>
-        <owl:inverseOf rdf:resource="&obo;RNAO#has_non_tangential_proper_part"/>
+        <rdfs:subPropertyOf rdf:resource="&ro;proper_part_of"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_has_non_tangential_proper_part"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with">
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#weakly_interacting_with"/>
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with">
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_weakly_interacting_with"/>
         <rdfs:domain rdf:resource="&obo;RNAO_0000020"/>
         <rdfs:range>
             <owl:Class>
@@ -305,95 +291,95 @@
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_CHH -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_CHH">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_CHH">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with_HH"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with_HH"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_CHS -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_CHS">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_CHS">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with_HS"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with_HS"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_CHW -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_CHW">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_CHW">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with_HW"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with_HW"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_CSH -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_CSH">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_CSH">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <owl:inverseOf rdf:resource="&obo;RNAO#pairs_with_CHS"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with_SH"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_pairs_with_CHS"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with_SH"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_CSS -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_CSS">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_CSS">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with_SS"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with_SS"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_CSW -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_CSW">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_CSW">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with_SW"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with_SW"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_CWH -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_CWH">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_CWH">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <owl:inverseOf rdf:resource="&obo;RNAO#pairs_with_CHW"/>
-        <owl:propertyDisjointWith rdf:resource="&obo;RNAO#pairs_with_TWH"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with_WH"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_pairs_with_CHW"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_pairs_with_TWH"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with_WH"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_CWS -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_CWS">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_CWS">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <owl:inverseOf rdf:resource="&obo;RNAO#pairs_with_CSW"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with_WS"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_pairs_with_CSW"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with_WS"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_CWW -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_CWW">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_CWW">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with_WW"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with_WW"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_HH -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_HH">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_HH">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with"/>
         <owl:propertyDisjointWith rdf:resource="&obo;interacts_with_HPh"/>
     </owl:ObjectProperty>
     
@@ -401,9 +387,9 @@
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_HS -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_HS">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_HS">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with"/>
         <owl:propertyDisjointWith rdf:resource="&obo;interacts_with_HPh"/>
     </owl:ObjectProperty>
     
@@ -411,10 +397,10 @@
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_HW -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_HW">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_HW">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with"/>
-        <owl:inverseOf rdf:resource="&obo;RNAO#pairs_with_WH"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_pairs_with_WH"/>
         <owl:propertyDisjointWith rdf:resource="&obo;interacts_with_HPh"/>
     </owl:ObjectProperty>
     
@@ -422,9 +408,9 @@
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_SH -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_SH">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_SH">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with"/>
         <owl:propertyDisjointWith rdf:resource="&obo;interacts_with_1BPh"/>
     </owl:ObjectProperty>
     
@@ -432,9 +418,9 @@
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_SS -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_SS">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_SS">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with"/>
         <owl:propertyDisjointWith rdf:resource="&obo;interacts_with_1BPh"/>
     </owl:ObjectProperty>
     
@@ -442,9 +428,9 @@
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_SW -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_SW">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_SW">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with"/>
         <owl:propertyDisjointWith rdf:resource="&obo;interacts_with_1BPh"/>
     </owl:ObjectProperty>
     
@@ -452,96 +438,96 @@
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_THH -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_THH">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_THH">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with_HH"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with_HH"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_THS -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_THS">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_THS">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with_HS"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with_HS"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_THW -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_THW">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_THW">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with_HW"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with_HW"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_TSH -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_TSH">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_TSH">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with_SH"/>
-        <owl:inverseOf rdf:resource="&obo;RNAO#pairs_with_THS"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with_SH"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_pairs_with_THS"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_TSS -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_TSS">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_TSS">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with_SS"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with_SS"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_TSW -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_TSW">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_TSW">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with_SW"/>
-        <owl:inverseOf rdf:resource="&obo;RNAO#pairs_with_TWS"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with_SW"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_pairs_with_TWS"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_TWH -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_TWH">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_TWH">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <owl:inverseOf rdf:resource="&obo;RNAO#pairs_with_THW"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with_WH"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_pairs_with_THW"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with_WH"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_TWS -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_TWS">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_TWS">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with_WS"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with_WS"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_TWW -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_TWW">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_TWW">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with_WW"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with_WW"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_WH -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_WH">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_WH">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with"/>
-        <owl:propertyDisjointWith rdf:resource="&obo;RNAO#pairs_with_WS"/>
-        <owl:propertyDisjointWith rdf:resource="&obo;RNAO#pairs_with_WW"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_pairs_with_WS"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_pairs_with_WW"/>
         <owl:propertyDisjointWith rdf:resource="&obo;interacts_with_WPh"/>
     </owl:ObjectProperty>
     
@@ -549,10 +535,10 @@
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_WS -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_WS">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_WS">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with"/>
-        <owl:propertyDisjointWith rdf:resource="&obo;RNAO#pairs_with_WW"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_pairs_with_WW"/>
         <owl:propertyDisjointWith rdf:resource="&obo;interacts_with_WPh"/>
     </owl:ObjectProperty>
     
@@ -560,9 +546,9 @@
 
     <!-- http://purl.obolibrary.org/obo/RNAO#pairs_with_WW -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#pairs_with_WW">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_pairs_with_WW">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#pairs_with"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_pairs_with"/>
         <owl:propertyDisjointWith rdf:resource="&obo;interacts_with_WPh"/>
     </owl:ObjectProperty>
     
@@ -570,138 +556,138 @@
 
     <!-- http://purl.obolibrary.org/obo/RNAO#stacks_five_prime_face_five_prime_face -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#stacks_five_prime_face_five_prime_face">
-        <owl:propertyDisjointWith rdf:resource="&obo;RNAO#stacks_five_prime_face_three_prime_face"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#stacks_with"/>
+    <owl:ObjectProperty rdf:about="&obo;RNAO_stacks_five_prime_face_five_prime_face">
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_stacks_five_prime_face_three_prime_face"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_stacks_with"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#stacks_five_prime_face_three_prime_face -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#stacks_five_prime_face_three_prime_face">
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#stacks_with"/>
+    <owl:ObjectProperty rdf:about="&obo;RNAO_stacks_five_prime_face_three_prime_face">
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_stacks_with"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#stacks_three_prime_face_five_prime_face -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#stacks_three_prime_face_five_prime_face">
-        <owl:propertyDisjointWith rdf:resource="&obo;RNAO#stacks_three_prime_face_three_prime_face"/>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#stacks_with"/>
+    <owl:ObjectProperty rdf:about="&obo;RNAO_stacks_three_prime_face_five_prime_face">
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_stacks_three_prime_face_three_prime_face"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_stacks_with"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#stacks_three_prime_face_three_prime_face -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#stacks_three_prime_face_three_prime_face">
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#stacks_with"/>
+    <owl:ObjectProperty rdf:about="&obo;RNAO_stacks_three_prime_face_three_prime_face">
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_stacks_with"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#stacks_with -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#stacks_with">
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#weakly_interacting_with"/>
+    <owl:ObjectProperty rdf:about="&obo;RNAO_stacks_with">
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_weakly_interacting_with"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#tangential_proper_part_of -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#tangential_proper_part_of">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_tangential_proper_part_of">
         <rdfs:label
             >tangential_proper_part_of</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="&purl;ro/ro.owl#proper_part_of"/>
+        <rdfs:subPropertyOf rdf:resource="&ro;proper_part_of"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#three_prime_to_five_prime_to -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#three_prime_to_five_prime_to">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_three_prime_to_five_prime_to">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label
             >three_prime_to_five_prime_to</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#backbone_connected_to"/>
-        <owl:inverseOf rdf:resource="&obo;RNAO#five_prime_to_three_prime_to"/>
-        <owl:propertyDisjointWith rdf:resource="&obo;RNAO#three_prime_to_three_prime_to"/>
-        <owl:propertyDisjointWith rdf:resource="&obo;RNAO#three_prime_to_two_prime_to"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_backbone_connected_to"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_five_prime_to_three_prime_to"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_three_prime_to_three_prime_to"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_three_prime_to_two_prime_to"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#three_prime_to_three_prime_to -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#three_prime_to_three_prime_to">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_three_prime_to_three_prime_to">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
         <rdfs:label
             >three_prime_to_three_prime_to</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#backbone_connected_to"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_backbone_connected_to"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#three_prime_to_two_prime_to -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#three_prime_to_two_prime_to">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_three_prime_to_two_prime_to">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label
             >three_prime_to_two_prime_to</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#backbone_connected_to"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_backbone_connected_to"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#two_prime_to_five_prime_to -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#two_prime_to_five_prime_to">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_two_prime_to_five_prime_to">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label
             >two_prime_to_five_prime_to</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#backbone_connected_to"/>
-        <owl:propertyDisjointWith rdf:resource="&obo;RNAO#two_prime_to_three_prime_to"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_backbone_connected_to"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_two_prime_to_three_prime_to"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#two_prime_to_three_prime_to -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#two_prime_to_three_prime_to">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_two_prime_to_three_prime_to">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label
             >two_prime_to_three_prime_to</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#backbone_connected_to"/>
-        <owl:inverseOf rdf:resource="&obo;RNAO#three_prime_to_two_prime_to"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_backbone_connected_to"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_three_prime_to_two_prime_to"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#weakly_connected_to -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#weakly_connected_to">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_weakly_connected_to">
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
         <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <rdfs:label
             >weakly_connected_to</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#connected_to"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_connected_to"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RNAO#weakly_interacting_with -->
 
-    <owl:ObjectProperty rdf:about="&obo;RNAO#weakly_interacting_with">
+    <owl:ObjectProperty rdf:about="&obo;RNAO_weakly_interacting_with">
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
         <rdfs:label
             >weakly_interacting_with</rdfs:label>
         <obo:IAO_0000115
             >x weakly_interating_with y iff [(x and y are Instances_of (material entity)) and there is an (not covalent) attractive interaction between x and y which are spatially adjacent.]</obo:IAO_0000115>
-        <rdfs:subPropertyOf rdf:resource="&obo;RNAO#weakly_connected_to"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_weakly_connected_to"/>
     </owl:ObjectProperty>
     
 
@@ -929,13 +915,13 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&snap;MaterialEntity"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                        <owl:onProperty rdf:resource="&ro;has_part"/>
                         <owl:someValuesFrom>
                             <owl:Class>
                                 <owl:intersectionOf rdf:parseType="Collection">
                                     <rdf:Description rdf:about="&obo;RNAO_0000017"/>
                                     <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&obo;RNAO#pairs_with"/>
+                                        <owl:onProperty rdf:resource="&obo;RNAO_pairs_with"/>
                                         <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
                                     </owl:Restriction>
                                 </owl:intersectionOf>
@@ -978,32 +964,32 @@
                             <owl:Class>
                                 <owl:complementOf>
                                     <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                        <owl:onProperty rdf:resource="&ro;has_part"/>
                                         <owl:onClass rdf:resource="&obo;RNAO_0000028"/>
                                         <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
                                     </owl:Restriction>
                                 </owl:complementOf>
                             </owl:Class>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:someValuesFrom>
                                     <owl:Class>
                                         <owl:intersectionOf rdf:parseType="Collection">
                                             <rdf:Description rdf:about="&obo;RNAO_0000017"/>
                                             <owl:Restriction>
-                                                <owl:onProperty rdf:resource="&obo;RNAO#has_tangential_proper_part"/>
+                                                <owl:onProperty rdf:resource="&obo;RNAO_has_tangential_proper_part"/>
                                                 <owl:someValuesFrom>
                                                     <owl:Class>
                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                             <rdf:Description rdf:about="&obo;RNAO_0000092"/>
                                                             <owl:Restriction>
-                                                                <owl:onProperty rdf:resource="&obo;RNAO#externally_connected_to"/>
+                                                                <owl:onProperty rdf:resource="&obo;RNAO_externally_connected_to"/>
                                                                 <owl:someValuesFrom>
                                                                     <owl:Class>
                                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                                             <rdf:Description rdf:about="&obo;RNAO_0000092"/>
                                                                             <owl:Restriction>
-                                                                                <owl:onProperty rdf:resource="&obo;RNAO#tangential_proper_part_of"/>
+                                                                                <owl:onProperty rdf:resource="&obo;RNAO_tangential_proper_part_of"/>
                                                                                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
                                                                             </owl:Restriction>
                                                                         </owl:intersectionOf>
@@ -1019,7 +1005,7 @@
                                 </owl:someValuesFrom>
                             </owl:Restriction>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
                                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
                             </owl:Restriction>
@@ -1051,11 +1037,11 @@
                                     <owl:Class>
                                         <owl:intersectionOf rdf:parseType="Collection">
                                             <owl:Restriction>
-                                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000027"/>
                                             </owl:Restriction>
                                             <owl:Restriction>
-                                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000028"/>
                                             </owl:Restriction>
                                         </owl:intersectionOf>
@@ -1063,25 +1049,25 @@
                                 </owl:complementOf>
                             </owl:Class>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:someValuesFrom>
                                     <owl:Class>
                                         <owl:intersectionOf rdf:parseType="Collection">
                                             <rdf:Description rdf:about="&obo;RNAO_0000017"/>
                                             <owl:Restriction>
-                                                <owl:onProperty rdf:resource="&obo;RNAO#has_tangential_proper_part"/>
+                                                <owl:onProperty rdf:resource="&obo;RNAO_has_tangential_proper_part"/>
                                                 <owl:someValuesFrom>
                                                     <owl:Class>
                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                             <rdf:Description rdf:about="&obo;RNAO_0000092"/>
                                                             <owl:Restriction>
-                                                                <owl:onProperty rdf:resource="&obo;RNAO#externally_connected_to"/>
+                                                                <owl:onProperty rdf:resource="&obo;RNAO_externally_connected_to"/>
                                                                 <owl:someValuesFrom>
                                                                     <owl:Class>
                                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                                             <rdf:Description rdf:about="&obo;RNAO_0000092"/>
                                                                             <owl:Restriction>
-                                                                                <owl:onProperty rdf:resource="&obo;RNAO#tangential_proper_part_of"/>
+                                                                                <owl:onProperty rdf:resource="&obo;RNAO_tangential_proper_part_of"/>
                                                                                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
                                                                             </owl:Restriction>
                                                                         </owl:intersectionOf>
@@ -1097,7 +1083,7 @@
                                 </owl:someValuesFrom>
                             </owl:Restriction>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
                                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
                             </owl:Restriction>
@@ -1125,25 +1111,25 @@
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:someValuesFrom>
                                     <owl:Class>
                                         <owl:intersectionOf rdf:parseType="Collection">
                                             <rdf:Description rdf:about="&obo;RNAO_0000017"/>
                                             <owl:Restriction>
-                                                <owl:onProperty rdf:resource="&obo;RNAO#has_tangential_proper_part"/>
+                                                <owl:onProperty rdf:resource="&obo;RNAO_has_tangential_proper_part"/>
                                                 <owl:someValuesFrom>
                                                     <owl:Class>
                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                             <rdf:Description rdf:about="&obo;RNAO_0000092"/>
                                                             <owl:Restriction>
-                                                                <owl:onProperty rdf:resource="&obo;RNAO#externally_connected_to"/>
+                                                                <owl:onProperty rdf:resource="&obo;RNAO_externally_connected_to"/>
                                                                 <owl:someValuesFrom>
                                                                     <owl:Class>
                                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                                             <rdf:Description rdf:about="&obo;RNAO_0000093"/>
                                                                             <owl:Restriction>
-                                                                                <owl:onProperty rdf:resource="&obo;RNAO#tangential_proper_part_of"/>
+                                                                                <owl:onProperty rdf:resource="&obo;RNAO_tangential_proper_part_of"/>
                                                                                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
                                                                             </owl:Restriction>
                                                                         </owl:intersectionOf>
@@ -1159,7 +1145,7 @@
                                 </owl:someValuesFrom>
                             </owl:Restriction>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
                                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
                             </owl:Restriction>
@@ -1189,25 +1175,25 @@
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:someValuesFrom>
                                     <owl:Class>
                                         <owl:intersectionOf rdf:parseType="Collection">
                                             <rdf:Description rdf:about="&obo;RNAO_0000017"/>
                                             <owl:Restriction>
-                                                <owl:onProperty rdf:resource="&obo;RNAO#has_tangential_proper_part"/>
+                                                <owl:onProperty rdf:resource="&obo;RNAO_has_tangential_proper_part"/>
                                                 <owl:someValuesFrom>
                                                     <owl:Class>
                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                             <rdf:Description rdf:about="&obo;RNAO_0000092"/>
                                                             <owl:Restriction>
-                                                                <owl:onProperty rdf:resource="&obo;RNAO#externally_connected_to"/>
+                                                                <owl:onProperty rdf:resource="&obo;RNAO_externally_connected_to"/>
                                                                 <owl:someValuesFrom>
                                                                     <owl:Class>
                                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                                             <rdf:Description rdf:about="&obo;RNAO_0000093"/>
                                                                             <owl:Restriction>
-                                                                                <owl:onProperty rdf:resource="&obo;RNAO#tangential_proper_part_of"/>
+                                                                                <owl:onProperty rdf:resource="&obo;RNAO_tangential_proper_part_of"/>
                                                                                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
                                                                             </owl:Restriction>
                                                                         </owl:intersectionOf>
@@ -1223,7 +1209,7 @@
                                 </owl:someValuesFrom>
                             </owl:Restriction>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
                                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
                             </owl:Restriction>
@@ -1253,25 +1239,25 @@
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:someValuesFrom>
                                     <owl:Class>
                                         <owl:intersectionOf rdf:parseType="Collection">
                                             <rdf:Description rdf:about="&obo;RNAO_0000017"/>
                                             <owl:Restriction>
-                                                <owl:onProperty rdf:resource="&obo;RNAO#has_tangential_proper_part"/>
+                                                <owl:onProperty rdf:resource="&obo;RNAO_has_tangential_proper_part"/>
                                                 <owl:someValuesFrom>
                                                     <owl:Class>
                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                             <rdf:Description rdf:about="&obo;RNAO_0000092"/>
                                                             <owl:Restriction>
-                                                                <owl:onProperty rdf:resource="&obo;RNAO#externally_connected_to"/>
+                                                                <owl:onProperty rdf:resource="&obo;RNAO_externally_connected_to"/>
                                                                 <owl:someValuesFrom>
                                                                     <owl:Class>
                                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                                             <rdf:Description rdf:about="&obo;RNAO_0000094"/>
                                                                             <owl:Restriction>
-                                                                                <owl:onProperty rdf:resource="&obo;RNAO#tangential_proper_part_of"/>
+                                                                                <owl:onProperty rdf:resource="&obo;RNAO_tangential_proper_part_of"/>
                                                                                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
                                                                             </owl:Restriction>
                                                                         </owl:intersectionOf>
@@ -1287,7 +1273,7 @@
                                 </owl:someValuesFrom>
                             </owl:Restriction>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
                                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
                             </owl:Restriction>
@@ -1315,25 +1301,25 @@
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:someValuesFrom>
                                     <owl:Class>
                                         <owl:intersectionOf rdf:parseType="Collection">
                                             <rdf:Description rdf:about="&obo;RNAO_0000017"/>
                                             <owl:Restriction>
-                                                <owl:onProperty rdf:resource="&obo;RNAO#has_tangential_proper_part"/>
+                                                <owl:onProperty rdf:resource="&obo;RNAO_has_tangential_proper_part"/>
                                                 <owl:someValuesFrom>
                                                     <owl:Class>
                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                             <rdf:Description rdf:about="&obo;RNAO_0000092"/>
                                                             <owl:Restriction>
-                                                                <owl:onProperty rdf:resource="&obo;RNAO#externally_connected_to"/>
+                                                                <owl:onProperty rdf:resource="&obo;RNAO_externally_connected_to"/>
                                                                 <owl:someValuesFrom>
                                                                     <owl:Class>
                                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                                             <rdf:Description rdf:about="&obo;RNAO_0000094"/>
                                                                             <owl:Restriction>
-                                                                                <owl:onProperty rdf:resource="&obo;RNAO#tangential_proper_part_of"/>
+                                                                                <owl:onProperty rdf:resource="&obo;RNAO_tangential_proper_part_of"/>
                                                                                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
                                                                             </owl:Restriction>
                                                                         </owl:intersectionOf>
@@ -1349,7 +1335,7 @@
                                 </owl:someValuesFrom>
                             </owl:Restriction>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
                                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
                             </owl:Restriction>
@@ -1379,25 +1365,25 @@
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:someValuesFrom>
                                     <owl:Class>
                                         <owl:intersectionOf rdf:parseType="Collection">
                                             <rdf:Description rdf:about="&obo;RNAO_0000017"/>
                                             <owl:Restriction>
-                                                <owl:onProperty rdf:resource="&obo;RNAO#has_tangential_proper_part"/>
+                                                <owl:onProperty rdf:resource="&obo;RNAO_has_tangential_proper_part"/>
                                                 <owl:someValuesFrom>
                                                     <owl:Class>
                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                             <rdf:Description rdf:about="&obo;RNAO_0000093"/>
                                                             <owl:Restriction>
-                                                                <owl:onProperty rdf:resource="&obo;RNAO#externally_connected_to"/>
+                                                                <owl:onProperty rdf:resource="&obo;RNAO_externally_connected_to"/>
                                                                 <owl:someValuesFrom>
                                                                     <owl:Class>
                                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                                             <rdf:Description rdf:about="&obo;RNAO_0000093"/>
                                                                             <owl:Restriction>
-                                                                                <owl:onProperty rdf:resource="&obo;RNAO#tangential_proper_part_of"/>
+                                                                                <owl:onProperty rdf:resource="&obo;RNAO_tangential_proper_part_of"/>
                                                                                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
                                                                             </owl:Restriction>
                                                                         </owl:intersectionOf>
@@ -1413,7 +1399,7 @@
                                 </owl:someValuesFrom>
                             </owl:Restriction>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
                                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
                             </owl:Restriction>
@@ -1443,25 +1429,25 @@
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:someValuesFrom>
                                     <owl:Class>
                                         <owl:intersectionOf rdf:parseType="Collection">
                                             <rdf:Description rdf:about="&obo;RNAO_0000017"/>
                                             <owl:Restriction>
-                                                <owl:onProperty rdf:resource="&obo;RNAO#has_tangential_proper_part"/>
+                                                <owl:onProperty rdf:resource="&obo;RNAO_has_tangential_proper_part"/>
                                                 <owl:someValuesFrom>
                                                     <owl:Class>
                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                             <rdf:Description rdf:about="&obo;RNAO_0000093"/>
                                                             <owl:Restriction>
-                                                                <owl:onProperty rdf:resource="&obo;RNAO#externally_connected_to"/>
+                                                                <owl:onProperty rdf:resource="&obo;RNAO_externally_connected_to"/>
                                                                 <owl:someValuesFrom>
                                                                     <owl:Class>
                                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                                             <rdf:Description rdf:about="&obo;RNAO_0000093"/>
                                                                             <owl:Restriction>
-                                                                                <owl:onProperty rdf:resource="&obo;RNAO#tangential_proper_part_of"/>
+                                                                                <owl:onProperty rdf:resource="&obo;RNAO_tangential_proper_part_of"/>
                                                                                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
                                                                             </owl:Restriction>
                                                                         </owl:intersectionOf>
@@ -1477,7 +1463,7 @@
                                 </owl:someValuesFrom>
                             </owl:Restriction>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
                                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
                             </owl:Restriction>
@@ -1505,25 +1491,25 @@
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:someValuesFrom>
                                     <owl:Class>
                                         <owl:intersectionOf rdf:parseType="Collection">
                                             <rdf:Description rdf:about="&obo;RNAO_0000017"/>
                                             <owl:Restriction>
-                                                <owl:onProperty rdf:resource="&obo;RNAO#has_tangential_proper_part"/>
+                                                <owl:onProperty rdf:resource="&obo;RNAO_has_tangential_proper_part"/>
                                                 <owl:someValuesFrom>
                                                     <owl:Class>
                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                             <rdf:Description rdf:about="&obo;RNAO_0000093"/>
                                                             <owl:Restriction>
-                                                                <owl:onProperty rdf:resource="&obo;RNAO#externally_connected_to"/>
+                                                                <owl:onProperty rdf:resource="&obo;RNAO_externally_connected_to"/>
                                                                 <owl:someValuesFrom>
                                                                     <owl:Class>
                                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                                             <rdf:Description rdf:about="&obo;RNAO_0000094"/>
                                                                             <owl:Restriction>
-                                                                                <owl:onProperty rdf:resource="&obo;RNAO#tangential_proper_part_of"/>
+                                                                                <owl:onProperty rdf:resource="&obo;RNAO_tangential_proper_part_of"/>
                                                                                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
                                                                             </owl:Restriction>
                                                                         </owl:intersectionOf>
@@ -1539,7 +1525,7 @@
                                 </owl:someValuesFrom>
                             </owl:Restriction>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
                                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
                             </owl:Restriction>
@@ -1567,25 +1553,25 @@
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:someValuesFrom>
                                     <owl:Class>
                                         <owl:intersectionOf rdf:parseType="Collection">
                                             <rdf:Description rdf:about="&obo;RNAO_0000017"/>
                                             <owl:Restriction>
-                                                <owl:onProperty rdf:resource="&obo;RNAO#has_tangential_proper_part"/>
+                                                <owl:onProperty rdf:resource="&obo;RNAO_has_tangential_proper_part"/>
                                                 <owl:someValuesFrom>
                                                     <owl:Class>
                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                             <rdf:Description rdf:about="&obo;RNAO_0000093"/>
                                                             <owl:Restriction>
-                                                                <owl:onProperty rdf:resource="&obo;RNAO#externally_connected_to"/>
+                                                                <owl:onProperty rdf:resource="&obo;RNAO_externally_connected_to"/>
                                                                 <owl:someValuesFrom>
                                                                     <owl:Class>
                                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                                             <rdf:Description rdf:about="&obo;RNAO_0000094"/>
                                                                             <owl:Restriction>
-                                                                                <owl:onProperty rdf:resource="&obo;RNAO#tangential_proper_part_of"/>
+                                                                                <owl:onProperty rdf:resource="&obo;RNAO_tangential_proper_part_of"/>
                                                                                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
                                                                             </owl:Restriction>
                                                                         </owl:intersectionOf>
@@ -1601,7 +1587,7 @@
                                 </owl:someValuesFrom>
                             </owl:Restriction>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
                                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
                             </owl:Restriction>
@@ -1629,25 +1615,25 @@
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:someValuesFrom>
                                     <owl:Class>
                                         <owl:intersectionOf rdf:parseType="Collection">
                                             <rdf:Description rdf:about="&obo;RNAO_0000017"/>
                                             <owl:Restriction>
-                                                <owl:onProperty rdf:resource="&obo;RNAO#has_tangential_proper_part"/>
+                                                <owl:onProperty rdf:resource="&obo;RNAO_has_tangential_proper_part"/>
                                                 <owl:someValuesFrom>
                                                     <owl:Class>
                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                             <rdf:Description rdf:about="&obo;RNAO_0000094"/>
                                                             <owl:Restriction>
-                                                                <owl:onProperty rdf:resource="&obo;RNAO#externally_connected_to"/>
+                                                                <owl:onProperty rdf:resource="&obo;RNAO_externally_connected_to"/>
                                                                 <owl:someValuesFrom>
                                                                     <owl:Class>
                                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                                             <rdf:Description rdf:about="&obo;RNAO_0000094"/>
                                                                             <owl:Restriction>
-                                                                                <owl:onProperty rdf:resource="&obo;RNAO#tangential_proper_part_of"/>
+                                                                                <owl:onProperty rdf:resource="&obo;RNAO_tangential_proper_part_of"/>
                                                                                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
                                                                             </owl:Restriction>
                                                                         </owl:intersectionOf>
@@ -1663,7 +1649,7 @@
                                 </owl:someValuesFrom>
                             </owl:Restriction>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
                                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
                             </owl:Restriction>
@@ -1691,25 +1677,25 @@
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:someValuesFrom>
                                     <owl:Class>
                                         <owl:intersectionOf rdf:parseType="Collection">
                                             <rdf:Description rdf:about="&obo;RNAO_0000017"/>
                                             <owl:Restriction>
-                                                <owl:onProperty rdf:resource="&obo;RNAO#has_tangential_proper_part"/>
+                                                <owl:onProperty rdf:resource="&obo;RNAO_has_tangential_proper_part"/>
                                                 <owl:someValuesFrom>
                                                     <owl:Class>
                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                             <rdf:Description rdf:about="&obo;RNAO_0000094"/>
                                                             <owl:Restriction>
-                                                                <owl:onProperty rdf:resource="&obo;RNAO#externally_connected_to"/>
+                                                                <owl:onProperty rdf:resource="&obo;RNAO_externally_connected_to"/>
                                                                 <owl:someValuesFrom>
                                                                     <owl:Class>
                                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                                             <rdf:Description rdf:about="&obo;RNAO_0000094"/>
                                                                             <owl:Restriction>
-                                                                                <owl:onProperty rdf:resource="&obo;RNAO#tangential_proper_part_of"/>
+                                                                                <owl:onProperty rdf:resource="&obo;RNAO_tangential_proper_part_of"/>
                                                                                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
                                                                             </owl:Restriction>
                                                                         </owl:intersectionOf>
@@ -1725,7 +1711,7 @@
                                 </owl:someValuesFrom>
                             </owl:Restriction>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
                                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
                             </owl:Restriction>
@@ -1750,13 +1736,13 @@
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000158"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000168"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_quality"/>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000200"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1775,25 +1761,25 @@
                     <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:someValuesFrom>
                                     <owl:Class>
                                         <owl:intersectionOf rdf:parseType="Collection">
                                             <rdf:Description rdf:about="&obo;RNAO_0000025"/>
                                             <owl:Restriction>
-                                                <owl:onProperty rdf:resource="&obo;RNAO#has_tangential_proper_part"/>
+                                                <owl:onProperty rdf:resource="&obo;RNAO_has_tangential_proper_part"/>
                                                 <owl:someValuesFrom>
                                                     <owl:Class>
                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                             <rdf:Description rdf:about="&obo;RNAO_0000092"/>
                                                             <owl:Restriction>
-                                                                <owl:onProperty rdf:resource="&obo;RNAO#externally_connected_to"/>
+                                                                <owl:onProperty rdf:resource="&obo;RNAO_externally_connected_to"/>
                                                                 <owl:someValuesFrom>
                                                                     <owl:Class>
                                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                                             <rdf:Description rdf:about="&obo;RNAO_0000092"/>
                                                                             <owl:Restriction>
-                                                                                <owl:onProperty rdf:resource="&obo;RNAO#tangential_proper_part_of"/>
+                                                                                <owl:onProperty rdf:resource="&obo;RNAO_tangential_proper_part_of"/>
                                                                                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000028"/>
                                                                             </owl:Restriction>
                                                                         </owl:intersectionOf>
@@ -1809,25 +1795,25 @@
                                 </owl:someValuesFrom>
                             </owl:Restriction>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:someValuesFrom>
                                     <owl:Class>
                                         <owl:intersectionOf rdf:parseType="Collection">
                                             <rdf:Description rdf:about="&obo;RNAO_0000027"/>
                                             <owl:Restriction>
-                                                <owl:onProperty rdf:resource="&obo;RNAO#has_tangential_proper_part"/>
+                                                <owl:onProperty rdf:resource="&obo;RNAO_has_tangential_proper_part"/>
                                                 <owl:someValuesFrom>
                                                     <owl:Class>
                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                             <rdf:Description rdf:about="&obo;RNAO_0000092"/>
                                                             <owl:Restriction>
-                                                                <owl:onProperty rdf:resource="&obo;RNAO#externally_connected_to"/>
+                                                                <owl:onProperty rdf:resource="&obo;RNAO_externally_connected_to"/>
                                                                 <owl:someValuesFrom>
                                                                     <owl:Class>
                                                                         <owl:intersectionOf rdf:parseType="Collection">
                                                                             <rdf:Description rdf:about="&obo;RNAO_0000092"/>
                                                                             <owl:Restriction>
-                                                                                <owl:onProperty rdf:resource="&obo;RNAO#tangential_proper_part_of"/>
+                                                                                <owl:onProperty rdf:resource="&obo;RNAO_tangential_proper_part_of"/>
                                                                                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000026"/>
                                                                             </owl:Restriction>
                                                                         </owl:intersectionOf>
@@ -1845,7 +1831,7 @@
                         </owl:unionOf>
                     </owl:Class>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                        <owl:onProperty rdf:resource="&ro;has_part"/>
                         <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
                         <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
                     </owl:Restriction>
@@ -1866,7 +1852,7 @@
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000158"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000186"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1900,20 +1886,20 @@
                     <owl:Class>
                         <owl:complementOf>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
                                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000018"/>
                             </owl:Restriction>
                         </owl:complementOf>
                     </owl:Class>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                        <owl:onProperty rdf:resource="&ro;has_part"/>
                         <owl:allValuesFrom>
                             <owl:Class>
                                 <owl:intersectionOf rdf:parseType="Collection">
                                     <rdf:Description rdf:about="&obo;RNAO_0000017"/>
                                     <rdf:Description rdf:about="&obo;RNAO_0000021"/>
                                     <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&obo;RNAO#covalently_bonded_to"/>
+                                        <owl:onProperty rdf:resource="&obo;RNAO_covalently_bonded_to"/>
                                         <owl:someValuesFrom rdf:resource="&obo;RNAO_0000021"/>
                                     </owl:Restriction>
                                 </owl:intersectionOf>
@@ -1937,7 +1923,7 @@
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000187"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                <owl:onProperty rdf:resource="&ro;has_part"/>
                 <owl:allValuesFrom>
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
@@ -1945,13 +1931,13 @@
                             <rdf:Description rdf:about="&obo;RNAO_0000018"/>
                             <rdf:Description rdf:about="&obo;RNAO_0000021"/>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&obo;RNAO#covalently_bonded_to"/>
+                                <owl:onProperty rdf:resource="&obo;RNAO_covalently_bonded_to"/>
                                 <owl:someValuesFrom>
                                     <owl:Class>
                                         <owl:intersectionOf rdf:parseType="Collection">
                                             <rdf:Description rdf:about="&obo;RNAO_0000021"/>
                                             <owl:Restriction>
-                                                <owl:onProperty rdf:resource="&obo;RNAO#covalently_bonded_to"/>
+                                                <owl:onProperty rdf:resource="&obo;RNAO_covalently_bonded_to"/>
                                                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000018"/>
                                             </owl:Restriction>
                                         </owl:intersectionOf>
@@ -1988,7 +1974,7 @@
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000158"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000021"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2002,8 +1988,8 @@
         <rdfs:label
             >purine nucleobase</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000017"/>
-        <purl:IAO_0000111
-            >purine nucleobase</purl:IAO_0000111>
+        <obo:IAO_0000111
+            >purine nucleobase</obo:IAO_0000111>
         <obo:IAO_0000115
             >A purine nucleobase is a heterocyclic group consisting of a five-membered aromatic ring ortho,para-fused to a six-membered aromatic ring and where the atoms at the 1-, 3-, 7- and 9- positions are nitrogen atoms.</obo:IAO_0000115>
     </owl:Class>
@@ -2016,8 +2002,8 @@
         <rdfs:label
             >pyrimidine nucleobase</rdfs:label>
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000017"/>
-        <purl:IAO_0000111
-            >pyrimidine nucleobase</purl:IAO_0000111>
+        <obo:IAO_0000111
+            >pyrimidine nucleobase</obo:IAO_0000111>
         <obo:IAO_0000115
             >A pyrimidine nucleobase is a heterocyclic group consisting of a six-membered ring where the atoms at the 1- and 3-positions are nitrogen atoms.</obo:IAO_0000115>
     </owl:Class>
@@ -2664,7 +2650,7 @@
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000091"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2681,7 +2667,7 @@
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000091"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2698,7 +2684,7 @@
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000091"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000019"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2715,7 +2701,7 @@
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000108"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                <owl:onProperty rdf:resource="&ro;has_part"/>
                 <owl:onClass rdf:resource="&obo;RNAO_0000001"/>
                 <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
             </owl:Restriction>
@@ -2736,7 +2722,7 @@
             <owl:Class>
                 <owl:complementOf>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                        <owl:onProperty rdf:resource="&ro;has_part"/>
                         <owl:someValuesFrom rdf:resource="&obo;RNAO_0000001"/>
                     </owl:Restriction>
                 </owl:complementOf>
@@ -2877,7 +2863,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000181"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000201"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2971,7 +2957,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&obo;RNAO_0000001"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_quality"/>
+                        <owl:onProperty rdf:resource="&ro;has_quality"/>
                         <owl:someValuesFrom rdf:resource="&obo;RNAO_0000114"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -2992,7 +2978,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&obo;RNAO_0000001"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_quality"/>
+                        <owl:onProperty rdf:resource="&ro;has_quality"/>
                         <owl:someValuesFrom rdf:resource="&obo;RNAO_0000115"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -3164,19 +3150,19 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&snap;MaterialEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_quality"/>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000135"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                <owl:onProperty rdf:resource="&ro;has_part"/>
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="&obo;RNAO_0000183"/>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&obo;RNAO#externally_connected_to"/>
+                                <owl:onProperty rdf:resource="&obo;RNAO_externally_connected_to"/>
                                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000183"/>
                             </owl:Restriction>
                         </owl:intersectionOf>
@@ -3200,7 +3186,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000132"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_quality"/>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000145"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3220,7 +3206,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000132"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_quality"/>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000146"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3398,13 +3384,13 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000132"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_quality"/>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000142"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_quality"/>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000138"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3424,13 +3410,13 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000132"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_quality"/>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000138"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_quality"/>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000143"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3450,13 +3436,13 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000132"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_quality"/>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000142"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_quality"/>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000138"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3476,13 +3462,13 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000132"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_quality"/>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000142"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_quality"/>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000138"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3504,7 +3490,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&obo;RNAO_0000093"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                        <owl:onProperty rdf:resource="&ro;part_of"/>
                         <owl:someValuesFrom rdf:resource="&obo;RNAO_0000023"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -3524,7 +3510,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&obo;RNAO_0000093"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                        <owl:onProperty rdf:resource="&ro;part_of"/>
                         <owl:someValuesFrom rdf:resource="&obo;RNAO_0000024"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -3544,7 +3530,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&obo;RNAO_0000092"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                        <owl:onProperty rdf:resource="&ro;part_of"/>
                         <owl:someValuesFrom rdf:resource="&obo;RNAO_0000023"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -3564,7 +3550,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&obo;RNAO_0000092"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                        <owl:onProperty rdf:resource="&ro;part_of"/>
                         <owl:someValuesFrom rdf:resource="&obo;RNAO_0000024"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -3584,7 +3570,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&obo;RNAO_0000094"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                        <owl:onProperty rdf:resource="&ro;part_of"/>
                         <owl:someValuesFrom rdf:resource="&obo;RNAO_0000023"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -3605,7 +3591,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&obo;RNAO_0000094"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                        <owl:onProperty rdf:resource="&ro;part_of"/>
                         <owl:someValuesFrom rdf:resource="&obo;RNAO_0000024"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -3623,7 +3609,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000181"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000141"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3640,13 +3626,13 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_25805"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000153"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000155"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3661,13 +3647,13 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_27594"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000154"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000156"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3683,13 +3669,13 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_29351"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000155"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000153"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3704,7 +3690,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_29351"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000154"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3719,13 +3705,13 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_29351"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000154"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000152"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3741,7 +3727,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_25805"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000157"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3757,7 +3743,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_29351"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000155"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3772,7 +3758,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_29351"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000154"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3787,7 +3773,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_25805"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000094"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3812,13 +3798,13 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_29235"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000156"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000155"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3834,7 +3820,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_29235"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000155"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3849,7 +3835,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_29235"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000152"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3864,7 +3850,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_27594"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000152"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3879,7 +3865,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_29351"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000152"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3894,7 +3880,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_29235"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000152"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3909,7 +3895,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_25805"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000152"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3925,7 +3911,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_29235"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000153"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3941,7 +3927,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_27594"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000153"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3957,7 +3943,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_27594"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000153"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3973,7 +3959,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_27594"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000153"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3988,7 +3974,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;CHEBI_29235"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#part_of"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000154"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4003,7 +3989,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
             >part of molecule</rdfs:label>
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#proper_part_of"/>
+                <owl:onProperty rdf:resource="&ro;proper_part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000141"/>
             </owl:Restriction>
         </owl:equivalentClass>
@@ -4055,13 +4041,13 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000158"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                <owl:onProperty rdf:resource="&ro;has_part"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000147"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                <owl:onProperty rdf:resource="&ro;has_part"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -4077,7 +4063,7 @@ degrees do not get separate entries in the ontology.</obo:IAO_0000115>
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000158"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&purl;ro/ro.owl#has_part"/>
+                <owl:onProperty rdf:resource="&ro;has_part"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000186"/>
             </owl:Restriction>
         </rdfs:subClassOf>
