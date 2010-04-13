@@ -1,1319 +1,1479 @@
 format-version: 1.2
-idspace: BIRN_ImagePhenotype http://ccdb.ucsd.edu/SAO/DPO/1.0/ImagePhenotype.owl ""
-idspace: BIRN_PDPO http://ccdb.ucsd.edu/PDPhenotypeOntology/1.0# ""
-idspace: BIRN_PDStage http://ccdb.ucsd.edu/PDStageOntology/1.0/ ""
-idspace: BIRN_SA http://ccdb.ucsd.edu/smart_atlas_ontology/sa.owl# ""
-idspace: IAO http://purl.obofoundry.org/IAO_ ""
-idspace: NDPO http://ccdb.ucsd.edu/SAO/Disease/1.0/NDPO.owl# ""
-idspace: OBI http://purl.obofoundry.org/obo/OBI_ ""
-idspace: OBO_REL http://www.obofoundry.org/ro/ro.owl# ""
-idspace: PKB http://ccdb.ucsd.edu/PKB/1.0/PKB.owl# ""
-idspace: RNAO http://purl.obofoundry.org/RNAO_ ""
-idspace: SAO_HumanDPO http://ccdb.ucsd.edu/SAO/HumanDPO.owl# ""
-idspace: bfo http://www.ifomis.org/bfo/1.1# ""
-idspace: biopax1 http://www.biopax.org/release/biopax-level1.owl# ""
-idspace: birnlex_anatomy http://purl.org/nbirn/birnlex/ontology/BIRNLex-Anatomy.owl# ""
-idspace: birnlex_disease http://purl.org/nbirn/birnlex/ontology/BIRNLex-Disease.owl# ""
-idspace: birnlex_tax http://purl.org/nbirn/birnlex/ontology/BIRNLex-OrganismalTaxonomy.owl# ""
-idspace: dc http://purl.org/dc/elements/1.1/ ""
-idspace: eor http://dublincore.org/2000/03/13/eor# ""
-idspace: galen http://www.co-ode.org/ontologies/galen# ""
-idspace: mged http://mged.sourceforge.net/ontologies/MGEDOntology.owl# ""
-idspace: oban http://www.berkeleybop.org/ontologies/oban/alpha# ""
-idspace: obd http://www.bioontology.org/obd/obd-ontology# ""
-idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# ""
-idspace: owl http://www.w3.org/2002/07/owl# ""
-idspace: propreo http://lsdis.cs.uga.edu/projects/glycomics/propreo# ""
-idspace: rdf http://www.w3.org/1999/02/22-rdf-syntax-ns# ""
-idspace: rdfs http://www.w3.org/2000/01/rdf-schema# ""
-idspace: reactome http://www.reactome.org/biopax# ""
-idspace: sao http://ccdb.ucsd.edu/SAO/1.2# ""
-idspace: serql http://www.openrdf.org/schema/serql# ""
-idspace: snap http://www.ifomis.org/bfo/1.1/snap# ""
-idspace: span http://www.ifomis.org/bfo/1.1/span# ""
-idspace: swrl http://www.w3.org/2003/11/swrl# ""
-idspace: xsd http://www.w3.org/2001/XMLSchema# ""
+
+
 
 [Term]
-id: snap:Quality
-name: quality
+id: CHEBI:25805
+name: oxygen atom
+is_a: CHEBI:33250
 
 [Term]
-id: snap:FiatObjectPart
-name: fiat object part
+id: CHEBI:27594
+name: carbon atom
+is_a: CHEBI:33250
 
 [Term]
-id: snap:ObjectBoundary
-name: object boundary
+id: CHEBI:28659
+name: phosphorous atom
+is_a: CHEBI:33250
 
 [Term]
-id: snap:MaterialEntity
-name: material entity
+id: CHEBI:29235
+name: hydrogen atom
+is_a: CHEBI:33250
+
+[Term]
+id: CHEBI:29351
+name: nitrogen atom
+is_a: CHEBI:33250
+
+[Term]
+id: CHEBI:33250
+name: atom
+is_a: snap#MaterialEntity
 
 [Term]
 id: RNAO:0000001
-name: RNA base pair
-namespace: 
-def: "An RNA base pair consists of a pair of RNA nucleotides that interact by edge-to-edge hydrogen bonding with two of their nucleoside edges." []
-synonym: "RNA base pair" EXACT []
-is_a: snap:MaterialEntity 
-property_value: IAO:0000111 "RNA base pair" xsd:string
-property_value: IAO:0000115 "An RNA base pair consists of a pair of RNA nucleotides that interact by edge-to-edge hydrogen bonding with two of their nucleoside edges." xsd:string
+name: base pair
+def: "A base pair consists of a pair of nucleotide residues that interact by nucleoside edge to nucleoside edge hydrogen bonds." [RNAO:ROC]
+is_a: snap#MaterialEntity
 
 [Term]
 id: RNAO:0000002
 name: deoxyribose ring
-namespace: 
-def: "A ribose ring that does not have a hydroxy group at the 2' position." []
-synonym: "deoxyribose ring" EXACT []
-is_a: snap:MaterialEntity 
-property_value: IAO:0000111 "deoxyribose ring" xsd:string
-property_value: IAO:0000115 "A ribose ring that does not have a hydroxy group at the 2' position." xsd:string
+def: "A ribose ring that does not have a hydroxy group at the 2' position." [RNAO:ROC]
+is_a: RNAO:0000147
 
 [Term]
 id: RNAO:0000003
 name: family_1_base_pair
-namespace: 
-def: "A family_1_base_pair is an RNAO_base_pair in which the two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edges of each base and in which the glycosidic bonds of the two nucleotides are oriented \"cis\" relative to each other." []
-synonym: "family_1_base_pair" EXACT []
-is_a: RNAO:0000116  ! cis-oriented RNA base pair
-property_value: IAO:0000111 "family_1_base_pair" xsd:string
-property_value: IAO:0000115 "A family_1_base_pair is an RNAO_base_pair in which the two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edges of each base and in which the glycosidic bonds of the two nucleotides are oriented \"cis\" relative to each other." xsd:string
+def: "A family_1_base_pair is an RNAO_base_pair in which the two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edges of each base and in which the glycosidic bonds of the two nucleotides are oriented "cis" relative to each other." [RNAO:ROC]
+is_a: RNAO:0000116
 
 [Term]
 id: RNAO:0000004
 name: family_2_base_pair
-namespace: 
-def: "A family_2_base_pair is an RNAO_base_pair in which the two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edges of each base and in which the glycosidic bonds of the two nucleotides are oriented \"trans\" relative to each other." []
-synonym: "family_2_base_pair" EXACT []
-is_a: RNAO:0000117  ! trans-oriented RNA base pair
-property_value: IAO:0000111 "family_2_base_pair" xsd:string
-property_value: IAO:0000115 "A family_2_base_pair is an RNAO_base_pair in which the two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edges of each base and in which the glycosidic bonds of the two nucleotides are oriented \"trans\" relative to each other." xsd:string
+def: "A family_2_base_pair is an RNAO_base_pair in which the two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edges of each base and in which the glycosidic bonds of the two nucleotides are oriented "trans" relative to each other." [RNAO:ROC]
+is_a: RNAO:0000117
 
 [Term]
 id: RNAO:0000005
 name: family_3_base_pair
-namespace: 
-def: "A family_3_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Hoogsteen edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented \"cis\" relative to each other." []
-synonym: "family_3_base_pair" EXACT []
-is_a: RNAO:0000116  ! cis-oriented RNA base pair
-property_value: IAO:0000111 "family_3_base_pair" xsd:string
-property_value: IAO:0000115 "A family_3_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Hoogsteen edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented \"cis\" relative to each other." xsd:string
-property_value: http://purl.obofoundry.org/#IAO_0000112 "Forbidden pairings (Watson-Crick edge first); CA, UC, AC, AA, GC, GU." xsd:string
+def: "A family_3_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Hoogsteen edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented "cis" relative to each other." [RNAO:ROC]
+is_a: RNAO:0000116
 
 [Term]
 id: RNAO:0000006
 name: family_4_base_pair
-namespace: 
-def: "A family_4_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Hoogsteen edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented \"trans\" relative to each other." []
-synonym: "family_4_base_pair" EXACT []
-is_a: RNAO:0000117  ! trans-oriented RNA base pair
-property_value: IAO:0000111 "family_4_base_pair" xsd:string
-property_value: IAO:0000115 "A family_4_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Hoogsteen edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented \"trans\" relative to each other." xsd:string
-property_value: http://purl.obofoundry.org/#IAO_0000112 "Forbidden are the following pairings (Watson-Crick edge first); CU, UC, AC, AU, GC, GA." xsd:string
+def: "A family_4_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Hoogsteen edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented "trans" relative to each other." [RNAO:ROC]
+is_a: RNAO:0000117
 
 [Term]
 id: RNAO:0000007
 name: family_5_base_pair
-namespace: 
-def: "A family_5_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented \"cis\" relative to each other." []
-synonym: "family_5_base_pair" EXACT []
-is_a: RNAO:0000116  ! cis-oriented RNA base pair
-property_value: IAO:0000111 "family_5_base_pair" xsd:string
-property_value: IAO:0000115 "A family_5_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented \"cis\" relative to each other." xsd:string
+def: "A family_5_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented "cis" relative to each other." [RNAO:ROC]
+is_a: RNAO:0000116
 
 [Term]
 id: RNAO:0000008
 name: family_6_base_pair
-namespace: 
-def: "A family_6_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented \"trans\" relative to each other." []
-synonym: "family_6_base_pair" EXACT []
-is_a: RNAO:0000117  ! trans-oriented RNA base pair
-property_value: IAO:0000111 "family_6_base_pair" xsd:string
-property_value: IAO:0000115 "A family_6_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented \"trans\" relative to each other." xsd:string
-property_value: http://purl.obofoundry.org/#IAO_0000112 "Forbidden is the pairing where G presents the Watson-Crick edge and A presents the sugar edge." xsd:string
+def: "A family_6_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented "trans" relative to each other." [RNAO:ROC]
+is_a: RNAO:0000117
 
 [Term]
 id: RNAO:0000009
 name: family_7_base_pair
-namespace: 
-def: "A family_7_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edges of each base and in which the glycosidic bonds of the two nucleotides are oriented \"cis\" relative to each other." []
-synonym: "family_7_base_pair" EXACT []
-is_a: RNAO:0000116  ! cis-oriented RNA base pair
-property_value: IAO:0000111 "family_7_base_pair" xsd:string
-property_value: IAO:0000115 "A family_7_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edges of each base and in which the glycosidic bonds of the two nucleotides are oriented \"cis\" relative to each other." xsd:string
-property_value: http://purl.obofoundry.org/#IAO_0000112 "Forbidden pairings are: CC, CU, CA, UA, UC, UG, UU, AC, AU, AA and GU." xsd:string
+def: "A family_7_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edges of each base and in which the glycosidic bonds of the two nucleotides are oriented "cis" relative to each other." [RNAO:ROC]
+is_a: RNAO:0000116
 
 [Term]
 id: RNAO:0000010
 name: family_8_base_pair
-namespace: 
-def: "A family_8_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edges of each base and in which the glycosidic bonds of the two nucleotides are oriented \"trans\" relative to each other." []
-synonym: "family_8_base_pair" EXACT []
-is_a: RNAO:0000117  ! trans-oriented RNA base pair
-property_value: IAO:0000111 "family_8_base_pair" xsd:string
-property_value: IAO:0000115 "A family_8_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edges of each base and in which the glycosidic bonds of the two nucleotides are oriented \"trans\" relative to each other." xsd:string
+def: "A family_8_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edges of each base and in which the glycosidic bonds of the two nucleotides are oriented "trans" relative to each other." [RNAO:ROC]
+is_a: RNAO:0000117
 
 [Term]
 id: RNAO:0000011
 name: family_9_base_pair
-namespace: 
-def: "A family_9_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented \"cis\" relative to each other." []
-synonym: "family_9_base_pair" EXACT []
-is_a: RNAO:0000116  ! cis-oriented RNA base pair
-property_value: IAO:0000111 "family_9_base_pair" xsd:string
-property_value: IAO:0000115 "A family_9_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented \"cis\" relative to each other." xsd:string
+def: "A family_9_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented "cis" relative to each other." [RNAO:ROC]
+is_a: RNAO:0000116
 
 [Term]
 id: RNAO:0000012
 name: family_10_base_pair
-namespace: 
-def: "A family_10_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented \"trans\" relative to each other." []
-synonym: "family_10_base_pair" EXACT []
-is_a: RNAO:0000117  ! trans-oriented RNA base pair
-property_value: IAO:0000111 "family_10_base_pair" xsd:string
-property_value: IAO:0000115 "A family_10_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented \"trans\" relative to each other." xsd:string
+def: "A family_10_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented "trans" relative to each other." [RNAO:ROC]
+is_a: RNAO:0000117
 
 [Term]
 id: RNAO:0000013
 name: family_11_base_pair
-namespace: 
-def: "A family_11_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Sugar edges of each base and in which the glycosidic bonds of the two nucleotides are oriented \"cis\" relative to each other." []
-synonym: "family_11_base_pair" EXACT []
-is_a: RNAO:0000116  ! cis-oriented RNA base pair
-property_value: IAO:0000111 "family_11_base_pair" xsd:string
-property_value: IAO:0000115 "A family_11_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Sugar edges of each base and in which the glycosidic bonds of the two nucleotides are oriented \"cis\" relative to each other." xsd:string
+def: "A family_11_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Sugar edges of each base and in which the glycosidic bonds of the two nucleotides are oriented "cis" relative to each other." [RNAO:ROC]
+is_a: RNAO:0000116
 
 [Term]
 id: RNAO:0000014
 name: family_12_base_pair
-namespace: 
-def: "A family_12_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Sugar edges of each base and in which the glycosidic bonds of the two nucleotides are oriented \"trans\" relative to each other." []
-synonym: "family_12_base_pair" EXACT []
-is_a: RNAO:0000117  ! trans-oriented RNA base pair
-property_value: IAO:0000111 "family_12_base_pair" xsd:string
-property_value: IAO:0000115 "A family_12_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Sugar edges of each base and in which the glycosidic bonds of the two nucleotides are oriented \"trans\" relative to each other." xsd:string
-property_value: http://purl.obofoundry.org/#IAO_0000112 "Excluded are CA, CC, CU, CG, and UA, UC, UU, UG." xsd:string
+def: "A family_12_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Sugar edges of each base and in which the glycosidic bonds of the two nucleotides are oriented "trans" relative to each other." [RNAO:ROC]
+is_a: RNAO:0000117
 
 [Term]
 id: RNAO:0000015
-name: nucleotide_suite
-namespace: 
-synonym: "nucleotide_suite" EXACT []
-is_a: snap:MaterialEntity 
-property_value: IAO:0000111 "nucleotide_suite" xsd:string
+name: RNA suite
+is_a: RNAO:0000158
+relationship: ro.owl#part_of RNAO:0000168
+relationship: ro.owl#has_quality RNAO:0000200
 
 [Term]
 id: RNAO:0000016
 name: canonical RNA base pair
-namespace: 
-def: "An RNAO_base_pair which has cis-Watson--Crick pairing and where the participating bases are AU, CG, GC or UA." []
-synonym: "canonical RNA base pair" EXACT []
-is_a: RNAO:0000116  ! cis-oriented RNA base pair
-property_value: IAO:0000111 "canonical RNA base pair" xsd:string
-property_value: IAO:0000115 "An RNAO_base_pair which has cis-Watson--Crick pairing and where the participating bases are AU, CG, GC or UA." xsd:string
+def: "An RNAO_base_pair which has cis-Watson--Crick pairing and where the participating bases are AU, CG, GC or UA." [RNAO:ROC]
+is_a: RNAO:0000116
 
 [Term]
 id: RNAO:0000017
 name: nucleobase
-namespace: 
-def: "A nucleobase is an N-heterocyclic group that forms part of a nucleotide." []
-synonym: "nucleobase" EXACT []
-is_a: snap:MaterialEntity 
-property_value: IAO:0000111 "nucleobase" xsd:string
-property_value: IAO:0000115 "A nucleobase is an N-heterocyclic group that forms part of a nucleotide." xsd:string
+def: "A nucleobase is an N-heterocyclic group that forms part of a nucleoside residue." [RNAO:ROC]
+is_a: RNAO:0000158
+relationship: ro.owl#part_of RNAO:0000186
 
 [Term]
 id: RNAO:0000018
-name: phosphate unit
-namespace: 
-def: "A phosphate group consists of a phosphorus atom doubly-bonded to two oxygen atoms and singly-bonded to two oxygen atoms, both of which have a free valence. Unlike the phosphate group in ChEBI (CHEBI:32958), the RNAO phosphate group has two free valences." []
-synonym: "phosphate unit" EXACT []
-is_a: snap:MaterialEntity 
-property_value: IAO:0000111 "phosphate unit" xsd:string
-property_value: IAO:0000115 "A phosphate group consists of a phosphorus atom doubly-bonded to two oxygen atoms and singly-bonded to two oxygen atoms, both of which have a free valence. Unlike the phosphate group in ChEBI (CHEBI:32958), the RNAO phosphate group has two free valences." xsd:string
+name: phosphate moiety
+def: "A phosphate group consists of a phosphorus atom doubly-bonded to two oxygen atoms and singly-bonded to two oxygen atoms, both of which have a free valence. Unlike the phosphate group in ChEBI (CHEBI:32958), the RNAO phosphate group has two free valences." [RNAO:ROC]
+is_a: RNAO:0000158
 
 [Term]
 id: RNAO:0000019
-name: ribonucleoside
-namespace: 
-def: "A ribonucleoside consists of a nitrogen heterocycle (a nucleobase) covalently bonded to a ribose ring, with free valences at the 3' and 5' positions on the ring." []
-synonym: "ribonucleoside" EXACT []
-is_a: snap:MaterialEntity 
-property_value: IAO:0000111 "ribonucleoside" xsd:string
-property_value: IAO:0000115 "A ribonucleoside consists of a nitrogen heterocycle (a nucleobase) covalently bonded to a ribose ring, with free valences at the 3' and 5' positions on the ring." xsd:string
+name: ribonucleoside residue
+def: "A ribonucleoside consists of a nitrogen heterocycle (a nucleobase) covalently bonded to a ribose ring, with free valences at the 3' and 5' positions on the ring." [RNAO:ROC]
+is_a: RNAO:0000186
 
 [Term]
 id: RNAO:0000020
-name: ribonucleotide
-namespace: 
-def: "A ribonucleotide consists of a nitrogen heterocyclic group covalently bonded to the 4' position of a ribose ring and a phosphate group covalently bonded the 3' position of the ribose ring. There is a free valence on one of the oxygens of the phosphate group and on the 5' position of the ribose ring." []
-synonym: "ribonucleotide" EXACT []
-is_a: snap:MaterialEntity 
-property_value: IAO:0000111 "ribonucleotide" xsd:string
-property_value: IAO:0000115 "A ribonucleotide consists of a nitrogen heterocyclic group covalently bonded to the 4' position of a ribose ring and a phosphate group covalently bonded the 3' position of the ribose ring. There is a free valence on one of the oxygens of the phosphate group and on the 5' position of the ribose ring." xsd:string
+name: ribonucleotide residue
+def: "A ribonucleotide consists of a nitrogen heterocyclic group covalently bonded to the 4' position of a ribose ring and a phosphate group covalently bonded the 3' position of the ribose ring. There is a free valence on one of the oxygens of the phosphate group and on the 5' position of the ribose ring." [RNAO:ROC]
+is_a: RNAO:0000187
 
 [Term]
 id: RNAO:0000021
 name: ribose ring
-namespace: 
-def: "A ribose ring is a furan ring (a five-membered singly-bonded ring containing four carbon atoms and one oxygen atom) with free valences at the 4' position (to bond to the nucleobase), and the 3' and 5' positions." []
-synonym: "ribose ring" EXACT []
-is_a: snap:MaterialEntity 
-property_value: IAO:0000111 "ribose ring" xsd:string
-property_value: IAO:0000115 "A ribose ring is a furan ring (a five-membered singly-bonded ring containing four carbon atoms and one oxygen atom) with free valences at the 4' position (to bond to the nucleobase), and the 3' and 5' positions." xsd:string
+def: "A ribose ring is a furanose ring with free valences at the 4' position (to bond to the nucleobase), and the 3' and 5' positions." [RNAO:ROC]
+is_a: RNAO:0000147
 
 [Term]
 id: RNAO:0000022
-name: two_prime_hydroxy_group
-namespace: 
-synonym: "two_prime_hydroxy_group" EXACT []
-is_a: RNAO:0000091  ! tangential proper part of RNA molecule
-relationship: http://purl.obofoundry.org/part_of RNAO:0000021 ! ribose ring
-property_value: IAO:0000111 "two_prime_hydroxy_group" xsd:string
+name: 2' hydroxyl group
+is_a: RNAO:0000158
+relationship: ro.owl#part_of RNAO:0000021
 
 [Term]
 id: RNAO:0000023
 name: purine nucleobase
-namespace: 
-def: "A purine nucleobase is a heterocyclic group consisting of a five-membered aromatic ring ortho,para-fused to a six-membered aromatic ring and where the atoms at the 1-, 3-, 7- and 9- positions are nitrogen atoms." []
-synonym: "purine nucleobase" EXACT []
-is_a: RNAO:0000017  ! nucleobase
-property_value: IAO:0000111 "purine nucleobase" xsd:string
-property_value: IAO:0000115 "A purine nucleobase is a heterocyclic group consisting of a five-membered aromatic ring ortho,para-fused to a six-membered aromatic ring and where the atoms at the 1-, 3-, 7- and 9- positions are nitrogen atoms." xsd:string
+def: "A purine nucleobase is a heterocyclic group consisting of a five-membered aromatic ring ortho,para-fused to a six-membered aromatic ring and where the atoms at the 1-, 3-, 7- and 9- positions are nitrogen atoms." [RNAO:ROC]
+is_a: RNAO:0000017
 
 [Term]
 id: RNAO:0000024
 name: pyrimidine nucleobase
-namespace: 
-def: "A pyrimidine nucleobase is a heterocyclic group consisting of a six-membered ring where the atoms at the 1- and 3-positions are nitrogen atoms." []
-synonym: "pyrimidine nucleobase" EXACT []
-is_a: RNAO:0000017  ! nucleobase
-property_value: IAO:0000111 "pyrimidine nucleobase" xsd:string
-property_value: IAO:0000115 "A pyrimidine nucleobase is a heterocyclic group consisting of a six-membered ring where the atoms at the 1- and 3-positions are nitrogen atoms." xsd:string
+def: "A pyrimidine nucleobase is a heterocyclic group consisting of a six-membered ring where the atoms at the 1- and 3-positions are nitrogen atoms." [RNAO:ROC]
+is_a: RNAO:0000017
 
 [Term]
 id: RNAO:0000025
 name: cytosine nucleobase
-namespace: 
-def: "A cytosine nucleobase is a pyrimidine that contains a 4-amino group and a 2-oxo group and has a free valence at the 1-position." []
-synonym: "cytosine nucleobase" EXACT []
-is_a: RNAO:0000024  ! pyrimidine nucleobase
-property_value: IAO:0000111 "cytosine nucleobase" xsd:string
-property_value: IAO:0000115 "A cytosine nucleobase is a pyrimidine that contains a 4-amino group and a 2-oxo group and has a free valence at the 1-position." xsd:string
+def: "A cytosine nucleobase is a pyrimidine that contains a 4-amino group and a 2-oxo group and has a free valence at the 1-position." [RNAO:ROC]
+is_a: RNAO:0000024
 
 [Term]
 id: RNAO:0000026
 name: uracil nucleobase
-namespace: 
-def: "A uracil nucleobase is a pyrimidine nucleobase that contains a 2-oxo group and a 4-oxo group and has a free valence at the 1-position." []
-synonym: "uracil nucleobase" EXACT []
-is_a: RNAO:0000024  ! pyrimidine nucleobase
-property_value: IAO:0000111 "uracil nucleobase" xsd:string
-property_value: IAO:0000115 "A uracil nucleobase is a pyrimidine nucleobase that contains a 2-oxo group and a 4-oxo group and has a free valence at the 1-position." xsd:string
+def: "A uracil nucleobase is a pyrimidine nucleobase that contains a 2-oxo group and a 4-oxo group and has a free valence at the 1-position." [RNAO:ROC]
+is_a: RNAO:0000024
 
 [Term]
 id: RNAO:0000027
 name: adenine nucleobase
-namespace: 
-def: "An adenine nucleobase is a purine nucleobase that contains a 6-amino group and a free valence at the 9-position." []
-synonym: "adenine nucleobase" EXACT []
-is_a: RNAO:0000023  ! purine nucleobase
-property_value: IAO:0000111 "adenine nucleobase" xsd:string
-property_value: IAO:0000115 "An adenine nucleobase is a purine nucleobase that contains a 6-amino group and a free valence at the 9-position." xsd:string
+def: "An adenine nucleobase is a purine nucleobase that contains a 6-amino group and a free valence at the 9-position." [RNAO:ROC]
+is_a: RNAO:0000023
 
 [Term]
 id: RNAO:0000028
 name: guanine nucleobase
-namespace: 
-def: "A guanine nucleobase is a purine nucleobase that contains a 2-amino group, a 6-oxo group and a free valence at the 9-position." []
-synonym: "guanine nucleobase" EXACT []
-is_a: RNAO:0000023  ! purine nucleobase
-property_value: IAO:0000111 "guanine nucleobase" xsd:string
-property_value: IAO:0000115 "A guanine nucleobase is a purine nucleobase that contains a 2-amino group, a 6-oxo group and a free valence at the 9-position." xsd:string
+def: "A guanine nucleobase is a purine nucleobase that contains a 2-amino group, a 6-oxo group and a free valence at the 9-position." [RNAO:ROC]
+is_a: RNAO:0000023
 
 [Term]
 id: RNAO:0000029
-name: suite in 22 conformation
-namespace: 
-synonym: "suite in 22 conformation" EXACT []
-is_a: RNAO:0000015  ! nucleotide_suite
-property_value: IAO:0000111 "suite in 22 conformation" xsd:string
+name: 22 conformation
+is_a: RNAO:0000200
 
 [Term]
 id: RNAO:0000030
-name: suite in 23 conformation
-namespace: 
-synonym: "suite in 23 conformation" EXACT []
-is_a: RNAO:0000015  ! nucleotide_suite
-property_value: IAO:0000111 "suite in 23 conformation" xsd:string
+name: 23 conformation
+is_a: RNAO:0000200
 
 [Term]
 id: RNAO:0000031
-name: suite in 32 conformation
-namespace: 
-synonym: "suite in 32 conformation" EXACT []
-is_a: RNAO:0000015  ! nucleotide_suite
-property_value: IAO:0000111 "suite in 32 conformation" xsd:string
+name: 32 conformation
+is_a: RNAO:0000200
 
 [Term]
 id: RNAO:0000032
-name: purine ribonucleoside
-namespace: 
-synonym: "purine ribonucleoside" EXACT []
-is_a: RNAO:0000019  ! ribonucleoside
-property_value: IAO:0000111 "purine ribonucleoside" xsd:string
+name: purine ribonucleoside residue
+is_a: RNAO:0000019
 
 [Term]
 id: RNAO:0000033
-name: suite in 33 conformation
-namespace: 
-synonym: "suite in 33 conformation" EXACT []
-is_a: RNAO:0000015  ! nucleotide_suite
-property_value: IAO:0000111 "suite in 33 conformation" xsd:string
+name: 33 conformation
+is_a: RNAO:0000200
 
 [Term]
 id: RNAO:0000034
-name: pyrimidine ribonucleoside
-namespace: 
-synonym: "pyrimidine ribonucleoside" EXACT []
-is_a: RNAO:0000019  ! ribonucleoside
-property_value: IAO:0000111 "pyrimidine ribonucleoside" xsd:string
+name: pyrimidine ribonucleoside residue
+is_a: RNAO:0000019
 
 [Term]
 id: RNAO:0000035
 name: cytidine residue
-namespace: 
-synonym: "cytidine residue" EXACT []
-is_a: RNAO:0000034  ! pyrimidine ribonucleoside
-property_value: IAO:0000111 "cytidine residue" xsd:string
+is_a: RNAO:0000034
 
 [Term]
 id: RNAO:0000036
 name: uridine residue
-namespace: 
-synonym: "uridine residue" EXACT []
-is_a: RNAO:0000034  ! pyrimidine ribonucleoside
-property_value: IAO:0000111 "uridine residue" xsd:string
+is_a: RNAO:0000034
 
 [Term]
 id: RNAO:0000037
 name: adenosine residue
-namespace: 
-synonym: "adenosine residue" EXACT []
-is_a: RNAO:0000032  ! purine ribonucleoside
-property_value: IAO:0000111 "adenosine residue" xsd:string
+is_a: RNAO:0000032
 
 [Term]
 id: RNAO:0000038
 name: guanosine residue
-namespace: 
-synonym: "guanosine residue" EXACT []
-is_a: RNAO:0000032  ! purine ribonucleoside
-property_value: IAO:0000111 "guanosine residue" xsd:string
+is_a: RNAO:0000032
 
 [Term]
 id: RNAO:0000039
-name: suite in 1a conformation
-namespace: 
-is_a: RNAO:0000033  ! suite in 33 conformation
+name: 1a conformation
+is_a: RNAO:0000033
 
 [Term]
 id: RNAO:0000040
-name: suite in 1c conformation
-namespace: 
-is_a: RNAO:0000033  ! suite in 33 conformation
+name: 1c conformation
+is_a: RNAO:0000033
 
 [Term]
 id: RNAO:0000041
-name: suite in 1e conformation
-namespace: 
-is_a: RNAO:0000033  ! suite in 33 conformation
+name: 1e conformation
+is_a: RNAO:0000033
 
 [Term]
 id: RNAO:0000042
-name: suite in 1f conformation
-namespace: 
-is_a: RNAO:0000033  ! suite in 33 conformation
+name: 1f conformation
+is_a: RNAO:0000033
 
 [Term]
 id: RNAO:0000043
-name: suite in 1g conformation
-namespace: 
-is_a: RNAO:0000033  ! suite in 33 conformation
+name: 1g conformation
+is_a: RNAO:0000033
 
 [Term]
 id: RNAO:0000044
-name: suite in 1l conformation
-namespace: 
-is_a: RNAO:0000033  ! suite in 33 conformation
+name: 1l conformation
+is_a: RNAO:0000033
 
 [Term]
 id: RNAO:0000045
-name: suite in 1m conformation
-namespace: 
-is_a: RNAO:0000033  ! suite in 33 conformation
+name: 1m conformation
+is_a: RNAO:0000033
 
 [Term]
 id: RNAO:0000046
-name: suite in 3a conformation
-namespace: 
-is_a: RNAO:0000033  ! suite in 33 conformation
+name: 3a conformation
+is_a: RNAO:0000033
 
 [Term]
 id: RNAO:0000047
-name: suite in 3d conformation
-namespace: 
-is_a: RNAO:0000033  ! suite in 33 conformation
+name: 3d conformation
+is_a: RNAO:0000033
 
 [Term]
 id: RNAO:0000048
-name: suite in 5a conformation
-namespace: 
-is_a: RNAO:0000033  ! suite in 33 conformation
+name: 5a conformation
+is_a: RNAO:0000033
 
 [Term]
 id: RNAO:0000049
-name: suite in 5d conformation
-namespace: 
-is_a: RNAO:0000033  ! suite in 33 conformation
+name: 5d conformation
+is_a: RNAO:0000033
 
 [Term]
 id: RNAO:0000050
-name: suite in 5j conformation
-namespace: 
-is_a: RNAO:0000033  ! suite in 33 conformation
+name: 5j conformation
+is_a: RNAO:0000033
 
 [Term]
 id: RNAO:0000051
-name: suite in 5n conformation
-namespace: 
-is_a: RNAO:0000033  ! suite in 33 conformation
+name: 5n conformation
+is_a: RNAO:0000033
 
 [Term]
 id: RNAO:0000052
-name: suite in 7a conformation
-namespace: 
-is_a: RNAO:0000033  ! suite in 33 conformation
+name: 7a conformation
+is_a: RNAO:0000033
 
 [Term]
 id: RNAO:0000053
-name: suite in 7d conformation
-namespace: 
-is_a: RNAO:0000033  ! suite in 33 conformation
+name: 7d conformation
+is_a: RNAO:0000033
 
 [Term]
 id: RNAO:0000054
-name: suite in 9a conformation
-namespace: 
-is_a: RNAO:0000033  ! suite in 33 conformation
+name: 9a conformation
+is_a: RNAO:0000033
 
 [Term]
 id: RNAO:0000055
-name: suite in ampersand-a conformation
-namespace: 
-is_a: RNAO:0000033  ! suite in 33 conformation
+name: &a conformation
+is_a: RNAO:0000033
 
 [Term]
 id: RNAO:0000056
-name: suite in 1bracket conformation
-namespace: 
-is_a: RNAO:0000031  ! suite in 32 conformation
+name: 1[ conformation
+is_a: RNAO:0000031
 
 [Term]
 id: RNAO:0000057
-name: suite in 1o conformation
-namespace: 
-is_a: RNAO:0000031  ! suite in 32 conformation
+name: 1o conformation
+is_a: RNAO:0000031
 
 [Term]
 id: RNAO:0000058
-name: suite in 1t conformation
-namespace: 
-is_a: RNAO:0000031  ! suite in 32 conformation
+name: 1t conformation
+is_a: RNAO:0000031
 
 [Term]
 id: RNAO:0000059
-name: suite in 3b conformation
-namespace: 
-is_a: RNAO:0000031  ! suite in 32 conformation
+name: 3b conformation
+name: 1z conformation
+is_a: RNAO:0000031
 
 [Term]
 id: RNAO:0000060
-name: suite in 5p conformation
-namespace: 
-is_a: RNAO:0000031  ! suite in 32 conformation
+name: 5p conformation
+is_a: RNAO:0000031
 
 [Term]
 id: RNAO:0000061
-name: suite in 5q conformation
-namespace: 
-is_a: RNAO:0000031  ! suite in 32 conformation
+name: 5q conformation
+is_a: RNAO:0000031
 
 [Term]
 id: RNAO:0000062
-name: suite in 5r conformation
-namespace: 
-is_a: RNAO:0000031  ! suite in 32 conformation
+name: 5r conformation
+is_a: RNAO:0000031
 
 [Term]
 id: RNAO:0000063
-name: suite in 5z conformation
-namespace: 
-is_a: RNAO:0000031  ! suite in 32 conformation
+name: 5z conformation
+is_a: RNAO:0000031
 
 [Term]
 id: RNAO:0000064
-name: suite in 7p conformation
-namespace: 
-is_a: RNAO:0000031  ! suite in 32 conformation
+name: 7p conformation
+is_a: RNAO:0000031
 
 [Term]
 id: RNAO:0000065
-name: suite in 7r conformation
-namespace: 
-is_a: RNAO:0000031  ! suite in 32 conformation
+name: 7r conformation
+is_a: RNAO:0000031
 
 [Term]
 id: RNAO:0000066
-name: suite in 1b conformation
-namespace: 
-is_a: RNAO:0000031  ! suite in 32 conformation
+name: 1b conformation
+is_a: RNAO:0000031
 
 [Term]
 id: RNAO:0000067
-name: suite in 0a conformation
-namespace: 
-is_a: RNAO:0000030  ! suite in 23 conformation
+name: 0a conformation
+is_a: RNAO:0000030
 
 [Term]
 id: RNAO:0000068
-name: suite in 0i conformation
-namespace: 
-is_a: RNAO:0000030  ! suite in 23 conformation
+name: 0i conformation
+is_a: RNAO:0000030
 
 [Term]
 id: RNAO:0000069
-name: suite in 0k conformation
-namespace: 
-is_a: RNAO:0000030  ! suite in 23 conformation
+name: 0k conformation
+is_a: RNAO:0000030
 
 [Term]
 id: RNAO:0000070
-name: suite in 2a conformation
-namespace: 
-is_a: RNAO:0000030  ! suite in 23 conformation
+name: 2a conformation
+is_a: RNAO:0000030
 
 [Term]
 id: RNAO:0000071
-name: suite in 2g conformation
-namespace: 
-is_a: RNAO:0000030  ! suite in 23 conformation
+name: 2g conformation
+is_a: RNAO:0000030
 
 [Term]
 id: RNAO:0000072
-name: suite in 2h conformation
-namespace: 
-is_a: RNAO:0000030  ! suite in 23 conformation
+name: 2h conformation
+is_a: RNAO:0000030
 
 [Term]
 id: RNAO:0000073
-name: suite in 4a conformation
-namespace: 
-is_a: RNAO:0000030  ! suite in 23 conformation
+name: 4a conformation
+is_a: RNAO:0000030
 
 [Term]
 id: RNAO:0000074
-name: suite in 4d conformation
-namespace: 
-is_a: RNAO:0000030  ! suite in 23 conformation
+name: 4d conformation
+is_a: RNAO:0000030
 
 [Term]
 id: RNAO:0000075
-name: suite in 4g conformation
-namespace: 
-is_a: RNAO:0000030  ! suite in 23 conformation
+name: 4g conformation
+is_a: RNAO:0000030
 
 [Term]
 id: RNAO:0000076
-name: suite in 4n conformation
-namespace: 
-is_a: RNAO:0000030  ! suite in 23 conformation
+name: 4n conformation
+is_a: RNAO:0000030
 
 [Term]
 id: RNAO:0000077
-name: suite in 6d conformation
-namespace: 
-is_a: RNAO:0000030  ! suite in 23 conformation
+name: 6d conformation
+is_a: RNAO:0000030
 
 [Term]
 id: RNAO:0000078
-name: suite in 6g conformation
-namespace: 
-is_a: RNAO:0000030  ! suite in 23 conformation
+name: 6g conformation
+is_a: RNAO:0000030
 
 [Term]
 id: RNAO:0000079
-name: suite in 8d conformation
-namespace: 
-is_a: RNAO:0000030  ! suite in 23 conformation
+name: 8d conformation
+is_a: RNAO:0000030
 
 [Term]
 id: RNAO:0000080
-name: suite in 6n conformation
-namespace: 
-is_a: RNAO:0000030  ! suite in 23 conformation
+name: 6n conformation
+is_a: RNAO:0000030
 
 [Term]
 id: RNAO:0000081
-name: suite in 6j conformation
-namespace: 
-is_a: RNAO:0000030  ! suite in 23 conformation
+name: 6j conformation
+is_a: RNAO:0000030
 
 [Term]
 id: RNAO:0000082
-name: suite in 0b conformation
-namespace: 
-is_a: RNAO:0000029  ! suite in 22 conformation
+name: 0b conformation
+is_a: RNAO:0000029
 
 [Term]
 id: RNAO:0000083
-name: suite in 2bracket conformation
-namespace: 
-is_a: RNAO:0000029  ! suite in 22 conformation
+name: 2[ conformation
+is_a: RNAO:0000029
 
 [Term]
 id: RNAO:0000084
-name: suite in 2o conformation
-namespace: 
-is_a: RNAO:0000029  ! suite in 22 conformation
+name: 2o conformation
+is_a: RNAO:0000029
 
 [Term]
 id: RNAO:0000085
-name: suite in 2u conformation
-namespace: 
-is_a: RNAO:0000029  ! suite in 22 conformation
+name: 2u conformation
+is_a: RNAO:0000029
 
 [Term]
 id: RNAO:0000086
-name: suite in 2z conformation
-namespace: 
-is_a: RNAO:0000029  ! suite in 22 conformation
+name: 2z conformation
+is_a: RNAO:0000029
 
 [Term]
 id: RNAO:0000087
-name: suite in 4b conformation
-namespace: 
-is_a: RNAO:0000029  ! suite in 22 conformation
+name: 4b conformation
+is_a: RNAO:0000029
 
 [Term]
 id: RNAO:0000088
-name: suite in 4p conformation
-namespace: 
-is_a: RNAO:0000029  ! suite in 22 conformation
+name: 4p conformation
+is_a: RNAO:0000029
 
 [Term]
 id: RNAO:0000089
-name: suite in 4s conformation
-namespace: 
-is_a: RNAO:0000029  ! suite in 22 conformation
+name: 4s conformation
+is_a: RNAO:0000029
 
 [Term]
 id: RNAO:0000090
-name: suite in 6p conformation
-namespace: 
-is_a: RNAO:0000029  ! suite in 22 conformation
+name: 6p conformation
+is_a: RNAO:0000029
 
 [Term]
 id: RNAO:0000091
-name: tangential proper part of RNA molecule
-namespace: 
-def: "A tangential proper part of an RNA molecule is a proper part that shares a boundary with the RNA molecule." []
-synonym: "tangential proper part of RNA molecule" EXACT []
-is_a: snap:FiatObjectPart 
-property_value: IAO:0000111 "tangential proper part of RNA molecule" xsd:string
-property_value: IAO:0000115 "A tangential proper part of an RNA molecule is a proper part that shares a boundary with the RNA molecule." xsd:string
+name: nucleoside edge
+def: "A nucleoside edge is either a Watson-Crick edge or a Hoogsteen edge or a sugar edge." [RNAO:ROC]
+is_a: RNAO:0000181
 
 [Term]
 id: RNAO:0000092
 name: Watson-Crick edge
-namespace: 
-def: "The Watson-Crick edge of a nucleobase is the preferred edge along which it undergoes hydrogen bonding with other nucleobases." []
-synonym: "Watson-Crick edge" EXACT []
-is_a: RNAO:0000091  ! tangential proper part of RNA molecule
-relationship: http://purl.obofoundry.org/part_of RNAO:0000017 ! nucleobase
-property_value: IAO:0000111 "Watson-Crick edge" xsd:string
-property_value: IAO:0000115 "The Watson-Crick edge of a nucleobase is the preferred edge along which it undergoes hydrogen bonding with other nucleobases." xsd:string
+def: "The Watson-Crick edge of a nucleobase is the preferred edge along which it undergoes hydrogen bonding with other nucleobases." [RNAO:ROC]
+is_a: RNAO:0000091
+relationship: ro.owl#part_of RNAO:0000017
 
 [Term]
 id: RNAO:0000093
 name: Hoogsteen edge
-namespace: 
-def: "The Hoogsteen edge of a nucleobase is the edge of the nucleobase which is not adjacent to the 2'-hydroxyl group on the ribose ring." []
-synonym: "Hoogsteen edge" EXACT []
-is_a: RNAO:0000091  ! tangential proper part of RNA molecule
-relationship: http://purl.obofoundry.org/part_of RNAO:0000017 ! nucleobase
-property_value: IAO:0000111 "Hoogsteen edge" xsd:string
-property_value: IAO:0000115 "The Hoogsteen edge of a nucleobase is the edge of the nucleobase which is not adjacent to the 2'-hydroxyl group on the ribose ring." xsd:string
+def: "The Hoogsteen edge of a nucleobase is the edge of the nucleobase which is not adjacent to the 2'-hydroxyl group on the ribose ring." [RNAO:ROC]
+is_a: RNAO:0000091
+relationship: ro.owl#part_of RNAO:0000017
 
 [Term]
 id: RNAO:0000094
 name: sugar edge
-namespace: 
-def: "The sugar edge of a nucleoside consists of the edge of the nucleobase adjacent ot the 2'-hydroxyl group on the ribose ring and the 2'-hydroxyl group on the ribose ring." []
-synonym: "sugar edge" EXACT []
-is_a: RNAO:0000091  ! tangential proper part of RNA molecule
-relationship: http://purl.obofoundry.org/part_of RNAO:0000019 ! ribonucleoside
-property_value: IAO:0000111 "sugar edge" xsd:string
-property_value: IAO:0000115 "The sugar edge of a nucleoside consists of the edge of the nucleobase adjacent ot the 2'-hydroxyl group on the ribose ring and the 2'-hydroxyl group on the ribose ring." xsd:string
+def: "The sugar edge of a nucleoside consists of the edge of the nucleobase adjacent ot the 2'-hydroxyl group on the ribose ring and the 2'-hydroxyl group on the ribose ring." [RNAO:ROC]
+is_a: RNAO:0000091
+relationship: ro.owl#part_of RNAO:0000019
 
 [Term]
 id: RNAO:0000095
-name: paired_region
-namespace: 
-def: "A collection of one or more sequence regions that\ncontains at least 1 base pair." []
-synonym: "paired_region" EXACT []
-is_a: RNAO:0000108  ! collection_of_sequence_regions
-disjoint_from: RNAO:0000096  ! unpaired_region
-property_value: IAO:0000111 "paired_region" xsd:string
-property_value: IAO:0000115 "A collection of one or more sequence regions that\ncontains at least 1 base pair." xsd:string
+name: paired region
+def: "A collection of one or more adjacent nucleotides that contains at least 1 base pair." [RNAO:ROC]
+is_a: RNAO:0000108
+relationship: ro.owl#has_part RNAO:0000001
 
 [Term]
 id: RNAO:0000096
-name: unpaired_region
-namespace: 
-def: "A collection of one or more sequence regions that contains no base pairs." []
-synonym: "unpaired_region" EXACT []
-is_a: RNAO:0000108  ! collection_of_sequence_regions
-property_value: IAO:0000111 "unpaired_region" xsd:string
-property_value: IAO:0000115 "A collection of one or more sequence regions that contains no base pairs." xsd:string
+name: unpaired region
+def: "A collection of one or more nucleotides that contains no base pairs." [RNAO:ROC]
+is_a: RNAO:0000108
 
 [Term]
 id: RNAO:0000097
-name: unbroken_stem
-namespace: 
-def: "A paired_region made up of two regions of sequence,\neach of which is contiguous, that completely pair with each other (no\nbulges/mismatches/etc).  This form is sometimes colloquially referred\nto as a \"helix\", but we have not adopted that term since it implies a\nlevel of explicit structural knowledge that is frequently lacking." []
-synonym: "unbroken_stem" EXACT []
-is_a: RNAO:0000095  ! paired_region
-property_value: IAO:0000111 "unbroken_stem" xsd:string
-property_value: IAO:0000115 "A paired_region made up of two regions of sequence,\neach of which is contiguous, that completely pair with each other (no\nbulges/mismatches/etc).  This form is sometimes colloquially referred\nto as a \"helix\", but we have not adopted that term since it implies a\nlevel of explicit structural knowledge that is frequently lacking." xsd:string
+name: unbroken stem
+def: "A paired region made up of two contiguous collections of nucleotides, in which each nucleotide forms a base pair." [RNAO:ROC]
+is_a: RNAO:0000095
 
 [Term]
 id: RNAO:0000098
 name: terminal_loop
-namespace: 
-def: "A contiguous sequence region that directly links the\ntwo halves of an unbroken_stem (but does not participate in the stem);\nthis structure is also known as a \"hairpin loop\".  Because a terminal\nloop may also participate in other inter-base interactions, (a) it is\ndefined relative to a particular unbroken_stem, and (b) it is not\nimplicitly defined as unpaired (or paired)." []
-synonym: "terminal_loop" EXACT []
-is_a: RNAO:0000110  ! sequence_region
-property_value: IAO:0000111 "terminal_loop" xsd:string
-property_value: IAO:0000115 "A contiguous sequence region that directly links the\ntwo halves of an unbroken_stem (but does not participate in the stem);\nthis structure is also known as a \"hairpin loop\".  Because a terminal\nloop may also participate in other inter-base interactions, (a) it is\ndefined relative to a particular unbroken_stem, and (b) it is not\nimplicitly defined as unpaired (or paired)." xsd:string
+def: "A contiguous sequence of nucleotides that directly links the two halves of an unbroken stem (but does not participate in the stem); this structure is also known as a "hairpin loop". Because a terminal loop may also participate in other inter-base interactions, (a) it is defined relative to a particular unbroken_stem, and (b) it is not implicitly defined as unpaired (or paired)." [RNAO:ROC]
+is_a: RNAO:0000108
 
 [Term]
 id: RNAO:0000099
-name: internal_loop
-namespace: 
-def: "A set consisting of all and only the sequence regions\nthat link two given unbroken_stems; this term encompasses the concepts of\n\"bulge\" and \"mismatch\" as well. Again, this term is defined relative\nto two particular unbroken_stems and does not imply unpairedness (or\npairedness)." []
-synonym: "internal_loop" EXACT []
-is_a: RNAO:0000108  ! collection_of_sequence_regions
-property_value: IAO:0000111 "internal_loop" xsd:string
-property_value: IAO:0000115 "A set consisting of all and only the sequence regions\nthat link two given unbroken_stems; this term encompasses the concepts of\n\"bulge\" and \"mismatch\" as well. Again, this term is defined relative\nto two particular unbroken_stems and does not imply unpairedness (or\npairedness)." xsd:string
+name: internal loop
+def: "A collection of nucleotides link two given unbroken_stems; this term encompasses the concepts of "bulge" and "mismatch" as well. Again, this term is defined relative to two particular unbroken_stems and does not imply unpairedness (or pairedness)." [RNAO:ROC]
+is_a: RNAO:0000108
 
 [Term]
 id: RNAO:0000100
 name: purine ribonucleotide
-namespace: 
-synonym: "purine ribonucleotide" EXACT []
-is_a: RNAO:0000020  ! ribonucleotide
-property_value: IAO:0000111 "purine ribonucleotide" xsd:string
+is_a: RNAO:0000020
 
 [Term]
 id: RNAO:0000101
 name: pyrimidine ribonucleotide
-namespace: 
-synonym: "pyrimidine ribonucleotide" EXACT []
-is_a: RNAO:0000020  ! ribonucleotide
-property_value: IAO:0000111 "pyrimidine ribonucleotide" xsd:string
+is_a: RNAO:0000020
 
 [Term]
 id: RNAO:0000102
 name: cytidylate residue
-namespace: 
-synonym: "cytidylate residue" EXACT []
-is_a: RNAO:0000101  ! pyrimidine ribonucleotide
-property_value: IAO:0000111 "cytidylate residue" xsd:string
+is_a: RNAO:0000101
 
 [Term]
 id: RNAO:0000103
 name: uridylate residue
-namespace: 
-synonym: "uridylate residue" EXACT []
-is_a: RNAO:0000101  ! pyrimidine ribonucleotide
-property_value: IAO:0000111 "uridylate residue" xsd:string
+is_a: RNAO:0000101
 
 [Term]
 id: RNAO:0000104
 name: adenylate residue
-namespace: 
-synonym: "adenylate residue" EXACT []
-is_a: RNAO:0000100  ! purine ribonucleotide
-property_value: IAO:0000111 "adenylate residue" xsd:string
+is_a: RNAO:0000100
 
 [Term]
 id: RNAO:0000105
 name: guanylate residue
-namespace: 
-synonym: "guanylate residue" EXACT []
-is_a: RNAO:0000100  ! purine ribonucleotide
-property_value: IAO:0000111 "guanylate residue" xsd:string
+is_a: RNAO:0000100
 
 [Term]
 id: RNAO:0000106
-name: stem_junction
-namespace: 
-def: "The set consisting of all and only the sequence regions that\nlink more than two given unbroken_stems such that each region links exactly\ntwo unbroken_stems.  This term is defined relative to the particular\nunbroken_stems involved and, again, does not imply anything about the\npairedness/unpairedness of the bases in this region. The degree of a\njunction is a property (e.g. 3-junction, 4-junction), so the different\ndegrees do not get separate entries in the ontology." []
-synonym: "stem_junction" EXACT []
-is_a: RNAO:0000108  ! collection_of_sequence_regions
-property_value: IAO:0000111 "stem_junction" xsd:string
-property_value: IAO:0000115 "The set consisting of all and only the sequence regions that\nlink more than two given unbroken_stems such that each region links exactly\ntwo unbroken_stems.  This term is defined relative to the particular\nunbroken_stems involved and, again, does not imply anything about the\npairedness/unpairedness of the bases in this region. The degree of a\njunction is a property (e.g. 3-junction, 4-junction), so the different\ndegrees do not get separate entries in the ontology." xsd:string
+name: stem junction
+def: "The set consisting of all and only the sequence regions that link more than two given unbroken_stems such that each region links exactly two unbroken_stems. This term is defined relative to the particular unbroken_stems involved and, again, does not imply anything about the pairedness/unpairedness of the bases in this region. The degree of a junction is a property (e.g. 3-junction, 4-junction), so the different degrees do not get separate entries in the ontology." [RNAO:ROC]
+is_a: RNAO:0000108
 
 [Term]
 id: RNAO:0000107
 name: strand_end
-namespace: 
-def: "A sequence_region bounded at one end by the 5' or 3' end of the molecule, and at the other by an unbroken_stem." []
-synonym: "strand_end" EXACT []
-is_a: RNAO:0000110  ! sequence_region
-property_value: IAO:0000111 "strand_end" xsd:string
-property_value: IAO:0000115 "A sequence_region bounded at one end by the 5' or 3' end of the molecule, and at the other by an unbroken_stem." xsd:string
+def: "A sequence_region bounded at one end by the 5' or 3' end of the molecule, and at the other by an unbroken_stem." [RNAO:ROC]
+is_a: RNAO:0000108
 
 [Term]
 id: RNAO:0000108
-name: collection_of_sequence_regions
-namespace: 
-def: "Part of an RNA or DNA molecule consisting of one or more sequence_regions." []
-synonym: "collection_of_sequence_regions" EXACT []
-is_a: snap:MaterialEntity 
-property_value: IAO:0000111 "collection_of_sequence_regions" xsd:string
-property_value: IAO:0000115 "Part of an RNA or DNA molecule consisting of one or more sequence_regions." xsd:string
+name: collection of nucleotides
+def: "A collection of nucleotides is a part of a nucleic acid consisting of one or more nucleotides." [RNAO:ROC]
+is_a: RNAO:0000181
+relationship: ro.owl#part_of RNAO:0000201
 
 [Term]
 id: RNAO:0000109
-name: three_prime_end
-namespace: 
-synonym: "three_prime_end" EXACT []
-is_a: snap:ObjectBoundary 
-property_value: IAO:0000111 "three_prime_end" xsd:string
-
-[Term]
-id: RNAO:0000110
-name: sequence_region
-namespace: 
-def: "Part of an RNA or DNA molecule containing only nucleotide residues." []
-synonym: "sequence_region" EXACT []
-is_a: snap:MaterialEntity 
-property_value: IAO:0000111 "sequence_region" xsd:string
-property_value: IAO:0000115 "Part of an RNA or DNA molecule containing only nucleotide residues." xsd:string
+name: 3' end
+is_a: RNAO:0000206
 
 [Term]
 id: RNAO:0000111
-name: five_prime_end
-namespace: 
-synonym: "five_prime_end" EXACT []
-is_a: snap:ObjectBoundary 
-property_value: IAO:0000111 "five_prime_end" xsd:string
+name: 5' end
+is_a: RNAO:0000206
 
 [Term]
 id: RNAO:0000112
 name: conformation
-namespace: 
-def: "The spatial arrangement of the atoms in a molecule or molecular part affording distinction between stereoisomers which can be interconverted by rotations about formally single bonds." []
-synonym: "conformation" EXACT []
-is_a: snap:Quality 
-property_value: IAO:0000111 "conformation" xsd:string
-property_value: IAO:0000115 "The spatial arrangement of the atoms in a molecule or molecular part affording distinction between stereoisomers which can be interconverted by rotations about formally single bonds." xsd:string
-property_value: http://purl.obofoundry.org/#IAO_0000117 "http://goldbook.iupac.org/C01258.html" xsd:string
+def: "The spatial arrangement of the atoms in a molecule or molecular part affording distinction between stereoisomers which can be interconverted by rotations about formally single bonds." [RNAO:ROC]
+is_a: snap#Quality
 
 [Term]
 id: RNAO:0000113
 name: base pair orientation
-namespace: 
-def: "A conformation that inheres in an RNA base pair. It may be cis- or trans- depending on the orientations of the ribose rings relative to the edge-edge interaction of the nucleobases. " []
-synonym: "base pair orientation" EXACT []
-is_a: RNAO:0000112  ! conformation
-property_value: IAO:0000111 "base pair orientation" xsd:string
-property_value: IAO:0000115 "A conformation that inheres in an RNA base pair. It may be cis- or trans- depending on the orientations of the ribose rings relative to the edge-edge interaction of the nucleobases. " xsd:string
-property_value: http://purl.obofoundry.org/#IAO_0000117 "PERSON: Colin Batchelor, based on the Leontis-Westhof classification." xsd:string
+def: "A conformation that inheres in an RNA base pair. It may be cis- or trans- depending on the orientations of the ribose rings relative to the edge-edge interaction of the nucleobases." [RNAO:ROC]
+is_a: RNAO:0000112
 
 [Term]
 id: RNAO:0000114
 name: base pair cis-orientation
-namespace: 
-def: "A base pair conformation where the ribose rings are on the same side of a plane drawn through the middle of the edge-edge hydrogen bonds." []
-synonym: "base pair cis-orientation" EXACT []
-is_a: RNAO:0000113  ! base pair orientation
-property_value: IAO:0000111 "base pair cis-orientation" xsd:string
-property_value: IAO:0000115 "A base pair conformation where the ribose rings are on the same side of a plane drawn through the middle of the edge-edge hydrogen bonds." xsd:string
-property_value: http://purl.obofoundry.org/#IAO_0000117 "PERSON: Colin Batchelor, based on the Leontis-Westhof classification." xsd:string
+def: "A base pair conformation where the ribose rings are on the same side of a plane drawn through the middle of the edge-edge hydrogen bonds." [RNAO:ROC]
+is_a: RNAO:0000113
 
 [Term]
 id: RNAO:0000115
 name: base pair trans-orientation
-namespace: 
-def: "A base pair conformation where the ribose rings are on opposite sides of a plane drawn through the middle of the edge-edge hydrogen bonds." []
-synonym: "base pair trans-orientation" EXACT []
-is_a: RNAO:0000113  ! base pair orientation
-property_value: IAO:0000111 "base pair trans-orientation" xsd:string
-property_value: IAO:0000115 "A base pair conformation where the ribose rings are on opposite sides of a plane drawn through the middle of the edge-edge hydrogen bonds." xsd:string
-property_value: http://purl.obofoundry.org/#IAO_0000117 "PERSON: Colin Batchelor, based on the Leontis-Westhof classification." xsd:string
+def: "A base pair conformation where the ribose rings are on opposite sides of a plane drawn through the middle of the edge-edge hydrogen bonds." [RNAO:ROC]
+is_a: RNAO:0000113
 
 [Term]
 id: RNAO:0000116
-name: cis-oriented RNA base pair
-namespace: 
-synonym: "cis-oriented RNA base pair" EXACT []
-is_a: RNAO:0000001  ! RNA base pair
-property_value: IAO:0000111 "cis-oriented RNA base pair" xsd:string
+name: cis-oriented base pair
+is_a: RNAO:0000001
 
 [Term]
 id: RNAO:0000117
-name: trans-oriented RNA base pair
-namespace: 
-synonym: "trans-oriented RNA base pair" EXACT []
-is_a: RNAO:0000001  ! RNA base pair
-property_value: IAO:0000111 "trans-oriented RNA base pair" xsd:string
+name: trans-oriented base pair
+is_a: RNAO:0000001
 
 [Term]
-id: RNAO:0000118
-name: ribose ring conformation
-namespace: 
-def: "A conformation that inheres in a ribose ring." []
-synonym: "ribose ring conformation" EXACT []
-is_a: RNAO:0000112  ! conformation
-property_value: IAO:0000111 "ribose ring conformation" xsd:string
-property_value: IAO:0000115 "A conformation that inheres in a ribose ring." xsd:string
-property_value: http://purl.obofoundry.org/#IAO_0000117 "PERSON: Colin Batchelor" xsd:string
+id: RNAO:0000121
+name: nucleoside conformation
+def: "A conformation that inheres in an nucleoside based on the rotation of the nucleobase about the glycosidic torsion angle χ with the furanose." [RNAO:ROC]
+is_a: RNAO:0000112
 
 [Term]
-id: RNAO:0000119
-name: C2prime endo pucker
-namespace: 
-synonym: "C2prime endo pucker" EXACT []
-is_a: RNAO:0000118  ! ribose ring conformation
-property_value: IAO:0000111 "C2prime endo pucker" xsd:string
+id: RNAO:0000122
+name: syn nucleoside conformation
+def: "A syn nucleoside conformation is a nucleoside conformation characterized by the nucleobase being oriented towards the ribose due to rotation about the glycosidic torsion angle χ. From χ = 0°, where the plane of the base is aligned with the O4’-C1’ bond in a direction towards the O4’ atom, the syn conformation covers the remaining rotations of ±90°: χ = [-90°, 90°]." [RNAO:ROC]
+is_a: RNAO:0000121
 
 [Term]
-id: RNAO:0000120
-name: C3prime endo pucker
-namespace: 
-synonym: "C3prime endo pucker" EXACT []
-is_a: RNAO:0000118  ! ribose ring conformation
-property_value: IAO:0000111 "C3prime endo pucker" xsd:string
+id: RNAO:0000123
+name: anti nucleoside conformation
+def: "A anti nucleoside conformation is a nucleoside conformation characterized by the nucleobase being oriented away from the ribose due to rotation about the glycosidic torsion angle χ. From χ = 180°, where the plane of the base is aligned with the O4’-C1’ bond in a direction away from the O4’ atom, the anti conformation covers a rotations of ±90°: χ = [-180°, 90°]." [RNAO:ROC]
+is_a: RNAO:0000121
 
 [Term]
-id: snap:FiatObjectPart
-namespace: 
+id: RNAO:0000124
+name: envelope conformation
+def: "An envelope conformation is a furan ring conformation in which only one of the five fruan atoms (C1’, C2’, C3’, C4’ or O4’) is out of the plane formed by the four others." [RNAO:ROC]
+is_a: RNAO:0000126
 
 [Term]
-id: snap:MaterialEntity
-namespace: 
+id: RNAO:0000125
+name: twist conformation
+def: "An envelope conformation is a furan ring conformation in which two atoms are in opposite sides of the plane formed by the remaining three." [RNAO:ROC]
+is_a: RNAO:0000126
 
 [Term]
-id: snap:ObjectBoundary
-namespace: 
+id: RNAO:0000126
+name: furan ring conformation
+def: "A furan ring conformation is a conformation that inheres in a furan ring and is characterized by the values of torsion angles: θ0-4." [RNAO:ROC]
+is_a: RNAO:0000112
 
 [Term]
-id: snap:Quality
-namespace: 
+id: RNAO:0000127
+name: C2’-endo pucker
+def: "C2'-endo pucker (<sup>2</sup>E conformation) is an envelope conformation in which the C2' atom is above the plane formed by the other 4 atoms." [RNAO:ROC]
+is_a: RNAO:0000124
 
+[Term]
+id: RNAO:0000128
+name: C3’-endo pucker
+def: "C3'-endo pucker (An <sup>3</sup>E conformation) is an envelope conformation in which the C3' atom is above the plane formed by the other 4 atoms." [RNAO:ROC]
+is_a: RNAO:0000124
+
+[Term]
+id: RNAO:0000129
+name: C4’-exo pucker
+def: "C4'-exo pucker (E<sub>4</sub> conformation) is an envelope conformation in which the C4' atom is below the plane formed by the other 4 atoms." [RNAO:ROC]
+is_a: RNAO:0000124
+
+[Term]
+id: RNAO:0000130
+name: C3'-endo - C4' -exo pucker
+def: "C3'-endo - C4' exo pucker (<sup>3</sup>E<sub>4</sub> conformation) is a twist conformation in which the C3' atom is above the plane and the C4' atom is below the plane." [RNAO:ROC]
+is_a: RNAO:0000125
+
+[Term]
+id: RNAO:0000131
+name: C3'-endo - C2' -exo pucker
+def: "C3'-endo - C2' exo pucker (<sup>3</sup>E<sub>2</sub> conformation) is a twist conformation in which the C3' atom is above the plane and the C2' atom is below the plane." [RNAO:ROC]
+is_a: RNAO:0000125
+
+[Term]
+id: RNAO:0000132
+name: base stack
+def: "A base stack consists of a pair of nucleotides that interact by London dispersion inter-molecular interactions between their nucleobases such that one base is stacked on top of the other." [RNAO:ROC]
+is_a: snap#MaterialEntity
+relationship: ro.owl#has_quality RNAO:0000135
+
+[Term]
+id: RNAO:0000133
+name: adjacent base stack
+def: "An adjacent base stack is a base stack between a pair of sequence-adjacent nucleotides." [RNAO:ROC]
+is_a: RNAO:0000132
+relationship: ro.owl#has_quality RNAO:0000145
+
+[Term]
+id: RNAO:0000134
+name: non-adjacent base stack
+def: "A non-adjacent base stack is a base stack between a pair of non sequence-adjacent nucleotides." [RNAO:ROC]
+is_a: RNAO:0000132
+relationship: ro.owl#has_quality RNAO:0000146
+
+[Term]
+id: RNAO:0000135
+name: base stack orientation
+def: "A base stack orientation is a conformation that inheres in a base stack by virtue of the orientation of the nucleobases relative to i) the alignment of base normals and ii) their sequence adjacency." [RNAO:ROC]
+is_a: RNAO:0000112
+
+[Term]
+id: RNAO:0000136
+name: #a conformation
+is_a: RNAO:0000030
+
+[Term]
+id: RNAO:0000138
+name: base stack straight orientation
+def: "An base stack straight orientation is a base stack orientation in which the normals of both bases are aligned in the same direction." [RNAO:ROC]
+is_a: RNAO:0000140
+
+[Term]
+id: RNAO:0000139
+name: base stack reverse orientation
+def: "A base stack reverse orientation is a base stack orientation in which the normals of both bases are aligned in the opposite directions." [RNAO:ROC]
+is_a: RNAO:0000140
+
+[Term]
+id: RNAO:0000140
+name: base stack base-normal orientation
+def: "A base stack base-normal orientation is a base stack orientation that depends on the relative orientation of the base normals." [RNAO:ROC]
+is_a: RNAO:0000135
+
+[Term]
+id: RNAO:0000141
+name: molecule
+is_a: snap#MaterialEntity
+
+[Term]
+id: RNAO:0000142
+name: base stack above orientation
+def: "A base stack above orientation is a base stack orientation in which the second base (B) is in the same direction as the normal to the first base (A)." [RNAO:ROC]
+is_a: RNAO:0000140
+
+[Term]
+id: RNAO:0000143
+name: base stack below orientation
+def: "A base stack below orientation is a base stack orientation in which the normal of the second base (B) is directed towards the first base (A)." [RNAO:ROC]
+is_a: RNAO:0000140
+
+[Term]
+id: RNAO:0000144
+name: base stack sequence adjacency
+def: "A base stack sequence adjacency is a base stack orientation that depends on whether the stacked nucleobases are part of nucleotides that are sequence adjacent or not." [RNAO:ROC]
+is_a: RNAO:0000135
+
+[Term]
+id: RNAO:0000145
+name: base stack adjacent base orientation
+def: "A base stack adjacent orientation is a base stack orientation in which the stacked nucleobases are part of nucleotides that are sequence adjacent." [RNAO:ROC]
+is_a: RNAO:0000144
+
+[Term]
+id: RNAO:0000146
+name: base stack non-adjacent base orientation
+def: "A base stack non-adjacent orientation is a base stack orientation in which the stacked nucleobases are part of nucleotides that are not sequence adjacent." [RNAO:ROC]
+is_a: RNAO:0000144
+
+[Term]
+id: RNAO:0000147
+name: furanose ring
+def: "A furanose ring is a ring that consists of four carbon and one oxygen atom and has free valences at each carbon position." [RNAO:ROC]
+is_a: RNAO:0000158
+
+[Term]
+id: RNAO:0000148
+name: upward base stack
+def: "An upward base stack is a base stack that exhibits both an straight orientation and an above orientation." [RNAO:ROC]
+is_a: RNAO:0000132
+relationship: ro.owl#has_quality RNAO:0000142
+relationship: ro.owl#has_quality RNAO:0000138
+
+[Term]
+id: RNAO:0000149
+name: downward base stack
+def: "A downward base stack is a base stack that exhibits both an straight orientation and a below orientation." [RNAO:ROC]
+is_a: RNAO:0000132
+relationship: ro.owl#has_quality RNAO:0000138
+relationship: ro.owl#has_quality RNAO:0000143
+
+[Term]
+id: RNAO:0000150
+name: inward base stack
+def: "An inward base stack is a base stack that exhibits both a reverse orientation and an above orientation." [RNAO:ROC]
+is_a: RNAO:0000132
+relationship: ro.owl#has_quality RNAO:0000142
+relationship: ro.owl#has_quality RNAO:0000138
+
+[Term]
+id: RNAO:0000151
+name: outward base stack
+def: "An outward base stack is a base stack that exhibits both a reverse orientation and a below orientation." [RNAO:ROC]
+is_a: RNAO:0000132
+relationship: ro.owl#has_quality RNAO:0000142
+relationship: ro.owl#has_quality RNAO:0000138
+
+[Term]
+id: RNAO:0000152
+name: purine Hoogsteen edge
+
+[Term]
+id: RNAO:0000153
+name: pyrimidine Hoogsteen edge
+
+[Term]
+id: RNAO:0000154
+name: purine Watson-Crick edge
+
+[Term]
+id: RNAO:0000155
+name: pyrimidine Watson-Crick edge
+
+[Term]
+id: RNAO:0000156
+name: purine sugar edge
+is_a: RNAO:0000094
+
+[Term]
+id: RNAO:0000157
+name: pyrimidine sugar edge
+is_a: RNAO:0000094
+
+[Term]
+id: RNAO:0000158
+name: submolecule
+is_a: RNAO:0000181
+relationship: ro.owl#part_of RNAO:0000141
+
+[Term]
+id: RNAO:0000159
+name: pyrimidine O4 atom
+is_a: CHEBI:25805
+relationship: ro.owl#part_of RNAO:0000153
+relationship: ro.owl#part_of RNAO:0000155
+
+[Term]
+id: RNAO:0000160
+name: purine C2 atom
+is_a: CHEBI:27594
+relationship: ro.owl#part_of RNAO:0000154
+relationship: ro.owl#part_of RNAO:0000156
+
+[Term]
+id: RNAO:0000161
+name: pyrimidine N4 atom
+is_a: CHEBI:29351
+relationship: ro.owl#part_of RNAO:0000155
+relationship: ro.owl#part_of RNAO:0000153
+
+[Term]
+id: RNAO:0000162
+name: purine N1 atom
+is_a: CHEBI:29351
+relationship: ro.owl#part_of RNAO:0000154
+
+[Term]
+id: RNAO:0000163
+name: purine N6 atom
+is_a: CHEBI:29351
+relationship: ro.owl#part_of RNAO:0000154
+relationship: ro.owl#part_of RNAO:0000152
+
+[Term]
+id: RNAO:0000164
+name: pyrimidine O2 atom
+is_a: CHEBI:25805
+relationship: ro.owl#part_of RNAO:0000157
+
+[Term]
+id: RNAO:0000165
+name: pyrimidine N3 atom
+is_a: CHEBI:29351
+relationship: ro.owl#part_of RNAO:0000155
+
+[Term]
+id: RNAO:0000166
+name: purine N3 atom
+is_a: CHEBI:29351
+relationship: ro.owl#part_of RNAO:0000154
+
+[Term]
+id: RNAO:0000167
+name: ribose O2' atom
+is_a: CHEBI:25805
+relationship: ro.owl#part_of RNAO:0000094
+
+[Term]
+id: RNAO:0000168
+name: ribonucleic acid
+is_a: RNAO:0000201
+
+[Term]
+id: RNAO:0000169
+name: purine H2 atom
+is_a: CHEBI:29235
+relationship: ro.owl#part_of RNAO:0000156
+relationship: ro.owl#part_of RNAO:0000155
+
+[Term]
+id: RNAO:0000170
+name: pyrimidine H3 atom
+is_a: CHEBI:29235
+relationship: ro.owl#part_of RNAO:0000155
+
+[Term]
+id: RNAO:0000171
+name: purine H8 atom
+is_a: CHEBI:29235
+relationship: ro.owl#part_of RNAO:0000152
+
+[Term]
+id: RNAO:0000172
+name: purine C8 atom
+is_a: CHEBI:27594
+relationship: ro.owl#part_of RNAO:0000152
+
+[Term]
+id: RNAO:0000173
+name: purine N7 atom
+is_a: CHEBI:29351
+relationship: ro.owl#part_of RNAO:0000152
+
+[Term]
+id: RNAO:0000174
+name: purine H62 atom
+is_a: CHEBI:29235
+relationship: ro.owl#part_of RNAO:0000152
+
+[Term]
+id: RNAO:0000175
+name: purine O6 atom
+is_a: CHEBI:25805
+relationship: ro.owl#part_of RNAO:0000152
+
+[Term]
+id: RNAO:0000176
+name: pyrimidine H5 atom
+is_a: CHEBI:29235
+relationship: ro.owl#part_of RNAO:0000153
+
+[Term]
+id: RNAO:0000177
+name: pyrimidine C5 atom
+is_a: CHEBI:27594
+relationship: ro.owl#part_of RNAO:0000153
+
+[Term]
+id: RNAO:0000178
+name: pyrimidine C4 atom
+is_a: CHEBI:27594
+relationship: ro.owl#part_of RNAO:0000153
+
+[Term]
+id: RNAO:0000179
+name: pyrimidine C7 atom
+is_a: CHEBI:27594
+relationship: ro.owl#part_of RNAO:0000153
+
+[Term]
+id: RNAO:0000180
+name: purine H61 atom
+is_a: CHEBI:29235
+relationship: ro.owl#part_of RNAO:0000154
+
+[Term]
+id: RNAO:0000181
+name: part of molecule
+is_a: snap#MaterialEntity
+
+[Term]
+id: RNAO:0000183
+name: nucleobase face
+is_a: RNAO:0000181
+
+[Term]
+id: RNAO:0000184
+name: 5p face
+is_a: RNAO:0000183
+
+[Term]
+id: RNAO:0000185
+name: 3p face
+is_a: RNAO:0000183
+
+[Term]
+id: RNAO:0000186
+name: nucleoside residue
+is_a: RNAO:0000158
+relationship: ro.owl#has_part RNAO:0000147
+relationship: ro.owl#has_part RNAO:0000017
+
+[Term]
+id: RNAO:0000187
+name: nucleotide residue
+is_a: RNAO:0000158
+relationship: ro.owl#has_part RNAO:0000186
+
+[Term]
+id: RNAO:0000200
+name: backbone conformation
+is_a: RNAO:0000112
+
+[Term]
+id: RNAO:0000201
+name: nucleic acid
+is_a: RNAO:0000141
+
+[Term]
+id: RNAO:0000206
+name: boundary of nucleic acid
+is_a: snap#ObjectBoundary
+
+[Term]
+id: snap#MaterialEntity
+
+[Term]
+id: snap#ObjectBoundary
+
+[Term]
+id: snap#Quality
 
 [Typedef]
-id: IAO:0000111
-is_metadata_tag: true
+id: ro.owl#has_part
 
 [Typedef]
-id: IAO:0000115
-is_metadata_tag: true
+id: ro.owl#has_proper_part
+name: has_proper_part
+is_a: ro.owl#has_part
 
 [Typedef]
-id: http://purl.obofoundry.org/#IAO_0000112
-is_metadata_tag: true
-
-[Typedef]
-id: http://purl.obofoundry.org/#IAO_0000117
-is_metadata_tag: true
-
-[Typedef]
-id: http://purl.obofoundry.org/ObjectProperty1243973897611439000
-name: obsolete_relation
-synonym: "obsolete_relation" EXACT []
-property_value: IAO:0000111 "obsolete_relation" xsd:string
-
-[Typedef]
-id: http://purl.obofoundry.org/backbone_connected_to
-name: backbone_connected_to
-
-[Typedef]
-id: http://purl.obofoundry.org/covalently_bonded_to
-name: covalently_bonded_to
-
-[Typedef]
-id: http://purl.obofoundry.org/disconnected_from
-name: disconnected_from
-synonym: "disconnected_from" EXACT []
-property_value: IAO:0000111 "disconnected_from" xsd:string
-
-[Typedef]
-id: http://purl.obofoundry.org/externally_connected_to
-name: externally_connected_to
-synonym: "externally_connected_to" EXACT []
-property_value: IAO:0000111 "externally_connected_to" xsd:string
-
-[Typedef]
-id: http://purl.obofoundry.org/five_prime_to_five_prime_to
-name: five_prime_to_five_prime_to
-
-[Typedef]
-id: http://purl.obofoundry.org/five_prime_to_three_prime_to
-name: five_prime_to_three_prime_to
-
-[Typedef]
-id: http://purl.obofoundry.org/five_prime_to_two_prime_to
-name: five_prime_to_two_prime_to
-
-[Typedef]
-id: http://purl.obofoundry.org/has_boundary
-name: has_boundary
-synonym: "has_boundary" EXACT []
-property_value: IAO:0000111 "has_boundary" xsd:string
-
-[Typedef]
-id: http://purl.obofoundry.org/has_non_tangential_proper_part
-name: has_non_tangential_proper_part
-synonym: "has_non_tangential_proper_part" EXACT []
-property_value: IAO:0000111 "has_non_tangential_proper_part" xsd:string
-
-[Typedef]
-id: http://purl.obofoundry.org/has_part
-
-[Typedef]
-id: http://purl.obofoundry.org/has_part_only
-all_only: http://purl.obofoundry.org/has_part 
-
-[Typedef]
-id: http://purl.obofoundry.org/has_quality
+id: ro.owl#has_quality
 name: has_quality
-synonym: "has_quality" EXACT []
-property_value: IAO:0000111 "has_quality" xsd:string
 
 [Typedef]
-id: http://purl.obofoundry.org/has_tangential_proper_part
-name: has_tangential_proper_part
-synonym: "has_tangential_proper_part" EXACT []
-property_value: IAO:0000111 "has_tangential_proper_part" xsd:string
-
-[Typedef]
-id: http://purl.obofoundry.org/interacts_with_0BPh
-domain: RNAO:0000020  ! ribonucleotide
-
-[Typedef]
-id: http://purl.obofoundry.org/interacts_with_1BPh
-def: "Pairwise interaction of the sugar edge with a phosphate unit. Only occurs with G." []
-domain: RNAO:0000105  ! guanylate residue
-range: RNAO:0000018  ! phosphate unit
-property_value: IAO:0000115 "Pairwise interaction of the sugar edge with a phosphate unit. Only occurs with G." xsd:string
-
-[Typedef]
-id: http://purl.obofoundry.org/interacts_with_2BPh
-domain: RNAO:0000104  ! adenylate residue
-range: RNAO:0000018  ! phosphate unit
-
-[Typedef]
-id: http://purl.obofoundry.org/interacts_with_3BPh
-domain: RNAO:0000105  ! guanylate residue
-range: RNAO:0000018  ! phosphate unit
-
-[Typedef]
-id: http://purl.obofoundry.org/interacts_with_4BPh
-domain: RNAO:0000105  ! guanylate residue
-range: RNAO:0000018  ! phosphate unit
-
-[Typedef]
-id: http://purl.obofoundry.org/interacts_with_5BPh
-range: RNAO:0000018  ! phosphate unit
-
-[Typedef]
-id: http://purl.obofoundry.org/interacts_with_6BPh
-range: RNAO:0000018  ! phosphate unit
-
-[Typedef]
-id: http://purl.obofoundry.org/interacts_with_7BPh
-range: RNAO:0000018  ! phosphate unit
-
-[Typedef]
-id: http://purl.obofoundry.org/interacts_with_8BPh
-domain: RNAO:0000102  ! cytidylate residue
-range: RNAO:0000018  ! phosphate unit
-
-[Typedef]
-id: http://purl.obofoundry.org/interacts_with_9BPh
-domain: RNAO:0000101  ! pyrimidine ribonucleotide
-range: RNAO:0000018  ! phosphate unit
-
-[Typedef]
-id: http://purl.obofoundry.org/interacts_with_HPh
-domain: RNAO:0000020  ! ribonucleotide
-range: RNAO:0000018  ! phosphate unit
-
-[Typedef]
-id: http://purl.obofoundry.org/interacts_with_WPh
-domain: RNAO:0000020  ! ribonucleotide
-range: RNAO:0000018  ! phosphate unit
-
-[Typedef]
-id: http://purl.obofoundry.org/isosteric_with
-
-[Typedef]
-id: http://purl.obofoundry.org/near_isosteric_with
-
-[Typedef]
-id: http://purl.obofoundry.org/non_tangential_proper_part-of
-name: non_tangential_proper_part_of
-is_transitive: true
-synonym: "non_tangential_proper_part_of" EXACT []
-property_value: IAO:0000111 "non_tangential_proper_part_of" xsd:string
-
-[Typedef]
-id: http://purl.obofoundry.org/nonisosteric_with
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with
-domain: RNAO:0000020  ! ribonucleotide
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_CHH
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_CHS
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_CHW
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_CSH
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_CSS
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_CSW
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_CWH
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_CWS
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_CWW
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_HH
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_HS
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_HW
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_SH
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_SS
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_SW
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_THH
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_THS
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_THW
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_TSH
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_TSS
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_TSW
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_TWH
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_TWS
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_TWW
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_WH
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_WS
-
-[Typedef]
-id: http://purl.obofoundry.org/pairs_with_WW
-
-[Typedef]
-id: http://purl.obofoundry.org/part_of
+id: ro.owl#part_of
 name: part_of
-synonym: "part_of" EXACT []
-property_value: IAO:0000111 "part_of" xsd:string
+inverse_of: ro.owl#has_part
 
 [Typedef]
-id: http://purl.obofoundry.org/stacks
+id: ro.owl#proper_part_of
+name: proper_part_of
+is_a: ro.owl#part_of
 
 [Typedef]
-id: http://purl.obofoundry.org/stacks_five_prime_face_five_prime_face
+id: ObjectProperty1243973897611439000
+name: obsolete_relation
 
 [Typedef]
-id: http://purl.obofoundry.org/stacks_five_prime_face_three_prime_face
+id: RNAO_backbone_connected_to
+name: backbone_connected_to
+is_a: RNAO_covalently_bonded_to
 
 [Typedef]
-id: http://purl.obofoundry.org/stacks_three_prime_face_five_prime_face
+id: RNAO_connected_to
+name: connected_to
+is_symmetric: true
+is_transitive: true
 
 [Typedef]
-id: http://purl.obofoundry.org/stacks_three_prime_face_three_prime_face
+id: RNAO_covalently_bonded_to
+name: covalently_bonded_to
+is_a: RNAO_covalently_connected_to
+is_symmetric: true
+range: CHEBI:33250
+domain: CHEBI:33250
 
 [Typedef]
-id: http://purl.obofoundry.org/tangential_proper_part_of
+id: RNAO_covalently_connected_to
+name: covalently_connected_to
+is_a: RNAO_connected_to
+is_symmetric: true
+is_transitive: true
+
+[Typedef]
+id: RNAO_disconnected_from
+name: disconnected_from
+is_symmetric: true
+
+[Typedef]
+id: RNAO_externally_connected_to
+name: externally_connected_to
+is_a: RNAO_connected_to
+is_symmetric: true
+
+[Typedef]
+id: RNAO_five_prime_to_five_prime_to
+name: five_prime_to_five_prime_to
+is_a: RNAO_backbone_connected_to
+is_functional: true
+is_symmetric: true
+
+[Typedef]
+id: RNAO_five_prime_to_three_prime_to
+name: five_prime_to_three_prime_to
+is_a: RNAO_backbone_connected_to
+is_functional: true
+
+[Typedef]
+id: RNAO_five_prime_to_two_prime_to
+name: five_prime_to_two_prime_to
+is_a: RNAO_backbone_connected_to
+inverse_of: RNAO_two_prime_to_five_prime_to
+is_functional: true
+
+[Typedef]
+id: RNAO_has_boundary
+name: has_boundary
+
+[Typedef]
+id: RNAO_has_non_tangential_proper_part
+name: has_non_tangential_proper_part
+is_a: ro.owl#has_proper_part
+
+[Typedef]
+id: RNAO_has_tangential_proper_part
+name: has_tangential_proper_part
+is_a: ro.owl#has_proper_part
+inverse_of: RNAO_tangential_proper_part_of
+
+[Typedef]
+id: RNAO_isosteric_with
+is_symmetric: true
+
+[Typedef]
+id: RNAO_near_isosteric_with
+is_symmetric: true
+
+[Typedef]
+id: RNAO_non_tangential_proper_part-of
+name: non_tangential_proper_part_of
+is_a: ro.owl#proper_part_of
+inverse_of: RNAO_has_non_tangential_proper_part
+
+[Typedef]
+id: RNAO_pairs_with
+is_a: RNAO_weakly_interacting_with
+domain: RNAO:0000020
+
+[Typedef]
+id: RNAO_pairs_with_CHH
+is_a: RNAO_pairs_with_HH
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_CHS
+is_a: RNAO_pairs_with_HS
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_CHW
+is_a: RNAO_pairs_with_HW
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_CSH
+is_a: RNAO_pairs_with_SH
+inverse_of: RNAO_pairs_with_CHS
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_CSS
+is_a: RNAO_pairs_with_SS
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_CSW
+is_a: RNAO_pairs_with_SW
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_CWH
+is_a: RNAO_pairs_with_WH
+inverse_of: RNAO_pairs_with_CHW
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_CWS
+is_a: RNAO_pairs_with_WS
+inverse_of: RNAO_pairs_with_CSW
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_CWW
+is_a: RNAO_pairs_with_WW
+is_functional: true
+is_symmetric: true
+
+[Typedef]
+id: RNAO_pairs_with_HH
+is_a: RNAO_pairs_with
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_HS
+is_a: RNAO_pairs_with
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_HW
+is_a: RNAO_pairs_with
+inverse_of: RNAO_pairs_with_WH
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_SH
+is_a: RNAO_pairs_with
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_SS
+is_a: RNAO_pairs_with
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_SW
+is_a: RNAO_pairs_with
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_THH
+is_a: RNAO_pairs_with_HH
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_THS
+is_a: RNAO_pairs_with_HS
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_THW
+is_a: RNAO_pairs_with_HW
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_TSH
+is_a: RNAO_pairs_with_SH
+inverse_of: RNAO_pairs_with_THS
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_TSS
+is_a: RNAO_pairs_with_SS
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_TSW
+is_a: RNAO_pairs_with_SW
+inverse_of: RNAO_pairs_with_TWS
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_TWH
+is_a: RNAO_pairs_with_WH
+inverse_of: RNAO_pairs_with_THW
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_TWS
+is_a: RNAO_pairs_with_WS
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_TWW
+is_a: RNAO_pairs_with_WW
+is_functional: true
+is_symmetric: true
+
+[Typedef]
+id: RNAO_pairs_with_WH
+is_a: RNAO_pairs_with
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_WS
+is_a: RNAO_pairs_with
+is_functional: true
+
+[Typedef]
+id: RNAO_pairs_with_WW
+is_a: RNAO_pairs_with
+is_functional: true
+
+[Typedef]
+id: RNAO_stacks_five_prime_face_five_prime_face
+is_a: RNAO_stacks_with
+
+[Typedef]
+id: RNAO_stacks_five_prime_face_three_prime_face
+is_a: RNAO_stacks_with
+
+[Typedef]
+id: RNAO_stacks_three_prime_face_five_prime_face
+is_a: RNAO_stacks_with
+
+[Typedef]
+id: RNAO_stacks_three_prime_face_three_prime_face
+is_a: RNAO_stacks_with
+
+[Typedef]
+id: RNAO_stacks_with
+is_a: RNAO_weakly_interacting_with
+
+[Typedef]
+id: RNAO_tangential_proper_part_of
 name: tangential_proper_part_of
-synonym: "tangential_proper_part_of" EXACT []
-property_value: IAO:0000111 "tangential_proper_part_of" xsd:string
+is_a: ro.owl#proper_part_of
 
 [Typedef]
-id: http://purl.obofoundry.org/three_prime_to_five_prime_to
+id: RNAO_three_prime_to_five_prime_to
 name: three_prime_to_five_prime_to
+is_a: RNAO_backbone_connected_to
+inverse_of: RNAO_five_prime_to_three_prime_to
+is_functional: true
 
 [Typedef]
-id: http://purl.obofoundry.org/three_prime_to_three_prime_to
+id: RNAO_three_prime_to_three_prime_to
 name: three_prime_to_three_prime_to
+is_a: RNAO_backbone_connected_to
+is_functional: true
+is_symmetric: true
 
 [Typedef]
-id: http://purl.obofoundry.org/three_prime_to_two_prime_to
+id: RNAO_three_prime_to_two_prime_to
 name: three_prime_to_two_prime_to
+is_a: RNAO_backbone_connected_to
+is_functional: true
 
 [Typedef]
-id: http://purl.obofoundry.org/two_prime_to_five_prime_to
+id: RNAO_two_prime_to_five_prime_to
 name: two_prime_to_five_prime_to
+is_a: RNAO_backbone_connected_to
+is_functional: true
 
 [Typedef]
-id: http://purl.obofoundry.org/two_prime_to_three_prime_to
+id: RNAO_two_prime_to_three_prime_to
 name: two_prime_to_three_prime_to
+is_a: RNAO_backbone_connected_to
+inverse_of: RNAO_three_prime_to_two_prime_to
+is_functional: true
 
+[Typedef]
+id: RNAO_weakly_connected_to
+name: weakly_connected_to
+is_a: RNAO_connected_to
+is_symmetric: true
+is_transitive: true
+
+[Typedef]
+id: RNAO_weakly_interacting_with
+name: weakly_interacting_with
+is_a: RNAO_weakly_connected_to
+is_symmetric: true
+
+[Typedef]
+id: interacts_with_0BPh
+is_a: interacts_with_HPh
+domain: RNAO:0000020
+
+[Typedef]
+id: interacts_with_1BPh
+is_a: ObjectProperty1243973897611439000
+range: RNAO:0000018
+domain: RNAO:0000105
+
+[Typedef]
+id: interacts_with_2BPh
+is_a: ObjectProperty1243973897611439000
+range: RNAO:0000018
+domain: RNAO:0000104
+
+[Typedef]
+id: interacts_with_3BPh
+is_a: interacts_with_WPh
+range: RNAO:0000018
+domain: RNAO:0000105
+
+[Typedef]
+id: interacts_with_4BPh
+is_a: interacts_with_WPh
+range: RNAO:0000018
+domain: RNAO:0000105
+
+[Typedef]
+id: interacts_with_5BPh
+is_a: interacts_with_WPh
+range: RNAO:0000018
+
+[Typedef]
+id: interacts_with_6BPh
+is_a: interacts_with_WPh
+range: RNAO:0000018
+
+[Typedef]
+id: interacts_with_7BPh
+is_a: interacts_with_HPh
+range: RNAO:0000018
+
+[Typedef]
+id: interacts_with_8BPh
+is_a: interacts_with_HPh
+range: RNAO:0000018
+domain: RNAO:0000102
+
+[Typedef]
+id: interacts_with_9BPh
+is_a: interacts_with_HPh
+range: RNAO:0000018
+domain: RNAO:0000101
+
+[Typedef]
+id: interacts_with_HPh
+is_a: ObjectProperty1243973897611439000
+range: RNAO:0000018
+domain: RNAO:0000020
+
+[Typedef]
+id: interacts_with_WPh
+is_a: ObjectProperty1243973897611439000
+range: RNAO:0000018
+domain: RNAO:0000020
