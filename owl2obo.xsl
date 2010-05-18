@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 		xmlns:obo="http://purl.obolibrary.org/obo/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
 		xmlns:owl="http://www.w3.org/2002/07/owl#"
 		xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 		xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -24,7 +25,7 @@
 </xsl:text>
     <xsl:text>id: </xsl:text><xsl:value-of select="roc:owlid2oboid(@rdf:about)"/>
     <xsl:apply-templates select="rdfs:label"/>
-    <xsl:apply-templates select="obo:IAO_0000115"/>
+    <xsl:apply-templates select="dc:description"/>
     <xsl:apply-templates select="rdfs:subClassOf"/>
   </xsl:template>
 
@@ -91,7 +92,7 @@ range: </xsl:text><xsl:value-of select="roc:owlid2oboid(@rdf:resource)"/>
     </xsl:if>
   </xsl:template>
 
-  <xsl:template match="obo:IAO_0000115">
+  <xsl:template match="dc:description">
     <xsl:text>
 def: &#x22;</xsl:text><xsl:value-of select="normalize-space(.)"/>
     <xsl:text>&#x22; [RNAO:ROC]</xsl:text>
