@@ -236,6 +236,8 @@ formula(forall([X,Y],equiv(5to(X,Y),3to(Y,X)))).
 
 %D18
 formula(forall([X],equiv(53strand(X),exists([P],and(
+	forall([Y,W,Z],implies(and(mo(Y,P),mo(Z,P),5to(Y,Z),3to(W,Y),5to(W,Z)),
+			po(W,X))),
 	Coll(P),forall([M],implies(mo(M,P),nt(M))),soc(X,P),
 	forall([Y,Z],implies(and(mo(Y,P),mo(Z,P)),or(3to(Y,Z),5to(Y,Z))))))))).
 
