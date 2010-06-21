@@ -1,0 +1,4665 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY obo "http://purl.obolibrary.org/obo/" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY snap "http://www.ifomis.org/bfo/1.1/snap#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY resource "http://semanticscience.org/resource/" >
+    <!ENTITY ro "http://purl.obofoundry.org/ro/ro.owl#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="&obo;rnao.owl#"
+     xml:base="&obo;rnao.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ro="http://purl.obofoundry.org/ro/ro.owl#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:snap="http://www.ifomis.org/bfo/1.1/snap#"
+     xmlns:resource="http://semanticscience.org/resource/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about="">
+        <dc:contributor>Francois Major</dc:contributor>
+        <dc:contributor>Eric Westhof</dc:contributor>
+        <dc:contributor>Jesse Stombaugh</dc:contributor>
+        <dc:contributor
+            >Jane S. Richardson</dc:contributor>
+        <dc:title
+            >The RNA Ontology (RNAO): An Ontology for Integrating RNA Sequence and Structure Data</dc:title>
+        <dc:contributor>Neocles Leontis</dc:contributor>
+        <dc:contributor>Colin Batchelor</dc:contributor>
+        <dc:date
+            >2010-05-17T23:35:00</dc:date>
+        <dc:contributor
+            >Robert Hoehndorf</dc:contributor>
+        <dc:contributor
+            >Michel Dumontier</dc:contributor>
+        <dc:contributor>Craig L. Zirbel</dc:contributor>
+        <dc:contributor
+            >Jose Cruz-Toledo</dc:contributor>
+        <dc:contributor>Rob Knight</dc:contributor>
+        <dc:contributor>Thomas Bittner</dc:contributor>
+        <dc:contributor
+            >Chris J. Mungall</dc:contributor>
+        <dc:contributor>Karen Eilbeck</dc:contributor>
+        <owl:imports rdf:resource="http://www.ifomis.org/bfo/1.1"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;date"/>
+    <owl:AnnotationProperty rdf:about="&dc;source"/>
+    <owl:AnnotationProperty rdf:about="&dc;title"/>
+    <owl:AnnotationProperty rdf:about="&dc;description"/>
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000112"/>
+    <owl:AnnotationProperty rdf:about="&dc;contributor"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obofoundry.org/ro/ro.owl#has_part -->
+
+    <owl:ObjectProperty rdf:about="&ro;has_part">
+        <rdf:type rdf:resource="&owl;ReflexiveProperty"/>
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:label>has part</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obofoundry.org/ro/ro.owl#has_proper_part -->
+
+    <owl:ObjectProperty rdf:about="&ro;has_proper_part">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:label>has proper part</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&ro;has_part"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obofoundry.org/ro/ro.owl#has_quality -->
+
+    <owl:ObjectProperty rdf:about="&ro;has_quality">
+        <rdfs:label>has_quality</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obofoundry.org/ro/ro.owl#part_of -->
+
+    <owl:ObjectProperty rdf:about="&ro;part_of">
+        <rdf:type rdf:resource="&owl;ReflexiveProperty"/>
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:label>part of</rdfs:label>
+        <owl:inverseOf rdf:resource="&ro;has_part"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obofoundry.org/ro/ro.owl#proper_part_of -->
+
+    <owl:ObjectProperty rdf:about="&ro;proper_part_of">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:label>proper part of</rdfs:label>
+        <owl:inverseOf rdf:resource="&ro;has_proper_part"/>
+        <rdfs:subPropertyOf rdf:resource="&ro;part_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ObjectProperty1243973897611439000 -->
+
+    <owl:ObjectProperty rdf:about="&obo;ObjectProperty1243973897611439000">
+        <rdfs:label
+            >obsolete_relation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000220 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000220">
+        <rdfs:label>RNA backbone of</rdfs:label>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000181"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000357"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000221 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000221">
+        <rdfs:label
+            >has RNA backbone</rdfs:label>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000220"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000358"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000222 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000222">
+        <rdfs:label>has direct part</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&ro;has_proper_part"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000223"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000223 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000223">
+        <rdfs:label>direct part of</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&ro;proper_part_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000300 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000300">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:label>connected_to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000301 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000301">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:label
+            >covalently connected to (transitive)</rdfs:label>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000158"/>
+        <rdfs:range rdf:resource="&obo;RNAO_0000158"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000300"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000302 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000302">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:label
+            >covalently bonded to (transitive)</rdfs:label>
+        <rdfs:domain rdf:resource="&obo;CHEBI_33250"/>
+        <rdfs:range rdf:resource="&obo;CHEBI_33250"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000301"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000303 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000303">
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label
+            >covalently bonded to</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000302"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000304 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000304">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label
+            >covalently connected to</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000301"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000305 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000305">
+        <rdfs:label
+            >backbone connected to</rdfs:label>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000187"/>
+        <rdfs:range rdf:resource="&obo;RNAO_0000187"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000304"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000306 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000306">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label
+            >covalently connected 5&#39; to 5&#39;</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000305"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_0000308"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000307 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000307">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label
+            >covalently connected 5p to 3p</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000382"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000308 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000308">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label
+            >covalently connected 5&#39; to 2&#39;</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000305"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000312"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000309 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000309">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label
+            >covalently connected 3p to 5p</rdfs:label>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000307"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000383"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000310 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000310">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label
+            >covalently connected 3&#39; to 3&#39;</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000305"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000311 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000311">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label
+            >covalently connected 3&#39; to 2&#39;</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000305"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000312 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000312">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label
+            >covalently connected 2&#39; to 5&#39;</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000305"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_0000313"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000313 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000313">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label
+            >covalently connected 2&#39; to 3&#39;</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000305"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000311"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000315 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000315">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:label
+            >weakly interacting with (transitive)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000300"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;CHEBI_33250"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000120"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000141"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000158"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;CHEBI_33250"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000120"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000141"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000158"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000316 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000316">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label
+            >weakly interacting with</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000315"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000317 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000317">
+        <rdfs:label>pairs with</rdfs:label>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000020"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000316"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_0000318"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000018"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000020"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000318 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000318">
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label>stacks with</rdfs:label>
+        <rdfs:range rdf:resource="&obo;RNAO_0000187"/>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000187"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000316"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000319 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000319">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label
+            >stacks 5&#39; face to 5&#39; face</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000318"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_0000320"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000320 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000320">
+        <rdfs:label
+            >stacks 5&#39; face to 3&#39; face</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000318"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000321"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000321 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000321">
+        <rdfs:label
+            >stacks 3&#39; face to 5&#39; face</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000318"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_0000322"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000322 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000322">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label
+            >stacks 3&#39; face to 3&#39; face</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000318"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000323 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000323">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with HH</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000317"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;interacts_with_HPh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000324 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000324">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with CHH</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000323"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000325 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000325">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with THH</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000323"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000326 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000326">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with HS</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000317"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;interacts_with_HPh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000327 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000327">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with CHS</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000326"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000328 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000328">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with THS</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000326"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000329 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000329">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with HW</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000317"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000341"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;interacts_with_HPh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000330 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000330">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with CHW</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000329"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000331 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000331">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with THW</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000329"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000332 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000332">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with SH</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000317"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;interacts_with_1BPh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000333 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000333">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with CSH</rdfs:label>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000327"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000332"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000334 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000334">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with TSH</rdfs:label>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000328"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000332"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000335 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000335">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with SS</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000317"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;interacts_with_1BPh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000336 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000336">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with CSS</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000335"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000337 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000337">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with TSS</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000335"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000338 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000338">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with SW</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000317"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;interacts_with_1BPh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000339 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000339">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with CSW</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000338"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000340 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000340">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with TSW</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000338"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000346"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000341 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000341">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with WH</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000317"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_0000344"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_0000347"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;interacts_with_WPh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000342 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000342">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with CWH</rdfs:label>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000330"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000341"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_0000343"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000343 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000343">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with TWH</rdfs:label>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000331"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000341"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000344 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000344">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with WS</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000317"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_0000347"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;interacts_with_WPh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000345 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000345">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with CWS</rdfs:label>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000339"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000344"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000346 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000346">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with TWS</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000344"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000347 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000347">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>pairs with WW</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000317"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;interacts_with_WPh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000348 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000348">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label>pairs with CWW</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000347"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000349 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000349">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label>pairs with TWW</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000347"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000350 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000350">
+        <rdfs:label>boundary of</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&ro;proper_part_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000351 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000351">
+        <rdfs:label
+            >external boundary of</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000350"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000352 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000352">
+        <rdfs:label>has boundary</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&ro;has_proper_part"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000350"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000353 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000353">
+        <rdfs:label
+            >has external boundary</rdfs:label>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000351"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000352"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000354 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000354">
+        <rdfs:label>has member</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&ro;has_part"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000355 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000355">
+        <rdfs:label>member of</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&ro;part_of"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000354"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&obo;RNAO_0000355"/>
+            <rdf:Description rdf:about="&obo;RNAO_0000356"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000356 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000356">
+        <rdfs:label
+            >subcollection of</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&ro;part_of"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000359"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000357 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000357">
+        <rdfs:label>submolecule of</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&ro;part_of"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000358"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000358 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000358">
+        <rdfs:label>has submolecule</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&ro;has_part"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000359 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000359">
+        <rdfs:label
+            >has subcollection</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&ro;has_part"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000360 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000360">
+        <rdfs:label>overlaps</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000361 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000361">
+        <rdfs:label
+            >covalently bonded sum of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000362 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000362">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:label>same chain</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000305"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&obo;RNAO_0000307"/>
+            <rdf:Description rdf:about="&obo;RNAO_0000309"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000363 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000363">
+        <rdf:type rdf:resource="&owl;ReflexiveProperty"/>
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:label>corresponds to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000364 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000364">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label
+            >corresponds to, nucleotide by nucleotide</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000363"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000365 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000365">
+        <rdfs:label>suite of</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000357"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000366"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000366 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000366">
+        <rdfs:label>has suite</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000358"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000367 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000367">
+        <rdfs:label>has face</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000352"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000368 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000368">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>face of</rdfs:label>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000183"/>
+        <rdfs:range rdf:resource="&obo;RNAO_0000187"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000350"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000367"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000369 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000369">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>5&#39; face of</rdfs:label>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000184"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000368"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000371"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000370 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000370">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>3&#39; face of</rdfs:label>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000185"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000368"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000372"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000371 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000371">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>has 5&#39; face</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000367"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000372 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000372">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>has 3&#39; face</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000367"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000373 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000373">
+        <rdfs:label>has edge</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000352"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000374 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000374">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>edge of</rdfs:label>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000091"/>
+        <rdfs:range rdf:resource="&obo;RNAO_0000187"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000350"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000373"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000375 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000375">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>has sugar edge</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000373"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000376 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000376">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label
+            >has hoogsteen edge</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000373"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000377 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000377">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label
+            >has watson-crick edge</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000373"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000378 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000378">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label
+            >is hoogsteen edge of</rdfs:label>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000093"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000374"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000376"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000379 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000379">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label
+            >is sugar edge of</rdfs:label>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000094"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000374"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000375"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000380 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000380">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label
+            >is watson-crick edge of</rdfs:label>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000092"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000374"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000377"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000381 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000381">
+        <rdfs:label
+            >sum of collection</rdfs:label>
+        <rdfs:range rdf:resource="&obo;RNAO_0000110"/>
+        <rdfs:domain rdf:resource="&snap;MaterialEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000382 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000382">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:label
+            >covalently connected 5&#39; to 3&#39; (transitive)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000362"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000383 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000383">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:label
+            >covalently connected 3&#39; to 5&#39; (transitive)</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000362"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_isosteric_with -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_isosteric_with">
+        <rdf:type rdf:resource="&owl;ReflexiveProperty"/>
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;ObjectProperty1243973897611439000"/>
+        <owl:propertyDisjointWith rdf:resource="&obo;RNAO_near_isosteric_with"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_near_isosteric_with -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_near_isosteric_with">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;ObjectProperty1243973897611439000"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/interacts_with_0BPh -->
+
+    <owl:ObjectProperty rdf:about="&obo;interacts_with_0BPh">
+        <rdfs:domain rdf:resource="&obo;RNAO_0000020"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;interacts_with_HPh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/interacts_with_1BPh -->
+
+    <owl:ObjectProperty rdf:about="&obo;interacts_with_1BPh">
+        <dc:description
+            >Pairwise interaction of the sugar edge with a phosphate unit. Only occurs with G.</dc:description>
+        <rdfs:subPropertyOf rdf:resource="&obo;ObjectProperty1243973897611439000"/>
+        <rdfs:range rdf:resource="&obo;RNAO_0000018"/>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000105"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/interacts_with_2BPh -->
+
+    <owl:ObjectProperty rdf:about="&obo;interacts_with_2BPh">
+        <rdfs:subPropertyOf rdf:resource="&obo;ObjectProperty1243973897611439000"/>
+        <rdfs:range rdf:resource="&obo;RNAO_0000018"/>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000104"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/interacts_with_3BPh -->
+
+    <owl:ObjectProperty rdf:about="&obo;interacts_with_3BPh">
+        <rdfs:range rdf:resource="&obo;RNAO_0000018"/>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000105"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;interacts_with_WPh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/interacts_with_4BPh -->
+
+    <owl:ObjectProperty rdf:about="&obo;interacts_with_4BPh">
+        <rdfs:range rdf:resource="&obo;RNAO_0000018"/>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000105"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;interacts_with_WPh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/interacts_with_5BPh -->
+
+    <owl:ObjectProperty rdf:about="&obo;interacts_with_5BPh">
+        <rdfs:range rdf:resource="&obo;RNAO_0000018"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;interacts_with_WPh"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000103"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000105"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/interacts_with_6BPh -->
+
+    <owl:ObjectProperty rdf:about="&obo;interacts_with_6BPh">
+        <rdfs:range rdf:resource="&obo;RNAO_0000018"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;interacts_with_WPh"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000102"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000105"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/interacts_with_7BPh -->
+
+    <owl:ObjectProperty rdf:about="&obo;interacts_with_7BPh">
+        <rdfs:range rdf:resource="&obo;RNAO_0000018"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;interacts_with_HPh"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000102"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000104"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/interacts_with_8BPh -->
+
+    <owl:ObjectProperty rdf:about="&obo;interacts_with_8BPh">
+        <rdfs:range rdf:resource="&obo;RNAO_0000018"/>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000102"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;interacts_with_HPh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/interacts_with_9BPh -->
+
+    <owl:ObjectProperty rdf:about="&obo;interacts_with_9BPh">
+        <rdfs:range rdf:resource="&obo;RNAO_0000018"/>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000101"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;interacts_with_HPh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/interacts_with_HPh -->
+
+    <owl:ObjectProperty rdf:about="&obo;interacts_with_HPh">
+        <rdfs:subPropertyOf rdf:resource="&obo;ObjectProperty1243973897611439000"/>
+        <rdfs:range rdf:resource="&obo;RNAO_0000018"/>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000020"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/interacts_with_WPh -->
+
+    <owl:ObjectProperty rdf:about="&obo;interacts_with_WPh">
+        <rdfs:subPropertyOf rdf:resource="&obo;ObjectProperty1243973897611439000"/>
+        <rdfs:range rdf:resource="&obo;RNAO_0000018"/>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000020"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_25805 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_25805">
+        <rdfs:label>oxygen atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_33250"/>
+        <rdfs:comment>from CHEBI</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_27594 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_27594">
+        <rdfs:label>carbon atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_33250"/>
+        <rdfs:comment>from CHEBI</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_28659 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_28659">
+        <rdfs:label
+            >phosphorous atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_33250"/>
+        <rdfs:comment>from CHEBI</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_29235 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_29235">
+        <rdfs:label>hydrogen atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_33250"/>
+        <rdfs:comment>from CHEBI</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_29351 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_29351">
+        <rdfs:label>nitrogen atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_33250"/>
+        <rdfs:comment>from CHEBI</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33250 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_33250">
+        <rdfs:label>atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&snap;MaterialEntity"/>
+        <owl:disjointWith rdf:resource="&obo;RNAO_0000141"/>
+        <rdfs:comment>from CHEBI</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000000 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000000">
+        <rdfs:label
+            >ribonucleic acid</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000201"/>
+        <rdfs:comment>3&#39;-5&#39; RNA</rdfs:comment>
+        <rdfs:comment>5&#39;-3&#39; RNA</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000001 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000001">
+        <rdfs:label>base pair</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&snap;MaterialEntity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;has_part"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;RNAO_0000017"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;RNAO_0000317"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&snap;MaterialEntity"/>
+        <dc:description
+            >A base pair consists of a pair of nucleotide residues that interact by nucleoside edge to nucleoside edge hydrogen bonds.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000002 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000002">
+        <rdfs:label
+            >deoxyribose ring</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000147"/>
+        <dc:description
+            >A ribose ring that does not have a hydroxy group at the 2&#39; position.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000003 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000003">
+        <rdfs:label
+            >family_1_base_pair</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000116"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:onClass rdf:resource="&obo;RNAO_0000028"/>
+                                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;has_part"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;RNAO_0000017"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;RNAO_0000352"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;RNAO_0000092"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000316"/>
+                                                        <owl:someValuesFrom>
+                                                            <owl:Class>
+                                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                                    <rdf:Description rdf:about="&obo;RNAO_0000092"/>
+                                                                    <owl:Restriction>
+                                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000350"/>
+                                                                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
+                                                                    </owl:Restriction>
+                                                                </owl:intersectionOf>
+                                                            </owl:Class>
+                                                        </owl:someValuesFrom>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;RNAO_0000222"/>
+                        <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000116"/>
+        <dc:description
+            >A family_1_base_pair is an RNAO_base_pair in which the two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edges of each base and in which the glycosidic bonds of the two nucleotides are oriented &quot;cis&quot; relative to each other.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000004 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000004">
+        <rdfs:label
+            >family_2_base_pair</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000117"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&ro;has_part"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000027"/>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&ro;has_part"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000028"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:complementOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;has_part"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;RNAO_0000017"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;RNAO_0000352"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;RNAO_0000092"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000316"/>
+                                                        <owl:someValuesFrom>
+                                                            <owl:Class>
+                                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                                    <rdf:Description rdf:about="&obo;RNAO_0000092"/>
+                                                                    <owl:Restriction>
+                                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000350"/>
+                                                                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
+                                                                    </owl:Restriction>
+                                                                </owl:intersectionOf>
+                                                            </owl:Class>
+                                                        </owl:someValuesFrom>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;RNAO_0000222"/>
+                        <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000117"/>
+        <dc:description
+            >A family_2_base_pair is an RNAO_base_pair in which the two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edges of each base and in which the glycosidic bonds of the two nucleotides are oriented &quot;trans&quot; relative to each other.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000005 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000005">
+        <rdfs:label
+            >family_3_base_pair</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000116"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;has_part"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;RNAO_0000017"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;RNAO_0000352"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;RNAO_0000092"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000316"/>
+                                                        <owl:someValuesFrom>
+                                                            <owl:Class>
+                                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                                    <rdf:Description rdf:about="&obo;RNAO_0000093"/>
+                                                                    <owl:Restriction>
+                                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000350"/>
+                                                                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
+                                                                    </owl:Restriction>
+                                                                </owl:intersectionOf>
+                                                            </owl:Class>
+                                                        </owl:someValuesFrom>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;RNAO_0000222"/>
+                        <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000116"/>
+        <dc:description
+            >A family_3_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Hoogsteen edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented &quot;cis&quot; relative to each other.</dc:description>
+        <rdfs:comment
+            >Forbidden pairings (Watson-Crick edge first); CA, UC, AC, AA, GC, GU.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000006 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000006">
+        <rdfs:label
+            >family_4_base_pair</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000117"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;has_part"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;RNAO_0000017"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;RNAO_0000352"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;RNAO_0000092"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000316"/>
+                                                        <owl:someValuesFrom>
+                                                            <owl:Class>
+                                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                                    <rdf:Description rdf:about="&obo;RNAO_0000093"/>
+                                                                    <owl:Restriction>
+                                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000350"/>
+                                                                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
+                                                                    </owl:Restriction>
+                                                                </owl:intersectionOf>
+                                                            </owl:Class>
+                                                        </owl:someValuesFrom>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;RNAO_0000222"/>
+                        <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000117"/>
+        <dc:description
+            >A family_4_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Hoogsteen edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented &quot;trans&quot; relative to each other.</dc:description>
+        <rdfs:comment
+            >Forbidden are the following pairings (Watson-Crick edge first); CU, UC, AC, AU, GC, GA.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000007 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000007">
+        <rdfs:label
+            >family_5_base_pair</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000116"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;has_part"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;RNAO_0000017"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;RNAO_0000352"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;RNAO_0000092"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000316"/>
+                                                        <owl:someValuesFrom>
+                                                            <owl:Class>
+                                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                                    <rdf:Description rdf:about="&obo;RNAO_0000094"/>
+                                                                    <owl:Restriction>
+                                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000350"/>
+                                                                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
+                                                                    </owl:Restriction>
+                                                                </owl:intersectionOf>
+                                                            </owl:Class>
+                                                        </owl:someValuesFrom>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;RNAO_0000222"/>
+                        <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000116"/>
+        <dc:description
+            >A family_5_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented &quot;cis&quot; relative to each other.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000008 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000008">
+        <rdfs:label
+            >family_6_base_pair</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000117"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;has_part"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;RNAO_0000017"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;RNAO_0000352"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;RNAO_0000092"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000316"/>
+                                                        <owl:someValuesFrom>
+                                                            <owl:Class>
+                                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                                    <rdf:Description rdf:about="&obo;RNAO_0000094"/>
+                                                                    <owl:Restriction>
+                                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000350"/>
+                                                                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
+                                                                    </owl:Restriction>
+                                                                </owl:intersectionOf>
+                                                            </owl:Class>
+                                                        </owl:someValuesFrom>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;RNAO_0000222"/>
+                        <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000117"/>
+        <rdfs:comment
+            >Forbidden is the pairing where G presents the Watson-Crick edge and A presents the sugar edge.</rdfs:comment>
+        <dc:description
+            >A family_6_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Watson-Crick edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented &quot;trans&quot; relative to each other.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000009 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000009">
+        <rdfs:label
+            >family_7_base_pair</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000116"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;has_part"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;RNAO_0000017"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;RNAO_0000352"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;RNAO_0000093"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000316"/>
+                                                        <owl:someValuesFrom>
+                                                            <owl:Class>
+                                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                                    <rdf:Description rdf:about="&obo;RNAO_0000093"/>
+                                                                    <owl:Restriction>
+                                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000350"/>
+                                                                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
+                                                                    </owl:Restriction>
+                                                                </owl:intersectionOf>
+                                                            </owl:Class>
+                                                        </owl:someValuesFrom>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;RNAO_0000222"/>
+                        <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000116"/>
+        <dc:description
+            >A family_7_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edges of each base and in which the glycosidic bonds of the two nucleotides are oriented &quot;cis&quot; relative to each other.</dc:description>
+        <rdfs:comment
+            >Forbidden pairings are: CC, CU, CA, UA, UC, UG, UU, AC, AU, AA and GU.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000010 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000010">
+        <rdfs:label
+            >family_8_base_pair</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000117"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;has_part"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;RNAO_0000017"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;RNAO_0000352"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;RNAO_0000093"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000316"/>
+                                                        <owl:someValuesFrom>
+                                                            <owl:Class>
+                                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                                    <rdf:Description rdf:about="&obo;RNAO_0000093"/>
+                                                                    <owl:Restriction>
+                                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000350"/>
+                                                                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
+                                                                    </owl:Restriction>
+                                                                </owl:intersectionOf>
+                                                            </owl:Class>
+                                                        </owl:someValuesFrom>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;RNAO_0000222"/>
+                        <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000117"/>
+        <dc:description
+            >A family_8_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edges of each base and in which the glycosidic bonds of the two nucleotides are oriented &quot;trans&quot; relative to each other.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000011 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000011">
+        <rdfs:label
+            >family_9_base_pair</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000116"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;has_part"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;RNAO_0000017"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;RNAO_0000352"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;RNAO_0000093"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000316"/>
+                                                        <owl:someValuesFrom>
+                                                            <owl:Class>
+                                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                                    <rdf:Description rdf:about="&obo;RNAO_0000094"/>
+                                                                    <owl:Restriction>
+                                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000350"/>
+                                                                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
+                                                                    </owl:Restriction>
+                                                                </owl:intersectionOf>
+                                                            </owl:Class>
+                                                        </owl:someValuesFrom>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;RNAO_0000222"/>
+                        <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000116"/>
+        <dc:description
+            >A family_9_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented &quot;cis&quot; relative to each other.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000012 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000012">
+        <rdfs:label
+            >family_10_base_pair</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000117"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;has_part"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;RNAO_0000017"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;RNAO_0000352"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;RNAO_0000093"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000316"/>
+                                                        <owl:someValuesFrom>
+                                                            <owl:Class>
+                                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                                    <rdf:Description rdf:about="&obo;RNAO_0000094"/>
+                                                                    <owl:Restriction>
+                                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000350"/>
+                                                                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
+                                                                    </owl:Restriction>
+                                                                </owl:intersectionOf>
+                                                            </owl:Class>
+                                                        </owl:someValuesFrom>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;RNAO_0000222"/>
+                        <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000117"/>
+        <dc:description
+            >A family_10_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Hoogsteen edge of one base and the Sugar edge of the other base and in which the glycosidic bonds of the two nucleotides are oriented &quot;trans&quot; relative to each other.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000013 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000013">
+        <rdfs:label
+            >family_11_base_pair</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000116"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;has_part"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;RNAO_0000017"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;RNAO_0000352"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;RNAO_0000094"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000316"/>
+                                                        <owl:someValuesFrom>
+                                                            <owl:Class>
+                                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                                    <rdf:Description rdf:about="&obo;RNAO_0000094"/>
+                                                                    <owl:Restriction>
+                                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000350"/>
+                                                                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
+                                                                    </owl:Restriction>
+                                                                </owl:intersectionOf>
+                                                            </owl:Class>
+                                                        </owl:someValuesFrom>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;RNAO_0000222"/>
+                        <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000116"/>
+        <dc:description
+            >A family_11_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Sugar edges of each base and in which the glycosidic bonds of the two nucleotides are oriented &quot;cis&quot; relative to each other.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000014 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000014">
+        <rdfs:label
+            >family_12_base_pair</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000117"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;has_part"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;RNAO_0000017"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;RNAO_0000352"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;RNAO_0000094"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000316"/>
+                                                        <owl:someValuesFrom>
+                                                            <owl:Class>
+                                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                                    <rdf:Description rdf:about="&obo;RNAO_0000094"/>
+                                                                    <owl:Restriction>
+                                                                        <owl:onProperty rdf:resource="&obo;RNAO_0000350"/>
+                                                                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
+                                                                    </owl:Restriction>
+                                                                </owl:intersectionOf>
+                                                            </owl:Class>
+                                                        </owl:someValuesFrom>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;RNAO_0000222"/>
+                        <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000117"/>
+        <dc:description
+            >A family_12_base_pair is an RNAO_base_pair in which two RNA nucleotides interact by edge-to-edge hydrogen-bonding between the Sugar edges of each base and in which the glycosidic bonds of the two nucleotides are oriented &quot;trans&quot; relative to each other.</dc:description>
+        <rdfs:comment
+            >Excluded are CA, CC, CU, CG, and UA, UC, UU, UG.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000015 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000015">
+        <rdfs:label>RNA suite</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000158"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000000"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000200"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000016 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000016">
+        <rdfs:label
+            >canonical RNA base pair</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&obo;RNAO_0000025"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&obo;RNAO_0000352"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="&obo;RNAO_0000092"/>
+                                                            <owl:Restriction>
+                                                                <owl:onProperty rdf:resource="&obo;RNAO_0000316"/>
+                                                                <owl:someValuesFrom>
+                                                                    <owl:Class>
+                                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                                            <rdf:Description rdf:about="&obo;RNAO_0000092"/>
+                                                                            <owl:Restriction>
+                                                                                <owl:onProperty rdf:resource="&obo;RNAO_0000350"/>
+                                                                                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000028"/>
+                                                                            </owl:Restriction>
+                                                                        </owl:intersectionOf>
+                                                                    </owl:Class>
+                                                                </owl:someValuesFrom>
+                                                            </owl:Restriction>
+                                                        </owl:intersectionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ro;has_part"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&obo;RNAO_0000027"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&obo;RNAO_0000352"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="&obo;RNAO_0000092"/>
+                                                            <owl:Restriction>
+                                                                <owl:onProperty rdf:resource="&obo;RNAO_0000316"/>
+                                                                <owl:someValuesFrom>
+                                                                    <owl:Class>
+                                                                        <owl:intersectionOf rdf:parseType="Collection">
+                                                                            <rdf:Description rdf:about="&obo;RNAO_0000092"/>
+                                                                            <owl:Restriction>
+                                                                                <owl:onProperty rdf:resource="&obo;RNAO_0000350"/>
+                                                                                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000026"/>
+                                                                            </owl:Restriction>
+                                                                        </owl:intersectionOf>
+                                                                    </owl:Class>
+                                                                </owl:someValuesFrom>
+                                                            </owl:Restriction>
+                                                        </owl:intersectionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;RNAO_0000222"/>
+                        <owl:onClass rdf:resource="&obo;RNAO_0000019"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000116"/>
+        <dc:description
+            >An RNAO_base_pair which has cis-Watson--Crick pairing and where the participating bases are AU, CG, GC or UA.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000017 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000017">
+        <rdfs:label>nucleobase</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000158"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000186"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description
+            >A nucleobase is an N-heterocyclic group that forms part of a nucleoside residue.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000018 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000018">
+        <rdfs:label
+            >phosphate moiety</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000158"/>
+        <dc:description
+            >A phosphate group consists of a phosphorus atom doubly-bonded to two oxygen atoms and singly-bonded to two oxygen atoms, both of which have a free valence. Unlike the phosphate group in ChEBI (CHEBI:32958), the RNAO phosphate group has two free valences.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000019 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000019">
+        <rdfs:label
+            >ribonucleoside residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000186"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;has_part"/>
+                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000018"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <dc:description
+            >A ribonucleoside consists of a nitrogen heterocycle (a nucleobase) covalently bonded to a ribose ring, with free valences at the 3&#39; and 5&#39; positions on the ring.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000020 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000020">
+        <rdfs:label
+            >ribonucleotide residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000187"/>
+        <dc:description
+            >A ribonucleotide consists of a nitrogen heterocyclic group covalently bonded to the 4&#39; position of a ribose ring and a phosphate group covalently bonded the 3&#39; position of the ribose ring. There is a free valence on one of the oxygens of the phosphate group and on the 5&#39; position of the ribose ring.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000021 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000021">
+        <rdfs:label>ribose ring</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000147"/>
+        <dc:description
+            >A ribose ring is a furanose ring with free valences at the 4&#39; position (to bond to the nucleobase), and the 3&#39; and 5&#39; positions.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000022 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000022">
+        <rdfs:label
+            >2&#39; hydroxyl group</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000158"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000023 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000023">
+        <rdfs:label
+            >purine nucleobase</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000017"/>
+        <dc:description
+            >A purine nucleobase is a heterocyclic group consisting of a five-membered aromatic ring ortho,para-fused to a six-membered aromatic ring and where the atoms at the 1-, 3-, 7- and 9- positions are nitrogen atoms.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000024 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000024">
+        <rdfs:label
+            >pyrimidine nucleobase</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000017"/>
+        <dc:description
+            >A pyrimidine nucleobase is a heterocyclic group consisting of a six-membered ring where the atoms at the 1- and 3-positions are nitrogen atoms.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000025 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000025">
+        <rdfs:label
+            >cytosine nucleobase</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000024"/>
+        <dc:description
+            >A cytosine nucleobase is a pyrimidine that contains a 4-amino group and a 2-oxo group and has a free valence at the 1-position.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000026 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000026">
+        <rdfs:label
+            >uracil nucleobase</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000024"/>
+        <dc:description
+            >A uracil nucleobase is a pyrimidine nucleobase that contains a 2-oxo group and a 4-oxo group and has a free valence at the 1-position.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000027 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000027">
+        <rdfs:label
+            >adenine nucleobase</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000023"/>
+        <dc:description
+            >An adenine nucleobase is a purine nucleobase that contains a 6-amino group and a free valence at the 9-position.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000028 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000028">
+        <rdfs:label
+            >guanine nucleobase</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000023"/>
+        <dc:description
+            >A guanine nucleobase is a purine nucleobase that contains a 2-amino group, a 6-oxo group and a free valence at the 9-position.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000029 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000029">
+        <rdfs:label>22 conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000200"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000030 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000030">
+        <rdfs:label>23 conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000200"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000031 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000031">
+        <rdfs:label>32 conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000200"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000032 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000032">
+        <rdfs:label
+            >purine ribonucleoside residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000019"/>
+        <owl:disjointWith rdf:resource="&obo;RNAO_0000034"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000033 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000033">
+        <rdfs:label>33 conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000200"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000034 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000034">
+        <rdfs:label
+            >pyrimidine ribonucleoside residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000019"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000035 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000035">
+        <rdfs:label
+            >cytidine residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000034"/>
+        <owl:disjointWith rdf:resource="&obo;RNAO_0000036"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000036 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000036">
+        <rdfs:label>uridine residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000034"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000037 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000037">
+        <rdfs:label
+            >adenosine residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000032"/>
+        <owl:disjointWith rdf:resource="&obo;RNAO_0000038"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000038 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000038">
+        <rdfs:label
+            >guanosine residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000032"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000039 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000039">
+        <rdfs:label>1a conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000033"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000040 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000040">
+        <rdfs:label>1c conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000033"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000041 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000041">
+        <rdfs:label>1e conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000033"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000042 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000042">
+        <rdfs:label>1f conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000033"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000043 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000043">
+        <rdfs:label>1g conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000033"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000044 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000044">
+        <rdfs:label>1l conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000033"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000045 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000045">
+        <rdfs:label>1m conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000033"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000046 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000046">
+        <rdfs:label>3a conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000033"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000047 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000047">
+        <rdfs:label>3d conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000033"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000048 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000048">
+        <rdfs:label>5a conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000033"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000049 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000049">
+        <rdfs:label>5d conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000033"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000050 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000050">
+        <rdfs:label>5j conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000033"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000051 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000051">
+        <rdfs:label>5n conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000033"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000052 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000052">
+        <rdfs:label>7a conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000033"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000053 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000053">
+        <rdfs:label>7d conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000033"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000054 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000054">
+        <rdfs:label>9a conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000033"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000055 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000055">
+        <rdfs:label>&amp;a conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000033"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000056 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000056">
+        <rdfs:label>1[ conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000031"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000057 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000057">
+        <rdfs:label>1o conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000031"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000058 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000058">
+        <rdfs:label>1t conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000031"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000059 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000059">
+        <rdfs:label>3b conformation</rdfs:label>
+        <rdfs:label>1z conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000031"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000060 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000060">
+        <rdfs:label>5p conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000031"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000061 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000061">
+        <rdfs:label>5q conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000031"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000062 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000062">
+        <rdfs:label>5r conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000031"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000063 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000063">
+        <rdfs:label>5z conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000031"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000064 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000064">
+        <rdfs:label>7p conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000031"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000065 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000065">
+        <rdfs:label>7r conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000031"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000066 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000066">
+        <rdfs:label>1b conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000031"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000067 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000067">
+        <rdfs:label>0a conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000030"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000068 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000068">
+        <rdfs:label>0i conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000030"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000069 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000069">
+        <rdfs:label>0k conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000030"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000070 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000070">
+        <rdfs:label>2a conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000030"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000071 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000071">
+        <rdfs:label>2g conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000030"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000072 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000072">
+        <rdfs:label>2h conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000030"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000073 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000073">
+        <rdfs:label>4a conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000030"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000074 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000074">
+        <rdfs:label>4d conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000030"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000075 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000075">
+        <rdfs:label>4g conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000030"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000076 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000076">
+        <rdfs:label>4n conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000030"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000077 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000077">
+        <rdfs:label>6d conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000030"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000078 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000078">
+        <rdfs:label>6g conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000030"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000079 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000079">
+        <rdfs:label>8d conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000030"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000080 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000080">
+        <rdfs:label>6n conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000030"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000081 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000081">
+        <rdfs:label>6j conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000030"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000082 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000082">
+        <rdfs:label>0b conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000029"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000083 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000083">
+        <rdfs:label>2[ conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000029"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000084 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000084">
+        <rdfs:label>2o conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000029"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000085 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000085">
+        <rdfs:label>2u conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000029"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000086 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000086">
+        <rdfs:label>2z conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000029"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000087 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000087">
+        <rdfs:label>4b conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000029"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000088 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000088">
+        <rdfs:label>4p conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000029"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000089 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000089">
+        <rdfs:label>4s conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000029"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000090 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000090">
+        <rdfs:label>6p conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000029"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000091 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000091">
+        <rdfs:label>nucleoside edge</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000092"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000093"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000094"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000196"/>
+        <dc:description
+            >A nucleoside edge is either a Watson-Crick edge or a Hoogsteen edge or a sugar edge.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000092 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000092">
+        <rdfs:label
+            >Watson-Crick edge</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000091"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description
+            >The Watson-Crick edge of a nucleobase is the preferred edge along which it undergoes hydrogen bonding with other nucleobases.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000093 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000093">
+        <rdfs:label>Hoogsteen edge</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000091"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description
+            >The Hoogsteen edge of a nucleobase is the edge of the nucleobase which is not adjacent to the 2&#39;-hydroxyl group on the ribose ring.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000094 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000094">
+        <rdfs:label>sugar edge</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000091"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000019"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description
+            >The sugar edge of a nucleoside consists of the edge of the nucleobase adjacent ot the 2&#39;-hydroxyl group on the ribose ring and the 2&#39;-hydroxyl group on the ribose ring.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000095 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000095">
+        <rdfs:label>paired region</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000108"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_part"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&obo;RNAO_0000096"/>
+        <dc:description
+            >A collection of one or more adjacent nucleotide residues in which at least one residue is part of a base pair.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000096 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000096">
+        <rdfs:label>unpaired region</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000108"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;has_part"/>
+                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000001"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <dc:description
+            >A collection of one or more nucleotides that are not involved in base pairing.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000097 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000097">
+        <rdfs:label>unbroken stem</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000095"/>
+        <dc:description
+            >A paired region made up of two contiguous collections of nucleotides, in which each nucleotide forms a base pair.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000098 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000098">
+        <rdfs:label>terminal loop</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000108"/>
+        <dc:description
+            >A contiguous sequence of nucleotide residues that directly links the two halves of an unbroken stem (but does not participate in the stem); this structure is also known as a &quot;hairpin loop&quot;.  Because a terminal loop may also participate in other inter-base interactions, (a) it is defined relative to a particular unbroken_stem, and (b) it is not implicitly defined as unpaired (or paired).</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000099 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000099">
+        <rdfs:label>internal loop</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000108"/>
+        <dc:description
+            >A collection of nucleotide residues that link two given unbroken_stems.</dc:description>
+        <rdfs:comment
+            >this term encompasses the concepts of &quot;bulge&quot; and &quot;mismatch&quot; as well. Again, this term is defined relative to two particular unbroken_stems and does not imply unpairedness (or pairedness).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000100 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000100">
+        <rdfs:label
+            >purine ribonucleotide</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000020"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000101 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000101">
+        <rdfs:label
+            >pyrimidine ribonucleotide</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000020"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000102 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000102">
+        <rdfs:label
+            >cytidylate residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000101"/>
+        <owl:disjointWith rdf:resource="&obo;RNAO_0000103"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000103 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000103">
+        <rdfs:label
+            >uridylate residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000101"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000104 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000104">
+        <rdfs:label
+            >adenylate residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000100"/>
+        <owl:disjointWith rdf:resource="&obo;RNAO_0000105"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000105 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000105">
+        <rdfs:label
+            >guanylate residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000100"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000106 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000106">
+        <rdfs:label>stem junction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000108"/>
+        <dc:description
+            >A collection of nucleotide residues consisting of all and only the nucleotide regions that link more than two unbroken stems such that each region links exactly two unbroken stems.  This term is defined relative to the particular unbroken_stems involved and, again, does not imply anything about the pairedness/unpairedness of the bases in this region. The degree of a junction is a property (e.g. 3-junction, 4-junction), so the different degrees do not get separate entries in the ontology.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000107 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000107">
+        <rdfs:label>strand end</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000108"/>
+        <dc:description
+            >A sequence_region bounded at one end by the 5&#39; or 3&#39; end of the molecule, and at the other by an unbroken_stem.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000108 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000108">
+        <rdfs:label
+            >collection of nucleotides residues</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000182"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000201"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RNAO_0000354"/>
+                <owl:allValuesFrom rdf:resource="&obo;RNAO_0000187"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description
+            >A collection of nucleotide residues is a part of a nucleic acid consisting of one or more nucleotides.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000109 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000109">
+        <rdfs:label>3&#39; end</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000219"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000110 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000110">
+        <rdfs:label
+            >collection of material entities</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&snap;MaterialEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RNAO_0000354"/>
+                <owl:someValuesFrom rdf:resource="&snap;MaterialEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000111 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000111">
+        <rdfs:label>5&#39; end</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000219"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000112 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000112">
+        <rdfs:label>conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&snap;Quality"/>
+        <dc:source
+            >http://goldbook.iupac.org/C01258.html</dc:source>
+        <dc:description
+            >The spatial arrangement of the atoms in a molecule or molecular part affording distinction between stereoisomers which can be interconverted by rotations about formally single bonds.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000113 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000113">
+        <rdfs:label
+            >base pair orientation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000112"/>
+        <dc:description
+            >A conformation that inheres in an RNA base pair. It may be cis- or trans- depending on the orientations of the ribose rings relative to the edge-edge interaction of the nucleobases.</dc:description>
+        <dc:source
+            >PERSON: Colin Batchelor, based on the Leontis-Westhof classification.</dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000114 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000114">
+        <rdfs:label
+            >base pair cis-orientation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000113"/>
+        <owl:disjointWith rdf:resource="&obo;RNAO_0000115"/>
+        <dc:source
+            >PERSON: Colin Batchelor, based on the Leontis-Westhof classification.</dc:source>
+        <dc:description
+            >A base pair conformation where the ribose rings are on the same side of a plane drawn through the middle of the edge-edge hydrogen bonds.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000115 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000115">
+        <rdfs:label
+            >base pair trans-orientation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000113"/>
+        <dc:source
+            >PERSON: Colin Batchelor, based on the Leontis-Westhof classification.</dc:source>
+        <dc:description
+            >A base pair conformation where the ribose rings are on opposite sides of a plane drawn through the middle of the edge-edge hydrogen bonds.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000116 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000116">
+        <rdfs:label
+            >cis-oriented base pair</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000001"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;has_quality"/>
+                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000114"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000117 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000117">
+        <rdfs:label
+            >trans-oriented base pair</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000001"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;has_quality"/>
+                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000115"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000001"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000118 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000118">
+        <rdfs:label
+            >collection of atoms</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000110"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RNAO_0000354"/>
+                <owl:allValuesFrom rdf:resource="&obo;CHEBI_33250"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000119 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000119">
+        <rdfs:label
+            >covalent boundary</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000196"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000120 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000120">
+        <rdfs:label
+            >non-covalent boundary</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000196"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000121 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000121">
+        <rdfs:label
+            >nucleoside conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000112"/>
+        <dc:description
+            >A conformation that inheres in an nucleoside based on the rotation of the nucleobase about the glycosidic torsion angle &#967; with the furanose.</dc:description>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000122 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000122">
+        <rdfs:label
+            >syn nucleoside conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000121"/>
+        <owl:disjointWith rdf:resource="&obo;RNAO_0000123"/>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+        <dc:description
+            >A syn nucleoside conformation is a nucleoside conformation characterized by the nucleobase being oriented towards the ribose due to rotation about the glycosidic torsion angle &#967;. From &#967; = 0&#176;, where the plane of the base is aligned with the O4&#8217;-C1&#8217; bond in a direction towards the O4&#8217; atom, the syn conformation covers the remaining rotations of &#177;90&#176;: &#967; = [-90&#176;, 90&#176;].</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000123 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000123">
+        <rdfs:label
+            >anti nucleoside conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000121"/>
+        <dc:description
+            >A anti nucleoside conformation is a nucleoside conformation characterized by the nucleobase being oriented away from the ribose due to rotation about the glycosidic torsion angle &#967;. From &#967; = 180&#176;, where the plane of the base is aligned with the O4&#8217;-C1&#8217; bond in a direction away from the O4&#8217; atom, the anti conformation covers a rotations of &#177;90&#176;: &#967; = [-180&#176;, 90&#176;].</dc:description>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000124 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000124">
+        <rdfs:label
+            >envelope conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000126"/>
+        <owl:disjointWith rdf:resource="&obo;RNAO_0000125"/>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+        <dc:description
+            >An envelope conformation is a furan ring conformation in which only one of the five fruan atoms (C1&#8217;, C2&#8217;, C3&#8217;, C4&#8217; or O4&#8217;) is out of the plane formed by the four others.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000125 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000125">
+        <rdfs:label
+            >twist conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000126"/>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+        <dc:description
+            >An envelope conformation is a furan ring conformation in which two atoms are in opposite sides of the plane formed by the remaining three.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000126 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000126">
+        <rdfs:label
+            >furan ring conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000112"/>
+        <dc:description
+            >A furan ring conformation is a conformation that inheres in a furan ring and is characterized by the values of torsion angles: &#952;0-4.</dc:description>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000127 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000127">
+        <rdfs:label>C2&#8217;-endo pucker</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000124"/>
+        <dc:description
+            >C2&#39;-endo pucker (&lt;sup&gt;2&lt;/sup&gt;E conformation) is an envelope conformation in which the C2&#39; atom is above the plane formed by the other 4 atoms.</dc:description>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000128 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000128">
+        <rdfs:label>C3&#8217;-endo pucker</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000124"/>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+        <dc:description
+            >C3&#39;-endo pucker (An &lt;sup&gt;3&lt;/sup&gt;E conformation) is an envelope conformation in which the C3&#39; atom is above the plane formed by the other 4 atoms.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000129 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000129">
+        <rdfs:label>C4&#8217;-exo pucker</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000124"/>
+        <dc:description
+            >C4&#39;-exo pucker (E&lt;sub&gt;4&lt;/sub&gt; conformation) is an envelope conformation in which the C4&#39; atom is below the plane formed by the other 4 atoms.</dc:description>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000130 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000130">
+        <rdfs:label
+            >C3&#39;-endo - C4&#39; -exo pucker</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000125"/>
+        <owl:disjointWith rdf:resource="&obo;RNAO_0000131"/>
+        <dc:description
+            >C3&#39;-endo - C4&#39; exo pucker (&lt;sup&gt;3&lt;/sup&gt;E&lt;sub&gt;4&lt;/sub&gt; conformation) is a twist conformation in which the C3&#39; atom is above the plane and the C4&#39; atom is below the plane.</dc:description>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000131 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000131">
+        <rdfs:label
+            >C3&#39;-endo - C2&#39; -exo pucker</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000125"/>
+        <dc:description
+            >C3&#39;-endo - C2&#39; exo pucker (&lt;sup&gt;3&lt;/sup&gt;E&lt;sub&gt;2&lt;/sub&gt; conformation) is a twist conformation in which the C3&#39; atom is above the plane and the C2&#39; atom is below the plane.</dc:description>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000132 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000132">
+        <rdfs:label>base stack</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&snap;MaterialEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_part"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&obo;RNAO_0000183"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&obo;RNAO_0000316"/>
+                                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000183"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000135"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+        <dc:description
+            >A base stack consists of a pair of nucleotides that interact by London dispersion inter-molecular interactions between their nucleobases such that one base is stacked on top of the other.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000133 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000133">
+        <rdfs:label
+            >adjacent base stack</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000132"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000145"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description
+            >An adjacent base stack is a base stack between a pair of sequence-adjacent nucleotides.</dc:description>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000134 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000134">
+        <rdfs:label
+            >non-adjacent base stack</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000132"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000146"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+        <dc:description
+            >A non-adjacent base stack is a base stack between a pair of non sequence-adjacent nucleotides.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000135 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000135">
+        <rdfs:label
+            >base stack orientation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000112"/>
+        <dc:description
+            >A base stack orientation is a conformation that inheres in a base stack by virtue of the orientation of the nucleobases relative to i) the alignment of base normals and ii) their sequence adjacency.</dc:description>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000136 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000136">
+        <rdfs:label>#a conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000030"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000138 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000138">
+        <rdfs:label
+            >base stack straight orientation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000140"/>
+        <dc:description
+            >An base stack straight orientation is a base stack orientation in which the normals of both bases are aligned in the same direction.</dc:description>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000139 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000139">
+        <rdfs:label
+            >base stack reverse orientation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000140"/>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+        <dc:description
+            >A base stack reverse orientation is a base stack orientation in which the normals of both bases are aligned in the opposite directions.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000140 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000140">
+        <rdfs:label
+            >base stack base-normal orientation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000135"/>
+        <owl:disjointWith rdf:resource="&obo;RNAO_0000144"/>
+        <dc:description
+            >A base stack base-normal orientation is a base stack orientation that depends on the relative orientation of the base normals.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000141 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000141">
+        <rdfs:label>molecule</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&snap;MaterialEntity"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000188"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;RNAO_0000361"/>
+                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000118"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>CHEBI:36357</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000142 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000142">
+        <rdfs:label
+            >base stack above orientation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000140"/>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+        <dc:description
+            >A base stack above orientation is a base stack orientation in which the second base (B) is in the same direction as the normal to the first base (A).</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000143 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000143">
+        <rdfs:label
+            >base stack below orientation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000140"/>
+        <dc:description
+            >A base stack below orientation is a base stack orientation in which the normal of the second base (B) is directed towards the first base (A).</dc:description>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000144 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000144">
+        <rdfs:label
+            >base stack sequence adjacency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000135"/>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+        <dc:description
+            >A base stack sequence adjacency is a base stack orientation that depends on whether the stacked nucleobases are part of nucleotides that are sequence adjacent or not.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000145 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000145">
+        <rdfs:label
+            >base stack adjacent base orientation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000144"/>
+        <owl:disjointWith rdf:resource="&obo;RNAO_0000146"/>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+        <dc:description
+            >A base stack adjacent orientation is a base stack orientation in which the stacked nucleobases are part of nucleotides that are sequence adjacent.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000146 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000146">
+        <rdfs:label
+            >base stack non-adjacent base orientation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000144"/>
+        <dc:description
+            >A base stack non-adjacent orientation is a base stack orientation in which the stacked nucleobases are part of nucleotides that are not sequence adjacent.</dc:description>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000147 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000147">
+        <rdfs:label>furanose ring</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000158"/>
+        <dc:description
+            >A furanose ring is a ring that consists of four carbon and one oxygen atom and has free valences at each carbon position.</dc:description>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000148 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000148">
+        <rdfs:label
+            >upward base stack</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000132"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000138"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description
+            >An upward base stack is a base stack that exhibits both an straight orientation and an above orientation.</dc:description>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000149 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000149">
+        <rdfs:label
+            >downward base stack</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000132"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000143"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000138"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description
+            >A downward base stack is a base stack that exhibits both an straight orientation and a below orientation.</dc:description>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000150 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000150">
+        <rdfs:label
+            >inward base stack</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000132"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000138"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description
+            >An inward base stack is a base stack that exhibits both a reverse orientation and an above orientation.</dc:description>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000151 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000151">
+        <rdfs:label
+            >outward base stack</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000132"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000142"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_quality"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000138"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description
+            >An outward base stack is a base stack that exhibits both a reverse orientation and a below orientation.</dc:description>
+        <dc:source
+            >PERSON: Michel Dumontier</dc:source>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000152 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000152">
+        <rdfs:label
+            >purine Hoogsteen edge</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000093"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;part_of"/>
+                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000023"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000153 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000153">
+        <rdfs:label
+            >pyrimidine Hoogsteen edge</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000093"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;part_of"/>
+                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000024"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000154 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000154">
+        <rdfs:label
+            >purine Watson-Crick edge</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000092"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;part_of"/>
+                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000023"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000155 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000155">
+        <rdfs:label
+            >pyrimidine Watson-Crick edge</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000092"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;part_of"/>
+                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000024"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000156 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000156">
+        <rdfs:label
+            >purine sugar edge</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000094"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;part_of"/>
+                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000023"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000094"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000157 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000157">
+        <rdfs:label
+            >pyrimidine sugar edge</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000094"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ro;part_of"/>
+                        <owl:someValuesFrom rdf:resource="&obo;RNAO_0000024"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000094"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000158 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000158">
+        <rdfs:label>submolecule</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000181"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000141"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description
+            >a submolecule is a part of a molecule that consists of covalently bonded sum of a collection of atoms.</dc:description>
+        <rdfs:comment>synonym:moiety</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000159 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000159">
+        <rdfs:label
+            >pyrimidine O4 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_25805"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000024"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000160 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000160">
+        <rdfs:label>purine C2 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_27594"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000023"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000161 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000161">
+        <rdfs:label
+            >pyrimidine N4 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_29351"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000024"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000162 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000162">
+        <rdfs:label>purine N1 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_29351"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000023"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000163 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000163">
+        <rdfs:label>purine N6 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_29351"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000023"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000164 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000164">
+        <rdfs:label
+            >pyrimidine O2 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_25805"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000024"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000165 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000165">
+        <rdfs:label
+            >pyrimidine N3 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_29351"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000024"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000166 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000166">
+        <rdfs:label>purine N3 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_29351"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000023"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000167 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000167">
+        <rdfs:label>ribose O2&#39; atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_25805"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000169 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000169">
+        <rdfs:label>purine H2 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_29235"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000023"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000170 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000170">
+        <rdfs:label
+            >pyrimidine H3 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_29235"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000024"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000171 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000171">
+        <rdfs:label>purine H8 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_29235"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000023"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000172 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000172">
+        <rdfs:label>purine C8 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_27594"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000023"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000173 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000173">
+        <rdfs:label>purine N7 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_29351"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000023"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000174 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000174">
+        <rdfs:label>purine H62 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_29235"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000023"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000175 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000175">
+        <rdfs:label>purine O6 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_25805"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000023"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000176 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000176">
+        <rdfs:label
+            >pyrimidine H5 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_29235"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000024"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000177 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000177">
+        <rdfs:label
+            >pyrimidine C5 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_27594"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000024"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000178 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000178">
+        <rdfs:label
+            >pyrimidine C4 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_27594"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000024"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000179 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000179">
+        <rdfs:label
+            >pyrimidine C7 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_27594"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000024"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000180 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000180">
+        <rdfs:label>purine H61 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_29235"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000023"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000181 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000181">
+        <rdfs:label
+            >part of molecule</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;proper_part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000141"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&snap;MaterialEntity"/>
+        <dc:description
+            >a part of molecule is some part of a molecule.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000182 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000182">
+        <rdfs:label
+            >collection of biopolymer residues</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000110"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000183 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000183">
+        <rdfs:label>nucleobase face</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000184"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000185"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000196"/>
+        <dc:description></dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000184 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000184">
+        <rdfs:label>5p face</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000183"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000185 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000185">
+        <rdfs:label>3p face</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000183"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000186 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000186">
+        <rdfs:label
+            >nucleoside residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000158"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_part"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_part"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000147"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000187 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000187">
+        <rdfs:label
+            >nucleotide residue</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000158"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;has_part"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000186"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000188 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000188">
+        <rdfs:label
+            >mereologically maximal object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&snap;MaterialEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000190 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000190">
+        <rdfs:label
+            >mereological sum of collection</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&snap;MaterialEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000196 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000196">
+        <rdfs:label>boundary</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000119"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000120"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000203"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&snap;MaterialEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RNAO_0000350"/>
+                <owl:someValuesFrom rdf:resource="&snap;MaterialEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:description
+            >A boundary is a region at which connections can be formed.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000200 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000200">
+        <rdfs:label
+            >backbone conformation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000112"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000201 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000201">
+        <rdfs:label>nucleic acid</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000141"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000203 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000203">
+        <rdfs:label
+            >external boundary</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000196"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000216 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000216">
+        <rdfs:label>ribose O3&#39; atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_25805"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000217 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000217">
+        <rdfs:label>ribose C3 atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;CHEBI_27594"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000021"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000219 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000219">
+        <rdfs:label
+            >terminal boundary of linear biopolymer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000196"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#MaterialEntity -->
+
+    <owl:Class rdf:about="&snap;MaterialEntity"/>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#Quality -->
+
+    <owl:Class rdf:about="&snap;Quality"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&obo;RNAO_0000113"/>
+            <rdf:Description rdf:about="&obo;RNAO_0000121"/>
+            <rdf:Description rdf:about="&obo;RNAO_0000126"/>
+            <rdf:Description rdf:about="&obo;RNAO_0000135"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&obo;RNAO_0000138"/>
+            <rdf:Description rdf:about="&obo;RNAO_0000139"/>
+            <rdf:Description rdf:about="&obo;RNAO_0000142"/>
+            <rdf:Description rdf:about="&obo;RNAO_0000143"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&obo;RNAO_0000127"/>
+            <rdf:Description rdf:about="&obo;RNAO_0000128"/>
+            <rdf:Description rdf:about="&obo;RNAO_0000129"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&obo;RNAO_0000119"/>
+            <rdf:Description rdf:about="&obo;RNAO_0000120"/>
+            <rdf:Description rdf:about="&obo;RNAO_0000203"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

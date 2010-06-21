@@ -1,0 +1,30 @@
+% Automatically generated from CL/KIF
+formulas(sos).
+ all x all y all z ((part_of2(x, y) & part_of2(y, z) -> part_of2(x, z))).
+ all x all y all z all t ((part_of3(x, y, t) & part_of3(y, z, t) -> part_of3(x, z, t))).
+ all a all b (( exists a exists b (part_of2(a, b)) -> part_of2(a, a))).
+ all a all b all t (( exists a exists b exists t (part_of3(a, b, t)) -> part_of3(a, a, t))).
+ all a all b ((part_of2(a, b) <-> has_part2(b, a))).
+ all a all b all t ((part_of3(a, b, t) <-> has_part3(b, a, t))).
+ all x all y all z ((covalently_bonded_to(x, y) -> covalently_bonded_to(y, x))).
+ all x all y ((overlaps(x, y) <->  exists z (part_of2(z, x) & part_of2(z, y)))).
+ all x all p ((sum_of_collection(x, p) <->  all z ((overlaps(z, x) <->  exists y (member_of(y, p) & overlaps(y, z)))))).
+ all x ((mereologically_maximal(x) <->  all y ((overlaps(y, x) -> part_of2(y, x))))).
+ all y all z ((q1_connected_to2(y, z) <-> instance_of(y, "atom") & instance_of(z, "atom") & covalently_bonded_to(y, z))).
+ all x all y all z ((q1_connected_to2(x, y) -> q1_connected_to2(y, x))).
+-( exists x (q1_connected_to2(x, x))).
+-( exists x exists t (q1_connected_to3(x, x, t))).
+ all x all y ((q1_connected_to2(x, y) -> q1_reachable2(x, y))).
+ all x all y all t ((q1_connected_to3(x, y, t) -> q1_reachable3(x, y, t))).
+ all x all y all z ((q1_reachable2(x, y) & q1_reachable2(y, z) -> q1_reachable2(x, z))).
+ all x all y all z all t ((q1_reachable3(x, y, t) & q1_reachable3(y, z, t) -> q1_reachable3(x, z, t))).
+ all x all p ((q1_connected_sum_of(x, p) <-> atom_collection(p) & sum_of_collection(x, p) &  all y all z ((member_of(y, p) & member_of(z, p) -> q1_reachable2(y, z))))).
+ all x ((pmolecule("p", x) <-> q1_connected_sum_of(x, "p") & mereologically_maximal(x))).
+ all x ((instance_of(x, "molecule") <->  exists p (pmolecule(p, x)))).
+ all x all y ((sub_molecule_of(y, x) <->  exists p exists r (collection(p) & collection(r) & q1_connected_sum_of(y, r) & q1_connected_sum_of(x, p) & sub_collection_of(r, p)))).
+ all a all b ((sub_collection_of(a, b) <->  all x ((member_of(x, a) -> member_of(x, b))))).
+ all x all y ((q2_connected_to(x, y) <-> molecular_level(x) & molecular_level(y) & -(covalently_bonded_to(x, y)) & interacts_with(x, y))).
+ all x ((molecular_level(x) <-> instance_of(x, "atom") | instance_of(x, "sub_molecule") | instance_of(x, "molecule"))).
+ all x all y all z ((q2_connected_to(x, y) -> q2_connected_to(y, x))).
+
+end_of_list.

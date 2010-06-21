@@ -1,0 +1,417 @@
+begin_problem(RNAO).
+list_of_descriptions.
+name({* RNA Axioms *}).
+author({* Robert Hoehndorf *}).
+status(unsatisfiable).
+description({* s *}).
+end_of_list.
+
+list_of_symbols.
+functions[(a,0),(b,0),(c,0)].
+predicates[	   (po,2), %partof
+		   (ppo,2), %proper part of
+		   (overlaps,2), %overlaps
+		   (Atom,1), 
+		   (Mol,1), %Molecule
+		   (Coll,1), %Collection
+		   (mo,2), %member-of
+		   (mm,1), %mereologically maximal
+		   (soc,2), %mereological sum of collection
+		   (Ind,1), %Individual
+		   (covbond,2), %covalently-bonded-to
+		   (covbondt,2), %covalently-bonded-to, transitive
+		   (wiw,2), %weakly interacting with
+		   (disjoint,2), %disjoint
+	   	   (covbondsum,2), %covalently-bonded-sum-of
+		   (submolof,2), %submolecule-of
+	   	   (subcollof,2), %sub-collection-of
+		   (submol,1), %submolecule
+		   (ncb,1), %non-covalent-boundary
+		   (cb,1), %covalent-boundary
+		   (ncbb,3), %non-covalent-boundary-between
+		   (cbb,3), %covalent-boundary-between
+	   	   (bo,2), %boundary-of
+		   (Boundary,1), %Boundary (of object); regions at which connections can be formed
+		   (exbo,2), % external-boundary-of
+		   (exb,1), % external-boundary
+		   (covconn,2), %covalently-connected-to
+	   	   (nt,1), %nucleotide
+		   (RiboseO3,1), %Ribose O3 atom
+		   (Phosphorus,1), 
+		   (O3,1), 
+		   (O5,1),
+	   	   (C3,1), 
+		   (C4,1), 
+		   (C5,1),
+	   	   (covconn35,2), %covalently-connected-3'-to-5'
+		   (covconn53,2), %covalently-connected-5'-to-3'
+	   	   (covconn35t,2), %covalently-connected-3'-to-5' (transitive)
+		   (covconn53t,2), %covalently-connected-5'-to-3' (transitive)
+		   (covconnt,2), %covalently-connected-to (transitive)
+	   	   (samechain,2), %same-chain
+		   (5to,2), %5'-to
+		   (3to,2), %3'-to
+		   (53strand,1), %5'-to-3'-strand-segment
+		   (53rna,1), %5'-to-3'-RNA-molecule
+	   	   (wcedgeof,2), %watson-crick-edge-of
+		   (hedgeof,2), %higstoon-edge-of
+		   (sugaredgeof,2), 
+		   (edgeof,2),
+	   	   (wcedge,1), %watcon-crick-edge
+		   (hedge,1), 
+		   (sugaredge,1), 
+		   (edge,1),
+	   	   (hasedge,2),
+	   	   (5faceof,2), %5'-face-of
+		   (3faceof,2), 
+		   (faceof,2), 
+		   (hasface,2),
+	   	   (3face,1), 
+		   (5face,1), 
+		   (face,1),
+	   	   (pairswith,2), 
+	   	   (pairswithwh,2),
+	   	   (pairswithww,2),
+	   	   (pairswithws,2),
+	   	   (pairswithhw,2),
+	   	   (pairswithhh,2),
+	   	   (pairswithhs,2),
+	   	   (pairswithsw,2),
+	   	   (pairswithsh,2),
+	   	   (pairswithss,2),
+	   	   (cgbo,2), %cis_Glycosidic_bond_orientation
+	   	   (tgbo,2), %trans_Glycosidic_bond_orientation
+	   	   (pairswithcwh,2),
+	   	   (bp,1),
+	   	   (stack,2), 
+		   (stack35,2), 
+		   (stack53,2), 
+		   (stack33,2),
+	   	   (stack55,2),
+	   	   (gnratetraloop,1),
+	   	   (rbo,2), %RNA backbone of
+	   	   (suiteof,2),
+	   	   (corrntnt,2), %corresponds-to-nt-nt
+	   	   (corrbpbp,4) %corresponds-to-bp-bp
+].
+end_of_list.
+
+
+list_of_formulae(axioms).
+
+%Basic definitions
+formula(forall([X,Y],equiv(overlaps(X,Y),exists([Z],and(po(Z,X),po(Z,Y)))))).
+formula(forall([X,Y],equiv(disjoint(X,Y),not(overlaps(X,Y))))).
+formula(forall([X,Y],equiv(ppo(X,Y),and(po(X,Y),not(equal(X,Y)))))).
+
+% mereology
+formula(forall([X,Y,Z],implies(and(po(X,Y),po(Y,Z)),po(X,Z)))).
+formula(forall([X,Y],implies(and(po(X,Y),po(Y,X)),equal(X,Y)))).
+formula(forall([X],po(X,X))).
+formula(forall([X,Y],implies(ppo(X,Y),exists([Z],and(po(Z,Y),disjoint(Z,X)))))).
+
+
+formula(forall([X,Y],implies(mo(X,Y),and(Ind(X),Coll(Y))))).
+
+%D2
+formula(forall([X,P], equiv(soc(X,P), forall([Z], equiv(overlaps(Z,X),
+		        exists([Y], and(mo(Y,P), overlaps(Y,Z)))))))).
+
+%D3
+formula(forall([X],equiv(mm(X),forall([Y],implies(overlaps(Y,X),po(Y,X)))))).
+
+%covalently bonded
+formula(forall([X,Y],implies(covbond(X,Y),and(Atom(X),Atom(Y))))).
+formula(forall([X,Y],implies(covbond(X,Y),covbond(Y,X)))).
+%A1
+formula(forall([X,Y],not(covbond(X,X)))).
+%A2
+formula(exists([X,Y,Z],and(Atom(X),Atom(Y),Atom(Z),covbond(X,Y),covbond(X,Z),
+	not(equal(Y,Z))))).
+
+%covbond*
+formula(forall([X,Y],implies(covbond(X,Y),covbondt(X,Y)))).
+formula(forall([X,Y,Z],implies(and(covbondt(X,Y),covbondt(Y,Z)),covbondt(X,Z)))).
+
+%D5
+formula(forall([X,P],implies(covbondsum(X,P), and(
+		soc(X,P),forall([Z],implies(mo(Z,P),Atom(Z))),
+		forall([Y,Z],implies(and(mo(Y,P),mo(Z,P)),covbondt(Y,Z))))))).
+
+%D6
+formula(forall([X],equiv(Mol(X),exists([P],and(covbondsum(X,P),mm(X)))))).
+
+%D7 and subcollection and Submol
+formula(forall([X,Y],equiv(subcollof(X,Y),forall([Z],implies(mo(Z,X),mo(Z,Y)))))).
+formula(forall([X,Y],equiv(submolof(X,Y),exists([P,R],
+	and(covbondsum(X,R),covbondsum(Y,P),subcollof(R,P)))))).
+formula(forall([X],equiv(submol(X),exists([Y],submolof(X,Y))))).
+
+%weakly interacting with (wiw)
+formula(forall([X,Y],implies(wiw(X,Y),and(or(Atom(X),Mol(X),submol(X),ncb(X)),
+			or(Atom(Y),Mol(Y),submol(Y),ncb(Y)))))).
+formula(forall([X,Y],implies(wiw(X,Y),wiw(Y,X)))).
+formula(exists([X],implies(or(Mol(X),submol(X)),wiw(X,X)))).
+
+%boundaries
+formula(forall([X,Y],implies(bo(X,Y),po(X,Y)))).
+formula(forall([X],equiv(Boundary(X),exists([Y],bo(X,Y))))).
+
+%A4
+formula(forall([X,Y],implies(covbond(X,Y),exists([B],cbb(B,X,Y))))).
+%D8
+formula(forall([B],equiv(cb(B),exists([X,Y],cbb(B,X,Y))))).
+%A5
+formula(forall([X,Y],implies(wiw(X,Y),exists([B],ncbb(B,X,Y))))).
+
+formula(forall([X,Y],implies(exbo(X,Y),bo(X,Y)))).
+%D9
+formula(forall([B,X],equiv(exbo(B,X),and(Boundary(B),or(Atom(X),submol(X),Mol(X)),
+	po(B,X),not(exists([Y],or(cbb(B,X,Y),ncbb(B,X,Y)))))))).
+%D9'
+formula(forall([B],equiv(exb(B),exists([X],exbo(B,X))))).
+
+%D10
+formula(forall([B],equiv(ncb(B),
+	or(
+	  exists([Y], and(
+	  	        exbo(B,Y),or(Atom(Y),submol(Y),Mol(Y)))),
+	and(
+	  exists([X,Y],and(ncbb(B,X,Y),
+		or(Atom(X),submol(X),Mol(X)),
+		or(Atom(Y),submol(Y),Mol(Y))))))))).
+
+%A6
+formula(forall([X,Y],implies(wiw(X,Y),and(or(Atom(X),submol(X),Mol(X),ncb(X)),
+					or(Atom(Y),submol(Y),Mol(Y),ncb(Y)))))).
+
+%D11: ignored: D11 defines a class-level relation, and is not needed
+
+%D12: covconn
+formula(forall([M,N],equiv(covconn(M,N),and(not(equal(M,N)),
+	exists([X,Y],and(Atom(X),Atom(Y),po(X,M),po(Y,N),covbond(X,Y))))))).
+formula(forall([M,N],implies(covconn(M,N),covconn(N,M)))).
+formula(forall([M],not(covconn(M,M)))).
+
+%D13: covconn35
+formula(forall([A,B],implies(covconn35(A,B),covconn(A,B)))).
+formula(forall([NT1,NT2], equiv(covconn35(NT1,NT2),exists([X,Y],
+			  and(
+			    RiboseO3(X),Phosphorus(Y),po(X,NT1),po(Y,NT2),
+			    nt(NT1),nt(NT2),covbond(X,Y)))))).
+
+%D14: covconn53
+formula(forall([A,B],implies(covconn53(A,B),covconn(A,B)))).
+formula(forall([NT1,NT2], equiv(covconn53(NT1,NT2),exists([X,Y],
+			  and(
+			    RiboseO3(Y),Phosphorus(X),po(X,NT1),po(Y,NT2),
+			    nt(NT1),nt(NT2),covbond(X,Y)))))).
+
+%A7, A8
+formula(forall([X,Y,Z],implies(and(covconn35(X,Y),covconn35(X,Z)),equal(Y,Z)))).
+formula(forall([X,Y,Z],implies(and(covconn53(X,Y),covconn35(X,Z)),equal(Y,Z)))).
+
+%transitive approximations for covconn([35],[53])
+formula(forall([X,Y],implies(covconnt(X,Y),covconn(X,Y)))).
+formula(forall([X,Y,Z],implies(and(covconnt(X,Y),covconnt(Y,Z)),covconnt(X,Z)))).
+formula(forall([X,Y],implies(covconn35t(X,Y),covconn35(X,Y)))).
+formula(forall([X,Y,Z],implies(and(covconn35t(X,Y),covconn35t(Y,Z)),covconn35t(X,Z)))).
+formula(forall([X,Y],implies(covconn53t(X,Y),covconn53(X,Y)))).
+formula(forall([X,Y,Z],implies(and(covconn53t(X,Y),covconn53t(Y,Z)),covconn53t(X,Z)))).
+
+%D15
+formula(forall([X,Y],equiv(samechain(X,Y),
+	and(nt(X),nt(Y),or(equal(X,Y),covconn35t(X,Y),covconn53t(X,Y)))))).
+
+%D16
+formula(forall([X,Y],equiv(5to(X,Y),and(samechain(X,Y),covconn35t(X,Y))))).
+
+%D17
+formula(forall([X,Y],equiv(3to(X,Y),and(samechain(X,Y),covconn53t(X,Y))))).
+formula(forall([X,Y],equiv(5to(X,Y),3to(Y,X)))).
+
+%Theorems (verified):
+%formula(forall([X,Y,Z],implies(and(5to(X,Y),5to(Y,Z)),5to(X,Z)))).
+%formula(forall([X,Y,Z],implies(and(3to(X,Y),3to(Y,Z)),3to(X,Z)))).
+
+%D18
+formula(forall([X],equiv(53strand(X),exists([P],and(
+	forall([Y,W,Z],implies(and(mo(Y,P),mo(Z,P),5to(Y,Z),3to(W,Y),5to(W,Z)),
+			po(W,X))),
+	Coll(P),forall([M],implies(mo(M,P),nt(M))),soc(X,P),
+	forall([Y,Z],implies(and(mo(Y,P),mo(Z,P)),or(3to(Y,Z),5to(Y,Z))))))))).
+
+%D19
+formula(forall([X],equiv(53rna(X),and(Mol(X),53strand(X))))).
+
+%A9, A11; split into multiple axioms for better readability
+%merged with A15 in one block
+formula(forall([X],implies(nt(X),exists([A,B,C],and(
+	wcedgeof(A,X),hedgeof(B,X),sugaredgeof(C,X)))))).
+formula(forall([A,B,X],implies(and(wcedgeof(A,X),wcedgeof(B,X)),equal(A,B)))).
+formula(forall([A,B,X],implies(and(hedgeof(A,X),hedgeof(B,X)),equal(A,B)))).
+formula(forall([A,B,X],implies(and(sugaredgeof(A,X),sugaredgeof(B,X)),equal(A,B)))).
+formula(forall([A,X],implies(wcedgeof(A,X),not(or(hedgeof(A,X),sugaredgeof(A,X)))))).
+formula(forall([A,X],implies(hedgeof(A,X),not(or(wcedgeof(A,X),sugaredgeof(A,X)))))).
+formula(forall([A,X],implies(sugaredgeof(A,X),not(or(wcedgeof(A,X),hedgeof(A,X)))))).
+
+%D20'
+formula(forall([A,X],equiv(edgeof(A,X),or(wcedgeof(A,X),hedgeof(A,X),sugaredgeof(A,X))))).
+
+%D20
+formula(forall([A],equiv(wcedge(A),exists([X],wcedgeof(A,X))))).
+formula(forall([A],equiv(sugaredge(A),exists([X],sugaredgeof(A,X))))).
+formula(forall([A],equiv(hedge(A),exists([X],hedgeof(A,X))))).
+formula(forall([A],equiv(edge(A),exists([X],edgeof(A,X))))).
+
+%D21
+formula(forall([X,Y],equiv(hasedge(X,Y),edgeof(Y,X)))).
+
+%A11; split into multiple axioms
+formula(forall([X],implies(nt(X),exists([A,B],and(3faceof(A,X),5faceof(B,X)))))).
+formula(forall([A,B,X],implies(and(3faceof(A,X),3faceof(B,X)),equal(A,B)))).
+formula(forall([A,B,X],implies(and(5faceof(A,X),5faceof(B,X)),equal(A,B)))).
+formula(forall([A,X],implies(5faceof(A,X),not(3faceof(A,X))))).
+formula(forall([A,X],implies(3faceof(A,X),not(5faceof(A,X))))).
+
+%D22'
+formula(forall([A,X],equiv(faceof(A,X),or(5faceof(A,X),3faceof(A,X))))).
+
+%D22
+formula(forall([A],equiv(5face(A),exists([X],5faceof(A,X))))).
+formula(forall([A],equiv(3face(A),exists([X],3faceof(A,X))))).
+formula(forall([A],equiv(face(A),exists([X],faceof(A,X))))).
+
+%D23
+formula(forall([X,Y],equiv(hasface(X,Y),faceof(Y,X)))).
+
+%A13
+formula(forall([X,Y,Z],implies(and(edgeof(X,Y),edgeof(X,Z)),equal(Y,Z)))).
+
+%A14
+formula(forall([X,Y,Z],implies(and(faceof(X,Y),faceof(X,Z)),equal(Y,Z)))).
+
+%edges and faces are boundaries
+formula(forall([X,Y],implies(edgeof(X,Y),bo(X,Y)))).
+formula(forall([X,Y],implies(faceof(X,Y),bo(X,Y)))).
+
+%D24
+formula(forall([X,Y],equiv(pairswith(X,Y),and(nt(X),nt(Y),
+	exists([A,B],and(edgeof(A,X),edgeof(B,Y),wiw(A,B))))))).
+
+%D25
+formula(forall([X,Y],equiv(pairswithwh(X,Y),and(nt(X),nt(Y),
+	exists([A,B],and(wcedgeof(A,X),hedgeof(B,Y),wiw(A,B))))))).
+formula(forall([X,Y],equiv(pairswithww(X,Y),and(nt(X),nt(Y),
+	exists([A,B],and(wcedgeof(A,X),wcedgeof(B,Y),wiw(A,B))))))).
+formula(forall([X,Y],equiv(pairswithws(X,Y),and(nt(X),nt(Y),
+	exists([A,B],and(wcedgeof(A,X),sugaredgeof(B,Y),wiw(A,B))))))).
+
+formula(forall([X,Y],equiv(pairswithhw(X,Y),and(nt(X),nt(Y),
+	exists([A,B],and(hedgeof(A,X),wcedgeof(B,Y),wiw(A,B))))))).
+formula(forall([X,Y],equiv(pairswithhh(X,Y),and(nt(X),nt(Y),
+	exists([A,B],and(hedgeof(A,X),hedgeof(B,Y),wiw(A,B))))))).
+formula(forall([X,Y],equiv(pairswithhs(X,Y),and(nt(X),nt(Y),
+	exists([A,B],and(hedgeof(A,X),sugaredgeof(B,Y),wiw(A,B))))))).
+
+formula(forall([X,Y],equiv(pairswithsh(X,Y),and(nt(X),nt(Y),
+	exists([A,B],and(sugaredgeof(A,X),hedgeof(B,Y),wiw(A,B))))))).
+formula(forall([X,Y],equiv(pairswithsw(X,Y),and(nt(X),nt(Y),
+	exists([A,B],and(sugaredgeof(A,X),wcedgeof(B,Y),wiw(A,B))))))).
+formula(forall([X,Y],equiv(pairswithss(X,Y),and(nt(X),nt(Y),
+	exists([A,B],and(sugaredgeof(A,X),sugaredgeof(B,Y),wiw(A,B))))))).
+
+%Theorem (verified):
+%formula(forall([X,Y],implies(pairswith(X,Y),pairswith(Y,X)))).
+
+%D26: incomplete
+formula(forall([X,Y],equiv(pairswithcwh(X,Y),and(pairswithwh(X,Y),cgbo(X,Y))))).
+
+%D27
+formula(forall([X],equiv(bp(X),exists([N1,N2],and(pairswith(N1,N2),
+	forall([P],implies(po(P,X),or(overlaps(P,N1),overlaps(P,N2))))))))).
+
+%D28: not used in remaining axioms
+
+%D29
+formula(forall([N1,N2],equiv(stack(N1,N2),and(nt(N1),nt(N2),
+	exists([F1,F2],and(faceof(F1,N1),faceof(F2,N2),wiw(F1,F2))))))).
+formula(forall([X],not(stack(X,X)))). % no theorem, because wiw is not irreflexive
+
+%Theorem (verified)
+%formula(forall([X,Y],implies(stack(X,Y),stack(Y,X)))).
+
+%D30
+formula(forall([X,Y],equiv(stack35(X,Y),and(nt(X),nt(Y),
+	exists([F1,F2],and(3faceof(F1,X),5faceof(F2,Y),wiw(F1,F2))))))).
+formula(forall([X,Y],equiv(stack53(X,Y),and(nt(X),nt(Y),
+	exists([F1,F2],and(5faceof(F1,X),3faceof(F2,Y),wiw(F1,F2))))))).
+formula(forall([X,Y],equiv(stack33(X,Y),and(nt(X),nt(Y),
+	exists([F1,F2],and(3faceof(F1,X),3faceof(F2,Y),wiw(F1,F2))))))).
+formula(forall([X,Y],equiv(stack55(X,Y),and(nt(X),nt(Y),
+	exists([F1,F2],and(5faceof(F1,X),5faceof(F2,Y),wiw(F1,F2))))))).
+
+%Theorem(verified)
+%formula(forall([X,Y],implies(stack35(X,Y),stack53(Y,X)))).
+%formula(forall([X,Y],implies(stack33(X,Y),stack33(Y,X)))).
+%formula(forall([X,Y],implies(stack55(X,Y),stack55(Y,X)))).
+
+%A16
+formula(forall([X,Y],implies(pairswith(X,Y),not(stack(X,Y))))).
+
+%A17
+formula(forall([X,Y],implies(stack(X,Y),not(pairswith(X,Y))))).
+
+%A18
+formula(forall([X,Y,Z],implies(and(covconn35(X,Y),covconn35(X,Z)),equal(Y,Z)))).
+formula(forall([X,Y,Z],implies(and(covconn53(X,Y),covconn53(X,Z)),equal(Y,Z)))).
+
+%A19
+formula(exists([X,Y,Z],and(stack55(X,Y),stack55(Y,Z),equal(X,Z)))).
+
+%A20
+formula(exists([X,Y,Z],and(stack55(X,Y),stack55(Y,Z),not(equal(X,Z))))).
+
+%A20'
+formula(forall([X,Y,Z],implies(and(stack55(X,Y),stack53(Y,Z)),not(equal(X,Z))))).
+
+%A20''
+formula(forall([X,Y,Z],implies(and(stack35(X,Y),stack35(Y,Z)),and(not(equal(X,Z)),
+	not(pairswith(X,Z)), not(stack(X,Z)))))).
+
+%D31: need to define pairswithcWW, etc. first
+%formula(forall([X],equiv(gnratetraloop(X),exists([N1,N2,N3,N4,N5,N6],
+%	covconn35(N1,N2),covconn35(N2,N3),covconn35(N3,N4),
+%	covconn35(N4,N5), covconn35(N5,N6), 
+
+%D32
+formula(forall([X,M],equiv(rbo(X,M), and(53rna(M),
+        exists([R],and(Coll(R),forall([Z],implies(and(
+	po(Z,M),or(Phosphorus(Z),O3(Z),O5(Z),C3(Z),C4(Z),C5(Z))),mo(Z,R))),
+	covbondsum(X,R))))))).
+
+%D33
+formula(forall([Y,M],equiv(suiteof(Y,M),and(53rna(M),exists([Q],
+	and(rbo(Q,M),po(Y,Q),exists([NTi,NTj],and(nt(NTi),nt(NTj),
+	po(NTi,M),covconn35(NTi,NTj),exists([R],and(Coll(R),
+	forall([Z],implies(or(and(po(Z,NTi),or(O3(Z),C3(Z),C4(Z))),
+	and(po(Z,NTj),or(Phosphorus(Z),O5(Z),C3(Z),C4(Z),C5(Z)))),mo(Z,R))),
+	covbondsum(Y,R))))))))))).
+
+%A21
+formula(forall([X,Y],implies(corrntnt(X,Y),and(nt(X),nt(Y),exists([A,B],
+	and(53rna(A),53rna(B),po(X,A),po(Y,B))))))).
+
+%D34
+formula(forall([X1,X2,Y1,Y2],equiv(corrbpbp(X1,X2,Y1,Y2),
+	and(nt(X1),nt(X2),nt(Y1),nt(Y2),exists([A,B],
+	and(53rna(A),53rna(B),po(X1,A),po(X2,A),po(Y1,B),po(Y2,B),
+	corrntnt(X1,Y1),corrntnt(X2,Y2),pairswith(X1,X2),pairswith(Y1,Y2))))))).
+
+end_of_list.
+
+list_of_formulae(conjectures).
+formula(forall([X,Y],and(Mol(X),not(Mol(X))))).
+formula(edge(a)).
+end_of_list.
+end_problem.
