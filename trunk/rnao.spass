@@ -1,6 +1,6 @@
 begin_problem(RNAO).
 list_of_descriptions.
-name({* RNA Axioms *}).
+name({* RNA Ontology Axioms FOL version *}).
 author({* Robert Hoehndorf *}).
 status(unsatisfiable).
 description({* s *}).
@@ -54,7 +54,7 @@ predicates[	   (po,2), %partof
 		   (53strand,1), %5'-to-3'-strand-segment
 		   (53rna,1), %5'-to-3'-RNA-molecule
 	   	   (wcedgeof,2), %watson-crick-edge-of
-		   (hedgeof,2), %higstoon-edge-of
+		   (hedgeof,2), %hoogsteen-edge-of
 		   (sugaredgeof,2), 
 		   (edgeof,2),
 	   	   (wcedge,1), %watcon-crick-edge
@@ -91,6 +91,7 @@ predicates[	   (po,2), %partof
 	   	   (gnratetraloop,1),
 	   	   (rbo,2), %RNA backbone of
 	   	   (suiteof,2),
+		   (corrto,2), % corresponds-to
 	   	   (corrntnt,2), %corresponds-to-nt-nt
 	   	   (corrbpbp,4) %corresponds-to-bp-bp
 ].
@@ -99,79 +100,147 @@ end_of_list.
 
 list_of_formulae(axioms).
 
+% Additional Documentation is found in the paper The RNA Ontology
+% (RNAO): An Ontology for Integrating RNA Sequence and Structure Data;
+% Applied Ontology, 2010.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Mereology %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Basic definitions
+%See Simons, Peter, 1987. Parts: A Study in Ontology. Oxford University Press.
+
+%D1: overlaps: two things overlap if they have a part in common
 formula(forall([X,Y],equiv(overlaps(X,Y),exists([Z],and(po(Z,X),po(Z,Y)))))).
+
+%Def: disjointness: two things are disjoint if they do not overlap
 formula(forall([X,Y],equiv(disjoint(X,Y),not(overlaps(X,Y))))).
+
+%Def: proper-part-of: part-of but not identical
 formula(forall([X,Y],equiv(ppo(X,Y),and(po(X,Y),not(equal(X,Y)))))).
 
-% mereology
+% Basic axioms: Extensional Mereology (EM)
+
+% Transitivity of parthood
 formula(forall([X,Y,Z],implies(and(po(X,Y),po(Y,Z)),po(X,Z)))).
+
+% Anti-Symmetry of parthood
 formula(forall([X,Y],implies(and(po(X,Y),po(Y,X)),equal(X,Y)))).
+
+% Reflexivity of parthood
 formula(forall([X],po(X,X))).
+
+% Strong supplementation principle
 formula(forall([X,Y],implies(ppo(X,Y),exists([Z],and(po(Z,Y),disjoint(Z,X)))))).
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Collections %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% domain and range restriction for member-of
 formula(forall([X,Y],implies(mo(X,Y),and(Ind(X),Coll(Y))))).
 
-%D2
+%D2: Definition Sum_of_Collection: 
 formula(forall([X,P], equiv(soc(X,P), forall([Z], equiv(overlaps(Z,X),
 		        exists([Y], and(mo(Y,P), overlaps(Y,Z)))))))).
 
-%D3
+%D3: Definition mereologically maximal (object)
 formula(forall([X],equiv(mm(X),forall([Y],implies(overlaps(Y,X),po(Y,X)))))).
 
-%covalently bonded
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% chemical bonds %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Axioms for "covalently_bonded_to": domain and range restrictions, symmetry
 formula(forall([X,Y],implies(covbond(X,Y),and(Atom(X),Atom(Y))))).
 formula(forall([X,Y],implies(covbond(X,Y),covbond(Y,X)))).
-%A1
+
+%A1: irreflexivity for covalently_bonded_to
 formula(forall([X,Y],not(covbond(X,X)))).
-%A2
+
+%A2: atoms can covalently bond with two atoms
 formula(exists([X,Y,Z],and(Atom(X),Atom(Y),Atom(Z),covbond(X,Y),covbond(X,Z),
 	not(equal(Y,Z))))).
 
-%covbond*
+%D4a: Covalently_bonded_to* is the smallest transitive relation
+% including covalently_bonded_to. Requires second-order logic.
+
+%D4a: covbondt: FOL approximation of D4a; introduction of covbondt as transitive version of
+% covbond; missing: covbondt is the smallest relation satisfying these conditions
 formula(forall([X,Y],implies(covbond(X,Y),covbondt(X,Y)))).
 formula(forall([X,Y,Z],implies(and(covbondt(X,Y),covbondt(Y,Z)),covbondt(X,Z)))).
 
-%D5
+%D4b: Covalently_bonded_to_in*. x Covalently_bonded_to_in* y in P is the
+% smallest transitive relation including covalently_bonded_to ranging
+% over members of the collection P.
+% D4b is approximated with covbondt (D4a); needs second order logic.
+
+%D5: definition of covalently_bonded_sum of a collection: 
+%D5: Covalently_bonded_sum_of: x is the covalently_bonded_sum_of P iff
+%[P instance_of Collection_of_atoms and x is the sum_of_collection P and (for
+%all y and z in P, y covalently_bonded_to* z in P)]. 
 formula(forall([X,P],implies(covbondsum(X,P), and(
 		soc(X,P),forall([Z],implies(mo(Z,P),Atom(Z))),
 		forall([Y,Z],implies(and(mo(Y,P),mo(Z,P)),covbondt(Y,Z))))))).
 
-%D6
+%D6: Molecules are mereologically maximal sums of collections of atoms
 formula(forall([X],equiv(Mol(X),exists([P],and(covbondsum(X,P),mm(X)))))).
 
-%D7 and subcollection and Submol
+%D7: subcollection definition: x sub_collection_of y iff for all z (if
+% z member_of x then z member_of y).
 formula(forall([X,Y],equiv(subcollof(X,Y),forall([Z],implies(mo(Z,X),mo(Z,Y)))))).
+
+%D8: Submolecule and submolecule-of; based on subcollection and
+% covalently bonded sums of collections
 formula(forall([X,Y],equiv(submolof(X,Y),exists([P,R],
 	and(covbondsum(X,R),covbondsum(Y,P),subcollof(R,P)))))).
 formula(forall([X],equiv(submol(X),exists([Y],submolof(X,Y))))).
 
-%weakly interacting with (wiw)
+%weakly interacting with (wiw): domain and range restrictions
 formula(forall([X,Y],implies(wiw(X,Y),and(or(Atom(X),Mol(X),submol(X),ncb(X)),
 			or(Atom(Y),Mol(Y),submol(Y),ncb(Y)))))).
-formula(forall([X,Y],implies(wiw(X,Y),wiw(Y,X)))).
-formula(exists([X],implies(or(Mol(X),submol(X)),wiw(X,X)))).
 
-%boundaries
-formula(forall([X,Y],implies(bo(X,Y),po(X,Y)))).
+% symmetry wiw
+formula(forall([X,Y],implies(wiw(X,Y),wiw(Y,X)))).
+
+%A3: it is possible that submolecules or molecules weakly interact
+% with themselves
+formula(exists([X],and(or(Mol(X),submol(X)),wiw(X,X)))).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% boundaries %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%First, boundaries are not parts, they are dependent
+% continuants/endurants
+formula(forall([X,Y],implies(bo(X,Y),not(po(X,Y))))).
+
+% Boundary class definition based on boundary-of
 formula(forall([X],equiv(Boundary(X),exists([Y],bo(X,Y))))).
 
-%A4
-formula(forall([X,Y],implies(covbond(X,Y),exists([B],cbb(B,X,Y))))).
-%D8
+%A4: covalent boundary between: for each covalent bond between X and
+% Y, there is exactly 1 covalent boundary between X and Y
+formula(forall([X,Y],implies(covbond(X,Y),exists([B],and(cbb(B,X,Y),forall([B2],
+                        implies(cbb(B2,X,Y),equal(B,B2)))))))).
+
+%D9: class definition covalent boundary
 formula(forall([B],equiv(cb(B),exists([X,Y],cbb(B,X,Y))))).
-%A5
+
+%A5: class restriction for non-covalent boundary; exists between two
+% weakly interacting entities
 formula(forall([X,Y],implies(wiw(X,Y),exists([B],ncbb(B,X,Y))))).
 
+% external-boundary-of is a sub-relation of boundary-of
 formula(forall([X,Y],implies(exbo(X,Y),bo(X,Y)))).
-%D9
+
+%D10: definition for external-boundary-of
+%D10. External_boundary_of. B is external_boundary_of x iff B instance_of
+%Boundary and x instance_of (Atom or Sub_molecule or Molecule) and B part_of x
+%and there is no y such that B is the covalent_boundary_between x and y or B is
+%the non-covalent_boundary_between x and y.
 formula(forall([B,X],equiv(exbo(B,X),and(Boundary(B),or(Atom(X),submol(X),Mol(X)),
 	po(B,X),not(exists([Y],or(cbb(B,X,Y),ncbb(B,X,Y)))))))).
-%D9'
+
+%D11: class def for external boundary
 formula(forall([B],equiv(exb(B),exists([X],exbo(B,X))))).
 
-%D10
+%D12: Definition non-covalent boundary
+%B is an instance_of Non-covalent_boundary iff (B is
+%the external_boundary_of some y and y instance_of (Atom or Sub_molecule or
+%Molecule)) or B is non-covalent_boundary_between x and y and (x and y
+%instance_of Atom or Sub_molecule or Molecule).
 formula(forall([B],equiv(ncb(B),
 	or(
 	  exists([Y], and(
@@ -181,37 +250,48 @@ formula(forall([B],equiv(ncb(B),
 		or(Atom(X),submol(X),Mol(X)),
 		or(Atom(Y),submol(Y),Mol(Y))))))))).
 
-%A6
+%A6: domain and range for weakly interacting with
 formula(forall([X,Y],implies(wiw(X,Y),and(or(Atom(X),submol(X),Mol(X),ncb(X)),
 					or(Atom(Y),submol(Y),Mol(Y),ncb(Y)))))).
 
-%D11: ignored: D11 defines a class-level relation, and is not needed
-
-%D12: covconn
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% connections %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%D13: covalently-connected-to; extends covalently-connect-to to
+%molecules; Two molecules are cov connected if they each have an atom
+%as part which are covalently-bonded-to
 formula(forall([M,N],equiv(covconn(M,N),and(not(equal(M,N)),
 	exists([X,Y],and(Atom(X),Atom(Y),po(X,M),po(Y,N),covbond(X,Y))))))).
+
+% Symmetry of covconn
 formula(forall([M,N],implies(covconn(M,N),covconn(N,M)))).
+% irreflexivity of covconn
 formula(forall([M],not(covconn(M,M)))).
 
-%D13: covconn35
+%The next definitions assign an ordering among the connections
+
+%D14: covconn35; covalently-connect-to from 3' to 5' end; the
+%definition uses Phosphorus and Ribose O3 atoms (without definition)
 formula(forall([A,B],implies(covconn35(A,B),covconn(A,B)))).
 formula(forall([NT1,NT2], equiv(covconn35(NT1,NT2),exists([X,Y],
 			  and(
 			    RiboseO3(X),Phosphorus(Y),po(X,NT1),po(Y,NT2),
 			    nt(NT1),nt(NT2),covbond(X,Y)))))).
 
-%D14: covconn53
+%D15: covconn53; similar to covconn35, just the other direction
 formula(forall([A,B],implies(covconn53(A,B),covconn(A,B)))).
 formula(forall([NT1,NT2], equiv(covconn53(NT1,NT2),exists([X,Y],
 			  and(
 			    RiboseO3(Y),Phosphorus(X),po(X,NT1),po(Y,NT2),
 			    nt(NT1),nt(NT2),covbond(X,Y)))))).
 
-%A7, A8
+%A7: functionality for covconn35
 formula(forall([X,Y,Z],implies(and(covconn35(X,Y),covconn35(X,Z)),equal(Y,Z)))).
-formula(forall([X,Y,Z],implies(and(covconn53(X,Y),covconn35(X,Z)),equal(Y,Z)))).
 
-%transitive approximations for covconn([35],[53])
+%A8: functionality for covconn53
+formula(forall([X,Y,Z],implies(and(covconn53(X,Y),covconn53(X,Z)),equal(Y,Z)))).
+
+% transitive approximations for covconn([35],[53]); again, the full
+% definition would require SOL, as these are intended to be the
+% smallest relations satisfying these conditions
 formula(forall([X,Y],implies(covconnt(X,Y),covconn(X,Y)))).
 formula(forall([X,Y,Z],implies(and(covconnt(X,Y),covconnt(Y,Z)),covconnt(X,Z)))).
 formula(forall([X,Y],implies(covconn35t(X,Y),covconn35(X,Y)))).
@@ -219,87 +299,115 @@ formula(forall([X,Y,Z],implies(and(covconn35t(X,Y),covconn35t(Y,Z)),covconn35t(X
 formula(forall([X,Y],implies(covconn53t(X,Y),covconn53(X,Y)))).
 formula(forall([X,Y,Z],implies(and(covconn53t(X,Y),covconn53t(Y,Z)),covconn53t(X,Z)))).
 
-%D15
+%D16: definition of the samechain relation:
+% Same_chain. nt1 same_chain nt2 iff [(nt1 equals nt2) or (nt1
+% cov_conn_3'_5'* nt2) or (nt1 cov_conn_5'_3'* nt2)].
 formula(forall([X,Y],equiv(samechain(X,Y),
 	and(nt(X),nt(Y),or(equal(X,Y),covconn35t(X,Y),covconn53t(X,Y)))))).
 
-%D16
+%D17: 5'-to; X is 5'-to Y if X and Y are on the same chain and 3-5 connected
 formula(forall([X,Y],equiv(5to(X,Y),and(samechain(X,Y),covconn35t(X,Y))))).
 
-%D17
+%D18: 3'-to; X is 3'-to Y if X and Y are on the same chain and 5-3 connected
 formula(forall([X,Y],equiv(3to(X,Y),and(samechain(X,Y),covconn53t(X,Y))))).
+
+% 5'-to and 3'-to are inverses of each other
 formula(forall([X,Y],equiv(5to(X,Y),3to(Y,X)))).
 
-%Theorems (verified):
+%Theorems (verified): transitivity for 5'-to and 3'-to
 %formula(forall([X,Y,Z],implies(and(5to(X,Y),5to(Y,Z)),5to(X,Z)))).
 %formula(forall([X,Y,Z],implies(and(3to(X,Y),3to(Y,Z)),3to(X,Z)))).
 
-%D18
+%D19: definition 5'-to-3'-strand-segment:
+%x instance_of 5'_to_3'_strand_segment iff there
+%exists P such that [P collection_of Nucleotides and x is the sum_of_collection of
+%P and for all y, z in P, (y 5’_to z OR y 3’_to z) and {for all y, w, and z such that (y,
+%z in P and y 5'_to z and w 3'_to y and w 5'_to z) then w part_of x}].
 formula(forall([X],equiv(53strand(X),exists([P],and(
 	forall([Y,W,Z],implies(and(mo(Y,P),mo(Z,P),5to(Y,Z),3to(W,Y),5to(W,Z)),
 			po(W,X))),
 	Coll(P),forall([M],implies(mo(M,P),nt(M))),soc(X,P),
 	forall([Y,Z],implies(and(mo(Y,P),mo(Z,P)),or(3to(Y,Z),5to(Y,Z))))))))).
 
-%D19
+%D20: class def for 5'-to-3'-RNA-molecule: Molecule and 5'-to-3'-strand-segment
 formula(forall([X],equiv(53rna(X),and(Mol(X),53strand(X))))).
 
-%A9, A11; split into multiple axioms for better readability
-%merged with A15 in one block
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% base pairing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%% edges%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%A9, A13; split into multiple axioms for better readability
+
+% nucleotides have a Watson-Craig, Hoogsteen and Sugar Edge
 formula(forall([X],implies(nt(X),exists([A,B,C],and(
 	wcedgeof(A,X),hedgeof(B,X),sugaredgeof(C,X)))))).
+
+% the next three axioms assert that there is exactly one edge of each
+% kind for every nucleotide
 formula(forall([A,B,X],implies(and(wcedgeof(A,X),wcedgeof(B,X)),equal(A,B)))).
 formula(forall([A,B,X],implies(and(hedgeof(A,X),hedgeof(B,X)),equal(A,B)))).
 formula(forall([A,B,X],implies(and(sugaredgeof(A,X),sugaredgeof(B,X)),equal(A,B)))).
+
+% the next three axioms assert that the three edges are disjoint
 formula(forall([A,X],implies(wcedgeof(A,X),not(or(hedgeof(A,X),sugaredgeof(A,X)))))).
 formula(forall([A,X],implies(hedgeof(A,X),not(or(wcedgeof(A,X),sugaredgeof(A,X)))))).
 formula(forall([A,X],implies(sugaredgeof(A,X),not(or(wcedgeof(A,X),hedgeof(A,X)))))).
 
-%D20'
+%D21: A is an edge of X iff it is one the the three kinds of edges
 formula(forall([A,X],equiv(edgeof(A,X),or(wcedgeof(A,X),hedgeof(A,X),sugaredgeof(A,X))))).
 
-%D20
+%D22: Class definitions based on relations; define three specific edge
+% class and one general one (Edge)
 formula(forall([A],equiv(wcedge(A),exists([X],wcedgeof(A,X))))).
 formula(forall([A],equiv(sugaredge(A),exists([X],sugaredgeof(A,X))))).
 formula(forall([A],equiv(hedge(A),exists([X],hedgeof(A,X))))).
 formula(forall([A],equiv(edge(A),exists([X],edgeof(A,X))))).
 
-%D21
+%D23: define has-edge as inverse relation to edge-of
 formula(forall([X,Y],equiv(hasedge(X,Y),edgeof(Y,X)))).
 
-%A11; split into multiple axioms
+%%%%%%%%%%%%%%%%%%%%%%%%% faces %%%%%%%%%%%%%%%%%%%%%%%%%%
+%A10; split into multiple axioms
+% every nucleotide has a 3' and 5' face
 formula(forall([X],implies(nt(X),exists([A,B],and(3faceof(A,X),5faceof(B,X)))))).
+
+% every nucleotide has at most one 3' and 5' face
 formula(forall([A,B,X],implies(and(3faceof(A,X),3faceof(B,X)),equal(A,B)))).
 formula(forall([A,B,X],implies(and(5faceof(A,X),5faceof(B,X)),equal(A,B)))).
+
+% 5' and 3' faces are disjoint
 formula(forall([A,X],implies(5faceof(A,X),not(3faceof(A,X))))).
 formula(forall([A,X],implies(3faceof(A,X),not(5faceof(A,X))))).
 
-%D22'
+%D24: face-of is the super-relation of both 5'-face-of and 3'-face-of
 formula(forall([A,X],equiv(faceof(A,X),or(5faceof(A,X),3faceof(A,X))))).
 
-%D22
+%D25: class definitions for 5'-face, 3'-face and face
 formula(forall([A],equiv(5face(A),exists([X],5faceof(A,X))))).
 formula(forall([A],equiv(3face(A),exists([X],3faceof(A,X))))).
 formula(forall([A],equiv(face(A),exists([X],faceof(A,X))))).
 
-%D23
+%D26: has-face is the inverse relation of face-of
 formula(forall([X,Y],equiv(hasface(X,Y),faceof(Y,X)))).
 
-%A13
+%A11: edge-of is functional
 formula(forall([X,Y,Z],implies(and(edgeof(X,Y),edgeof(X,Z)),equal(Y,Z)))).
 
-%A14
+%A12: face-of is functional
 formula(forall([X,Y,Z],implies(and(faceof(X,Y),faceof(X,Z)),equal(Y,Z)))).
 
 %edges and faces are boundaries
 formula(forall([X,Y],implies(edgeof(X,Y),bo(X,Y)))).
 formula(forall([X,Y],implies(faceof(X,Y),bo(X,Y)))).
 
-%D24
+%%%%%%%%%%%%%%%%%% base pairing %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%D27: definition of pairswith: two nucleotides pairwith each other if
+%their edges are weakling interacting
 formula(forall([X,Y],equiv(pairswith(X,Y),and(nt(X),nt(Y),
 	exists([A,B],and(edgeof(A,X),edgeof(B,Y),wiw(A,B))))))).
 
-%D25
+%D28: sub-relations of pairswith, distinguished by which edges pair
+% with which other edge
 formula(forall([X,Y],equiv(pairswithwh(X,Y),and(nt(X),nt(Y),
 	exists([A,B],and(wcedgeof(A,X),hedgeof(B,Y),wiw(A,B))))))).
 formula(forall([X,Y],equiv(pairswithww(X,Y),and(nt(X),nt(Y),
@@ -321,27 +429,32 @@ formula(forall([X,Y],equiv(pairswithsw(X,Y),and(nt(X),nt(Y),
 formula(forall([X,Y],equiv(pairswithss(X,Y),and(nt(X),nt(Y),
 	exists([A,B],and(sugaredgeof(A,X),sugaredgeof(B,Y),wiw(A,B))))))).
 
-%Theorem (verified):
+%Theorem (verified): symmetry of pairswith
 %formula(forall([X,Y],implies(pairswith(X,Y),pairswith(Y,X)))).
 
-%D26: incomplete
-formula(forall([X,Y],equiv(pairswithcwh(X,Y),and(pairswithwh(X,Y),cgbo(X,Y))))).
+%D29: extend with further sub-relations of pairswith when needed
+%formula(forall([X,Y],equiv(pairswithcwh(X,Y),and(pairswithwh(X,Y),cgbo(X,Y))))).
 
-%D27
+%D30: Definition basepair; a basepair is a pair of two nucleotides
+% where both nucleotides are paired
 formula(forall([X],equiv(bp(X),exists([N1,N2],and(pairswith(N1,N2),
 	forall([P],implies(po(P,X),or(overlaps(P,N1),overlaps(P,N2))))))))).
 
-%D28: not used in remaining axioms
+%D31: not used in remaining axioms
 
-%D29
+%%%%%%%%%%%%%%%%%%%%% stacking %%%%%%%%%%%%%%%%%%%%%%%
+%D32: definition of stacking relation: two nucleotides are stacked if
+%they have two faces which are weakly interacting
 formula(forall([N1,N2],equiv(stack(N1,N2),and(nt(N1),nt(N2),
 	exists([F1,F2],and(faceof(F1,N1),faceof(F2,N2),wiw(F1,F2))))))).
+
+% stacking is irreflexive
 formula(forall([X],not(stack(X,X)))). % no theorem, because wiw is not irreflexive
 
-%Theorem (verified)
+%Theorem (verified): symmetry of stacking
 %formula(forall([X,Y],implies(stack(X,Y),stack(Y,X)))).
 
-%D30
+%D33: sub-relations of stacking, distinguished by the faces which are interacting
 formula(forall([X,Y],equiv(stack35(X,Y),and(nt(X),nt(Y),
 	exists([F1,F2],and(3faceof(F1,X),5faceof(F2,Y),wiw(F1,F2))))))).
 formula(forall([X,Y],equiv(stack53(X,Y),and(nt(X),nt(Y),
@@ -356,53 +469,63 @@ formula(forall([X,Y],equiv(stack55(X,Y),and(nt(X),nt(Y),
 %formula(forall([X,Y],implies(stack33(X,Y),stack33(Y,X)))).
 %formula(forall([X,Y],implies(stack55(X,Y),stack55(Y,X)))).
 
-%A16
+%A14: pairswith excludes stacking
 formula(forall([X,Y],implies(pairswith(X,Y),not(stack(X,Y))))).
 
-%A17
-formula(forall([X,Y],implies(stack(X,Y),not(pairswith(X,Y))))).
+%C15: Theorem, follows from A14
+%formula(forall([X,Y],implies(stack(X,Y),not(pairswith(X,Y))))).
 
-%A18
-formula(forall([X,Y,Z],implies(and(covconn35(X,Y),covconn35(X,Z)),equal(Y,Z)))).
-formula(forall([X,Y,Z],implies(and(covconn53(X,Y),covconn53(X,Z)),equal(Y,Z)))).
+%A16: stack35 and stack53 are functional
+formula(forall([X,Y,Z],implies(and(stack35(X,Y),stack35(X,Z)),equal(Y,Z)))).
+formula(forall([X,Y,Z],implies(and(stack53(X,Y),stack53(X,Z)),equal(Y,Z)))).
 
-%A19
-formula(exists([X,Y,Z],and(stack55(X,Y),stack55(Y,Z),equal(X,Z)))).
+%Theorem: when X is 3'-to-5' stacked on Y and Y 3'-to-5'-stacked on Z,
+% then X and Z are not identical, do not pair and do not stack;
+% follows from irreflexivity of pairswith, stack and functionality
+%formula(forall([X,Y,Z],implies(and(stack35(X,Y),stack35(Y,Z)),and(not(equal(X,Z)),
+%	not(pairswith(X,Z)), not(stack(X,Z)))))).
 
-%A20
+%A17: stack55 can hold between X and two different nucleotides
 formula(exists([X,Y,Z],and(stack55(X,Y),stack55(Y,Z),not(equal(X,Z))))).
 
-%A20'
-formula(forall([X,Y,Z],implies(and(stack55(X,Y),stack53(Y,Z)),not(equal(X,Z))))).
+%Theorem: if X is 5'-to-5'-stacked on Y and Y is 5'-to-3'-stacked on Z,
+% then X and Z cannot be identical
+%formula(forall([X,Y,Z],implies(and(stack55(X,Y),stack53(Y,Z)),not(equal(X,Z))))).
 
-%A20''
-formula(forall([X,Y,Z],implies(and(stack35(X,Y),stack35(Y,Z)),and(not(equal(X,Z)),
-	not(pairswith(X,Z)), not(stack(X,Z)))))).
+%D34: ommitted, because D34 is an example of how to build a gRNA
+% Tetraloop, not part of the ontology
 
-%D31: need to define pairswithcWW, etc. first
-%formula(forall([X],equiv(gnratetraloop(X),exists([N1,N2,N3,N4,N5,N6],
-%	covconn35(N1,N2),covconn35(N2,N3),covconn35(N3,N4),
-%	covconn35(N4,N5), covconn35(N5,N6), 
-
-%D32
+%D35: definition of RNA-Backbone of a molecule
 formula(forall([X,M],equiv(rbo(X,M), and(53rna(M),
         exists([R],and(Coll(R),forall([Z],implies(and(
 	po(Z,M),or(Phosphorus(Z),O3(Z),O5(Z),C3(Z),C4(Z),C5(Z))),mo(Z,R))),
 	covbondsum(X,R))))))).
 
-%D33
-formula(forall([Y,M],equiv(suiteof(Y,M),and(53rna(M),exists([Q],
-	and(rbo(Q,M),po(Y,Q),exists([NTi,NTj],and(nt(NTi),nt(NTj),
-	po(NTi,M),covconn35(NTi,NTj),exists([R],and(Coll(R),
-	forall([Z],implies(or(and(po(Z,NTi),or(O3(Z),C3(Z),C4(Z))),
-	and(po(Z,NTj),or(Phosphorus(Z),O5(Z),C3(Z),C4(Z),C5(Z)))),mo(Z,R))),
-	covbondsum(Y,R))))))))))).
+%definition suite-of
+%formula(forall([Y,M],equiv(suiteof(Y,M),and(53rna(M),exists([Q],
+%	and(rbo(Q,M),po(Y,Q),exists([NTi,NTj],and(nt(NTi),nt(NTj),
+%	po(NTi,M),covconn35(NTi,NTj),exists([R],and(Coll(R),
+%	forall([Z],implies(or(and(po(Z,NTi),or(O3(Z),C3(Z),C4(Z))),
+%	and(po(Z,NTj),or(Phosphorus(Z),O5(Z),C3(Z),C4(Z),C5(Z)))),mo(Z,R))),
+%	covbondsum(Y,R))))))))))).
 
-%A21
-formula(forall([X,Y],implies(corrntnt(X,Y),and(nt(X),nt(Y),exists([A,B],
-	and(53rna(A),53rna(B),po(X,A),po(Y,B))))))).
+%A18: corresponds-to restriction; relation between collections
+formula(forall([X,Y],implies(corrto(X,Y),exists([M1,M2],and(53rna(M1),
+	53rna(M2),forall([Z],and(implies(mo(Z,X),po(Z,M1)),
+				 implies(mo(Z,Y),po(Z,M2))))))))).
 
-%D34
+%A19: restrict corresponds-to to nucleotides; definition is based on
+% the corresponds-to relation which is asserted between two
+% collections; corrntnt is a relation between collections of single nucleotides
+formula(forall([X,Y],equiv(corrntnt(X,Y),and(corrto(X,Y),exists([A,B],
+	and(mo(A,X),mo(B,Y),nt(A),nt(B),forall([C],and(implies(mo(C,X),equal(A,C)),
+						implies(mo(C,Y),equal(B,C)))))))))).
+%deprecated definition of corrntnt
+%formula(forall([X,Y],implies(corrntnt(X,Y),and(nt(X),nt(Y),exists([A,B],
+%	and(53rna(A),53rna(B),po(X,A),po(Y,B))))))).
+
+%D36 definition of corresponds-to-bp-bp; extend the
+% nucleotide-by-nucleotide correspondence to basepairs
 formula(forall([X1,X2,Y1,Y2],equiv(corrbpbp(X1,X2,Y1,Y2),
 	and(nt(X1),nt(X2),nt(Y1),nt(Y2),exists([A,B],
 	and(53rna(A),53rna(B),po(X1,A),po(X2,A),po(Y1,B),po(Y2,B),
@@ -411,7 +534,10 @@ formula(forall([X1,X2,Y1,Y2],equiv(corrbpbp(X1,X2,Y1,Y2),
 end_of_list.
 
 list_of_formulae(conjectures).
-formula(forall([X,Y],and(Mol(X),not(Mol(X))))).
-formula(edge(a)).
+
+% This formula is a logical contradiction. If it is provable by the
+% theorem prover, the theory is inconsistent. Replace this formula
+% with a theorem you wish to infer.
+formula(and(exists([X],Mol(X)),not(exists([X],Mol(X))))).
 end_of_list.
 end_problem.
