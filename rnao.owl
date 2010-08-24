@@ -97,12 +97,52 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000191 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000191">
+        <rdfs:label
+            >linear RNA backbone of</rdfs:label>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000189"/>
+        <owl:inverseOf rdf:resource="&obo;RNAO_0000192"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000220"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000000"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000015"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000020"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000192 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RNAO_0000192">
+        <rdfs:label
+            >has linear RNA backbone</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000221"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RNAO_0000220 -->
 
     <owl:ObjectProperty rdf:about="&obo;RNAO_0000220">
         <rdfs:label>RNA backbone of</rdfs:label>
-        <rdfs:domain rdf:resource="&obo;RNAO_0000181"/>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000168"/>
         <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000357"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000000"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000015"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000020"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -313,16 +353,6 @@
         <rdfs:label
             >weakly interacting with (transitive)</rdfs:label>
         <rdfs:subPropertyOf rdf:resource="&obo;RNAO_0000300"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&obo;CHEBI_33250"/>
-                    <rdf:Description rdf:about="&obo;RNAO_0000120"/>
-                    <rdf:Description rdf:about="&obo;RNAO_0000141"/>
-                    <rdf:Description rdf:about="&obo;RNAO_0000158"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -333,6 +363,16 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;CHEBI_33250"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000120"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000141"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000158"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -793,8 +833,17 @@
 
     <owl:ObjectProperty rdf:about="&obo;RNAO_0000357">
         <rdfs:label>submolecule of</rdfs:label>
+        <rdfs:domain rdf:resource="&obo;RNAO_0000181"/>
         <owl:inverseOf rdf:resource="&obo;RNAO_0000358"/>
         <rdfs:subPropertyOf rdf:resource="&ro;part_of"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&obo;RNAO_0000141"/>
+                    <rdf:Description rdf:about="&obo;RNAO_0000181"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -4456,14 +4505,14 @@
         <rdfs:subClassOf rdf:resource="&obo;RNAO_0000182"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000201"/>
+                <owl:onProperty rdf:resource="&obo;RNAO_0000354"/>
+                <owl:allValuesFrom rdf:resource="&obo;RNAO_0000187"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;RNAO_0000354"/>
-                <owl:allValuesFrom rdf:resource="&obo;RNAO_0000187"/>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000201"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:description
@@ -4895,6 +4944,15 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000137 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000137">
+        <rdfs:label>backbone</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000158"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RNAO_0000138 -->
 
     <owl:Class rdf:about="&obo;RNAO_0000138">
@@ -5050,13 +5108,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;has_quality"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000138"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000142"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;has_quality"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000142"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000138"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:description
@@ -5128,13 +5186,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;has_quality"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000142"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000138"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;has_quality"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000138"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000142"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:description
@@ -5419,6 +5477,21 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000168 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000168">
+        <rdfs:label>RNA backbone</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000137"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000000"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RNAO_0000169 -->
 
     <owl:Class rdf:about="&obo;RNAO_0000169">
@@ -5676,13 +5749,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;has_part"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000147"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;has_part"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000017"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000147"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -5711,6 +5784,16 @@
         <rdfs:label
             >mereologically maximal object</rdfs:label>
         <rdfs:subClassOf rdf:resource="&snap;MaterialEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RNAO_0000189 -->
+
+    <owl:Class rdf:about="&obo;RNAO_0000189">
+        <rdfs:label
+            >linear RNA backbone</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;RNAO_0000168"/>
     </owl:Class>
     
 
@@ -5836,13 +5919,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000026"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000475"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000475"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000026"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -5864,13 +5947,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000474"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000506"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000506"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000474"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -5891,13 +5974,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000026"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000507"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000507"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000026"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -5912,7 +5995,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000501"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000028"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -5924,7 +6007,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000028"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000501"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -5939,12 +6022,6 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000027"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000504"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -5952,6 +6029,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000472"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000027"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -5987,13 +6070,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000501"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000028"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000028"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000501"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -6030,13 +6113,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000503"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000026"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000026"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000503"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -6104,13 +6187,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000025"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000502"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000502"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000025"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -6125,7 +6208,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000504"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000472"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -6137,7 +6220,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000472"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000504"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -6180,13 +6263,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000027"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000472"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000472"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000027"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -6201,12 +6284,6 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000500"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000472"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -6214,6 +6291,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
                 <owl:someValuesFrom rdf:resource="&obo;RNAO_0000027"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ro;part_of"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000500"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -6229,13 +6312,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000025"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000474"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000474"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000025"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -6328,13 +6411,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000028"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000501"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000501"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000028"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -6349,13 +6432,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000027"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000500"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000500"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000027"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -6399,13 +6482,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000025"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000502"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000502"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000025"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -6585,13 +6668,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000503"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000026"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000026"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000503"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -6666,7 +6749,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000505"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000028"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -6678,7 +6761,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000028"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000505"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -6724,13 +6807,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000028"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000505"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000505"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000028"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -6746,13 +6829,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000473"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000028"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000028"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000473"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -6800,13 +6883,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000025"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000502"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000502"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000025"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -6822,13 +6905,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000025"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000474"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000474"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000025"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -7786,13 +7869,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000506"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000035"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ro;part_of"/>
-                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000035"/>
+                <owl:someValuesFrom rdf:resource="&obo;RNAO_0000506"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -18704,18 +18787,18 @@
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&obo;RNAO_0000113"/>
-            <rdf:Description rdf:about="&obo;RNAO_0000121"/>
-            <rdf:Description rdf:about="&obo;RNAO_0000126"/>
-            <rdf:Description rdf:about="&obo;RNAO_0000135"/>
+            <rdf:Description rdf:about="&obo;RNAO_0000127"/>
+            <rdf:Description rdf:about="&obo;RNAO_0000128"/>
+            <rdf:Description rdf:about="&obo;RNAO_0000129"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&obo;RNAO_0000127"/>
-            <rdf:Description rdf:about="&obo;RNAO_0000128"/>
-            <rdf:Description rdf:about="&obo;RNAO_0000129"/>
+            <rdf:Description rdf:about="&obo;RNAO_0000113"/>
+            <rdf:Description rdf:about="&obo;RNAO_0000121"/>
+            <rdf:Description rdf:about="&obo;RNAO_0000126"/>
+            <rdf:Description rdf:about="&obo;RNAO_0000135"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
