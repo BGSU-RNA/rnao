@@ -36,13 +36,23 @@ predicates[	   (po,2), %partof
 		   (exb,1), % external-boundary
 		   (covconn,2), %covalently-connected-to
 	   	   (nt,1), %nucleotide
-		   (RiboseO3,1), %Ribose O3 atom
+		   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		   % These classes need to be imported from the ChEBI ontology
+		   (RiboseO3p,1), %Ribose O3p atom
 		   (Phosphorus,1), 
-		   (O3,1), 
-		   (O5,1),
-	   	   (C3,1), 
-		   (C4,1), 
-		   (C5,1),
+		   (O2p,1), %O2-prime
+		   (O3p,1), %O3-prime
+		   (O4p,1), 
+		   (O5p,1),
+	   	   (C1p,1), 
+		   (C2p,1), 
+	   	   (C3p,1), 
+		   (C4p,1), 
+		   (C5p,1),
+		   (OP1,1), 
+		   (OP2,1),
+		   (Nucleobase,1),
+		   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	   	   (covconn35,2), %covalently-connected-3'-to-5'
 		   (covconn53,2), %covalently-connected-5'-to-3'
 	   	   (covconn35t,2), %covalently-connected-3'-to-5' (transitive)
@@ -90,7 +100,8 @@ predicates[	   (po,2), %partof
 	   	   (stack55,2),
 	   	   (gnratetraloop,1),
 	   	   (rbo,2), %RNA backbone of
-	   	   (suiteof,2),
+	   	   (suiteof,2), % suite-of
+	   	   (suite,1), % suite
 		   (corrto,2), % corresponds-to
 	   	   (corrntnt,2), %corresponds-to-nt-nt
 	   	   (corrbpbp,4) %corresponds-to-bp-bp
@@ -104,6 +115,11 @@ list_of_formulae(axioms).
 % (RNAO): An Ontology for Integrating RNA Sequence and Structure Data;
 % Applied Ontology, 2010.
 
+
+
+% At this stage of RNAO, Hydrogen atoms are never included, but are assumed
+% to satisfy the same conditions as the heavier axioms to which they
+% are covalently bonded in the RNA molecule. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Mereology %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Basic definitions
@@ -269,18 +285,18 @@ formula(forall([M],not(covconn(M,M)))).
 %The next definitions assign an ordering among the connections
 
 %D14: covconn35; covalently-connect-to from 3' to 5' end; the
-%definition uses Phosphorus and Ribose O3 atoms (without definition)
+%definition uses Phosphorus and Ribose O3p atoms (without definition)
 formula(forall([A,B],implies(covconn35(A,B),covconn(A,B)))).
 formula(forall([NT1,NT2], equiv(covconn35(NT1,NT2),exists([X,Y],
 			  and(
-			    RiboseO3(X),Phosphorus(Y),po(X,NT1),po(Y,NT2),
+			    RiboseO3p(X),Phosphorus(Y),po(X,NT1),po(Y,NT2),
 			    nt(NT1),nt(NT2),covbond(X,Y)))))).
 
 %D15: covconn53; similar to covconn35, just the other direction
 formula(forall([A,B],implies(covconn53(A,B),covconn(A,B)))).
 formula(forall([NT1,NT2], equiv(covconn53(NT1,NT2),exists([X,Y],
 			  and(
-			    RiboseO3(Y),Phosphorus(X),po(X,NT1),po(Y,NT2),
+			    RiboseO3p(Y),Phosphorus(X),po(X,NT1),po(Y,NT2),
 			    nt(NT1),nt(NT2),covbond(X,Y)))))).
 
 %A7: functionality for covconn35
@@ -472,7 +488,7 @@ formula(forall([X,Y],equiv(stack55(X,Y),and(nt(X),nt(Y),
 %A14: pairswith excludes stacking
 formula(forall([X,Y],implies(pairswith(X,Y),not(stack(X,Y))))).
 
-%C15: Theorem, follows from A14
+%C1p5: Theorem, follows from A14
 %formula(forall([X,Y],implies(stack(X,Y),not(pairswith(X,Y))))).
 
 %A16: stack35 and stack53 are functional
@@ -495,19 +511,34 @@ formula(exists([X,Y,Z],and(stack55(X,Y),stack55(Y,Z),not(equal(X,Z))))).
 %D34: ommitted, because D34 is an example of how to build a gRNA
 % Tetraloop, not part of the ontology
 
-%D35: definition of RNA-Backbone of a molecule
-formula(forall([X,M],equiv(rbo(X,M), and(53rna(M),
+%D35: definition of linear RNA-Backbone of a molecule, nucleotide or suite
+formula(forall([X,M],equiv(rbo(X,M), and(or(53rna(M),nt(M),suite(M)),
         exists([R],and(Coll(R),forall([Z],implies(and(
-	po(Z,M),or(Phosphorus(Z),O3(Z),O5(Z),C3(Z),C4(Z),C5(Z))),mo(Z,R))),
+	po(Z,M),or(Phosphorus(Z),O3p(Z),O5p(Z),C3p(Z),C4p(Z),C5p(Z))),mo(Z,R))),
 	covbondsum(X,R))))))).
 
 %definition suite-of
-%formula(forall([Y,M],equiv(suiteof(Y,M),and(53rna(M),exists([Q],
-%	and(rbo(Q,M),po(Y,Q),exists([NTi,NTj],and(nt(NTi),nt(NTj),
-%	po(NTi,M),covconn35(NTi,NTj),exists([R],and(Coll(R),
-%	forall([Z],implies(or(and(po(Z,NTi),or(O3(Z),C3(Z),C4(Z))),
-%	and(po(Z,NTj),or(Phosphorus(Z),O5(Z),C3(Z),C4(Z),C5(Z)))),mo(Z,R))),
-%	covbondsum(Y,R))))))))))).
+%Def (suite-of): X suite-of M iff M is a 5-3-RNA-Molecule, and X is a
+%part of M and there are 2 nucleotides NTi, NTj, such that: NTi part-of 
+%M and NTj part-of M and NTi covalently-connected-3'-to-5'-to NTj and
+%there exists a Collection R such that: all Z with: (if Z part-of NTi 
+%and instance of either O2p or O3p or O4p or C1p or C2p or C3p or C4p 
+%or Nucleobase) or (Z part-of NTj and instance of
+%P or OP1 or OP2 or O2p or O4p or O5p or C2p or C1p or C3p or C4p or 
+%C5p or Nucleobase) then Z member-of R and X is covalently-bonded-sum-of
+%R.
+formula(forall([Y,M],equiv(suiteof(Y,M),and(53rna(M),po(Y,M),
+	exists([NTi,NTj],and(nt(NTi),nt(NTj),
+	po(NTi,M),covconn35(NTi,NTj),exists([R],and(Coll(R),
+	forall([Z],implies(or(
+	and(po(Z,NTi),
+	or(O2p(Z),O3p(Z),O4p(Z),C1p(Z),C2p(Z),C3p(Z),C4p(Z),Nucleobase(Z))),
+	and(po(Z,NTj),
+	or(Phosphorus(Z),OP1(Z),OP2(Z),O2p(Z),O4p(Z),O5p(Z),C2p(Z),
+			C1p(Z),C3p(Z),C4p(Z),C5p(Z),Nucleobase(Z)))),
+	mo(Z,R))),covbondsum(Y,R))))))))).
+
+formula(forall([X],equiv(suite(X),exists([Y],suiteof(X,Y))))).
 
 %A18: corresponds-to restriction; relation between collections
 formula(forall([X,Y],implies(corrto(X,Y),exists([M1,M2],and(53rna(M1),
