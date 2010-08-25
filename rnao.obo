@@ -1114,6 +1114,11 @@ name: #a conformation
 is_a: RNAO:0000030
 
 [Term]
+id: RNAO:0000137
+name: backbone
+is_a: RNAO:0000158
+
+[Term]
 id: RNAO:0000138
 name: base stack straight orientation
 def: "An base stack straight orientation is a base stack orientation in which the normals of both bases are aligned in the same direction." [RNAO:ROC]
@@ -1177,8 +1182,8 @@ id: RNAO:0000148
 name: upward base stack
 def: "An upward base stack is a base stack that exhibits both an straight orientation and an above orientation." [RNAO:ROC]
 is_a: RNAO:0000132
-relationship: ro.owl#has_quality RNAO:0000138
 relationship: ro.owl#has_quality RNAO:0000142
+relationship: ro.owl#has_quality RNAO:0000138
 
 [Term]
 id: RNAO:0000149
@@ -1201,8 +1206,8 @@ id: RNAO:0000151
 name: outward base stack
 def: "An outward base stack is a base stack that exhibits both a reverse orientation and a below orientation." [RNAO:ROC]
 is_a: RNAO:0000132
-relationship: ro.owl#has_quality RNAO:0000142
 relationship: ro.owl#has_quality RNAO:0000138
+relationship: ro.owl#has_quality RNAO:0000142
 
 [Term]
 id: RNAO:0000152
@@ -1289,6 +1294,12 @@ id: RNAO:0000167
 name: ribose O2prime atom
 is_a: RNAO:0000521
 relationship: ro.owl#part_of RNAO:0000021
+
+[Term]
+id: RNAO:0000168
+name: RNA backbone
+is_a: RNAO:0000137
+relationship: ro.owl#part_of RNAO:0000000
 
 [Term]
 id: RNAO:0000169
@@ -1392,8 +1403,8 @@ is_a: RNAO:0000183
 id: RNAO:0000186
 name: nucleoside residue
 is_a: RNAO:0000158
-relationship: ro.owl#has_part RNAO:0000147
 relationship: ro.owl#has_part RNAO:0000017
+relationship: ro.owl#has_part RNAO:0000147
 
 [Term]
 id: RNAO:0000187
@@ -1405,6 +1416,11 @@ relationship: ro.owl#has_part RNAO:0000186
 id: RNAO:0000188
 name: mereologically maximal object
 is_a: snap#MaterialEntity
+
+[Term]
+id: RNAO:0000189
+name: linear RNA backbone
+is_a: RNAO:0000168
 
 [Term]
 id: RNAO:0000190
@@ -1455,40 +1471,40 @@ id: RNAO:0000400
 name: uracil O4 atom
 is_a: RNAO:0000159
 relationship: ro.owl#part_of RNAO:0000503
-relationship: ro.owl#part_of RNAO:0000026
 relationship: ro.owl#part_of RNAO:0000475
+relationship: ro.owl#part_of RNAO:0000026
 
 [Term]
 id: RNAO:0000401
 name: cytosine O2 atom
 is_a: RNAO:0000164
 relationship: ro.owl#part_of RNAO:0000025
-relationship: ro.owl#part_of RNAO:0000474
 relationship: ro.owl#part_of RNAO:0000506
+relationship: ro.owl#part_of RNAO:0000474
 
 [Term]
 id: RNAO:0000402
 name: uracil O2 atom
 is_a: RNAO:0000164
 relationship: ro.owl#part_of RNAO:0000475
-relationship: ro.owl#part_of RNAO:0000026
 relationship: ro.owl#part_of RNAO:0000507
+relationship: ro.owl#part_of RNAO:0000026
 
 [Term]
 id: RNAO:0000403
 name: guanine O6 atom
 is_a: RNAO:0000175
-relationship: ro.owl#part_of RNAO:0000501
-relationship: ro.owl#part_of RNAO:0000473
 relationship: ro.owl#part_of RNAO:0000028
+relationship: ro.owl#part_of RNAO:0000473
+relationship: ro.owl#part_of RNAO:0000501
 
 [Term]
 id: RNAO:0000404
 name: adenine C2 atom
 is_a: RNAO:0000160
-relationship: ro.owl#part_of RNAO:0000027
 relationship: ro.owl#part_of RNAO:0000504
 relationship: ro.owl#part_of RNAO:0000472
+relationship: ro.owl#part_of RNAO:0000027
 
 [Term]
 id: RNAO:0000406
@@ -1501,8 +1517,8 @@ relationship: ro.owl#part_of RNAO:0000500
 id: RNAO:0000407
 name: guanine C8 atom
 is_a: RNAO:0000172
-relationship: ro.owl#part_of RNAO:0000501
 relationship: ro.owl#part_of RNAO:0000028
+relationship: ro.owl#part_of RNAO:0000501
 
 [Term]
 id: RNAO:0000408
@@ -1515,8 +1531,8 @@ relationship: ro.owl#part_of RNAO:0000025
 id: RNAO:0000409
 name: uracil C5 atom
 is_a: RNAO:0000177
-relationship: ro.owl#part_of RNAO:0000503
 relationship: ro.owl#part_of RNAO:0000026
+relationship: ro.owl#part_of RNAO:0000503
 
 [Term]
 id: RNAO:0000410
@@ -1541,16 +1557,16 @@ relationship: ro.owl#part_of RNAO:0000026
 id: RNAO:0000413
 name: cytosine C6 atom
 is_a: RNAO:0000179
-relationship: ro.owl#part_of RNAO:0000025
 relationship: ro.owl#part_of RNAO:0000502
+relationship: ro.owl#part_of RNAO:0000025
 
 [Term]
 id: RNAO:0000414
 name: adenine H2 atom
 is_a: RNAO:0000169
-relationship: ro.owl#part_of RNAO:0000504
-relationship: ro.owl#part_of RNAO:0000027
 relationship: ro.owl#part_of RNAO:0000472
+relationship: ro.owl#part_of RNAO:0000027
+relationship: ro.owl#part_of RNAO:0000504
 
 [Term]
 id: RNAO:0000415
@@ -1564,23 +1580,23 @@ relationship: ro.owl#part_of RNAO:0000502
 id: RNAO:0000416
 name: adenine N1 atom
 is_a: RNAO:0000162
-relationship: ro.owl#part_of RNAO:0000027
 relationship: ro.owl#part_of RNAO:0000472
+relationship: ro.owl#part_of RNAO:0000027
 
 [Term]
 id: RNAO:0000417
 name: adenine N6 atom
 is_a: RNAO:0000163
-relationship: ro.owl#part_of RNAO:0000500
 relationship: ro.owl#part_of RNAO:0000472
 relationship: ro.owl#part_of RNAO:0000027
+relationship: ro.owl#part_of RNAO:0000500
 
 [Term]
 id: RNAO:0000418
 name: cytosine N3 atom
 is_a: RNAO:0000165
-relationship: ro.owl#part_of RNAO:0000025
 relationship: ro.owl#part_of RNAO:0000474
+relationship: ro.owl#part_of RNAO:0000025
 
 [Term]
 id: RNAO:0000419
@@ -1613,15 +1629,15 @@ relationship: ro.owl#part_of RNAO:0000475
 id: RNAO:0000424
 name: guanine H8 atom
 is_a: RNAO:0000171
-relationship: ro.owl#part_of RNAO:0000028
 relationship: ro.owl#part_of RNAO:0000501
+relationship: ro.owl#part_of RNAO:0000028
 
 [Term]
 id: RNAO:0000425
 name: adenine H8 atom
 is_a: RNAO:0000171
-relationship: ro.owl#part_of RNAO:0000027
 relationship: ro.owl#part_of RNAO:0000500
+relationship: ro.owl#part_of RNAO:0000027
 
 [Term]
 id: RNAO:0000426
@@ -1634,8 +1650,8 @@ relationship: ro.owl#part_of RNAO:0000500
 id: RNAO:0000427
 name: cytosine H5 atom
 is_a: RNAO:0000176
-relationship: ro.owl#part_of RNAO:0000025
 relationship: ro.owl#part_of RNAO:0000502
+relationship: ro.owl#part_of RNAO:0000025
 
 [Term]
 id: RNAO:0000428
@@ -1695,8 +1711,8 @@ relationship: ro.owl#part_of RNAO:0000025
 id: RNAO:0000439
 name: uracil H6 atom
 is_a: RNAO:0000437
-relationship: ro.owl#part_of RNAO:0000503
 relationship: ro.owl#part_of RNAO:0000026
+relationship: ro.owl#part_of RNAO:0000503
 
 [Term]
 id: RNAO:0000440
@@ -1726,9 +1742,9 @@ relationship: ro.owl#part_of RNAO:0000023
 id: RNAO:0000444
 name: guanine N2 atom
 is_a: RNAO:0000443
-relationship: ro.owl#part_of RNAO:0000505
-relationship: ro.owl#part_of RNAO:0000473
 relationship: ro.owl#part_of RNAO:0000028
+relationship: ro.owl#part_of RNAO:0000473
+relationship: ro.owl#part_of RNAO:0000505
 
 [Term]
 id: RNAO:0000445
@@ -1746,15 +1762,15 @@ relationship: ro.owl#part_of RNAO:0000023
 id: RNAO:0000447
 name: guanine H22 atom
 is_a: RNAO:0000446
-relationship: ro.owl#part_of RNAO:0000028
 relationship: ro.owl#part_of RNAO:0000505
+relationship: ro.owl#part_of RNAO:0000028
 
 [Term]
 id: RNAO:0000448
 name: guanine H21 atom
 is_a: RNAO:0000445
-relationship: ro.owl#part_of RNAO:0000473
 relationship: ro.owl#part_of RNAO:0000028
+relationship: ro.owl#part_of RNAO:0000473
 
 [Term]
 id: RNAO:0000449
@@ -1772,15 +1788,15 @@ relationship: ro.owl#part_of RNAO:0000024
 id: RNAO:0000451
 name: cytosine H42 atom
 is_a: RNAO:0000450
-relationship: ro.owl#part_of RNAO:0000025
 relationship: ro.owl#part_of RNAO:0000502
+relationship: ro.owl#part_of RNAO:0000025
 
 [Term]
 id: RNAO:0000452
 name: cytosine H41 atom
 is_a: RNAO:0000449
-relationship: ro.owl#part_of RNAO:0000025
 relationship: ro.owl#part_of RNAO:0000474
+relationship: ro.owl#part_of RNAO:0000025
 
 [Term]
 id: RNAO:0000453
@@ -2091,8 +2107,8 @@ relationship: ro.owl#part_of RNAO:0000028
 id: RNAO:0000528
 name: cytidine ribose O 2prime atom
 is_a: RNAO:0000167
-relationship: ro.owl#part_of RNAO:0000506
 relationship: ro.owl#part_of RNAO:0000035
+relationship: ro.owl#part_of RNAO:0000506
 
 [Term]
 id: RNAO:0000529
@@ -4021,10 +4037,22 @@ id: ObjectProperty1243973897611439000
 name: obsolete relation
 
 [Typedef]
+id: RNAO:0000191
+name: linear RNA backbone of
+is_a: RNAO:0000220
+inverse_of: RNAO:0000192
+domain: RNAO:0000189
+
+[Typedef]
+id: RNAO:0000192
+name: has linear RNA backbone
+is_a: RNAO:0000221
+
+[Typedef]
 id: RNAO:0000220
 name: RNA backbone of
 is_a: RNAO:0000357
-domain: RNAO:0000181
+domain: RNAO:0000168
 
 [Typedef]
 id: RNAO:0000221
@@ -4402,6 +4430,7 @@ id: RNAO:0000357
 name: submolecule of
 is_a: ro.owl#part_of
 inverse_of: RNAO:0000358
+domain: RNAO:0000181
 
 [Typedef]
 id: RNAO:0000358
