@@ -6,4 +6,6 @@ from base pairing and base stacking interactions to sophisticated motifs.
 
 RNA Ontology is described in the publication by [Hoehndorf et al., 2011](http://dl.acm.org/citation.cfm?id=1971674.1971676).
 
-This repository was automatically exported from [code.google.com/p/rnao](https://code.google.com/p/rnao/) because Google Code [is shutting down](http://google-opensource.blogspot.co.uk/2015/03/farewell-to-google-code.html).
+**Interactive browser**: http://bgsu-rna.github.io/rnao/
+
+This repository was automatically exported from [code.google.com/p/rnao](https://code.google.com/p/rnao/).
